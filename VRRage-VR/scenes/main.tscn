@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://cr0xwn6ug1cab"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_84r0s"]
+[ext_resource type="PackedScene" uid="uid://r6qyyl6442m3" path="res://scenes/ui.tscn" id="2_67p3i"]
+[ext_resource type="Script" path="res://scripts/open_xr_composition_layer_quad.gd" id="3_fd3md"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_nfd5q"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_qovl0"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_aqd64"]
+radius = 0.01
+height = 0.01
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_84r0s")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+render_target_update_mode = 4
+
+[node name="UI" parent="SubViewport" instance=ExtResource("2_67p3i")]
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="LeftHand" type="XRController3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
+tracker = &"left_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftHand"]
+mesh = SubResource("SphereMesh_nfd5q")
+
+[node name="RightHand" type="XRController3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, 0.5)
+tracker = &"right_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightHand"]
+mesh = SubResource("SphereMesh_qovl0")
+
+[node name="OpenXRCompositionLayerQuad" type="OpenXRCompositionLayerQuad" parent="XROrigin3D" node_paths=PackedStringArray("layer_viewport")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.53552, -3.09479)
+layer_viewport = NodePath("../../SubViewport")
+alpha_blend = true
+script = ExtResource("3_fd3md")
+
+[node name="Pointer" type="MeshInstance3D" parent="XROrigin3D/OpenXRCompositionLayerQuad"]
+mesh = SubResource("SphereMesh_aqd64")
