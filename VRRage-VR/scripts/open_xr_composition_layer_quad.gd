@@ -67,9 +67,9 @@ func _process(_delta):
 				event.position = _intersect_to_viewport_pos(intersect)
 				layer_viewport.push_input(event)
 				
-				was_pressed = is_pressed
-				was_intersect = intersect
+			was_pressed = is_pressed
+			was_intersect = intersect
 			
-			else:
-				was_pressed = false
-				was_intersect = NO_INTERSECTION
+		else:
+			was_pressed = false
+			was_intersect = NO_INTERSECTION
