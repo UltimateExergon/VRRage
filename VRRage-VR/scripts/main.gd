@@ -41,6 +41,7 @@ func _ready():
 
 # Handle OpenXR session ready
 func _on_openxr_session_begun() -> void:
+	xr_interface.set_display_refresh_rate(maximum_refresh_rate)
 	# Get the reported refresh rate
 	var current_refresh_rate = xr_interface.get_display_refresh_rate()
 	if current_refresh_rate > 0:
