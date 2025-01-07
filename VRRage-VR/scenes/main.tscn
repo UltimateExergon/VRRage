@@ -39,11 +39,12 @@ tracker = &"right_hand"
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightHand"]
 mesh = SubResource("SphereMesh_qovl0")
 
-[node name="OpenXRCompositionLayerQuad" type="OpenXRCompositionLayerQuad" parent="XROrigin3D" node_paths=PackedStringArray("layer_viewport")]
+[node name="OpenXRCompositionLayerQuad" type="OpenXRCompositionLayerQuad" parent="XROrigin3D" node_paths=PackedStringArray("layer_viewport", "controller")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.53552, -3.09479)
 layer_viewport = NodePath("../../SubViewport")
 alpha_blend = true
 script = ExtResource("3_fd3md")
+controller = NodePath("../RightHand")
 
 [node name="Pointer" type="MeshInstance3D" parent="XROrigin3D/OpenXRCompositionLayerQuad"]
 mesh = SubResource("SphereMesh_aqd64")
