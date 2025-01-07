@@ -94,6 +94,8 @@ func _on_openxr_focused_state() -> void:
 	get_tree().paused = false
 
 	emit_signal("focus_gained")
+	
+	$XROrigin3D/OpenXRCompositionLayerQuad.run = true
 
 # Handle OpenXR stopping state
 func _on_openxr_stopping() -> void:
