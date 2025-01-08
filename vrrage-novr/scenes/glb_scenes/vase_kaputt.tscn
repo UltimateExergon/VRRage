@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://cd364n2pb2w8h"]
+
+[ext_resource type="PackedScene" uid="uid://bglnn1bvt7qc3" path="res://assets/models/Vase_kaputt.glb" id="1_qvf17"]
+
+[node name="Vase_kaputt" instance=ExtResource("1_qvf17")]
+
+[node name="Vase_cell" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0176665, 0.0377913, -0.239753)
+
+[node name="Vase_cell_001" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.300407, 0.10677, 0.119712)
+
+[node name="Vase_cell_002" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0265706, 0.692112, -0.544855)
+
+[node name="Vase_cell_003" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.708556, 1.70433, -0.046262)
+
+[node name="Vase_cell_004" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.568549, 1.74252, -0.387847)
+
+[node name="Vase_cell_005" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.560924, 0.813487, 0.053736)
+
+[node name="Vase_cell_006" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.491725, 1.709, 0.655883)
+
+[node name="Vase_cell_007" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.482966, 1.16054, -0.27796)
+
+[node name="Vase_cell_008" parent="." index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.257283, 0.333703, 0.271632)
+
+[node name="Vase_cell_009" parent="." index="9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0554936, 1.32844, 0.731892)

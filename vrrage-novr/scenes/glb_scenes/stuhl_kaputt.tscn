@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://cllm2cln728u"]
+
+[ext_resource type="PackedScene" uid="uid://ctsmotcwywjp4" path="res://assets/models/Stuhl_kaputt.glb" id="1_f1oqa"]
+
+[node name="Stuhl_kaputt" instance=ExtResource("1_f1oqa")]
+
+[node name="Stuhl_cell" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.572639, -0.181093, -0.555787)
+
+[node name="Stuhl_cell_001" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.520433, 2.88792, -0.111328)
+
+[node name="Stuhl_cell_002" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.588247, -0.0691332, 0.629301)
+
+[node name="Stuhl_cell_003" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.492799, 0.19951, -0.531424)
+
+[node name="Stuhl_cell_004" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.500045, 0.749579, 0.0485145)
+
+[node name="Stuhl_cell_005" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.280235, 2.04431, 0.329789)
+
+[node name="Stuhl_cell_006" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.588247, -0.136127, -0.539082)
+
+[node name="Stuhl_cell_007" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.478385, 0.724252, 0.537238)
+
+[node name="Stuhl_cell_008" parent="." index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.338818, 0.536426, -0.479177)
+
+[node name="Stuhl_cell_009" parent="." index="9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0220407, 1.85113, -0.259617)
