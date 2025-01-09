@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ijpoii8btt68"]
+
+[ext_resource type="PackedScene" uid="uid://dtgwnv6x1ix2k" path="res://assets/models/Stuhl.glb" id="1_o0j57"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_65gfn"]
+size = Vector3(0.527832, 0.911011, 0.513428)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pddac"]
+size = Vector3(0.128418, 0.623993, 0.539429)
+
+[node name="stuhl" instance=ExtResource("1_o0j57")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00756836, 0.0067749, 0.0482178)
+shape = SubResource("BoxShape3D_65gfn")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.193115, 0.758435, 0.0485229)
+shape = SubResource("BoxShape3D_pddac")

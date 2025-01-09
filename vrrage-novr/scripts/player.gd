@@ -19,6 +19,8 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _physics_process(delta):
+	raycast_check()
+	
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	else:
@@ -50,11 +52,10 @@ func _input(event):
 		look_rot.x -= (event.relative.y * sensitivity)
 		look_rot.x = clamp(look_rot.x, min_angle, max_angle)
 		
-	if Input.is_action_just_pressed("E"):
-		if raycast.is_colliding():
-			if raycast.get_collider().is_in_group("DESTRUCTIBLE"):
+func raycast_check():
+	if raycast.is_colliding():
+		var collider = raycast.get_collider()
+		if Input.is_action_just_pressed("E"):
+			if collider.is_in_group("DESTRUCTIBLE"):
 				print("Destructible Object detected")
-				raycast.get_collider().get_node("Destruction").destroy()
-			elif raycast.get_collider().is_in_group("V2"):
-				print("V2 Object detected")
-				raycast.get_collider().damage(80)
+				collider.get_parent().get_node("Destruction").destroy()
