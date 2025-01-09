@@ -95,7 +95,7 @@ func _on_openxr_focused_state() -> void:
 
 	emit_signal("focus_gained")
 	
-	$XROrigin3D/OpenXRCompositionLayerQuad.run = true
+	$Player/OpenXRCompositionLayerQuad.run = true
 
 # Handle OpenXR stopping state
 func _on_openxr_stopping() -> void:
