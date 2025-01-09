@@ -41,35 +41,7 @@ func _ready():
 
 # Handle OpenXR session ready
 func _on_openxr_session_begun() -> void:
-	xr_interface.set_display_refresh_rate(maximum_refresh_rate)
-	# Get the reported refresh rate
-	var current_refresh_rate = xr_interface.get_display_refresh_rate()
-	if current_refresh_rate > 0:
-		print("OpenXR: Refresh rate reported as ", str(current_refresh_rate))
-	else:
-		print("OpenXR: No refresh rate given by XR runtime")
-
-	# See if we have a better refresh rate available
-	var new_rate = current_refresh_rate
-	var available_rates : Array = xr_interface.get_available_display_refresh_rates()
-	if available_rates.size() == 0:
-		print("OpenXR: Target does not support refresh rate extension")
-	elif available_rates.size() == 1:
-		# Only one available, so use it
-		new_rate = available_rates[0]
-	else:
-		for rate in available_rates:
-			if rate > new_rate and rate <= maximum_refresh_rate:
-				new_rate = rate
-
-	# Did we find a better rate?
-	if current_refresh_rate != new_rate:
-		print("OpenXR: Setting refresh rate to ", str(new_rate))
-		xr_interface.set_display_refresh_rate(new_rate)
-		current_refresh_rate = new_rate
-
-	# Now match our physics rate
-	Engine.physics_ticks_per_second = current_refresh_rate
+	pass
 
 # Handle OpenXR visible state
 func _on_openxr_visible_state() -> void:
