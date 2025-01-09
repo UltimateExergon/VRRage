@@ -1,12 +1,30 @@
-[gd_scene load_steps=13 format=3 uid="uid://cr0xwn6ug1cab"]
+[gd_scene load_steps=27 format=3 uid="uid://cr0xwn6ug1cab"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_84r0s"]
 [ext_resource type="PackedScene" uid="uid://r6qyyl6442m3" path="res://scenes/ui.tscn" id="2_67p3i"]
 [ext_resource type="Script" path="res://scripts/open_xr_composition_layer_quad.gd" id="3_fd3md"]
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="3_r6v4x"]
+[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="4_0dh6a"]
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="4_18trf"]
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="5_piton"]
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_656kw"]
+[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="8_8u6fd"]
+[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="11_nlnhu"]
+[ext_resource type="Animation" path="res://addons/godot-xr-tools/hands/animations/right/Grip Shaft.res" id="11_x16vw"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="12_cj03w"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xor64"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_mdlrf"]
+sky_material = SubResource("ProceduralSkyMaterial_xor64")
+
+[sub_resource type="Environment" id="Environment_yq3fj"]
+background_mode = 2
+sky = SubResource("Sky_mdlrf")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_erxix"]
 albedo_color = Color(0, 0.972549, 1, 1)
@@ -22,8 +40,35 @@ height = 0.01
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0kkvq"]
 points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1)
 
+[sub_resource type="BoxMesh" id="BoxMesh_5kmld"]
+size = Vector3(1.5, 1, 0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wamt1"]
+points = PackedVector3Array(0.75, 0.5, 0.25, 0.75, 0.5, -0.25, -0.75, 0.5, 0.25, 0.75, -0.5, 0.25, 0.75, -0.5, -0.25, -0.75, 0.5, -0.25, -0.75, -0.5, 0.25, -0.75, -0.5, -0.25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iu55i"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cuq7x"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bceu8"]
+points = PackedVector3Array(0.05, 0.05, 0.05, 0.05, 0.05, -0.05, -0.05, 0.05, 0.05, 0.05, -0.05, 0.05, 0.05, -0.05, -0.05, -0.05, 0.05, -0.05, -0.05, -0.05, 0.05, -0.05, -0.05, -0.05)
+
+[sub_resource type="Resource" id="Resource_sphux"]
+script = ExtResource("12_cj03w")
+closed_pose = ExtResource("11_x16vw")
+
 [node name="Main" type="Node3D"]
 script = ExtResource("1_84r0s")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_yq3fj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+light_energy = 0.5
+shadow_enabled = true
 
 [node name="SubViewport" type="SubViewport" parent="."]
 disable_3d = true
@@ -43,15 +88,19 @@ tracker = &"left_hand"
 
 [node name="LeftHand" parent="Player/LeftHand" instance=ExtResource("3_r6v4x")]
 
+[node name="FunctionPickup" parent="Player/LeftHand/LeftHand" instance=ExtResource("4_0dh6a")]
+
 [node name="RightHand" type="XRController3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -1)
 tracker = &"right_hand"
 
 [node name="RightHand" parent="Player/RightHand" instance=ExtResource("4_18trf")]
 
-[node name="FunctionTeleport" parent="Player/RightHand" instance=ExtResource("5_piton")]
+[node name="FunctionTeleport" parent="Player/RightHand/RightHand" instance=ExtResource("5_piton")]
 teleport_button_action = "primary"
 rotation_action = ""
+
+[node name="FunctionPickup" parent="Player/RightHand/RightHand" instance=ExtResource("4_0dh6a")]
 
 [node name="OpenXRCompositionLayerQuad" type="OpenXRCompositionLayerQuad" parent="Player" node_paths=PackedStringArray("layer_viewport", "controller")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.53552, -2.11696)
@@ -66,17 +115,43 @@ material_override = SubResource("StandardMaterial3D_erxix")
 mesh = SubResource("SphereMesh_aqd64")
 
 [node name="PlayerBody" parent="Player" instance=ExtResource("6_656kw")]
+collision_mask = 1018
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player/PlayerBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_niwk8")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Ground" type="StaticBody3D" parent="."]
+collision_layer = 2
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 mesh = SubResource("PlaneMesh_hlpcr")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_0kkvq")
+
+[node name="Desk" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.519929, 1.68312)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Desk"]
+mesh = SubResource("BoxMesh_5kmld")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Desk"]
+shape = SubResource("ConvexPolygonShape3D_wamt1")
+
+[node name="PickableObject" parent="." instance=ExtResource("8_8u6fd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00270891, 1.16449, 1.61613)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PickableObject"]
+material_override = SubResource("StandardMaterial3D_iu55i")
+mesh = SubResource("BoxMesh_cuq7x")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="PickableObject"]
+shape = SubResource("ConvexPolygonShape3D_bceu8")
+
+[node name="GrabPointHandRight" parent="PickableObject" instance=ExtResource("11_nlnhu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0249062, 0.0668472, -0.101692)
+snap_hand = false
+hand_pose = SubResource("Resource_sphux")

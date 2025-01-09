@@ -174,7 +174,6 @@ func _physics_process(delta):
 			controller.is_button_pressed(teleport_button_action) and \
 			controller.get_vector2(teleport_button_action).y > .1 :
 		if !is_teleporting:
-			print(controller.get_vector2(teleport_button_action))
 			is_teleporting = true
 			$Teleport.visible = true
 			$Target.visible = true
