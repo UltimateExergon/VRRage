@@ -146,11 +146,11 @@ paths = PackedStringArray("/user/hand/left/input/aim/pose", "/user/hand/right/in
 
 [sub_resource type="OpenXRIPBinding" id="OpenXRIPBinding_j0rww"]
 action = SubResource("OpenXRAction_u0pns")
-paths = PackedStringArray("/user/hand/left/input/aim/pose", "/user/hand/right/input/aim/pose")
+paths = PackedStringArray("/user/hand/left/input/aim/pose")
 
 [sub_resource type="OpenXRIPBinding" id="OpenXRIPBinding_rous8"]
 action = SubResource("OpenXRAction_xofl2")
-paths = PackedStringArray("/user/hand/left/input/grip/pose", "/user/hand/right/input/grip/pose")
+paths = PackedStringArray("/user/hand/left/input/grip/pose", "/user/hand/right/input/grip/pose", "/user/hand/right/input/aim/pose")
 
 [sub_resource type="OpenXRIPBinding" id="OpenXRIPBinding_m2nwa"]
 action = SubResource("OpenXRAction_rx1fu")
@@ -178,11 +178,11 @@ paths = PackedStringArray("/user/hand/left/input/aim/pose", "/user/hand/right/in
 
 [sub_resource type="OpenXRIPBinding" id="OpenXRIPBinding_ub8xh"]
 action = SubResource("OpenXRAction_u0pns")
-paths = PackedStringArray("/user/hand/left/input/aim/pose", "/user/hand/right/input/aim/pose")
+paths = PackedStringArray("/user/hand/left/input/aim/pose")
 
 [sub_resource type="OpenXRIPBinding" id="OpenXRIPBinding_6dyd6"]
 action = SubResource("OpenXRAction_xofl2")
-paths = PackedStringArray("/user/hand/left/input/grip/pose", "/user/hand/right/input/grip/pose")
+paths = PackedStringArray("/user/hand/left/input/grip/pose", "/user/hand/right/input/aim/pose")
 
 [sub_resource type="OpenXRIPBinding" id="OpenXRIPBinding_oma1a"]
 action = SubResource("OpenXRAction_rx1fu")
@@ -238,11 +238,11 @@ paths = PackedStringArray("/user/hand/left/input/aim/pose", "/user/hand/right/in
 
 [sub_resource type="OpenXRIPBinding" id="OpenXRIPBinding_7l8rj"]
 action = SubResource("OpenXRAction_u0pns")
-paths = PackedStringArray("/user/hand/left/input/aim/pose", "/user/hand/right/input/aim/pose")
+paths = PackedStringArray("/user/hand/left/input/aim/pose")
 
 [sub_resource type="OpenXRIPBinding" id="OpenXRIPBinding_hggfm"]
 action = SubResource("OpenXRAction_xofl2")
-paths = PackedStringArray("/user/hand/left/input/grip/pose", "/user/hand/right/input/grip/pose")
+paths = PackedStringArray("/user/hand/left/input/grip/pose", "/user/hand/right/input/grip/pose", "/user/hand/right/input/aim/pose")
 
 [sub_resource type="OpenXRIPBinding" id="OpenXRIPBinding_7gtkx"]
 action = SubResource("OpenXRAction_rx1fu")
@@ -302,11 +302,11 @@ paths = PackedStringArray("/user/hand/left/input/aim/pose", "/user/hand/right/in
 
 [sub_resource type="OpenXRIPBinding" id="OpenXRIPBinding_kpb1u"]
 action = SubResource("OpenXRAction_u0pns")
-paths = PackedStringArray("/user/hand/left/input/aim/pose", "/user/hand/right/input/aim/pose")
+paths = PackedStringArray("/user/hand/left/input/aim/pose")
 
 [sub_resource type="OpenXRIPBinding" id="OpenXRIPBinding_sysql"]
 action = SubResource("OpenXRAction_xofl2")
-paths = PackedStringArray("/user/hand/left/input/grip/pose", "/user/hand/right/input/grip/pose")
+paths = PackedStringArray("/user/hand/left/input/grip/pose", "/user/hand/right/input/grip/pose", "/user/hand/right/input/aim/pose")
 
 [sub_resource type="OpenXRIPBinding" id="OpenXRIPBinding_0cbj8"]
 action = SubResource("OpenXRAction_rx1fu")
@@ -378,11 +378,11 @@ paths = PackedStringArray("/user/hand/left/input/aim/pose", "/user/hand/right/in
 
 [sub_resource type="OpenXRIPBinding" id="OpenXRIPBinding_wo7r5"]
 action = SubResource("OpenXRAction_u0pns")
-paths = PackedStringArray("/user/hand/left/input/aim/pose", "/user/hand/right/input/aim/pose")
+paths = PackedStringArray("/user/hand/left/input/aim/pose")
 
 [sub_resource type="OpenXRIPBinding" id="OpenXRIPBinding_k1mjg"]
 action = SubResource("OpenXRAction_xofl2")
-paths = PackedStringArray("/user/hand/left/input/grip/pose", "/user/hand/right/input/grip/pose")
+paths = PackedStringArray("/user/hand/left/input/grip/pose", "/user/hand/right/input/grip/pose", "/user/hand/right/input/aim/pose")
 
 [sub_resource type="OpenXRIPBinding" id="OpenXRIPBinding_sdayo"]
 action = SubResource("OpenXRAction_rx1fu")
@@ -458,11 +458,11 @@ paths = PackedStringArray("/user/hand/left/input/aim/pose", "/user/hand/right/in
 
 [sub_resource type="OpenXRIPBinding" id="OpenXRIPBinding_4vro1"]
 action = SubResource("OpenXRAction_u0pns")
-paths = PackedStringArray("/user/hand/left/input/aim/pose", "/user/hand/right/input/aim/pose")
+paths = PackedStringArray("/user/hand/left/input/aim/pose")
 
 [sub_resource type="OpenXRIPBinding" id="OpenXRIPBinding_ehqmq"]
 action = SubResource("OpenXRAction_xofl2")
-paths = PackedStringArray("/user/hand/left/input/grip/pose", "/user/hand/right/input/grip/pose")
+paths = PackedStringArray("/user/hand/left/input/grip/pose", "/user/hand/right/input/grip/pose", "/user/hand/right/input/aim/pose")
 
 [sub_resource type="OpenXRIPBinding" id="OpenXRIPBinding_1go7m"]
 action = SubResource("OpenXRAction_rx1fu")
@@ -550,11 +550,11 @@ paths = PackedStringArray("/user/hand/left/input/aim/pose", "/user/hand/right/in
 
 [sub_resource type="OpenXRIPBinding" id="OpenXRIPBinding_t3gh4"]
 action = SubResource("OpenXRAction_u0pns")
-paths = PackedStringArray("/user/hand/left/input/aim/pose", "/user/hand/right/input/aim/pose")
+paths = PackedStringArray("/user/hand/left/input/aim/pose")
 
 [sub_resource type="OpenXRIPBinding" id="OpenXRIPBinding_6a00r"]
 action = SubResource("OpenXRAction_xofl2")
-paths = PackedStringArray("/user/hand/left/input/grip/pose", "/user/hand/right/input/grip/pose")
+paths = PackedStringArray("/user/hand/left/input/grip/pose", "/user/hand/right/input/grip/pose", "/user/hand/right/input/aim/pose")
 
 [sub_resource type="OpenXRIPBinding" id="OpenXRIPBinding_yhcdg"]
 action = SubResource("OpenXRAction_rx1fu")
