@@ -27,28 +27,23 @@ shape = SubResource("ConcavePolygonShape3D_b8k8n")
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 14.127, -7.11548)
 
 [node name="Vase" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.749874, -2.59634)
-
-[node name="toDestroy" parent="Vase" groups=["DESTRUCTIBLE"] instance=ExtResource("5_ansi6")]
-
-[node name="Destruction" type="Node" parent="Vase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.03881, 0.8499, -3.80125)
 script = ExtResource("3_5wh4r")
 fragmented = ExtResource("6_1n7gu")
 
-[node name="Stuhl" type="Node3D" parent="."]
-transform = Transform3D(-0.889305, 0, 0.457315, 0, 1, 0, -0.457315, 0, -0.889305, 4.49929, 0.715373, 0)
+[node name="toDestroy" parent="Vase" groups=["DESTRUCTIBLE"] instance=ExtResource("5_ansi6")]
 
-[node name="toDestroy" parent="Stuhl" groups=["DESTRUCTIBLE"] instance=ExtResource("5_i1w11")]
-
-[node name="Destruction" type="Node" parent="Stuhl"]
+[node name="Chair" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.63338, 0.818713, 0)
 script = ExtResource("3_5wh4r")
 fragmented = ExtResource("6_o4lwc")
 
-[node name="Blöcke" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.62364, 0)
+[node name="toDestroy" parent="Chair" groups=["DESTRUCTIBLE"] instance=ExtResource("5_i1w11")]
+transform = Transform3D(-0.889305, 0, 0.457315, 0, 1, 0, -0.457315, 0, -0.889305, 0, 0, 0)
 
-[node name="toDestroy" parent="Blöcke" groups=["DESTRUCTIBLE"] instance=ExtResource("7_geve4")]
-
-[node name="Destruction" type="Node" parent="Blöcke"]
+[node name="Blocks" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12692, 1.63291, 0)
 script = ExtResource("3_5wh4r")
 fragmented = ExtResource("8_w8626")
+
+[node name="toDestroy" parent="Blocks" groups=["DESTRUCTIBLE"] instance=ExtResource("7_geve4")]

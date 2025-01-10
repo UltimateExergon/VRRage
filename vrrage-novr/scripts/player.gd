@@ -58,4 +58,4 @@ func raycast_check():
 		if Input.is_action_just_pressed("E"):
 			if collider.is_in_group("DESTRUCTIBLE"):
 				print("Destructible Object detected")
-				collider.get_parent().get_node("Destruction").destroy()
+				collider.get_parent().destroy()

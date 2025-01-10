@@ -1,9 +1,9 @@
 @tool
 class_name Destruction
-extends Node
+extends Node3D
 
 @export var fragmented: PackedScene: set = set_fragmented
-@onready var shard_container := self #get_node("../../")
+var shard_container
 
 @export_group("Collision")
 @export_flags_3d_physics var collision_layer = 1
@@ -17,10 +17,14 @@ static var _cached_scenes := {}
 static var _cached_shapes := {}
 
 func destroy() -> void:
+	var shard_holder : Node3D = Node3D.new()
+	add_child(shard_holder)
+	shard_holder.position = self.position
+	shard_container = shard_holder
 	for shard in _get_shards():
 		_add_shard(shard)
 	add_timer()
-	get_parent().get_node("toDestroy").queue_free()
+	get_node("toDestroy").queue_free()
 
 func _get_shards() -> Array[Node]:
 	if not fragmented in _cached_scenes:
@@ -45,8 +49,8 @@ func _add_shard(original: MeshInstance3D) -> void:
 	body.add_child(mesh)
 	body.add_child(shape)
 	shard_container.add_child(body, true)
-	body.global_position = get_parent().global_transform.origin + original.position
-	body.global_rotation = get_parent().global_rotation
+	body.global_position = global_transform.origin + original.position
+	body.global_rotation = global_rotation
 	body.collision_layer = collision_layer
 	body.collision_mask = collision_mask
 	mesh.scale = original.scale
