@@ -1,0 +1,139 @@
+[gd_scene load_steps=15 format=4 uid="uid://0dswmvtcjlft"]
+
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_vi18c"]
+[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_rom2c"]
+[ext_resource type="Animation" path="res://addons/godot-xr-tools/hands/animations/left/Grip Shaft.res" id="3_ix2ph"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="4_qtmvn"]
+[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_es162"]
+[ext_resource type="Animation" path="res://addons/godot-xr-tools/hands/animations/right/Grip Shaft.res" id="6_ilny4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8642x"]
+resource_name = "Block Rot"
+cull_mode = 2
+albedo_color = Color(0.90649, 0.148386, 0.181272, 1)
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ikq2a"]
+resource_name = "Block Blau"
+cull_mode = 2
+albedo_color = Color(0.0976809, 0.479894, 0.906907, 1)
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5nu5w"]
+resource_name = "Block Gelb"
+cull_mode = 2
+albedo_color = Color(0.897779, 0.906403, 0.156404, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_rplxq"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AgAEAAYAAgAAAAQABwABAAMABwAFAAEA"),
+"name": "Block Rot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP////8AAAAAAAAAAAAAAAD//wAAAAD//wAA//8AAP///////wAA//8AAAAAAAD/////AAAAAA==")
+}, {
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AgAHAAMAAgAGAAcABAABAAUABAAAAAEA"),
+"name": "Block Blau",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP////8AAAAAAAAAAAAAAAD//wAAAAD//wAA//8AAP///////wAA//8AAAAAAAD/////AAAAAA==")
+}, {
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AAADAAEAAAACAAMABgAFAAcABgAEAAUA"),
+"name": "Block Gelb",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP////8AAAAAAAAAAAAAAAD//wAAAAD//wAA//8AAP///////wAA//8AAAAAAAD/////AAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_s6mjf"]
+resource_name = "Blöcke_Cube"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("/x//P//f/z//H/9//9//f/9f/z//n/8//1//f/+f/38="),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AgAEAAYAAgAAAAQABwABAAMABwAFAAEA"),
+"material": SubResource("StandardMaterial3D_8642x"),
+"name": "Block Rot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP///78AAP///////wAAAAAAAP+/AAD//wAA/////wAA////v/////////////8AAAAA/7//////AAD//wAA/3//f/+/AAD/f/9//78AAP9//3//vwAA/3//f/+/")
+}, {
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("/18AAP+fAAD/X/+//5//v/9f/z//n/8//1//f/+f/38="),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AgAHAAMAAgAGAAcABAABAAUABAAAAAEA"),
+"material": SubResource("StandardMaterial3D_ikq2a"),
+"name": "Block Blau",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP///78AAP//////vwAAAAAAAP//AAD//wAA/////wAA////v/////////+///8AAAAA////////AAD//////////////7//v/+//7////////////+//7//v/+/")
+}, {
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("/1////+f////X/+//5//v/9f/z//n/8//1//f/+f/38="),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AAADAAEAAAACAAMABgAFAAcABgAEAAUA"),
+"material": SubResource("StandardMaterial3D_5nu5w"),
+"name": "Block Gelb",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP////9U1QAAAAAAAFTVAAD//wAAVNX//wAA//9U1f///////1TV//8AAAAAVNX/////AABU1VTVVNVU1VTVVNVU1VTVVNWqKqoqqiqqKqoqqiqqKqoq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_rplxq")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_og17j"]
+points = PackedVector3Array(1, 1, 1, 1, 1, -1, -1, 1, 1, 1, -1, 1, 1, -1, -1, -1, 1, -1, -1, -1, 1, -1, -1, -1)
+
+[sub_resource type="Resource" id="Resource_hepod"]
+script = ExtResource("4_qtmvn")
+closed_pose = ExtResource("3_ix2ph")
+
+[sub_resource type="Resource" id="Resource_i2qxf"]
+script = ExtResource("4_qtmvn")
+closed_pose = ExtResource("6_ilny4")
+
+[node name="PickableObject" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00270891, 1.16449, 1.61613)
+collision_layer = 4
+collision_mask = 196615
+freeze_mode = 1
+script = ExtResource("1_vi18c")
+
+[node name="Block" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.115418, 0, 0, 0, 0.115418, 0, 0, 0, 0.115418, 0.00206272, -0.127259, 0.124717)
+mesh = SubResource("ArrayMesh_s6mjf")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.115418, 0, 0, 0, 0.115418, 0, 0, 0, 0.115418, 0.00206272, -0.127259, 0.124717)
+shape = SubResource("ConvexPolygonShape3D_og17j")
+
+[node name="GrabPointHandLeft" parent="." instance=ExtResource("2_rom2c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.104766, 0.0228082, -0.029362)
+snap_hand = false
+hand_pose = SubResource("Resource_hepod")
+
+[node name="GrabPointHandRight" parent="." instance=ExtResource("5_es162")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101468, 0.0249214, -0.0232486)
+snap_hand = false
+hand_pose = SubResource("Resource_i2qxf")

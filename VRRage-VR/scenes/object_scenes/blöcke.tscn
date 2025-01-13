@@ -1,26 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://cga3j5ocd81bb"]
+[gd_scene load_steps=2 format=3 uid="uid://cga3j5ocd81bb"]
 
 [ext_resource type="PackedScene" uid="uid://cj86q4pg0ewdj" path="res://assets/models/Blöcke.glb" id="1_kauxx"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_byep5"]
-size = Vector3(0.237732, 0.236694, 0.739838)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_q63s2"]
-size = Vector3(0.211639, 0.205078, 0.42334)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_14ulk"]
-size = Vector3(0.246826, 0.234924, 0.239944)
-
 [node name="blöcke" instance=ExtResource("1_kauxx")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0050354, -0.151428, 0.000717163)
-shape = SubResource("BoxShape3D_byep5")
+[node name="Block_001" parent="." index="0"]
+visible = false
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="7"]
-transform = Transform3D(1.14606, 0, 0, 0, 1.14606, 0, 0, 0, 1.14606, 0.00424946, 0.0789057, 0.00244638)
-shape = SubResource("BoxShape3D_q63s2")
+[node name="Block_002" parent="." index="1"]
+visible = false
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="." index="8"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00109863, 0.308441, 0.000480652)
-shape = SubResource("BoxShape3D_14ulk")
+[node name="Block_003" parent="." index="2"]
+visible = false
+
+[node name="Block_004" parent="." index="3"]
+visible = false
+
+[node name="Block_005" parent="." index="4"]
+visible = false
+
+[node name="Block_006" parent="." index="5"]
+visible = false
