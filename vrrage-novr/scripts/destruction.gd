@@ -2,7 +2,7 @@
 class_name Destruction
 extends Node3D
 
-@export var fragmented: PackedScene: set = set_fragmented
+@export var fragmented : PackedScene: set = set_fragmented
 var shard_container
 
 @export_group("Collision")
@@ -33,7 +33,7 @@ func _get_shards() -> Array[Node]:
 			_cached_shapes[shard_mesh] = shard_mesh.mesh.create_convex_shape()
 	return (_cached_scenes[fragmented].get_children() as Array)\
 			.filter(func(node): return node is MeshInstance3D)
-
+	
 func set_fragmented(to: PackedScene) -> void:
 	fragmented = to
 	if is_inside_tree():

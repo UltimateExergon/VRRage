@@ -1,11 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnttiwa2x1tej"]
+[gd_scene load_steps=2 format=3 uid="uid://dnttiwa2x1tej"]
 
-[ext_resource type="PackedScene" uid="uid://ntux64wp5hmy" path="res://scenes/player.tscn" id="2_fjilb"]
-[ext_resource type="PackedScene" uid="uid://7oiv4x5w20g2" path="res://scenes/Level/testlevel.tscn" id="3_6q3jk"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_2ahed"]
 
 [node name="main" type="Node3D"]
-
-[node name="Player" parent="." instance=ExtResource("2_fjilb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42457, 1.03125, 0.46751)
-
-[node name="Testlevel" parent="." instance=ExtResource("3_6q3jk")]
+script = ExtResource("1_2ahed")
