@@ -9,6 +9,10 @@ signal pose_recentered
 var xr_interface : OpenXRInterface
 var xr_is_focussed = false
 
+var startPos : Vector3
+
+const levelPath : String = "res://scenes/Level/"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	xr_interface = XRServer.find_interface("OpenXR")
@@ -38,11 +42,24 @@ func _ready():
 		# We couldn't start OpenXR.
 		print("OpenXR not instantiated!")
 		get_tree().quit()
+		
+func load_level(levelname : String) -> void:
+	print("Loading " + levelname)
+	var level = load(levelPath + levelname + ".tscn").instantiate()
+	startPos = level.get_startPos()
+	add_child(level)
+	
+func load_player() -> void:
+	print("Loading Player")
+	var player = load("res://scenes/player.tscn")
+	player.position = startPos
+	add_child(player)
 
 # Handle OpenXR session ready
 func _on_openxr_session_begun() -> void:
-	pass
-
+	load_level("testlevel")
+	load_player()
+	
 # Handle OpenXR visible state
 func _on_openxr_visible_state() -> void:
 	# We always pass this state at startup,
