@@ -1,13 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://cr0xwn6ug1cab"]
+[gd_scene load_steps=6 format=3 uid="uid://cr0xwn6ug1cab"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_84r0s"]
 [ext_resource type="PackedScene" uid="uid://r6qyyl6442m3" path="res://scenes/ui.tscn" id="2_67p3i"]
-[ext_resource type="PackedScene" uid="uid://p6g67fls634d" path="res://scenes/player.tscn" id="3_r3a2h"]
-[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="8_8u6fd"]
-[ext_resource type="PackedScene" uid="uid://7oiv4x5w20g2" path="res://scenes/Level/testlevel.tscn" id="8_fqjhx"]
-[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="11_nlnhu"]
-[ext_resource type="Animation" path="res://addons/godot-xr-tools/hands/animations/right/Grip Shaft.res" id="11_x16vw"]
-[ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="12_cj03w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xor64"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -21,30 +15,6 @@ background_mode = 2
 sky = SubResource("Sky_mdlrf")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_hlpcr"]
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0kkvq"]
-points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_5kmld"]
-size = Vector3(1.5, 1, 0.5)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wamt1"]
-points = PackedVector3Array(0.75, 0.5, 0.25, 0.75, 0.5, -0.25, -0.75, 0.5, 0.25, 0.75, -0.5, 0.25, 0.75, -0.5, -0.25, -0.75, 0.5, -0.25, -0.75, -0.5, 0.25, -0.75, -0.5, -0.25)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iu55i"]
-albedo_color = Color(1, 0, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_cuq7x"]
-size = Vector3(0.1, 0.1, 0.1)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bceu8"]
-points = PackedVector3Array(0.05, 0.05, 0.05, 0.05, 0.05, -0.05, -0.05, 0.05, 0.05, 0.05, -0.05, 0.05, 0.05, -0.05, -0.05, -0.05, 0.05, -0.05, -0.05, -0.05, 0.05, -0.05, -0.05, -0.05)
-
-[sub_resource type="Resource" id="Resource_sphux"]
-script = ExtResource("12_cj03w")
-closed_pose = ExtResource("11_x16vw")
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_84r0s")
@@ -63,44 +33,3 @@ transparent_bg = true
 render_target_update_mode = 4
 
 [node name="UI" parent="SubViewport" instance=ExtResource("2_67p3i")]
-
-[node name="Player" parent="." instance=ExtResource("3_r3a2h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2785, 0, -8.00931)
-
-[node name="Ground" type="StaticBody3D" parent="."]
-collision_layer = 2
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
-mesh = SubResource("PlaneMesh_hlpcr")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_0kkvq")
-
-[node name="Desk" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.519929, 1.68312)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Desk"]
-mesh = SubResource("BoxMesh_5kmld")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Desk"]
-shape = SubResource("ConvexPolygonShape3D_wamt1")
-
-[node name="PickableObject" parent="." instance=ExtResource("8_8u6fd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00270891, 1.16449, 1.61613)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PickableObject"]
-material_override = SubResource("StandardMaterial3D_iu55i")
-mesh = SubResource("BoxMesh_cuq7x")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="PickableObject"]
-shape = SubResource("ConvexPolygonShape3D_bceu8")
-
-[node name="GrabPointHandRight" parent="PickableObject" instance=ExtResource("11_nlnhu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0249062, 0.0668472, -0.101692)
-snap_hand = false
-hand_pose = SubResource("Resource_sphux")
-
-[node name="Testlevel" parent="." instance=ExtResource("8_fqjhx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23.7085)
