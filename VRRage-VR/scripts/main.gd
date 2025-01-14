@@ -43,10 +43,18 @@ func _ready():
 		print("OpenXR not instantiated!")
 		get_tree().quit()
 		
+func delete_oldLevel():
+	print("Deleting old level")
+	for i in get_tree().get_nodes_in_group("LEVEL"):
+		i.queue_free()
+		
 func load_level(levelname : String) -> void:
+	delete_oldLevel()
+	
 	print("Loading " + levelname)
 	var level = load(levelPath + levelname + ".tscn").instantiate()
 	startPos = level.get_startPos()
+	level.add_to_group("LEVEL")
 	add_child(level)
 	
 func load_player() -> void:
