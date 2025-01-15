@@ -17,14 +17,14 @@ static var _cached_scenes := {}
 static var _cached_shapes := {}
 
 func destroy() -> void:
+	self.position = self.get_children()[0].global_position
 	var shard_holder : Node3D = Node3D.new()
 	add_child(shard_holder)
-	shard_holder.position = self.position
 	shard_container = shard_holder
 	for shard in _get_shards():
 		_add_shard(shard)
 	add_timer()
-	get_node("toDestroy").queue_free()
+	self.get_children()[0].queue_free()
 
 func _get_shards() -> Array[Node]:
 	if not fragmented in _cached_scenes:
