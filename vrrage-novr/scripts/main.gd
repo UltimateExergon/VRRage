@@ -18,12 +18,12 @@ func load_level(levelname : String) -> void:
 	
 	print("Loading " + levelname)
 	var level = load(levelPath + levelname + ".tscn").instantiate()
+	add_child(level)
 	startPos = level.get_startPos()
 	level.add_to_group("LEVEL")
-	add_child(level)
 	
 func load_player():
 	var player = load("res://scenes/player.tscn").instantiate()
-	player.position = startPos
 	add_child(player)
+	player.position = startPos
 	
