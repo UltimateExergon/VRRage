@@ -1,5 +1,6 @@
+Area3D
+CollisionShape3D
 XRToolsPickable
 Node3D
-CollisionShape3D
 MeshInstance3D
 StaticBody3D

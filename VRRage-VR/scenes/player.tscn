@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://p6g67fls634d"]
+[gd_scene load_steps=11 format=3 uid="uid://p6g67fls634d"]
 
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="1_s4y1t"]
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="2_a6x7t"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="4_arkbb"]
 [ext_resource type="Script" path="res://scripts/open_xr_composition_layer_quad.gd" id="5_pj6a8"]
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_8lfl8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8pval"]
+size = Vector3(0.065, 0.11, 0.175)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_erxix"]
 albedo_color = Color(0, 0.972549, 1, 1)
@@ -25,7 +28,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -1)
 tracker = &"left_hand"
 
-[node name="LeftHand" parent="LeftHand" instance=ExtResource("1_s4y1t")]
+[node name="LeftHand" parent="LeftHand" groups=["hand"] instance=ExtResource("1_s4y1t")]
 
 [node name="FunctionPickup" parent="LeftHand/LeftHand" instance=ExtResource("2_a6x7t")]
 pickup_axis_action = "trigger_click"
@@ -35,7 +38,7 @@ action_button_action = "ax_button"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -1)
 tracker = &"right_hand"
 
-[node name="RightHand" parent="RightHand" instance=ExtResource("3_08aoj")]
+[node name="RightHand" parent="RightHand" groups=["hand"] instance=ExtResource("3_08aoj")]
 
 [node name="FunctionTeleport" parent="RightHand/RightHand" instance=ExtResource("4_arkbb")]
 teleport_button_action = "primary"
@@ -45,6 +48,13 @@ player_radius = 0.2
 [node name="FunctionPickup" parent="RightHand/RightHand" instance=ExtResource("2_a6x7t")]
 pickup_axis_action = "trigger_click"
 action_button_action = "ax_button"
+
+[node name="Area3D" type="Area3D" parent="RightHand/RightHand"]
+collision_mask = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightHand/RightHand/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020575, -0.0321151, 0.0895705)
+shape = SubResource("BoxShape3D_8pval")
 
 [node name="OpenXRCompositionLayerQuad" type="OpenXRCompositionLayerQuad" parent="." node_paths=PackedStringArray("controller")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.53552, -2.11696)
@@ -63,3 +73,5 @@ collision_mask = 1018
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_niwk8")
+
+[connection signal="body_entered" from="RightHand/RightHand/Area3D" to="RightHand/RightHand" method="_on_area_3d_body_entered"]

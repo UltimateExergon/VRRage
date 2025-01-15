@@ -18,8 +18,8 @@ static var _cached_shapes := {}
 
 func destroy() -> void:
 	var shard_holder : Node3D = Node3D.new()
-	add_child(shard_holder)
 	shard_holder.position = self.position
+	add_child(shard_holder)
 	shard_container = shard_holder
 	for shard in _get_shards():
 		_add_shard(shard)

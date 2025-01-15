@@ -59,7 +59,7 @@ func load_level(levelname : String) -> void:
 	
 func load_player() -> void:
 	print("Loading Player")
-	var player = load("res://scenes/player.tscn")
+	var player = load("res://scenes/player.tscn").instantiate()
 	add_child(player)
 	player.position = startPos
 

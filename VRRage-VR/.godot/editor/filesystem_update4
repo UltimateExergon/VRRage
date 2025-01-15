@@ -1,10 +1,13 @@
+res://scenes/Level/testlevel.tscn
 res://openxr_action_map.tres
 res://addons/godot-xr-tools/hands/animations/left/hand_blend_tree.tres
 res://addons/godot-xr-tools/hands/animations/right/hand_blend_tree.tres
-res://scenes/object_scenes/block.tscn
-res://scenes/object_scenes/blöcke.tscn
-res://scenes/Level/testlevel.tscn
 res://scenes/main.tscn
+res://scenes/player.tscn
+res://scenes/object_scenes/block.tscn
 res://scenes/object_scenes/stuhl.tscn
 res://scenes/object_scenes/vase.tscn
-res://scenes/player.tscn
+res://scripts/main.gd
+res://addons/godot-xr-tools/hands/hand.gd
+res://addons/godot-xr-tools/objects/pickable.gd
+res://scripts/destruction.gd
