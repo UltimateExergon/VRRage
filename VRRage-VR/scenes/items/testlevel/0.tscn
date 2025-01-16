@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bejym0re5ks8h"]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_bb4xl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0g6su"]
+albedo_color = Color(0.369947, 0.189115, 0.173119, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_nlf8o"]
+material = SubResource("StandardMaterial3D_0g6su")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.5
+radial_segments = 8
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_m48sw"]
+points = PackedVector3Array(-0.1, -0.25, 0, -0.0707126, -0.25, -0.0707126, -0.0707126, -0.25, 0.070693, -0.1, 0.25, 0, 0, -0.25, -0.1, -0.0707126, 0.25, -0.0707126, 0, -0.25, 0.1, -0.0707126, 0.25, 0.070693, 0.070693, -0.25, -0.0707126, 0, 0.25, -0.1, 0.070693, -0.25, 0.070693, 0, 0.25, 0.1, 0.1, -0.25, 0, 0.070693, 0.25, -0.0707126, 0.070693, 0.25, 0.070693, 0.1, 0.25, 0)
+
+[node name="0" type="RigidBody3D"]
+script = ExtResource("1_bb4xl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_nlf8o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_m48sw")
