@@ -9,9 +9,13 @@ signal pose_recentered
 var xr_interface : OpenXRInterface
 var xr_is_focussed = false
 
-var startPos : Vector3
-
 const levelPath : String = "res://scenes/Level/"
+const recipePath : String = "res://craftingRecipes/"
+const levelFormat : String = ".tscn"
+const recipeFormat : String = ".csv"
+
+var startPos : Vector3
+var craftingRecipes : Array
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
