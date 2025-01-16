@@ -475,9 +475,3 @@ static func _find_child(node : Node, type : String) -> Node:
 
 	# No child found matching type
 	return null
-
-
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body.is_in_group("DESTRUCTIBLE"):
-		print("destroy", body)
-		body.get_parent().destroy()

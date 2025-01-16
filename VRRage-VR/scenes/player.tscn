@@ -34,11 +34,18 @@ tracker = &"left_hand"
 pickup_axis_action = "trigger_click"
 action_button_action = "ax_button"
 
+[node name="SpeedAndCollisionDetection" type="CharacterBody3D" parent="LeftHand/LeftHand" groups=["hand"]]
+collision_mask = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftHand/LeftHand/SpeedAndCollisionDetection"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.0214874, -0.0321151, 0.0895705)
+shape = SubResource("BoxShape3D_8pval")
+
 [node name="RightHand" type="XRController3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -1)
 tracker = &"right_hand"
 
-[node name="RightHand" parent="RightHand" groups=["hand"] instance=ExtResource("3_08aoj")]
+[node name="RightHand" parent="RightHand" instance=ExtResource("3_08aoj")]
 
 [node name="FunctionTeleport" parent="RightHand/RightHand" instance=ExtResource("4_arkbb")]
 teleport_button_action = "primary"
@@ -49,11 +56,11 @@ player_radius = 0.2
 pickup_axis_action = "trigger_click"
 action_button_action = "ax_button"
 
-[node name="Area3D" type="Area3D" parent="RightHand/RightHand"]
+[node name="SpeedAndCollisionDetection" type="CharacterBody3D" parent="RightHand/RightHand" groups=["hand"]]
 collision_mask = 5
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RightHand/RightHand/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020575, -0.0321151, 0.0895705)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightHand/RightHand/SpeedAndCollisionDetection"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.020575, -0.0321151, 0.0895705)
 shape = SubResource("BoxShape3D_8pval")
 
 [node name="OpenXRCompositionLayerQuad" type="OpenXRCompositionLayerQuad" parent="." node_paths=PackedStringArray("controller")]
@@ -73,5 +80,3 @@ collision_mask = 1018
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_niwk8")
-
-[connection signal="body_entered" from="RightHand/RightHand/Area3D" to="RightHand/RightHand" method="_on_area_3d_body_entered"]

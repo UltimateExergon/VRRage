@@ -60,8 +60,9 @@ func load_level(levelname : String) -> void:
 func load_player() -> void:
 	print("Loading Player")
 	var player = load("res://scenes/player.tscn").instantiate()
+	player.global_position = startPos
 	add_child(player)
-	player.position = startPos
+	print(player.global_position)
 
 # Handle OpenXR session ready
 func _on_openxr_session_begun() -> void:

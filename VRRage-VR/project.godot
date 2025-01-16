@@ -29,6 +29,10 @@ window/size/viewport_height=1080
 
 enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 
+[physics]
+
+common/physics_ticks_per_second=180
+
 [xr]
 
 openxr/enabled=true

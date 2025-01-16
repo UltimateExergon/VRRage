@@ -63,6 +63,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00270891, 1.16449, 1.61613)
 collision_layer = 4
 collision_mask = 196615
 freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_3vmex")
 
 [node name="Vase" type="MeshInstance3D" parent="."]
@@ -83,3 +85,5 @@ hand_pose = SubResource("Resource_1ism8")
 transform = Transform3D(0.937349, 0.348392, 0, -0.348392, 0.937349, 0, 0, 0, 1, 0.260988, 0, -0.112988)
 snap_hand = false
 hand_pose = SubResource("Resource_xruei")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
