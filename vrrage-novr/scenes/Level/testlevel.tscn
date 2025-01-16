@@ -33,13 +33,16 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 14.127, -7.11548)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.03881, 0.8499, -3.80125)
 script = ExtResource("3_5wh4r")
 fragmented = ExtResource("6_1n7gu")
+dropID = 2
 
-[node name="toDestroy" parent="Vase" groups=["DESTRUCTIBLE"] instance=ExtResource("5_ansi6")]
+[node name="blab" parent="Vase" groups=["DESTRUCTIBLE"] instance=ExtResource("5_ansi6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1133, 0, 0)
 
 [node name="Chair" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.63338, 0.818713, 0)
 script = ExtResource("3_5wh4r")
 fragmented = ExtResource("6_o4lwc")
+dropID = 0
 
 [node name="toDestroy" parent="Chair" groups=["DESTRUCTIBLE"] instance=ExtResource("5_i1w11")]
 transform = Transform3D(-0.889305, 0, 0.457315, 0, 1, 0, -0.457315, 0, -0.889305, 0, 0, 0)
@@ -48,5 +51,6 @@ transform = Transform3D(-0.889305, 0, 0.457315, 0, 1, 0, -0.457315, 0, -0.889305
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12692, 1.63291, 0)
 script = ExtResource("3_5wh4r")
 fragmented = ExtResource("8_w8626")
+dropID = 1
 
 [node name="toDestroy" parent="Blocks" groups=["DESTRUCTIBLE"] instance=ExtResource("7_geve4")]

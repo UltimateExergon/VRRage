@@ -2,8 +2,14 @@
 class_name Destruction
 extends Node3D
 
-@export var fragmented: PackedScene: set = set_fragmented
+const itemPath : String = "res://scenes/items/"
+const itemFormat : String = ".tscn"
+
+@export var fragmented : PackedScene: set = set_fragmented
+@export var dropID : int = -1
 var shard_container
+
+var current_level : String : set = set_currentLevel
 
 @export_group("Collision")
 @export_flags_3d_physics var collision_layer = 1
@@ -23,6 +29,7 @@ func destroy() -> void:
 	shard_container = shard_holder
 	for shard in _get_shards():
 		_add_shard(shard)
+	add_drop()
 	add_timer()
 	self.get_children()[0].queue_free()
 
@@ -33,7 +40,7 @@ func _get_shards() -> Array[Node]:
 			_cached_shapes[shard_mesh] = shard_mesh.mesh.create_convex_shape()
 	return (_cached_scenes[fragmented].get_children() as Array)\
 			.filter(func(node): return node is MeshInstance3D)
-
+	
 func set_fragmented(to: PackedScene) -> void:
 	fragmented = to
 	if is_inside_tree():
@@ -60,6 +67,15 @@ func _add_shard(original: MeshInstance3D) -> void:
 	body.apply_impulse(_random_direction() * explosion_power,
 			-original.position.normalized())
 			
+func add_drop():
+	if dropID > -1:
+		var item = load(itemPath + current_level + "/" + str(dropID) + itemFormat).instantiate()
+		item.add_to_group("CRAFTABLE")
+		add_child(item)
+		
+func set_currentLevel(levelname : String) -> void:
+	current_level = levelname
+		
 func add_timer():
 	var timer : Timer = Timer.new()
 	add_child(timer)
