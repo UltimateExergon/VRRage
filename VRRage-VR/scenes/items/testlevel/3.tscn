@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://c2o0ingjar0oi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ia8vk"]
+albedo_color = Color(0.383066, 0.250872, 0.215441, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_827vm"]
+material = SubResource("StandardMaterial3D_ia8vk")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.5
+radial_segments = 8
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2ml0b"]
+points = PackedVector3Array(-0.1, -0.25, 0, -0.0707126, -0.25, -0.0707126, -0.0707126, -0.25, 0.070693, -0.1, 0.25, 0, 0, -0.25, -0.1, -0.0707126, 0.25, -0.0707126, 0, -0.25, 0.1, -0.0707126, 0.25, 0.070693, 0.070693, -0.25, -0.0707126, 0, 0.25, -0.1, 0.070693, -0.25, 0.070693, 0, 0.25, 0.1, 0.1, -0.25, 0, 0.070693, 0.25, -0.0707126, 0.070693, 0.25, 0.070693, 0.1, 0.25, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ayts7"]
+albedo_color = Color(0.196078, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_d26qh"]
+material = SubResource("StandardMaterial3D_ayts7")
+size = Vector3(0.2, 0.2, 0.2)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_12o4j"]
+points = PackedVector3Array(0.1, 0.1, 0.1, 0.1, 0.1, -0.1, -0.1, 0.1, 0.1, 0.1, -0.1, 0.1, 0.1, -0.1, -0.1, -0.1, 0.1, -0.1, -0.1, -0.1, 0.1, -0.1, -0.1, -0.1)
+
+[node name="3" type="RigidBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_827vm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_2ml0b")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.307985, 0)
+mesh = SubResource("BoxMesh_d26qh")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.307985, 0)
+shape = SubResource("ConvexPolygonShape3D_12o4j")
