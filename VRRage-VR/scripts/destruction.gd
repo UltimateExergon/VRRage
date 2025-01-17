@@ -70,7 +70,7 @@ func _add_shard(original: MeshInstance3D) -> void:
 func add_drop():
 	if dropID > -1:
 		var item = load(itemPath + current_level + "/" + str(dropID) + itemFormat).instantiate()
-		item.add_to_group("CRAFTABLE")
+		item.set_dropID(dropID)
 		add_child(item)
 		
 func set_currentLevel(levelname : String) -> void:
