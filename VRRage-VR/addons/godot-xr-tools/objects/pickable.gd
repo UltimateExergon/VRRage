@@ -107,11 +107,13 @@ var _highlight_requests : Dictionary = {}
 # Is this node highlighted
 var _highlighted : bool = false
 
+#True if node is picked up
+var got_picked_up : bool = false
+
 
 # Remember some state so we can return to it when the user drops the object
 @onready var original_collision_mask : int = collision_mask
 @onready var original_collision_layer : int = collision_layer
-
 
 # Add support for is_xr_class on XRTools classes
 func is_xr_class(name : String) -> bool:
@@ -209,6 +211,8 @@ func drop():
 
 	# Request primary grabber to drop
 	_grab_driver.primary.by.drop_object()
+	
+	got_picked_up = false
 
 
 func drop_and_free():
@@ -261,6 +265,8 @@ func pick_up(by: Node3D) -> void:
 
 		_:
 			restore_freeze = freeze
+
+	got_picked_up = true
 
 	# turn off physics on our pickable object
 	freeze = true
