@@ -89,6 +89,7 @@ func spawn_crafted_item(itemID : int, pos : Vector3):
 	var item = load(itemPath + current_level + "/" + str(itemID) + itemFormat).instantiate()
 	item.position = pos
 	get_node(current_level).add_child(item)
+	ingredients.clear()
 		
 func check_for_recipe(items : Array):
 	for i in craftingRecipes:
