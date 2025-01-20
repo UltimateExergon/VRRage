@@ -17,7 +17,7 @@ var current_level : String : set = set_currentLevel
 
 @export_group("Physics")
 @export var explosion_power: float = 1.0
-@export var vanish_time : int = 10
+@export var vanish_time : int = 1
 
 static var _cached_scenes := {}
 static var _cached_shapes := {}
