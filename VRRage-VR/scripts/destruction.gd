@@ -12,6 +12,7 @@ var shard_container
 var current_level : String : set = set_currentLevel
 
 @export_group("Collision")
+@export_flags_3d_physics var collision_layer = 1
 @export_flags_3d_physics var collision_mask = 1
 
 @export_group("Physics")
@@ -57,6 +58,7 @@ func _add_shard(original: MeshInstance3D) -> void:
 	shard_container.add_child(body, true)
 	body.global_position = global_transform.origin + original.position
 	body.global_rotation = global_rotation
+	body.collision_layer = collision_layer
 	body.collision_mask = collision_mask
 	mesh.scale = original.scale
 	shape.scale = original.scale
@@ -69,6 +71,7 @@ func add_drop():
 	if dropID > -1:
 		var item = load(itemPath + current_level + "/" + str(dropID) + itemFormat).instantiate()
 		item.set_dropID(dropID)
+		print("Spawned Drop at: ", item.global_position)
 		add_child(item)
 		
 func set_currentLevel(levelname : String) -> void:

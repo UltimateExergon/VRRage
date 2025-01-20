@@ -18,8 +18,9 @@ func _ready():
 			_grab_points.push_back(grab_point)
 	
 func _on_body_entered(body):
-	if body.is_in_group("CRAFTABLE") and self.got_picked_up == true:
-		print("Crafting:", self, body)
+	print(self, "BODY ENTERED: ", body, "WITH PICKED UP: ", self.got_picked_up, " AND COLLISION REPORTED: ", collision_reported)
+	if body.is_in_group("CRAFTABLE") and self.got_picked_up == true and collision_reported == false:
+		print("Crafting: ", self, body)
 		collision_reported = true
 		get_tree().root.get_children()[2].craft(self, body)
 		
