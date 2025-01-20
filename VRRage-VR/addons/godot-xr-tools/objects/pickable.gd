@@ -268,9 +268,9 @@ func pick_up(by: Node3D) -> void:
 	print("ITEM: ", self, " Got Picked Up: ", got_picked_up)
 
 	# turn off physics on our pickable object
-	freeze = true
+	#freeze = true
 	collision_layer = picked_up_layer
-	collision_mask = 0
+	#collision_mask = 0
 
 	# Find a suitable primary hand grab
 	var by_grab_point := _get_grab_point(by, null)
