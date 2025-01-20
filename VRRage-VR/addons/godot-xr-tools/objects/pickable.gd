@@ -213,6 +213,7 @@ func drop():
 	_grab_driver.primary.by.drop_object()
 	
 	got_picked_up = false
+	print("ITEM: ", self, " Got Dropped: ", got_picked_up)
 
 
 func drop_and_free():
@@ -267,6 +268,7 @@ func pick_up(by: Node3D) -> void:
 			restore_freeze = freeze
 
 	got_picked_up = true
+	print("ITEM: ", self, " Got Picked Up: ", got_picked_up)
 
 	# turn off physics on our pickable object
 	freeze = true
