@@ -102,7 +102,7 @@ func check_for_recipe(items : Array):
 	print("CHECKING FOR RECIPES WITH ITEMS: ", items)
 	for i in craftingRecipes:
 		print("CHECKING RECIPE: ", i)
-		var recipe_ingredients : Array = [i[0], i[1]]
+		var recipe_ingredients : Array = [int(i[0]), int(i[1])]
 		print("INGREDIENTS: ", recipe_ingredients)
 		if items[0] in recipe_ingredients and items[1] in recipe_ingredients:
 			print("RETURNING RECIPE RESULT: ", i[2])
