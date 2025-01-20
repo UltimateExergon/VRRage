@@ -83,7 +83,7 @@ func craft(item1, item2):
 		var new_item = match_items()
 		if new_item != null:
 			print("CRAFTING RECIPE FOUND, PERFORMING CRAFT OF ITEM: ", new_item)
-			spawn_crafted_item(new_item, item1.global_position)
+			spawn_crafted_item(int(new_item), item1.global_position)
 			item1.queue_free()
 			item2.queue_free()
 		else: 

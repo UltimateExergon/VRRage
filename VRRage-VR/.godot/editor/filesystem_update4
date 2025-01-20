@@ -10,4 +10,4 @@ res://scenes/object_scenes/stuhl.tscn
 res://scenes/object_scenes/vase.tscn
 res://scenes/items/testlevel/3.tscn
 res://scenes/items/testlevel/1.tscn
-res://addons/godot-xr-tools/objects/pickable.gd
+res://scripts/main.gd
