@@ -77,7 +77,7 @@ func load_player() -> void:
 	add_child(player)
 	
 func craft(item1, item2):
-	ingredients.append([item1, item2])
+	ingredients.append([item1.get_dropID(), item2.get_dropID()])
 	print("ATTEMTPING TO CRAFT WITH INGREDIENTS: ", ingredients)
 	if ingredients.size() == 2:
 		var new_item = match_items()
@@ -99,9 +99,11 @@ func spawn_crafted_item(itemID : int, pos : Vector3):
 	get_node(current_level).add_child(item)
 		
 func check_for_recipe(items : Array):
+	print("CHECKING FOR RECIPES WITH ITEMS: ", items)
 	for i in craftingRecipes:
 		var recipe_ingredients : Array = [i[0], i[1]]
 		if items[0].get_dropID() in recipe_ingredients and items[1].get_dropID() in recipe_ingredients:
+			print("RETURNING RECIPE RESULT: ", i[2])
 			return i[2]
 			
 	return null
