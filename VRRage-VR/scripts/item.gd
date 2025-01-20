@@ -3,7 +3,7 @@ extends XRToolsPickable
 @export_category("Item")
 @export var dropID : int : set = set_dropID, get = get_dropID
 
-var collision_reported : bool = true
+var collision_reported : bool = false
 
 func _ready():
 	self.contact_monitor = true
