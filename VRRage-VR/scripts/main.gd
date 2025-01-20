@@ -84,6 +84,10 @@ func craft(item1, item2):
 			spawn_crafted_item(new_item, item1.global_position)
 			item1.queue_free()
 			item2.queue_free()
+		else: 
+			item1.collision_reported = false
+			item2.collision_reported = false
+			ingredients.clear()
 			
 func spawn_crafted_item(itemID : int, pos : Vector3):
 	var item = load(itemPath + current_level + "/" + str(itemID) + itemFormat).instantiate()

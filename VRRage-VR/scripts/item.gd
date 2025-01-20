@@ -3,6 +3,8 @@ extends XRToolsPickable
 @export_category("Item")
 @export var dropID : int : set = set_dropID, get = get_dropID
 
+var collision_reported : bool = true
+
 func _ready():
 	self.contact_monitor = true
 	self.max_contacts_reported = 160
@@ -18,6 +20,7 @@ func _ready():
 func _on_body_entered(body):
 	if body.is_in_group("CRAFTABLE") and self.got_picked_up == true:
 		print("Crafting:", self, body)
+		collision_reported = true
 		get_tree().root.get_children()[2].craft(self, body)
 		
 func set_dropID(id : int) -> void:
