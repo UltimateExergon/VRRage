@@ -211,9 +211,6 @@ func drop():
 
 	# Request primary grabber to drop
 	_grab_driver.primary.by.drop_object()
-	
-	got_picked_up = false
-	print("ITEM: ", self, " Got Dropped: ", got_picked_up)
 
 
 func drop_and_free():
@@ -330,6 +327,9 @@ func let_go(by: Node3D, p_linear_velocity: Vector3, p_angular_velocity: Vector3)
 	print_verbose("%s> dropping" % name)
 	_grab_driver.discard()
 	_grab_driver = null
+	
+	got_picked_up = false
+	print("ITEM: ", self, " Got Dropped: ", got_picked_up)
 
 	# Restore RigidBody mode
 	freeze = restore_freeze
