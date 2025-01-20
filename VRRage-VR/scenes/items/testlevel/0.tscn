@@ -16,6 +16,12 @@ radial_segments = 8
 points = PackedVector3Array(-0.1, -0.25, 0, -0.0707126, -0.25, -0.0707126, -0.0707126, -0.25, 0.070693, -0.1, 0.25, 0, 0, -0.25, -0.1, -0.0707126, 0.25, -0.0707126, 0, -0.25, 0.1, -0.0707126, 0.25, 0.070693, 0.070693, -0.25, -0.0707126, 0, 0.25, -0.1, 0.070693, -0.25, 0.070693, 0, 0.25, 0.1, 0.1, -0.25, 0, 0.070693, 0.25, -0.0707126, 0.070693, 0.25, 0.070693, 0.1, 0.25, 0)
 
 [node name="0" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.246955, 0)
+collision_layer = 4
+collision_mask = 196615
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_bb4xl")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

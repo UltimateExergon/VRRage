@@ -503,7 +503,7 @@ func _estimate_body_forward_dir() -> Vector3:
 		var angle = clamp(acos(dot) * body_forward_mix, 0.0, 0.33 * PI)
 		forward = forward.rotated(cross, angle)
 
-	return forward
+	return forward.normalized()
 
 # This method updates the player body to match the player position
 func _update_body_under_camera(delta : float):

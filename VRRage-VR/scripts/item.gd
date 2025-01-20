@@ -18,7 +18,7 @@ func _ready():
 func _on_body_entered(body):
 	if body.is_in_group("CRAFTABLE") and self.got_picked_up == true:
 		print("Crafting:", self, body)
-		get_tree().root.get_children()[0].craft(self, body)
+		get_tree().root.get_children()[2].craft(self, body)
 		
 func set_dropID(id : int) -> void:
 	dropID = id

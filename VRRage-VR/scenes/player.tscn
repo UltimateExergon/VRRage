@@ -35,6 +35,7 @@ pickup_axis_action = "trigger_click"
 action_button_action = "ax_button"
 
 [node name="SpeedAndCollisionDetection" type="CharacterBody3D" parent="LeftHand/LeftHand" groups=["hand"]]
+collision_layer = 0
 collision_mask = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LeftHand/LeftHand/SpeedAndCollisionDetection"]
@@ -57,6 +58,7 @@ pickup_axis_action = "trigger_click"
 action_button_action = "ax_button"
 
 [node name="SpeedAndCollisionDetection" type="CharacterBody3D" parent="RightHand/RightHand" groups=["hand"]]
+collision_layer = 0
 collision_mask = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RightHand/RightHand/SpeedAndCollisionDetection"]
@@ -75,7 +77,7 @@ material_override = SubResource("StandardMaterial3D_erxix")
 mesh = SubResource("SphereMesh_aqd64")
 
 [node name="PlayerBody" parent="." instance=ExtResource("6_8lfl8")]
-collision_mask = 1018
+collision_mask = 1017
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
