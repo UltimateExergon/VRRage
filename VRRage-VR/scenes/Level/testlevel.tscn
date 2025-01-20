@@ -60,7 +60,6 @@ fragmented = ExtResource("8_w8626")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.11467, 1.59684, 0.126654)
 script = ExtResource("3_5wh4r")
 fragmented = ExtResource("8_w8626")
-dropID = 2
 
 [node name="toDestroy" parent="Block_1" groups=["DESTRUCTIBLE"] instance=ExtResource("9_orrpl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.63913e-07, 0, 0)
@@ -69,7 +68,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.63913e-07, 0, 0)
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.23489, 1.59684, -0.00432141)
 script = ExtResource("3_5wh4r")
 fragmented = ExtResource("8_w8626")
-dropID = 2
 
 [node name="toDestroy" parent="Block_2" groups=["DESTRUCTIBLE"] instance=ExtResource("9_orrpl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00270898, -0.0100032, -0.0138106)
