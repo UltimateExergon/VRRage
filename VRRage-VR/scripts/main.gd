@@ -78,22 +78,25 @@ func load_player() -> void:
 	
 func craft(item1, item2):
 	ingredients.append([item1, item2])
+	print("ATTEMTPING TO CRAFT WITH INGREDIENTS: ", ingredients)
 	if ingredients.size() == 2:
 		var new_item = match_items()
 		if new_item != null:
+			print("CRAFTING RECIPE FOUND, PERFORMING CRAFT OF ITEM: ", new_item)
 			spawn_crafted_item(new_item, item1.global_position)
 			item1.queue_free()
 			item2.queue_free()
 		else: 
+			print("NO RECIPE FOUND FOR: ", ingredients)
 			item1.collision_reported = false
 			item2.collision_reported = false
 			ingredients.clear()
 			
 func spawn_crafted_item(itemID : int, pos : Vector3):
 	var item = load(itemPath + current_level + "/" + str(itemID) + itemFormat).instantiate()
-	item.position = pos
+	item.global_position = pos
+	print("CRAFTED NEW ITEM AT POSITION: ", item.global_position)
 	get_node(current_level).add_child(item)
-	ingredients.clear()
 		
 func check_for_recipe(items : Array):
 	for i in craftingRecipes:
@@ -106,6 +109,8 @@ func check_for_recipe(items : Array):
 func match_items():
 	var item1 : Array = ingredients[0]
 	var item2 : Array = ingredients[1]
+	
+	print("MATCHING ITEMS: ", item1, item2)
 	
 	if item1[0] == item2[1] and item1[1] == item2[0]:
 		return check_for_recipe(item1)
