@@ -1,21 +1,22 @@
-[gd_scene load_steps=12 format=3 uid="uid://7oiv4x5w20g2"]
+[gd_scene load_steps=8 format=3 uid="uid://7oiv4x5w20g2"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_4uqd0"]
-[ext_resource type="ArrayMesh" uid="uid://b8gwlrftd1c7n" path="res://assets/models/dummy_raum.obj" id="1_cyaxt"]
-[ext_resource type="Script" path="res://scripts/destruction.gd" id="3_5wh4r"]
-[ext_resource type="PackedScene" uid="uid://bcy1nlojdvrcd" path="res://scenes/object_scenes/vase.tscn" id="5_ansi6"]
-[ext_resource type="PackedScene" uid="uid://ijpoii8btt68" path="res://scenes/object_scenes/stuhl.tscn" id="5_i1w11"]
-[ext_resource type="PackedScene" uid="uid://bglnn1bvt7qc3" path="res://assets/models/Vase_kaputt.glb" id="6_1n7gu"]
-[ext_resource type="PackedScene" uid="uid://ctsmotcwywjp4" path="res://assets/models/Stuhl_kaputt.glb" id="6_o4lwc"]
-[ext_resource type="PackedScene" uid="uid://cga3j5ocd81bb" path="res://scenes/object_scenes/blöcke.tscn" id="7_geve4"]
-[ext_resource type="PackedScene" uid="uid://dguikl2uowstc" path="res://assets/models/Blöcke_kaputt.glb" id="8_w8626"]
-[ext_resource type="PackedScene" uid="uid://0dswmvtcjlft" path="res://scenes/object_scenes/block.tscn" id="9_orrpl"]
+[ext_resource type="ArrayMesh" uid="uid://b8gwlrftd1c7n" path="res://assets/models/testlevel/dummy_raum.obj" id="1_cyaxt"]
+[ext_resource type="PackedScene" uid="uid://0dswmvtcjlft" path="res://scenes/object_scenes/testlevel/block.tscn" id="3_yq473"]
+[ext_resource type="PackedScene" uid="uid://ijpoii8btt68" path="res://scenes/object_scenes/testlevel/stuhl.tscn" id="4_krn1v"]
+[ext_resource type="PackedScene" uid="uid://bcy1nlojdvrcd" path="res://scenes/object_scenes/testlevel/vase.tscn" id="5_8cusy"]
+
+[sub_resource type="Environment" id="Environment_l4b7o"]
+ambient_light_color = Color(0.52, 0.52, 0.52, 1)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_b8k8n"]
 data = PackedVector3Array(21.8643, -6.4016, -17.8679, 21.8643, 18.3012, -17.8679, 21.8643, -6.4016, 6.4016, 21.8643, -6.4016, 6.4016, 21.8643, 18.3012, -17.8679, 21.8643, 18.3012, 6.4016, -21.7969, -6.4016, 6.4016, -21.7969, 18.3012, 6.4016, -21.7969, -6.4016, -17.8679, -21.7969, -6.4016, -17.8679, -21.7969, 18.3012, 6.4016, -21.7969, 18.3012, -17.8679, -21.7969, -6.4016, -17.8679, -21.7969, 18.3012, -17.8679, 21.8643, -6.4016, -17.8679, 21.8643, -6.4016, -17.8679, -21.7969, 18.3012, -17.8679, 21.8643, 18.3012, -17.8679, -21.7969, 18.3012, 6.4016, 21.8643, 18.3012, 6.4016, -21.7969, 18.3012, -17.8679, -21.7969, 18.3012, -17.8679, 21.8643, 18.3012, 6.4016, 21.8643, 18.3012, -17.8679, 21.8643, -6.4016, 6.4016, -21.7969, -6.4016, 6.4016, 21.8643, -6.4016, -17.8679, 21.8643, -6.4016, -17.8679, -21.7969, -6.4016, 6.4016, -21.7969, -6.4016, -17.8679, 3.1408, 3.1408, 6.4016, 3.1408, -6.4016, 6.4016, 21.8643, 18.3012, 6.4016, 21.8643, 18.3012, 6.4016, 3.1408, -6.4016, 6.4016, 21.8643, -6.4016, 6.4016, -3.1408, 3.1408, 6.4016, 3.1408, 3.1408, 6.4016, -21.7969, 18.3012, 6.4016, -21.7969, 18.3012, 6.4016, 3.1408, 3.1408, 6.4016, 21.8643, 18.3012, 6.4016, 3.1408, -6.4016, 6.4016, -3.1408, -6.4016, 6.4016, 21.8643, -6.4016, 6.4016, 21.8643, -6.4016, 6.4016, -3.1408, -6.4016, 6.4016, -21.7969, -6.4016, 6.4016, -3.1408, -6.4016, 6.4016, -3.1408, 3.1408, 6.4016, -21.7969, -6.4016, 6.4016, -21.7969, -6.4016, 6.4016, -3.1408, 3.1408, 6.4016, -21.7969, 18.3012, 6.4016, -3.1408, 3.1408, 6.4016, -3.1408, -6.4016, 6.4016, -3.1408, 3.1408, 34.3959, -3.1408, 3.1408, 34.3959, -3.1408, -6.4016, 6.4016, -3.1408, -6.4016, 34.3959, 3.1408, 3.1408, 6.4016, -3.1408, 3.1408, 6.4016, 3.1408, 3.1408, 34.3959, 3.1408, 3.1408, 34.3959, -3.1408, 3.1408, 6.4016, -3.1408, 3.1408, 34.3959, -3.1408, -6.4016, 6.4016, 3.1408, -6.4016, 6.4016, -3.1408, -6.4016, 34.3959, -3.1408, -6.4016, 34.3959, 3.1408, -6.4016, 6.4016, 3.1408, -6.4016, 34.3959, 3.1408, -6.4016, 6.4016, 3.1408, 3.1408, 6.4016, 3.1408, -6.4016, 34.3959, 3.1408, -6.4016, 34.3959, 3.1408, 3.1408, 6.4016, 3.1408, 3.1408, 34.3959, -3.1408, -6.4016, 34.3959, 3.1408, -6.4016, 34.3959, -3.1408, -6.4016, 76.6899, -3.1408, -6.4016, 76.6899, 3.1408, -6.4016, 34.3959, 3.1408, -6.4016, 76.6899, 3.1408, 3.1408, 76.6899, 3.1408, -6.4016, 76.6899, 39.6497, 3.1408, 76.6899, 39.6497, 3.1408, 76.6899, 3.1408, -6.4016, 76.6899, 39.6497, -6.4016, 76.6899, -3.1408, 3.1408, 34.3959, -3.1408, -6.4016, 34.3959, -3.1408, 3.1408, 76.6899, -3.1408, 3.1408, 76.6899, -3.1408, -6.4016, 34.3959, -3.1408, -6.4016, 76.6899, -3.1408, 3.1408, 34.3959, -3.1408, 3.1408, 76.6899, -3.1408, 20.8634, 34.3959, -3.1408, 20.8634, 34.3959, -3.1408, 3.1408, 76.6899, -3.1408, 20.8634, 76.6899, 3.1408, 20.8634, 34.3959, -3.1408, 20.8634, 34.3959, 3.1408, 20.8634, 76.6899, 3.1408, 20.8634, 76.6899, -3.1408, 20.8634, 34.3959, -3.1408, 20.8634, 76.6899, -3.1408, 3.1408, 76.6899, 3.1408, 3.1408, 76.6899, -3.1408, 20.8634, 76.6899, -3.1408, 20.8634, 76.6899, 3.1408, 3.1408, 76.6899, 3.1408, 20.8634, 76.6899, 3.1408, 20.8634, 76.6899, 3.1408, 3.1408, 76.6899, 39.6497, 20.8634, 76.6899, 39.6497, 20.8634, 76.6899, 3.1408, 3.1408, 76.6899, 39.6497, 3.1408, 76.6899, 3.1408, 3.1408, 34.3959, -3.1408, 3.1408, 34.3959, 3.1408, 20.8634, 34.3959, 3.1408, 20.8634, 34.3959, -3.1408, 3.1408, 34.3959, -3.1408, 20.8634, 34.3959, 39.6497, -6.4016, 34.3959, 39.6497, 3.1408, 34.3959, 39.6497, -6.4016, 76.6899, 39.6497, -6.4016, 76.6899, 39.6497, 3.1408, 34.3959, 39.6497, 3.1408, 76.6899, 3.1408, -6.4016, 34.3959, 3.1408, 3.1408, 34.3959, 39.6497, -6.4016, 34.3959, 39.6497, -6.4016, 34.3959, 3.1408, 3.1408, 34.3959, 39.6497, 3.1408, 34.3959, 3.1408, -6.4016, 76.6899, 3.1408, -6.4016, 34.3959, 39.6497, -6.4016, 76.6899, 39.6497, -6.4016, 76.6899, 3.1408, -6.4016, 34.3959, 39.6497, -6.4016, 34.3959, 39.6497, 3.1408, 76.6899, 39.6497, 3.1408, 34.3959, 39.6497, 20.8634, 76.6899, 39.6497, 20.8634, 76.6899, 39.6497, 3.1408, 34.3959, 39.6497, 20.8634, 34.3959, 3.1408, 20.8634, 34.3959, 3.1408, 20.8634, 76.6899, 39.6497, 20.8634, 34.3959, 39.6497, 20.8634, 34.3959, 3.1408, 20.8634, 76.6899, 39.6497, 20.8634, 76.6899, 3.1408, 3.1408, 34.3959, 3.1408, 20.8634, 34.3959, 39.6497, 3.1408, 34.3959, 39.6497, 3.1408, 34.3959, 3.1408, 20.8634, 34.3959, 39.6497, 20.8634, 34.3959, 3.1408, 3.1408, 76.6899, -3.1408, 3.1408, 76.6899, 3.1408, -6.4016, 76.6899, 3.1408, -6.4016, 76.6899, -3.1408, 3.1408, 76.6899, -3.1408, -6.4016, 76.6899, -17.4129, -1.9871, 6.4016, -17.4129, -6.4016, 6.4016, -17.4129, -1.9871, -12.021, -17.4129, -1.9871, -12.021, -17.4129, -6.4016, 6.4016, -17.4129, -6.4016, -12.021, -17.4129, -1.9871, -12.021, -17.4129, -6.4016, -12.021, -15.4129, -1.9871, -12.021, -15.4129, -1.9871, -12.021, -17.4129, -6.4016, -12.021, -15.4129, -6.4016, -12.021, -15.4129, -1.9871, -12.021, -15.4129, -6.4016, -12.021, -15.4129, -1.9871, 6.4016, -15.4129, -1.9871, 6.4016, -15.4129, -6.4016, -12.021, -15.4129, -6.4016, 6.4016, -15.4129, -1.9871, 6.4016, -15.4129, -6.4016, 6.4016, -17.4129, -1.9871, 6.4016, -17.4129, -1.9871, 6.4016, -15.4129, -6.4016, 6.4016, -17.4129, -6.4016, 6.4016, -15.4129, -6.4016, -12.021, -17.4129, -6.4016, -12.021, -15.4129, -6.4016, 6.4016, -15.4129, -6.4016, 6.4016, -17.4129, -6.4016, -12.021, -17.4129, -6.4016, 6.4016, -17.4129, -1.9871, -12.021, -15.4129, -1.9871, -12.021, -17.4129, -1.9871, 6.4016, -17.4129, -1.9871, 6.4016, -15.4129, -1.9871, -12.021, -15.4129, -1.9871, 6.4016)
 
 [node name="testlevel" type="Node3D"]
 script = ExtResource("1_4uqd0")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_l4b7o")
 
 [node name="Raum" type="StaticBody3D" parent="." groups=["room"]]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 1.83053, 0)
@@ -30,76 +31,11 @@ shape = SubResource("ConcavePolygonShape3D_b8k8n")
 [node name="OmniLight3D" type="OmniLight3D" parent="Raum"]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 14.127, -7.11548)
 
-[node name="Vase" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.03881, 0.8499, -3.80125)
-script = ExtResource("3_5wh4r")
-fragmented = ExtResource("6_1n7gu")
-dropID = 0
+[node name="block" parent="." instance=ExtResource("3_yq473")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.14662, 1.40517, -2.02315)
 
-[node name="toDestroy" parent="Vase" groups=["DESTRUCTIBLE"] instance=ExtResource("5_ansi6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00338554, -0.196342, 0.0041666)
+[node name="chair" parent="." instance=ExtResource("4_krn1v")]
+transform = Transform3D(-0.97062, 0, -0.240618, 0, 1, 0, 0.240618, 0, -0.97062, 4.02538, 0, -0.0433738)
 
-[node name="Chair" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.63338, 0.818713, 0)
-script = ExtResource("3_5wh4r")
-fragmented = ExtResource("6_o4lwc")
-dropID = 1
-
-[node name="toDestroy" parent="Chair" groups=["DESTRUCTIBLE"] instance=ExtResource("5_i1w11")]
-transform = Transform3D(-0.889305, 0, 0.457315, 0, 1, 0, -0.457315, 0, -0.889305, 0, 0, 0)
-
-[node name="Blocks" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12692, 1.63291, 0)
-visible = false
-script = ExtResource("3_5wh4r")
-fragmented = ExtResource("8_w8626")
-
-[node name="toDestroy" parent="Blocks" groups=["DESTRUCTIBLE"] instance=ExtResource("7_geve4")]
-
-[node name="Block_1" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.11467, 1.59684, 0.126654)
-script = ExtResource("3_5wh4r")
-fragmented = ExtResource("8_w8626")
-
-[node name="toDestroy" parent="Block_1" groups=["DESTRUCTIBLE"] instance=ExtResource("9_orrpl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.63913e-07, 0, 0)
-
-[node name="Block_2" type="Node3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.23489, 1.59684, -0.00432141)
-script = ExtResource("3_5wh4r")
-fragmented = ExtResource("8_w8626")
-
-[node name="toDestroy" parent="Block_2" groups=["DESTRUCTIBLE"] instance=ExtResource("9_orrpl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00270898, -0.0100032, -0.0138106)
-
-[node name="Block_3" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08004, 1.62754, 0)
-script = ExtResource("3_5wh4r")
-fragmented = ExtResource("8_w8626")
-
-[node name="toDestroy" parent="Block_3" groups=["DESTRUCTIBLE"] instance=ExtResource("9_orrpl")]
-transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0.101335, -0.0307025, -0.260435)
-
-[node name="Block_4" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08004, 1.62754, 0)
-script = ExtResource("3_5wh4r")
-fragmented = ExtResource("8_w8626")
-
-[node name="toDestroy" parent="Block_4" groups=["DESTRUCTIBLE"] instance=ExtResource("9_orrpl")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.155002, 0.0730956, 0.0157628)
-
-[node name="Block_5" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08004, 1.62754, 0)
-script = ExtResource("3_5wh4r")
-fragmented = ExtResource("8_w8626")
-
-[node name="toDestroy" parent="Block_5" groups=["DESTRUCTIBLE"] instance=ExtResource("9_orrpl")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.15449, 0.437579, 0.00890133)
-
-[node name="Block_6" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08004, 1.62754, 0)
-script = ExtResource("3_5wh4r")
-fragmented = ExtResource("8_w8626")
-
-[node name="toDestroy" parent="Block_6" groups=["DESTRUCTIBLE"] instance=ExtResource("9_orrpl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0346305, 0.199834, -0.269516)
+[node name="vase" parent="." instance=ExtResource("5_8cusy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38335, 0, -1.05734)

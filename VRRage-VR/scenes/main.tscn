@@ -1,22 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cr0xwn6ug1cab"]
+[gd_scene load_steps=5 format=3 uid="uid://cr0xwn6ug1cab"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_84r0s"]
-[ext_resource type="PackedScene" uid="uid://r6qyyl6442m3" path="res://scenes/ui.tscn" id="2_67p3i"]
 [ext_resource type="FontFile" uid="uid://c5j0gq17ej1w6" path="res://assets/fonts/Montserrat-Medium.ttf" id="3_dnlsj"]
-[ext_resource type="Script" path="res://scenes/score.gd" id="4_22l7e"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xor64"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-
-[sub_resource type="Sky" id="Sky_mdlrf"]
-sky_material = SubResource("ProceduralSkyMaterial_xor64")
-
-[sub_resource type="Environment" id="Environment_yq3fj"]
-background_mode = 2
-sky = SubResource("Sky_mdlrf")
-tonemap_mode = 2
-glow_enabled = true
+[ext_resource type="Script" path="res://scripts/score.gd" id="4_22l7e"]
 
 [sub_resource type="Theme" id="Theme_mlard"]
 default_font = ExtResource("3_dnlsj")
@@ -25,32 +11,22 @@ default_font_size = 22
 [node name="Main" type="Node3D"]
 script = ExtResource("1_84r0s")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_yq3fj")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
-light_energy = 0.5
-shadow_enabled = true
-
 [node name="SubViewport" type="SubViewport" parent="."]
 disable_3d = true
 transparent_bg = true
 render_target_update_mode = 4
 
-[node name="UI" parent="SubViewport" instance=ExtResource("2_67p3i")]
-
-[node name="UI" type="Control" parent="."]
+[node name="UI" type="Control" parent="SubViewport"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Score" type="Label" parent="UI"]
+[node name="Score" type="Label" parent="SubViewport/UI"]
 layout_mode = 0
 offset_left = 47.0
 offset_top = 47.0
-offset_right = 307.0
+offset_right = 322.0
 offset_bottom = 142.0
 theme = SubResource("Theme_mlard")
 theme_override_font_sizes/font_size = 69

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwau2e4fx3op7"]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_ifaw4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uhcpx"]
+albedo_color = Color(0.168627, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6bbl1"]
+material = SubResource("StandardMaterial3D_uhcpx")
+size = Vector3(0.3, 0.3, 0.3)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_r4hfn"]
+points = PackedVector3Array(0.15, 0.15, 0.15, 0.15, 0.15, -0.15, -0.15, 0.15, 0.15, 0.15, -0.15, 0.15, 0.15, -0.15, -0.15, -0.15, 0.15, -0.15, -0.15, -0.15, 0.15, -0.15, -0.15, -0.15)
+
+[node name="testcube" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.816731, 0)
+collision_layer = 4
+collision_mask = 196615
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_ifaw4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_6bbl1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_r4hfn")

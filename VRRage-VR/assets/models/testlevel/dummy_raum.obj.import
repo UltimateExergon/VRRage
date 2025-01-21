@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b8gwlrftd1c7n"
+path="res://.godot/imported/dummy_raum.obj-616bad6829242cdce0a81a5063d88974.mesh"
+
+[deps]
+
+files=["res://.godot/imported/dummy_raum.obj-616bad6829242cdce0a81a5063d88974.mesh"]
+
+source_file="res://assets/models/testlevel/dummy_raum.obj"
+dest_files=["res://.godot/imported/dummy_raum.obj-616bad6829242cdce0a81a5063d88974.mesh", "res://.godot/imported/dummy_raum.obj-616bad6829242cdce0a81a5063d88974.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

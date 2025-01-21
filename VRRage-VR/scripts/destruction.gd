@@ -1,14 +1,12 @@
-@tool
 class_name Destruction
 extends Node3D
-
-signal destroyed
 
 const itemPath : String = "res://scenes/items/"
 const itemFormat : String = ".tscn"
 
 @export var fragmented : PackedScene: set = set_fragmented
-@export var dropID : int = -1
+@export var dropID : String = ""
+@export var score_points : int = 100
 var shard_container
 
 var current_level : String : set = set_currentLevel
@@ -20,21 +18,29 @@ var current_level : String : set = set_currentLevel
 @export var explosion_power: float = 1.0
 @export var vanish_time : int = 1
 
+@onready var main_node = get_tree().root.get_children()[2]
+
 static var _cached_scenes := {}
 static var _cached_shapes := {}
 
 func destroy() -> void:
 	self.position = self.get_children()[0].global_position
+	
 	var shard_holder : Node3D = Node3D.new()
 	add_child(shard_holder)
 	shard_container = shard_holder
+	
 	for shard in _get_shards():
 		_add_shard(shard)
+	
 	add_drop()
+	add_score_points()
 	add_timer()
-	destroyed.emit()
 
 	self.get_children()[0].queue_free()
+	
+func add_score_points():
+	main_node.increase_score(score_points)
 
 func _get_shards() -> Array[Node]:
 	if not fragmented in _cached_scenes:
@@ -70,8 +76,8 @@ func _add_shard(original: MeshInstance3D) -> void:
 			-original.position.normalized())
 			
 func add_drop():
-	if dropID > -1:
-		var item = load(itemPath + current_level + "/" + str(dropID) + itemFormat).instantiate()
+	if dropID != "":
+		var item = load(itemPath + current_level + "/" + dropID + itemFormat).instantiate()
 		item.set_dropID(dropID)
 		print("Spawned Drop at: ", item.global_position)
 		add_child(item)

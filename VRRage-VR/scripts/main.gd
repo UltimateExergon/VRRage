@@ -21,6 +21,10 @@ var startPos : Vector3
 var craftingRecipes : Array
 var ingredients : Array
 
+var current_score : int = 0
+
+@onready var score_label = $SubViewport/UI/Score
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	xr_interface = XRServer.find_interface("OpenXR")
@@ -76,6 +80,8 @@ func load_player() -> void:
 	player.global_position = startPos
 	add_child(player)
 	
+	increase_score(0)
+	
 func craft(item1, item2):
 	ingredients.append([item1.get_dropID(), item2.get_dropID()])
 	print("ATTEMTPING TO CRAFT WITH INGREDIENTS: ", ingredients)
@@ -83,7 +89,7 @@ func craft(item1, item2):
 		var new_item = match_items()
 		if new_item != null:
 			print("CRAFTING RECIPE FOUND, PERFORMING CRAFT OF ITEM: ", new_item)
-			spawn_crafted_item(int(new_item), item1.global_position)
+			spawn_crafted_item(new_item, item1.global_position)
 			item1.queue_free()
 			item2.queue_free()
 		else: 
@@ -92,8 +98,8 @@ func craft(item1, item2):
 			item2.collision_reported = false
 			ingredients.clear()
 			
-func spawn_crafted_item(itemID : int, pos : Vector3):
-	var item = load(itemPath + current_level + "/" + str(itemID) + itemFormat).instantiate()
+func spawn_crafted_item(itemID : String, pos : Vector3):
+	var item = load(itemPath + current_level + "/" + itemID + itemFormat).instantiate()
 	item.global_position = pos
 	print("CRAFTED NEW ITEM AT POSITION: ", item.global_position)
 	get_node(current_level).add_child(item)
@@ -102,9 +108,9 @@ func check_for_recipe(items : Array):
 	print("CHECKING FOR RECIPES WITH ITEMS: ", items)
 	for i in craftingRecipes:
 		print("CHECKING RECIPE: ", i)
-		var recipe_ingredients : Array = [int(i[0]), int(i[1])]
+		var recipe_ingredients : Array = [i[0], i[1]]
 		print("INGREDIENTS: ", recipe_ingredients)
-		if items[0] in recipe_ingredients and items[1] in recipe_ingredients:
+		if (items[0] == recipe_ingredients[0] or items[0] == recipe_ingredients[1]) and (items[1] == recipe_ingredients[0] or items[1] == recipe_ingredients[1]):
 			print("RETURNING RECIPE RESULT: ", i[2])
 			return i[2]
 			
@@ -120,6 +126,10 @@ func match_items():
 		return check_for_recipe(item1)
 	else:
 		return null
+		
+func increase_score(points : int):
+	current_score += points
+	score_label.update_score(current_score)
 	
 
 # Handle OpenXR session ready
