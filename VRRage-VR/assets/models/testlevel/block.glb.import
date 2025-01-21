@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cj86q4pg0ewdj"
-path="res://.godot/imported/Blöcke.glb-7b7a7240c68f87847b01e95e0c43e0f8.scn"
+path="res://.godot/imported/block.glb-ecd9379b2be1153774b5e69848dd6e6e.scn"
 
 [deps]
 
-source_file="res://assets/models/testlevel/Blöcke.glb"
-dest_files=["res://.godot/imported/Blöcke.glb-7b7a7240c68f87847b01e95e0c43e0f8.scn"]
+source_file="res://assets/models/testlevel/block.glb"
+dest_files=["res://.godot/imported/block.glb-ecd9379b2be1153774b5e69848dd6e6e.scn"]
 
 [params]
 

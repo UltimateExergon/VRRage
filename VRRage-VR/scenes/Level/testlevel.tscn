@@ -15,6 +15,10 @@ data = PackedVector3Array(21.8643, -6.4016, -17.8679, 21.8643, 18.3012, -17.8679
 [node name="testlevel" type="Node3D"]
 script = ExtResource("1_4uqd0")
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_l4b7o")
 
@@ -32,7 +36,7 @@ shape = SubResource("ConcavePolygonShape3D_b8k8n")
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 14.127, -7.11548)
 
 [node name="block" parent="." instance=ExtResource("3_yq473")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.14662, 1.40517, -2.02315)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.14662, 1.29412, -2.02315)
 
 [node name="chair" parent="." instance=ExtResource("4_krn1v")]
 transform = Transform3D(-0.97062, 0, -0.240618, 0, 1, 0, 0.240618, 0, -0.97062, 4.02538, 0, -0.0433738)

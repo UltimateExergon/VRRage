@@ -99,3 +99,9 @@ func _on_timer_timeout():
 
 static func _random_direction() -> Vector3:
 	return (Vector3(randf(), randf(), randf()) - Vector3.ONE / 2.0).normalized() * 2.0
+	
+	
+func _on_body_entered(body: Node) -> void:
+	print("BODY ENTERED", body, get_children()[0].linear_velocity.length())
+	if get_children()[0].linear_velocity.length() > 1 and body.is_in_group("room"):
+		self.destroy()

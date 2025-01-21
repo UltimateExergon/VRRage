@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://basy77ies5xdk"
-path="res://.godot/imported/Vase.glb-c1079f74477163e91750643999a9183e.scn"
+path="res://.godot/imported/vase.glb-ad3a0a5be0f0b7cf5147281608588826.scn"
 
 [deps]
 
-source_file="res://assets/models/testlevel/Vase.glb"
-dest_files=["res://.godot/imported/Vase.glb-c1079f74477163e91750643999a9183e.scn"]
+source_file="res://assets/models/testlevel/vase.glb"
+dest_files=["res://.godot/imported/vase.glb-ad3a0a5be0f0b7cf5147281608588826.scn"]
 
 [params]
 

@@ -406,8 +406,3 @@ func _get_grab_point(grabber : Node3D, current : XRToolsGrabPoint) -> XRToolsGra
 func _set_ranged_grab_method(new_value: int) -> void:
 	ranged_grab_method = new_value
 	can_ranged_grab = new_value != RangedMethod.NONE
-
-
-func _on_body_entered(body: Node) -> void:
-	if self.linear_velocity.length() > 1 and body.is_in_group("room"):
-		self.get_parent().destroy()
