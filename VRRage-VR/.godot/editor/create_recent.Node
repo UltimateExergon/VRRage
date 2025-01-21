@@ -1,3 +1,5 @@
+Label
+Control
 CharacterBody3D
 StaticBody3D
 CollisionShape3D

@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cr0xwn6ug1cab"]
+[gd_scene load_steps=9 format=3 uid="uid://cr0xwn6ug1cab"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_84r0s"]
 [ext_resource type="PackedScene" uid="uid://r6qyyl6442m3" path="res://scenes/ui.tscn" id="2_67p3i"]
+[ext_resource type="FontFile" uid="uid://c5j0gq17ej1w6" path="res://assets/fonts/Montserrat-Medium.ttf" id="3_dnlsj"]
+[ext_resource type="Script" path="res://scenes/score.gd" id="4_22l7e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xor64"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -15,6 +17,10 @@ background_mode = 2
 sky = SubResource("Sky_mdlrf")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="Theme" id="Theme_mlard"]
+default_font = ExtResource("3_dnlsj")
+default_font_size = 22
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_84r0s")
@@ -33,3 +39,20 @@ transparent_bg = true
 render_target_update_mode = 4
 
 [node name="UI" parent="SubViewport" instance=ExtResource("2_67p3i")]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Score" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 47.0
+offset_right = 307.0
+offset_bottom = 142.0
+theme = SubResource("Theme_mlard")
+theme_override_font_sizes/font_size = 69
+text = "Score: 0"
+script = ExtResource("4_22l7e")

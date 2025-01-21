@@ -35,7 +35,7 @@ pickup_axis_action = "trigger_click"
 action_button_action = "ax_button"
 
 [node name="SpeedAndCollisionDetection" type="CharacterBody3D" parent="LeftHand/LeftHand" groups=["hand"]]
-collision_layer = 0
+collision_layer = 2
 collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LeftHand/LeftHand/SpeedAndCollisionDetection"]
@@ -58,7 +58,7 @@ pickup_axis_action = "trigger_click"
 action_button_action = "ax_button"
 
 [node name="SpeedAndCollisionDetection" type="CharacterBody3D" parent="RightHand/RightHand" groups=["hand"]]
-collision_layer = 0
+collision_layer = 2
 collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RightHand/RightHand/SpeedAndCollisionDetection"]

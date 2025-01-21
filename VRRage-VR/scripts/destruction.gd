@@ -2,6 +2,8 @@
 class_name Destruction
 extends Node3D
 
+signal destroyed
+
 const itemPath : String = "res://scenes/items/"
 const itemFormat : String = ".tscn"
 
@@ -12,7 +14,6 @@ var shard_container
 var current_level : String : set = set_currentLevel
 
 @export_group("Collision")
-@export_flags_3d_physics var collision_layer = 1
 @export_flags_3d_physics var collision_mask = 1
 
 @export_group("Physics")
@@ -31,6 +32,8 @@ func destroy() -> void:
 		_add_shard(shard)
 	add_drop()
 	add_timer()
+	destroyed.emit()
+
 	self.get_children()[0].queue_free()
 
 func _get_shards() -> Array[Node]:
@@ -58,7 +61,6 @@ func _add_shard(original: MeshInstance3D) -> void:
 	shard_container.add_child(body, true)
 	body.global_position = global_transform.origin + original.position
 	body.global_rotation = global_rotation
-	body.collision_layer = collision_layer
 	body.collision_mask = collision_mask
 	mesh.scale = original.scale
 	shape.scale = original.scale
