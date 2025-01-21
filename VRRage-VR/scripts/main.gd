@@ -23,7 +23,7 @@ var ingredients : Array
 
 var current_score : int = 0
 
-@onready var score_label = $SubViewport/UI/Score
+var score_label = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -68,6 +68,7 @@ func load_level(levelname : String) -> void:
 	craftingRecipes = load(recipePath + levelname + recipeFormat).records
 	var level = load(levelPath + levelname + ".tscn").instantiate()
 	add_child(level)
+	score_label = $testlevel/Label3D
 	startPos = level.get_startPos()
 	level.add_to_group("LEVEL")
 

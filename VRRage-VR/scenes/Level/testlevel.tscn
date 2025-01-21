@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://7oiv4x5w20g2"]
+[gd_scene load_steps=9 format=3 uid="uid://7oiv4x5w20g2"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_4uqd0"]
 [ext_resource type="ArrayMesh" uid="uid://b8gwlrftd1c7n" path="res://assets/models/testlevel/dummy_raum.obj" id="1_cyaxt"]
 [ext_resource type="PackedScene" uid="uid://0dswmvtcjlft" path="res://scenes/object_scenes/testlevel/block.tscn" id="3_yq473"]
 [ext_resource type="PackedScene" uid="uid://ijpoii8btt68" path="res://scenes/object_scenes/testlevel/stuhl.tscn" id="4_krn1v"]
 [ext_resource type="PackedScene" uid="uid://bcy1nlojdvrcd" path="res://scenes/object_scenes/testlevel/vase.tscn" id="5_8cusy"]
+[ext_resource type="Script" path="res://scripts/score.gd" id="6_6voqi"]
 
 [sub_resource type="Environment" id="Environment_l4b7o"]
 ambient_light_color = Color(0.52, 0.52, 0.52, 1)
@@ -43,3 +44,9 @@ transform = Transform3D(-0.97062, 0, -0.240618, 0, 1, 0, 0.240618, 0, -0.97062, 
 
 [node name="vase" parent="." instance=ExtResource("5_8cusy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38335, 0, -1.05734)
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0332, -4.43286)
+text = "Score: 0"
+font_size = 177
+script = ExtResource("6_6voqi")

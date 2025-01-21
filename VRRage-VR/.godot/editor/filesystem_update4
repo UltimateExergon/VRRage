@@ -10,3 +10,4 @@ res://scenes/object_scenes/testlevel/stuhl.tscn
 res://scenes/object_scenes/testlevel/vase.tscn
 res://scenes/ui.tscn
 res://scripts/main.gd
+res://scripts/score.gd
