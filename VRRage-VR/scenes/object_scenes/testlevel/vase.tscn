@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bglnn1bvt7qc3" path="res://assets/models/testlevel/vase_kaputt.glb" id="2_3207w"]
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_a1yxx"]
 [ext_resource type="Animation" path="res://addons/godot-xr-tools/hands/animations/left/Grip 5.res" id="3_acx37"]
-[ext_resource type="Script" path="res://scripts/item.gd" id="3_awd2u"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="3_y2vvy"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="4_kv1v6"]
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_c2mfw"]
 [ext_resource type="Animation" path="res://addons/godot-xr-tools/hands/animations/right/Grip 5.res" id="6_fnyg6"]
@@ -65,14 +65,14 @@ script = ExtResource("1_bdxft")
 fragmented = ExtResource("2_3207w")
 dropID = "testsphere"
 
-[node name="XRToolsPickable" type="RigidBody3D" parent="." groups=["DESTRUCTIBLE"]]
+[node name="XRToolsPickable" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00270891, 1.16449, 1.61613)
 collision_layer = 4
 collision_mask = 196615
 freeze_mode = 1
 contact_monitor = true
 max_contacts_reported = 1
-script = ExtResource("3_awd2u")
+script = ExtResource("3_y2vvy")
 
 [node name="Vase" type="MeshInstance3D" parent="XRToolsPickable"]
 transform = Transform3D(0.355522, 0, 0, 0, 0.355522, 0, 0, 0, 0.355522, 0, 0, 0)
@@ -92,5 +92,3 @@ hand_pose = SubResource("Resource_1ism8")
 transform = Transform3D(0.937349, 0.348392, 0, -0.348392, 0.937349, 0, 0, 0, 1, 0.260988, 0, -0.112988)
 snap_hand = false
 hand_pose = SubResource("Resource_xruei")
-
-[connection signal="body_entered" from="XRToolsPickable" to="." method="_on_body_entered"]

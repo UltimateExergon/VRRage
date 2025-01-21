@@ -80,6 +80,7 @@ func load_player() -> void:
 	player.global_position = startPos
 	add_child(player)
 	
+	player.get_node("OpenXRCompositionLayerQuad").layer_viewport = $SubViewport
 	increase_score(0)
 	
 func craft(item1, item2):

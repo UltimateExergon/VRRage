@@ -1,5 +1,5 @@
 0453c2224f3a23d633b93278348c95c7
-::res://::1737480709
+::res://::1737482383
 icon.svg::CompressedTexture2D::8871517404379361786::1736183127::1736428264::1::::<><>::
 openxr_action_map.tres::OpenXRActionMap::2238366026904376263::1737479390::0::1::::<><>::
 ::res://addons/::1736946931
@@ -383,7 +383,7 @@ start_xr.tscn::PackedScene::-1::1736428331::0::1::::<><>::
 LICENSE.txt::TextFile::-1::1605988452::0::1::::<><>::
 Montserrat-Medium.ttf::FontFile::6898615597894483195::1323702000::1737464422::1::::<><>::
 ::res://assets/models/::1737477595
-::res://assets/models/testlevel/::1737480709
+::res://assets/models/testlevel/::1737480710
 block.glb::PackedScene::5474577772146129015::1737477595::1737480673::1::::<><>::
 block_kaputt.glb::PackedScene::7622186882264747808::1737477595::1737480683::1::::<><>::
 dummy_raum.obj::Mesh::4716395109335626357::1737477595::1737479354::1::::<><>::
@@ -393,9 +393,9 @@ vase.glb::PackedScene::2425095529810170332::1737477595::1737480705::1::::<><>::
 vase_kaputt.glb::PackedScene::2831075805175399344::1737477595::1737480710::1::::<><>::
 ::res://craftingRecipes/::1737479354
 testlevel.csv::Resource::8375767935930584102::1737477595::1737479354::1::::<><>::res://addons/csv-data-importer/csv_data.gd
-::res://scenes/::1737480571
-main.tscn::PackedScene::6019097662994022905::1737480571::0::1::::<><>::res://scripts/main.gd<>uid://c5j0gq17ej1w6::::res://assets/fonts/Montserrat-Medium.ttf<>res://scripts/score.gd
-player.tscn::PackedScene::1117249715510311557::1737480571::0::1::::<><>::res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn<>res://addons/godot-xr-tools/functions/function_pickup.tscn<>res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn<>res://addons/godot-xr-tools/functions/function_teleport.tscn<>res://scripts/open_xr_composition_layer_quad.gd<>res://addons/godot-xr-tools/player/player_body.tscn
+::res://scenes/::1737482278
+main.tscn::PackedScene::6019097662994022905::1737482278::0::1::::<><>::res://scripts/main.gd<>uid://c5j0gq17ej1w6::::res://assets/fonts/Montserrat-Medium.ttf<>res://scripts/score.gd
+player.tscn::PackedScene::1117249715510311557::1737482278::0::1::::<><>::res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn<>res://addons/godot-xr-tools/functions/function_pickup.tscn<>res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn<>res://addons/godot-xr-tools/functions/function_teleport.tscn<>res://scripts/open_xr_composition_layer_quad.gd<>res://addons/godot-xr-tools/player/player_body.tscn
 ::res://scenes/items/::1737477595
 ::res://scenes/items/testlevel/::1737477595
 testcraft1.tscn::PackedScene::6698374337822308848::1737477595::0::1::::<><>::
@@ -403,15 +403,15 @@ testcraft2.tscn::PackedScene::1127415381951136936::1737477595::0::1::::<><>::
 testcube.tscn::PackedScene::3931838055172333702::1737477595::0::1::::<><>::res://scripts/item.gd
 testcylinder.tscn::PackedScene::2687235434952697889::1737477595::0::1::::<><>::res://scripts/item.gd
 testsphere.tscn::PackedScene::8594462225613835084::1737477595::0::1::::<><>::res://scripts/item.gd
-::res://scenes/Level/::1737480571
-testlevel.tscn::PackedScene::2275469082689215875::1737480571::0::1::::<><>::res://scripts/level.gd<>uid://b8gwlrftd1c7n::::res://assets/models/testlevel/dummy_raum.obj<>uid://0dswmvtcjlft::::res://scenes/object_scenes/testlevel/block.tscn<>uid://ijpoii8btt68::::res://scenes/object_scenes/testlevel/stuhl.tscn<>uid://bcy1nlojdvrcd::::res://scenes/object_scenes/testlevel/vase.tscn
+::res://scenes/Level/::1737482278
+testlevel.tscn::PackedScene::2275469082689215875::1737482278::0::1::::<><>::res://scripts/level.gd<>uid://b8gwlrftd1c7n::::res://assets/models/testlevel/dummy_raum.obj<>uid://0dswmvtcjlft::::res://scenes/object_scenes/testlevel/block.tscn<>uid://ijpoii8btt68::::res://scenes/object_scenes/testlevel/stuhl.tscn<>uid://bcy1nlojdvrcd::::res://scenes/object_scenes/testlevel/vase.tscn
 ::res://scenes/object_scenes/::1737477595
-::res://scenes/object_scenes/testlevel/::1737480709
-block.tscn::PackedScene::1762047081136099825::1737480682::0::1::::<><>::uid://dguikl2uowstc::::res://assets/models/testlevel/block_kaputt.glb<>res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn<>res://addons/godot-xr-tools/hands/animations/left/Grip Shaft.res<>res://scripts/item.gd<>res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd<>res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn<>res://addons/godot-xr-tools/hands/animations/right/Grip Shaft.res<>res://scripts/destruction.gd
-stuhl.tscn::PackedScene::581026338943674195::1737480699::0::1::::<><>::res://scripts/destruction.gd<>res://scripts/item.gd<>res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn<>uid://ctsmotcwywjp4::::res://assets/models/testlevel/stuhl_kaputt.glb<>res://addons/godot-xr-tools/hands/animations/left/Grip 1.res<>res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd<>res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn<>res://addons/godot-xr-tools/hands/animations/right/Grip 1.res
-vase.tscn::PackedScene::2577945893997178499::1737480709::0::1::::<><>::res://scripts/destruction.gd<>uid://bglnn1bvt7qc3::::res://assets/models/testlevel/vase_kaputt.glb<>res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn<>res://addons/godot-xr-tools/hands/animations/left/Grip 5.res<>res://scripts/item.gd<>res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd<>res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn<>res://addons/godot-xr-tools/hands/animations/right/Grip 5.res
-::res://scripts/::1737480570
-destruction.gd::GDScript::-1::1737480570::0::1::::Destruction<>Node3D<>::
+::res://scenes/object_scenes/testlevel/::1737482278
+block.tscn::PackedScene::1762047081136099825::1737482278::0::1::::<><>::uid://dguikl2uowstc::::res://assets/models/testlevel/block_kaputt.glb<>res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn<>res://addons/godot-xr-tools/hands/animations/left/Grip Shaft.res<>res://scripts/item.gd<>res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd<>res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn<>res://addons/godot-xr-tools/hands/animations/right/Grip Shaft.res<>res://scripts/destruction.gd
+stuhl.tscn::PackedScene::581026338943674195::1737482278::0::1::::<><>::res://scripts/destruction.gd<>res://scripts/item.gd<>res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn<>uid://ctsmotcwywjp4::::res://assets/models/testlevel/stuhl_kaputt.glb<>res://addons/godot-xr-tools/hands/animations/left/Grip 1.res<>res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd<>res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn<>res://addons/godot-xr-tools/hands/animations/right/Grip 1.res
+vase.tscn::PackedScene::2577945893997178499::1737482278::0::1::::<><>::res://scripts/destruction.gd<>uid://bglnn1bvt7qc3::::res://assets/models/testlevel/vase_kaputt.glb<>res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn<>res://addons/godot-xr-tools/hands/animations/left/Grip 5.res<>res://scripts/item.gd<>res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd<>res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn<>res://addons/godot-xr-tools/hands/animations/right/Grip 5.res
+::res://scripts/::1737482370
+destruction.gd::GDScript::-1::1737482370::0::1::::Destruction<>Node3D<>::
 item.gd::GDScript::-1::1737477595::0::1::::<>XRToolsPickable<>::
 level.gd::GDScript::-1::1736946931::0::1::::<>Node3D<>::
 main.gd::GDScript::-1::1737477595::0::1::::<>Node3D<>::
