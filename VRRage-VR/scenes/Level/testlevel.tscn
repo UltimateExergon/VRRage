@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_4uqd0"]
 [ext_resource type="ArrayMesh" uid="uid://b8gwlrftd1c7n" path="res://assets/models/testlevel/dummy_raum.obj" id="1_cyaxt"]
-[ext_resource type="PackedScene" uid="uid://0dswmvtcjlft" path="res://scenes/object_scenes/block.tscn" id="3_yq473"]
-[ext_resource type="PackedScene" uid="uid://ijpoii8btt68" path="res://scenes/object_scenes/stuhl.tscn" id="4_krn1v"]
-[ext_resource type="PackedScene" uid="uid://bcy1nlojdvrcd" path="res://scenes/object_scenes/vase.tscn" id="5_8cusy"]
+[ext_resource type="PackedScene" uid="uid://0dswmvtcjlft" path="res://scenes/object_scenes/testlevel/block.tscn" id="5_lxofl"]
+[ext_resource type="PackedScene" uid="uid://ijpoii8btt68" path="res://scenes/object_scenes/testlevel/stuhl.tscn" id="6_rsxg6"]
 [ext_resource type="PackedScene" uid="uid://brr88ibcpmb4j" path="res://scenes/teleporter.tscn" id="6_typxf"]
 [ext_resource type="PackedScene" uid="uid://bbmagsn1leo2j" path="res://scenes/score.tscn" id="7_4qcnn"]
+[ext_resource type="PackedScene" uid="uid://bcy1nlojdvrcd" path="res://scenes/object_scenes/testlevel/vase.tscn" id="7_xys1m"]
 
 [sub_resource type="Environment" id="Environment_l4b7o"]
 ambient_light_color = Color(0.52, 0.52, 0.52, 1)
@@ -37,18 +37,18 @@ shape = SubResource("ConcavePolygonShape3D_b8k8n")
 [node name="OmniLight3D" type="OmniLight3D" parent="Raum"]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 14.127, -7.11548)
 
-[node name="block" parent="." instance=ExtResource("3_yq473")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.14662, 1.29412, -2.02315)
-
-[node name="chair" parent="." instance=ExtResource("4_krn1v")]
-transform = Transform3D(-0.97062, 0, -0.240618, 0, 1, 0, 0.240618, 0, -0.97062, 4.02538, 0, -0.0433738)
-
-[node name="vase" parent="." instance=ExtResource("5_8cusy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38335, 0, -1.05734)
-
 [node name="Teleporter" parent="." instance=ExtResource("6_typxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.52947, -2.24113e-05, -3.48849)
 teleport_level = "level_select"
 label_text = "Level Selection"
 
 [node name="Score" parent="." instance=ExtResource("7_4qcnn")]
+
+[node name="block" parent="." instance=ExtResource("5_lxofl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0691, 1.66856, -1.70887)
+
+[node name="chair" parent="." instance=ExtResource("6_rsxg6")]
+transform = Transform3D(-0.995243, 0, 0.0974265, 0, 1, 0, -0.0974265, 0, -0.995243, 4.39241, 0.168138, 0.87831)
+
+[node name="vase" parent="." instance=ExtResource("7_xys1m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.57441, 0.437879, -0.734952)
