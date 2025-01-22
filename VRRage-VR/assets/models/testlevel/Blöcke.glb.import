@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dtgwnv6x1ix2k"
-path="res://.godot/imported/Stuhl.glb-e046b5a6a49aa9569affa852e79c4cec.scn"
+uid="uid://cj86q4pg0ewdj"
+path="res://.godot/imported/Blöcke.glb-7b7a7240c68f87847b01e95e0c43e0f8.scn"
 
 [deps]
 
-source_file="res://assets/models/testlevel/Stuhl.glb"
-dest_files=["res://.godot/imported/Stuhl.glb-e046b5a6a49aa9569affa852e79c4cec.scn"]
+source_file="res://assets/models/testlevel/Blöcke.glb"
+dest_files=["res://.godot/imported/Blöcke.glb-7b7a7240c68f87847b01e95e0c43e0f8.scn"]
 
 [params]
 
 nodes/root_type="RigidBody3D"
-nodes/root_name="stuhl"
+nodes/root_name="blöcke"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false

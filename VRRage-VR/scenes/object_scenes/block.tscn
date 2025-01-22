@@ -1,13 +1,11 @@
-[gd_scene load_steps=17 format=4 uid="uid://0dswmvtcjlft"]
+[gd_scene load_steps=15 format=4 uid="uid://0dswmvtcjlft"]
 
-[ext_resource type="PackedScene" uid="uid://dguikl2uowstc" path="res://assets/models/testlevel/block_kaputt.glb" id="2_o8g2k"]
-[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_rom2c"]
-[ext_resource type="Animation" uid="uid://nq3xh1olqipq" path="res://addons/godot-xr-tools/hands/animations/left/Grip Shaft.res" id="3_ix2ph"]
-[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="3_w3vel"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_vi18c"]
+[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_rom2c"]
+[ext_resource type="Animation" path="res://addons/godot-xr-tools/hands/animations/left/Grip Shaft.res" id="3_ix2ph"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="4_qtmvn"]
-[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_es162"]
-[ext_resource type="Animation" uid="uid://c8dghcftg1thx" path="res://addons/godot-xr-tools/hands/animations/right/Grip Shaft.res" id="6_ilny4"]
-[ext_resource type="Script" path="res://scripts/destruction.gd" id="7_cle0r"]
+[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_es162"]
+[ext_resource type="Animation" path="res://addons/godot-xr-tools/hands/animations/right/Grip Shaft.res" id="6_ilny4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8642x"]
 resource_name = "Block Rot"
@@ -114,12 +112,7 @@ closed_pose = ExtResource("3_ix2ph")
 script = ExtResource("4_qtmvn")
 closed_pose = ExtResource("6_ilny4")
 
-[node name="block" type="Node3D"]
-script = ExtResource("7_cle0r")
-fragmented = ExtResource("2_o8g2k")
-dropID = "testcube"
-
-[node name="PickableObject" type="RigidBody3D" parent="."]
+[node name="PickableObject" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00270891, 1.16449, 1.61613)
 collision_layer = 4
 collision_mask = 196615
@@ -127,23 +120,25 @@ freeze_mode = 1
 continuous_cd = true
 contact_monitor = true
 max_contacts_reported = 1
-script = ExtResource("3_w3vel")
+script = ExtResource("1_vi18c")
 
-[node name="Block" type="MeshInstance3D" parent="PickableObject"]
+[node name="Block" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.115418, 0, 0, 0, 0.115418, 0, 0, 0, 0.115418, 0.00206272, -0.127259, 0.124717)
 mesh = SubResource("ArrayMesh_s6mjf")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PickableObject"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.115, 0, 0, 0, 0.115, 0, 0, 0, 0.115, 0.00206272, -0.127259, 0.124717)
 shape = SubResource("ConvexPolygonShape3D_og17j")
 
-[node name="GrabPointHandLeft" parent="PickableObject" instance=ExtResource("2_rom2c")]
+[node name="GrabPointHandLeft" parent="." instance=ExtResource("2_rom2c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.104766, 0.0228082, -0.029362)
 snap_hand = false
 hand_pose = SubResource("Resource_hepod")
 
-[node name="GrabPointHandRight" parent="PickableObject" instance=ExtResource("5_es162")]
+[node name="GrabPointHandRight" parent="." instance=ExtResource("5_es162")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101468, 0.0249214, -0.0232486)
 snap_hand = false
 hand_pose = SubResource("Resource_i2qxf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

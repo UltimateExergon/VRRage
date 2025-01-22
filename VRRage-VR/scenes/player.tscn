@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://p6g67fls634d"]
 
-[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="1_s4y1t"]
-[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="2_a6x7t"]
-[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="3_08aoj"]
-[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="4_arkbb"]
+[ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="1_s4y1t"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="2_a6x7t"]
+[ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="3_08aoj"]
+[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="4_arkbb"]
 [ext_resource type="Script" path="res://scripts/open_xr_composition_layer_quad.gd" id="5_pj6a8"]
-[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_8lfl8"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_8lfl8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_erxix"]
 albedo_color = Color(0, 0.972549, 1, 1)
@@ -76,7 +76,7 @@ collision_mask = 4
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.020575, -0.0321151, 0.0895705)
 shape = SubResource("BoxShape3D_8pval")
 
-[node name="PlayerBody" parent="." instance=ExtResource("6_8lfl8")]
+[node name="PlayerBody" parent="." groups=["PLAYER"] instance=ExtResource("6_8lfl8")]
 collision_mask = 1017
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody"]

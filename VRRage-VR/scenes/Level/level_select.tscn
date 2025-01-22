@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://rynn5wsvtykk"]
+
+[ext_resource type="PackedScene" uid="uid://brr88ibcpmb4j" path="res://scenes/teleporter.tscn" id="1_n2a6i"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_s1xfp"]
+
+[sub_resource type="Environment" id="Environment_7e4a7"]
+ambient_light_color = Color(0.794338, 0.769397, 0.760934, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3mhjb"]
+size = Vector3(15, 0.5, 15)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1syp0"]
+points = PackedVector3Array(-7.5, -0.25, -7.5, -7.5, 0.25, -7.5, 7.5, -0.25, -7.5, -7.5, -0.25, 7.5, -7.5, 0.25, 7.5, 7.5, 0.25, -7.5, 7.5, -0.25, 7.5, 7.5, 0.25, 7.5)
+
+[node name="level_select" type="Node3D"]
+script = ExtResource("1_s1xfp")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7e4a7")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.62391, 0)
+
+[node name="Raum" type="StaticBody3D" parent="." groups=["room"]]
+collision_mask = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Raum"]
+mesh = SubResource("BoxMesh_3mhjb")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Raum"]
+shape = SubResource("ConvexPolygonShape3D_1syp0")
+
+[node name="Teleporter" parent="." instance=ExtResource("1_n2a6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0524111, -5.38576)
+teleport_level = "testlevel"
+label_text = "Testlevel"
+
+[node name="Teleporter2" parent="." instance=ExtResource("1_n2a6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0447845, 5.26871)
+teleport_level = "birthday"
+label_text = "Birthday Party"

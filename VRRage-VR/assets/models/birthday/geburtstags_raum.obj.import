@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://6r0j371gpkry"
+path="res://.godot/imported/geburtstags_raum.obj-c79895716c0d2ab2c151bc844a8e7640.mesh"
+
+[deps]
+
+files=["res://.godot/imported/geburtstags_raum.obj-c79895716c0d2ab2c151bc844a8e7640.mesh"]
+
+source_file="res://assets/models/birthday/geburtstags_raum.obj"
+dest_files=["res://.godot/imported/geburtstags_raum.obj-c79895716c0d2ab2c151bc844a8e7640.mesh", "res://.godot/imported/geburtstags_raum.obj-c79895716c0d2ab2c151bc844a8e7640.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

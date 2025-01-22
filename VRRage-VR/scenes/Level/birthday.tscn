@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://dh2xvlylxuguu"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_14gsh"]
+[ext_resource type="ArrayMesh" uid="uid://6r0j371gpkry" path="res://assets/models/birthday/geburtstags_raum.obj" id="1_lbqcs"]
+[ext_resource type="PackedScene" uid="uid://brr88ibcpmb4j" path="res://scenes/teleporter.tscn" id="3_nk0ps"]
+[ext_resource type="PackedScene" uid="uid://bbmagsn1leo2j" path="res://scenes/score.tscn" id="4_keygf"]
+[ext_resource type="PackedScene" uid="uid://ijpoii8btt68" path="res://scenes/object_scenes/testlevel/stuhl.tscn" id="5_b8i3k"]
+
+[sub_resource type="Environment" id="Environment_odbat"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8iy02"]
+points = PackedVector3Array(-14.3722, -0.000235506, -7.34584, -11.6723, -0.004155, -4.25966, -14.3722, -0.000235506, 7.34584, -14.3722, 4, -7.34584, 7.34583, -0.000235506, -7.34584, -11.6723, -0.004155, 3.60964, -9.78664, -0.004155, -4.25966, -14.3722, 4, 7.34584, 7.34583, -0.000235506, 7.34584, 7.34583, 4, -7.34584, -9.78664, -0.004155, 3.60964, 7.34583, 4, 7.34584)
+
+[node name="birthday" type="Node3D"]
+script = ExtResource("1_14gsh")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_odbat")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.09786, 0)
+
+[node name="Raum" type="StaticBody3D" parent="." groups=["room"]]
+collision_mask = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Raum"]
+mesh = ExtResource("1_lbqcs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Raum"]
+shape = SubResource("ConvexPolygonShape3D_8iy02")
+
+[node name="Teleporter" parent="." instance=ExtResource("3_nk0ps")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.79532, -0.218406, 0)
+teleport_level = "level_select"
+label_text = "Level Selection"
+
+[node name="Score" parent="." instance=ExtResource("4_keygf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0332, -7.13605)
+
+[node name="chair" parent="." instance=ExtResource("5_b8i3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.485659, 3.08945)

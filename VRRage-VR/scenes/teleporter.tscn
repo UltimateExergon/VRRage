@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://brr88ibcpmb4j"]
+
+[ext_resource type="Script" path="res://scripts/teleporter.gd" id="1_fa1s6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a5j3y"]
+albedo_color = Color(0.0603, 0.67, 0.0603, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_42cru"]
+material = SubResource("StandardMaterial3D_a5j3y")
+size = Vector3(2, 0.5, 2)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1vbwb"]
+points = PackedVector3Array(-1, -0.25, -1, -1, 0.25, -1, 1, -0.25, -1, -1, -0.25, 1, -1, 0.25, 1, 1, 0.25, -1, 1, -0.25, 1, 1, 0.25, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wughb"]
+size = Vector3(2, 3, 2)
+
+[node name="Teleporter" type="Node3D"]
+script = ExtResource("1_fa1s6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_42cru")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_1vbwb")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23805, 0)
+shape = SubResource("BoxShape3D_wughb")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.00367, 0)
+billboard = 1
+text = "To: "
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

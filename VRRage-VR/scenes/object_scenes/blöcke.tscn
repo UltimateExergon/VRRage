@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://cga3j5ocd81bb"]
+
+[ext_resource type="PackedScene" uid="uid://cj86q4pg0ewdj" path="res://assets/models/Blöcke.glb" id="1_kauxx"]
+
+[node name="blöcke" instance=ExtResource("1_kauxx")]
+
+[node name="Block_001" parent="." index="0"]
+visible = false
+
+[node name="Block_002" parent="." index="1"]
+visible = false
+
+[node name="Block_003" parent="." index="2"]
+visible = false
+
+[node name="Block_004" parent="." index="3"]
+visible = false
+
+[node name="Block_005" parent="." index="4"]
+visible = false
+
+[node name="Block_006" parent="." index="5"]
+visible = false
