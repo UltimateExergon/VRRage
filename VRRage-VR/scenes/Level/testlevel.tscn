@@ -35,7 +35,7 @@ mesh = ExtResource("1_cyaxt")
 shape = SubResource("ConcavePolygonShape3D_b8k8n")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Raum"]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 14.127, -7.11548)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.127, -7.11548)
 
 [node name="Teleporter" parent="." instance=ExtResource("6_typxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.52947, -2.24113e-05, -3.48849)

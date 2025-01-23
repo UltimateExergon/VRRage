@@ -72,7 +72,9 @@ func _add_shard(original: MeshInstance3D) -> void:
 	shard_container.add_child(body, true)
 	body.global_position = global_transform.origin + original.position
 	body.global_rotation = global_rotation
+	body.collision_layer = 0
 	body.collision_mask = collision_mask
+	body.set_collision_mask_value(4, true)
 	mesh.scale = original.scale
 	shape.scale = original.scale
 	shape.shape = _cached_shapes[original]
@@ -83,7 +85,11 @@ func _add_shard(original: MeshInstance3D) -> void:
 func add_drop():
 	if dropID != "":
 		var item = load(itemPath + current_level + "/" + dropID + itemFormat).instantiate()
-		item.set_dropID(dropID)
+		print(item)
+		if item.get_class() == "RigidBody3D" :
+			item.set_dropID(dropID)
+		else:
+			item.get_children()[0].set_dropID(dropID)
 		print("Spawned Drop at: ", item.global_position)
 		add_child(item)
 		

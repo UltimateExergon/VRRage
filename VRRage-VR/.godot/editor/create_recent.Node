@@ -1,6 +1,7 @@
+CollisionShape3D
+Node
 RigidBody3D
 Node3D
-Node
 MeshInstance3D
 StaticBody3D
 Label3D
@@ -11,4 +12,3 @@ Label
 XRToolsPickable
 CanvasLayer
 CharacterBody3D
-CollisionShape3D

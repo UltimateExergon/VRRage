@@ -95,8 +95,15 @@ fragmented = ExtResource("2_bt2i2")
 score_points = 300
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0745644, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0923348, 0)
+collision_layer = 4
+collision_mask = 196623
+freeze_mode = 1
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("3_okhlp")
+dropID = "gabel"
 
 [node name="Holzteil" type="MeshInstance3D" parent="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.122959, 0)
@@ -118,6 +125,8 @@ shape = SubResource("ConvexPolygonShape3D_ehe05")
 
 [node name="GrabPointHandLeft" parent="RigidBody3D" instance=ExtResource("4_3i741")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0162068, 0.0568625, -0.123044)
+snap_hand = false
 
 [node name="GrabPointHandRight" parent="RigidBody3D" instance=ExtResource("5_jjo5f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00679484, 0.0570835, -0.119805)
+snap_hand = false

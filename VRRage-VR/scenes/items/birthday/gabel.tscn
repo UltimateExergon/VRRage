@@ -46,32 +46,35 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_gf1ms")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lgyhu"]
-points = PackedVector3Array(1.00002, 0.0475729, 1.05888, 0.885691, 0.136988, 4.94971, 0.999827, -0.0535633, 2.2866, 1.00002, -0.0900706, 1.05888, 0.269592, -0.00653936, -7.33847, 0.129614, 0.281998, -1.15101, 0.885691, 0.109422, 4.94971, -0.885864, 0.136988, 4.94971, 0.999827, -0.191207, 2.2866, 0.269592, -0.144137, -7.33847, 0.184626, -9.96292e-05, -7.48017, -0.129786, 0.281998, -1.15101, -0.885864, 0.109422, 4.94971, -1, 0.0475729, 1.05888, -1, -0.0535633, 2.2866, -1, -0.191207, 2.2866, 0.250602, -0.191299, -6.498, -0.269765, -0.144137, -7.33847, 0.184626, -0.0943792, -7.48017, 0.080866, -0.0265998, -7.53026, -0.184799, -9.96292e-05, -7.48017, -0.269765, -0.00653936, -7.33847, -1, -0.0900706, 1.05888, -0.250775, -0.191299, -6.498, -0.184799, -0.0943792, -7.48017, 0.080866, -0.0679253, -7.53026, -0.0810388, -0.0265998, -7.53026, -0.0810388, -0.0679253, -7.53026)
+[sub_resource type="BoxShape3D" id="BoxShape3D_xeqj5"]
+margin = 0.01
+size = Vector3(0.0426865, 0.0134277, 0.193422)
 
 [node name="gabel" type="Node3D"]
 script = ExtResource("1_55hx7")
 fragmented = ExtResource("2_0b5qa")
 
 [node name="PickableObject" parent="." instance=ExtResource("3_um27q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.210649, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0923348, 0)
 collision_mask = 196623
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("4_nttdi")
-dropID = ""
+dropID = "gabel"
 
 [node name="Gabel" type="MeshInstance3D" parent="PickableObject"]
 transform = Transform3D(0.0150238, 0, 0, 0, 0.0150238, 0, 0, 0, 0.0150238, 0, 0, 0)
 mesh = SubResource("ArrayMesh_s6w5l")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="PickableObject"]
-transform = Transform3D(0.0150238, 0, 0, 0, 0.0150238, 0, 0, 0, 0.0150238, 0, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_lgyhu")
-
 [node name="GrabPointHandLeft" parent="PickableObject" instance=ExtResource("4_1g8bx")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0155845, 0.0868624, -0.00702298)
+snap_hand = false
 
 [node name="GrabPointHandRight" parent="PickableObject" instance=ExtResource("5_cx0gj")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0138359, 0.0839003, -0.00712527)
+snap_hand = false
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="PickableObject"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00174941, 0.00211425, -0.0204082)
+shape = SubResource("BoxShape3D_xeqj5")
