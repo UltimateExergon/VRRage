@@ -65,10 +65,11 @@ func load_level(levelname : String) -> void:
 	
 	print("Loading " + levelname)
 	current_level = levelname
-	craftingRecipes = load(recipePath + levelname + recipeFormat).records
+	if levelname != "level_select":
+		craftingRecipes = load(recipePath + levelname + recipeFormat).records
 	var level = load(levelPath + levelname + ".tscn").instantiate()
 	add_child(level)
-	score_label = $testlevel/Label3D
+	score_label = get_node(levelname + "/Score")
 	startPos = level.get_startPos()
 	level.add_to_group("LEVEL")
 

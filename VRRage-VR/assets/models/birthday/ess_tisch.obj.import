@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cpd51qx8iunaf"
+path="res://.godot/imported/ess_tisch.obj-73ef8d72e28dcc726cc21b3a40ed97ee.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ess_tisch.obj-73ef8d72e28dcc726cc21b3a40ed97ee.mesh"]
+
+source_file="res://assets/models/birthday/ess_tisch.obj"
+dest_files=["res://.godot/imported/ess_tisch.obj-73ef8d72e28dcc726cc21b3a40ed97ee.mesh", "res://.godot/imported/ess_tisch.obj-73ef8d72e28dcc726cc21b3a40ed97ee.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,3 +1,8 @@
+RigidBody3D
+Node3D
+Node
+MeshInstance3D
+StaticBody3D
 Label3D
 Panel
 Button
@@ -6,10 +11,4 @@ Label
 XRToolsPickable
 CanvasLayer
 CharacterBody3D
-StaticBody3D
 CollisionShape3D
-RigidBody3D
-ShapeCast3D
-Area3D
-Node3D
-MeshInstance3D

@@ -1,0 +1,50 @@
+[gd_scene load_steps=13 format=3 uid="uid://dy77eurx5l5sg"]
+
+[ext_resource type="Script" path="res://scripts/destruction.gd" id="1_l5d28"]
+[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_p3vlf"]
+[ext_resource type="PackedScene" uid="uid://1ia2pqmmx6kd" path="res://assets/models/birthday/stuhl_kaputt.glb" id="2_tsimk"]
+[ext_resource type="ArrayMesh" uid="uid://banv8qs4g8v87" path="res://assets/models/birthday/stuhl_Cube.res" id="4_m1737"]
+[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="5_ocfaw"]
+[ext_resource type="Animation" path="res://addons/godot-xr-tools/hands/animations/left/Grip 1.res" id="6_y275v"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="7_ggnd3"]
+[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="8_gyh5w"]
+[ext_resource type="Animation" path="res://addons/godot-xr-tools/hands/animations/right/Grip 1.res" id="9_j4btg"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_firlv"]
+points = PackedVector3Array(0.740156, -0.521505, 0.740156, -0.740156, -0.521505, 0.740156, 0.740156, -0.621115, 0.740156, 0.740156, -0.521505, -0.740168, 0.711755, 1.41743, -0.668435, -0.7119, 1.41743, -0.668435, -0.740156, -0.521505, -0.740168, -0.740156, -0.621115, 0.740156, 0.637276, -2.31011, 0.637378, 0.740156, -0.621115, -0.740168, 0.711755, 1.41743, -0.799393, -0.7119, 1.41743, -0.799393, -0.740156, -0.621115, -0.740168, -0.637421, -2.31011, 0.637378, 0.637276, -2.31011, -0.637541, 0.653505, 1.4167, -0.799393, -0.65365, 1.4167, -0.799393, -0.637421, -2.31011, -0.637541)
+
+[sub_resource type="Resource" id="Resource_3oclu"]
+script = ExtResource("7_ggnd3")
+closed_pose = ExtResource("6_y275v")
+
+[sub_resource type="Resource" id="Resource_r7b3h"]
+script = ExtResource("7_ggnd3")
+closed_pose = ExtResource("9_j4btg")
+
+[node name="b_stuhl" type="Node3D"]
+script = ExtResource("1_l5d28")
+fragmented = ExtResource("2_tsimk")
+dropID = "holzteil"
+
+[node name="PickableObject" parent="." instance=ExtResource("1_p3vlf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00270891, -0.0146251, 0.0693225)
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 1
+
+[node name="Stuhl" type="MeshInstance3D" parent="PickableObject"]
+transform = Transform3D(0.342815, 0, 0, 0, 0.342815, 0, 0, 0, 0.342815, 0, 0.79194, 0)
+mesh = ExtResource("4_m1737")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="PickableObject"]
+transform = Transform3D(0.342815, 0, 0, 0, 0.342815, 0, 0, 0, 0.342815, 0, 0.79194, 0)
+shape = SubResource("ConvexPolygonShape3D_firlv")
+
+[node name="GrabPointHandLeft" parent="PickableObject" instance=ExtResource("5_ocfaw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.198554, 0.322811, 0.124802)
+hand_pose = SubResource("Resource_3oclu")
+
+[node name="GrabPointHandRight" parent="PickableObject" instance=ExtResource("8_gyh5w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.196228, 0.313296, 0.124425)
+hand_pose = SubResource("Resource_r7b3h")

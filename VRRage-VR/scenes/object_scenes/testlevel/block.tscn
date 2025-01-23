@@ -1,12 +1,12 @@
 [gd_scene load_steps=17 format=4 uid="uid://0dswmvtcjlft"]
 
-[ext_resource type="PackedScene" uid="uid://dguikl2uowstc" path="res://assets/models/testlevel/block_kaputt.glb" id="2_o8g2k"]
-[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_rom2c"]
-[ext_resource type="Animation" uid="uid://nq3xh1olqipq" path="res://addons/godot-xr-tools/hands/animations/left/Grip Shaft.res" id="3_ix2ph"]
+[ext_resource type="PackedScene" uid="uid://dguikl2uowstc" path="res://assets/models/testlevel/Blöcke_kaputt.glb" id="2_o8g2k"]
+[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_rom2c"]
+[ext_resource type="Animation" path="res://addons/godot-xr-tools/hands/animations/left/Grip Shaft.res" id="3_ix2ph"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="3_w3vel"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="4_qtmvn"]
-[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_es162"]
-[ext_resource type="Animation" uid="uid://c8dghcftg1thx" path="res://addons/godot-xr-tools/hands/animations/right/Grip Shaft.res" id="6_ilny4"]
+[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_es162"]
+[ext_resource type="Animation" path="res://addons/godot-xr-tools/hands/animations/right/Grip Shaft.res" id="6_ilny4"]
 [ext_resource type="Script" path="res://scripts/destruction.gd" id="7_cle0r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8642x"]

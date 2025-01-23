@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=4 uid="uid://bdpdnjkc3623u"]
+
+[ext_resource type="Script" path="res://scripts/destruction.gd" id="1_fl3qa"]
+[ext_resource type="PackedScene" uid="uid://dwgrubwysepy2" path="res://assets/models/birthday/holzteil_kaputt.glb" id="2_ee75y"]
+[ext_resource type="Script" path="res://scripts/item.gd" id="3_ot6kf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6mpt0"]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_color = Color(0.65167, 0.477939, 0.393352, 1)
+roughness = 0.904545
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6tr0v"]
+_surfaces = [{
+"aabb": AABB(-0.0224847, -0.0205327, -0.0756109, 0.0408495, 0.033462, 0.104236),
+"format": 34359742465,
+"index_count": 66,
+"index_data": PackedByteArray("AAAHAAgACAAFAAAADAAJAAoACQAAAAsACQAMAAAAAAAGAAsADAAHAAAACwACAAEAAgAGAAUAAgALAAYABAAJAAMABAAKAAkABQAEAAIABAAMAAoADAAIAAcACAAEAAUABAAIAAwACQABAAMACQALAAEAAAAFAAYABAABAAIABAADAAEA"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 13,
+"vertex_data": PackedByteArray("6MOCPKBYBLywKqw80HGWPDA0qLzi2Zq90HGWPGDVUzzWcJm92DG4vDA0qLzi2Zq92DG4vGDVUzzWcJm92HGWPGDVUzwQkIc80HGWPCCeQ7wQbo88QHgSu2DVUzxwn8484OasO2DVUzxYVbs82DG4vDA0qLzgEaW72DG4vGDVUzyAAc080LltPDA0qLxwzBc8ENNXvGDVUzxwf+o8")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ddly1"]
+resource_name = "holzteil_Cube_cell_018"
+_surfaces = [{
+"aabb": AABB(-0.0224847, -0.0205327, -0.0756109, 0.0408495, 0.033462, 0.104236),
+"attribute_data": PackedByteArray("AACAPwAAAAAAAIA/AACAPwAAAAAAAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAAAAAADAPgAAgD4AAMA+AACAPgAAwD4AAIA+AAAgPwAAgD4AACA/AACAPgAAID8AAIA+AADAPgAAAD8AAMA+AAAAPwAAwD4AAAA/AAAgPwAAAD8AACA/AAAAPwAAID8AAAA/SwuMPQAAgD+Wfm4/AACAP1KI/jwAAIA/AACAP2CdGT0AACA/yNzAPgAAID/AS5w+1IamPgAAAD8AAMA+lrwMPwAAID8wHBI/AAAgPzAcEj88XaE+gBSMPgAAwD7wrEE+AAAgP44x9z6S+9w+5M48PgAAID8gtD0+AAAgPyC0PT6iB2s/8MKnPaIHaz8AAIA/AACAP23fbj+QBIk9bt9uPxZCVD+8MEo+AACAP0ghBz6vN14/RCEHPt9uWD+MlaA+tER5PyCCmT0AAIA/YP5aPQ=="),
+"format": 34359742487,
+"index_count": 66,
+"index_data": PackedByteArray("AQAjACQAJQASAAIAKAApACYAKQAFACsAKQAoAAUABAAVACoAJwAiAAAAHQALAAgACwAfACEACwAdAB8AEQAZAA4AEQAbABkAIAAQAAoAEAAeABoAHgAXABYAFwAQACAAEAAXAB4AGAAHAA0AGAAcAAcAAwATABQADwAGAAkADwAMAAYA"),
+"material": SubResource("StandardMaterial3D_6mpt0"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 44,
+"vertex_data": PackedByteArray("6MOCPKBYBLywKqw86MOCPKBYBLywKqw86MOCPKBYBLywKqw86MOCPKBYBLywKqw86MOCPKBYBLywKqw86MOCPKBYBLywKqw80HGWPDA0qLzi2Zq90HGWPDA0qLzi2Zq90HGWPDA0qLzi2Zq90HGWPGDVUzzWcJm90HGWPGDVUzzWcJm90HGWPGDVUzzWcJm92DG4vDA0qLzi2Zq92DG4vDA0qLzi2Zq92DG4vDA0qLzi2Zq92DG4vGDVUzzWcJm92DG4vGDVUzzWcJm92DG4vGDVUzzWcJm92HGWPGDVUzwQkIc82HGWPGDVUzwQkIc80HGWPCCeQ7wQbo880HGWPCCeQ7wQbo88QHgSu2DVUzxwn8484OasO2DVUzxYVbs82DG4vDA0qLzgEaW72DG4vDA0qLzgEaW72DG4vGDVUzyAAc082DG4vGDVUzyAAc080LltPDA0qLxwzBc80LltPDA0qLxwzBc8ENNXvGDVUzxwf+o80HGWPCCeQ7wQbo882HGWPGDVUzwQkIc82HGWPGDVUzwQkIc8QHgSu2DVUzxwn848QHgSu2DVUzxwn8484OasO2DVUzxYVbs84OasO2DVUzxYVbs82DG4vGDVUzyAAc08ENNXvGDVUzxwf+o8ENNXvGDVUzxwf+o82DG4vDA0qLzgEaW70LltPDA0qLxwzBc80LltPDA0qLxwzBc82JxrhqqBroT4nJeGDsLTmqylSYyLn3v6Fcztgf///z/tfIhD4rJE01dqq03ZxVqOaf3///9/tP7/fwAA/////0j473jxhkf7af3///9/tP7/f///////v0j473jkht/6af3///9/tP7/fwAA/////wAA/3//f7T+af3///9/tP7/f///////vwAA/3//f9n+rKVJjIufe/oVzO2B////PxXM7YH///8/7XyIQ+KyRNP/f///////v/9///////+//38AAP////8AAP9//38f//9///////+/AAD/f/9/Of//fwAAAAD+/0j473hHhiD2/3///////79I+O94mYaZ+P9///////+/SPjveAOHzvvYnGuGqoGuhPicl4YOwtOa+JyXhg7C05qspUmMi597+ldqq03ZxVqO2JxrhqqBroRXaqtN2cVajldqq03ZxVqO7XyIQ+KyRNNXaqtN2cVajg==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_6tr0v")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5blto"]
+points = PackedVector3Array(0.0183648, 0.0129293, 0.0165446, 0.00527347, 0.0129293, 0.0228604, 0.0159617, -0.00807944, 0.0210136, 0.0183608, -0.0119412, 0.0175037, 0.0183608, -0.0205327, -0.0756109, 0.0183608, 0.0129293, -0.0749273, -0.00223587, 0.0129293, 0.0252173, -0.013176, 0.0129293, 0.0286252, -0.0224847, -0.0205327, -0.00504541, 0.0145062, -0.0205327, 0.00925951, -0.0224847, -0.0205327, -0.0756109, -0.0224847, 0.0129293, -0.0749273, -0.0224847, 0.0129293, 0.0250235)
+
+[node name="holzteil" type="Node3D"]
+script = ExtResource("1_fl3qa")
+fragmented = ExtResource("2_ee75y")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0608018, 0)
+collision_layer = 4
+collision_mask = 196615
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("3_ot6kf")
+
+[node name="Mesh" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("ArrayMesh_ddly1")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("ConvexPolygonShape3D_5blto")
