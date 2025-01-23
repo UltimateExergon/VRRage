@@ -25,6 +25,8 @@ var current_score : int = 0
 
 var score_label = ""
 
+var player
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	xr_interface = XRServer.find_interface("OpenXR")
@@ -78,12 +80,15 @@ func load_level(levelname : String) -> void:
 	
 func load_player() -> void:
 	print("Loading Player")
-	var player = load("res://scenes/player.tscn").instantiate()
-	player.global_position = startPos
+	player = load("res://scenes/player.tscn").instantiate()
+	teleport_player()
 	add_child(player)
 	
 	player.get_node("OpenXRCompositionLayerQuad").layer_viewport = $SubViewport
 	increase_score(0)
+	
+func teleport_player():
+	player.global_position = startPos
 	
 func craft(item1, item2):
 	ingredients.append([item1.get_dropID(), item2.get_dropID()])
