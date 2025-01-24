@@ -67,6 +67,7 @@ func load_level(levelname : String) -> void:
 	
 	print("Loading " + levelname)
 	current_level = levelname
+	current_score = 0
 	var level = load(levelPath + levelname + ".tscn").instantiate()
 	add_child(level)
 	if levelname != "level_select":

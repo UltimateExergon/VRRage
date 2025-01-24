@@ -1,5 +1,5 @@
 0453c2224f3a23d633b93278348c95c7
-::res://::1737724481
+::res://::1737724613
 icon.svg::CompressedTexture2D::8871517404379361786::1736183127::1736428264::1::::<><>::
 openxr_action_map.tres::OpenXRActionMap::2238366026904376263::1737724481::0::1::::<><>::
 ::res://addons/::1736946931
@@ -383,7 +383,7 @@ start_xr.tscn::PackedScene::-1::1736428331::0::1::::<><>::
 LICENSE.txt::TextFile::-1::1605988452::0::1::::<><>::
 Montserrat-Medium.ttf::FontFile::6898615597894483195::1323702000::1737464422::1::::<><>::
 ::res://assets/models/::1737569205
-::res://assets/models/birthday/::1737723414
+::res://assets/models/birthday/::1737724558
 ess_tisch.obj::Mesh::5833735973058353081::1737722931::1737723413::1::::<><>::
 Gabel.glb::PackedScene::9089052361627481007::1737654180::1737654190::1::::<><>::
 Gabel_kaputt.glb::PackedScene::4581356821268974803::1737654449::1737654526::1::::<><>::
@@ -428,8 +428,8 @@ testcraft2.tscn::PackedScene::1127415381951136936::1737477595::0::1::::<><>::
 testcube.tscn::PackedScene::3931838055172333702::1737657582::0::1::::<><>::res://scripts/item.gd
 testcylinder.tscn::PackedScene::2687235434952697889::1737477595::0::1::::<><>::res://scripts/item.gd
 testsphere.tscn::PackedScene::8594462225613835084::1737477595::0::1::::<><>::res://scripts/item.gd
-::res://scenes/Level/::1737724519
-birthday.tscn::PackedScene::7707756763774251972::1737724519::0::1::::<><>::res://scripts/level.gd<>uid://6r0j371gpkry::::res://assets/models/birthday/geburtstags_raum.obj<>uid://brr88ibcpmb4j::::res://scenes/teleporter.tscn<>uid://bbmagsn1leo2j::::res://scenes/score.tscn<>uid://cpd51qx8iunaf::::res://assets/models/birthday/ess_tisch.obj<>uid://dfy56pujwfofb::::res://assets/models/birthday/geschenk_tisch.obj<>uid://dr0x3tv55r54f::::res://assets/models/birthday/hoher_schrank.obj<>uid://dy77eurx5l5sg::::res://scenes/object_scenes/birthday/b_stuhl.tscn<>uid://fa03r3j0co0m::::res://assets/models/birthday/kleiner_schrank.obj<>uid://7h0wdl1creks::::res://scenes/items/birthday/gabel.tscn
+::res://scenes/Level/::1737724584
+birthday.tscn::PackedScene::7707756763774251972::1737724584::0::1::::<><>::res://scripts/level.gd<>uid://6r0j371gpkry::::res://assets/models/birthday/geburtstags_raum.obj<>uid://brr88ibcpmb4j::::res://scenes/teleporter.tscn<>uid://bbmagsn1leo2j::::res://scenes/score.tscn<>uid://cpd51qx8iunaf::::res://assets/models/birthday/ess_tisch.obj<>uid://dfy56pujwfofb::::res://assets/models/birthday/geschenk_tisch.obj<>uid://dr0x3tv55r54f::::res://assets/models/birthday/hoher_schrank.obj<>uid://dy77eurx5l5sg::::res://scenes/object_scenes/birthday/b_stuhl.tscn<>uid://fa03r3j0co0m::::res://assets/models/birthday/kleiner_schrank.obj<>uid://7h0wdl1creks::::res://scenes/items/birthday/gabel.tscn
 level_select.tscn::PackedScene::1243569554703589862::1737569205::0::1::::<><>::uid://brr88ibcpmb4j::::res://scenes/teleporter.tscn<>res://scripts/level.gd
 testlevel.tscn::PackedScene::2275469082689215875::1737663379::0::1::::<><>::res://scripts/level.gd<>uid://b8gwlrftd1c7n::::res://assets/models/testlevel/dummy_raum.obj<>uid://0dswmvtcjlft::::res://scenes/object_scenes/testlevel/block.tscn<>uid://ijpoii8btt68::::res://scenes/object_scenes/testlevel/stuhl.tscn<>uid://brr88ibcpmb4j::::res://scenes/teleporter.tscn<>uid://bbmagsn1leo2j::::res://scenes/score.tscn<>uid://bcy1nlojdvrcd::::res://scenes/object_scenes/testlevel/vase.tscn
 ::res://scenes/object_scenes/::1737651589
