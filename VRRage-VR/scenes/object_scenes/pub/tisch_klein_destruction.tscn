@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmogc34j05jip"]
+
+[ext_resource type="Script" path="res://scripts/destruction.gd" id="1_er18x"]
+[ext_resource type="PackedScene" uid="uid://bh5ooa06ubhly" path="res://assets/models/pub/TischKlein_kaputt.glb" id="2_ur0xs"]
+[ext_resource type="PackedScene" uid="uid://cmmh4s51ysgcd" path="res://scenes/object_scenes/pub/tisch_klein.tscn" id="3_msyiv"]
+
+[node name="Kleiner Tisch" type="Node3D"]
+script = ExtResource("1_er18x")
+fragmented = ExtResource("2_ur0xs")
+
+[node name="TischKlein" parent="." instance=ExtResource("3_msyiv")]

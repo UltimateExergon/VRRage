@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://cenukpfporvah"]
+
+[ext_resource type="Script" path="res://scripts/destruction.gd" id="1_yi2wk"]
+[ext_resource type="PackedScene" uid="uid://dsif8pobg7vbk" path="res://assets/models/pub/TischGroß_kaputt.glb" id="2_2bmg8"]
+[ext_resource type="PackedScene" uid="uid://d3xbhds6x1wx" path="res://scenes/object_scenes/pub/tisch_groß.tscn" id="2_tlgrr"]
+
+[node name="Großer Tisch" type="Node3D"]
+script = ExtResource("1_yi2wk")
+fragmented = ExtResource("2_2bmg8")
+
+[node name="TischGroß" parent="." instance=ExtResource("2_tlgrr")]
