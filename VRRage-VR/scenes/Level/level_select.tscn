@@ -40,3 +40,8 @@ label_text = "Testlevel"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0447845, 5.26871)
 teleport_level = "birthday"
 label_text = "Birthday Party"
+
+[node name="Teleporter3" parent="." instance=ExtResource("1_n2a6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6614, 0.104348, 0)
+teleport_level = "office"
+label_text = "Büro"
