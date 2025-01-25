@@ -1,6 +1,6 @@
-res://scenes/Level/birthday.tscn
+res://assets/models/birthday/stuhl_Cube.res
+res://scenes/Level/pub.tscn
 res://openxr_action_map.tres
 res://addons/godot-xr-tools/hands/animations/left/hand_blend_tree.tres
 res://addons/godot-xr-tools/hands/animations/right/hand_blend_tree.tres
 res://scripts/destruction.gd
-res://scripts/main.gd

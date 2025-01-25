@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://yg8clck6x474"]
+[gd_scene load_steps=12 format=3 uid="uid://yg8clck6x474"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_bomn3"]
 [ext_resource type="ArrayMesh" uid="uid://cj7huxnprjrpq" path="res://assets/models/pub/Raum.obj" id="2_lofus"]
 [ext_resource type="PackedScene" uid="uid://brr88ibcpmb4j" path="res://scenes/teleporter.tscn" id="3_0vpfk"]
+[ext_resource type="ArrayMesh" uid="uid://xvjlx35kanxy" path="res://assets/models/pub/Tresen.obj" id="3_ndrhm"]
 [ext_resource type="PackedScene" uid="uid://bbmagsn1leo2j" path="res://scenes/score.tscn" id="4_jcchi"]
 [ext_resource type="PackedScene" uid="uid://cw0qc8nlbnwjj" path="res://scenes/object_scenes/pub/barhocker_destruction.tscn" id="5_a2iwf"]
 [ext_resource type="PackedScene" uid="uid://bmogc34j05jip" path="res://scenes/object_scenes/pub/tisch_klein_destruction.tscn" id="6_66xwd"]
@@ -12,6 +13,8 @@
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_d5vsx"]
 points = PackedVector3Array(-4.51654, 0, -3.3535, -4.51654, 0, 4.43595, -4.51654, 3, -3.3535, 3.83279, 0, -3.3535, -4.51654, 3, 4.43595, 3.83279, 0, 4.43595, 3.83279, 3, -3.3535, 3.83279, 3, 4.43595)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wmacs"]
 
 [node name="Pub" type="Node3D"]
 script = ExtResource("1_bomn3")
@@ -33,6 +36,15 @@ shape = SubResource("ConvexPolygonShape3D_d5vsx")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Raum"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05419, 3.18883, -2.1254)
+
+[node name="Tresen" type="StaticBody3D" parent="."]
+collision_mask = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tresen"]
+mesh = ExtResource("3_ndrhm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tresen"]
+shape = SubResource("ConvexPolygonShape3D_wmacs")
 
 [node name="Teleporter" parent="." instance=ExtResource("3_0vpfk")]
 transform = Transform3D(0.657715, 0, 0, 0, 0.767669, 0, 0, 0, 0.624765, 3.0445, 0, 3.63578)
