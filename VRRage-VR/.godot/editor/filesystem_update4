@@ -1,4 +1,3 @@
-res://assets/models/birthday/stuhl_Cube.res
 res://scenes/Level/pub.tscn
 res://openxr_action_map.tres
 res://addons/godot-xr-tools/hands/animations/left/hand_blend_tree.tres

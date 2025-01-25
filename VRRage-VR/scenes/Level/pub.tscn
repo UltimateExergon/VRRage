@@ -38,6 +38,7 @@ shape = SubResource("ConvexPolygonShape3D_d5vsx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05419, 3.18883, -2.1254)
 
 [node name="Tresen" type="StaticBody3D" parent="."]
+collision_layer = 8
 collision_mask = 0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Tresen"]
