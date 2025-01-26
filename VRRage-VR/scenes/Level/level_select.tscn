@@ -47,5 +47,11 @@ teleport_level = "office"
 label_text = "Büro"
 
 [node name="Teleporter4" parent="." instance=ExtResource("1_n2a6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.46727, 0.0720582, 5.21268)
 teleport_level = "markt"
 label_text = "Supermarkt"
+
+[node name="Teleporter5" parent="." instance=ExtResource("1_n2a6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.51301, 0.0988855, -4.66867)
+teleport_level = "pub"
+label_text = "Bar"
