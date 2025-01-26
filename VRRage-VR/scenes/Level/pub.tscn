@@ -11,16 +11,15 @@
 
 [sub_resource type="Environment" id="Environment_m3w4k"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_d5vsx"]
-points = PackedVector3Array(-4.51654, 0, -3.3535, -4.51654, 0, 4.43595, -4.51654, 3, -3.3535, 3.83279, 0, -3.3535, -4.51654, 3, 4.43595, 3.83279, 0, 4.43595, 3.83279, 3, -3.3535, 3.83279, 3, 4.43595)
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qos8j"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wmacs"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1elgc"]
 
 [node name="Pub" type="Node3D"]
 script = ExtResource("1_bomn3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.835088, 0.550116, 0, -0.550116, 0.835088, 0, 2.60028, 3.20793)
+transform = Transform3D(1, 0, 0, 0, 0.835088, 0.550116, 0, -0.550116, 0.835088, -2.38747, 2.60028, 4.43756)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_m3w4k")
@@ -29,76 +28,78 @@ environment = SubResource("Environment_m3w4k")
 collision_mask = 0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Raum"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38747, 0, 1.22963)
 mesh = ExtResource("2_lofus")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Raum"]
-shape = SubResource("ConvexPolygonShape3D_d5vsx")
+shape = SubResource("ConcavePolygonShape3D_qos8j")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Raum"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05419, 3.18883, -2.1254)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42792, 2.04989, 4.00189)
 
 [node name="Tresen" type="StaticBody3D" parent="."]
 collision_layer = 8
 collision_mask = 0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Tresen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38747, 0, 1.22963)
 mesh = ExtResource("3_ndrhm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Tresen"]
-shape = SubResource("ConvexPolygonShape3D_wmacs")
+shape = SubResource("ConcavePolygonShape3D_1elgc")
 
 [node name="Teleporter" parent="." instance=ExtResource("3_0vpfk")]
-transform = Transform3D(0.657715, 0, 0, 0, 0.767669, 0, 0, 0, 0.624765, 3.0445, 0, 3.63578)
+transform = Transform3D(0.657715, 0, 0, 0, 0.767669, 0, 0, 0, 0.624765, 0.657029, 0, 4.86541)
 teleport_level = "level_select"
 label_text = "Level Selection"
 
 [node name="Score" parent="." instance=ExtResource("4_jcchi")]
-transform = Transform3D(1, 0, 0, 0, 0.929821, -0.368011, 0, 0.368011, 0.929821, 0, 3.0332, -3.21225)
+transform = Transform3D(1, 0, 0, 0, 0.929821, -0.368011, 0, 0.368011, 0.929821, -2.38747, 3.0332, -1.98262)
 
 [node name="Hocker" parent="." instance=ExtResource("5_a2iwf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.60579, 0, 1.4443)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99326, 0, 2.67393)
 
 [node name="Hocker1" parent="." instance=ExtResource("5_a2iwf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61153, 0, 0.465081)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.999, 0, 1.69471)
 
 [node name="Hocker2" parent="." instance=ExtResource("5_a2iwf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.496462, 0, 0.458958)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.88393, 0, 1.68859)
 
 [node name="Hocker3" parent="." instance=ExtResource("5_a2iwf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.57882, 0, 2.44915)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.96629, 0, 3.67878)
 
 [node name="Hocker4" parent="." instance=ExtResource("5_a2iwf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.78347, 0, 0.442404)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.604, 0, 1.67203)
 
 [node name="Hocker5" parent="." instance=ExtResource("5_a2iwf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86286, 0, 0.458889)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.524611, 0, 1.68852)
 
 [node name="Hocker6" parent="." instance=ExtResource("5_a2iwf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98736, 0, 0.399231)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.599889, 0, 1.62886)
 
 [node name="Kleiner Tisch" parent="." instance=ExtResource("6_66xwd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.85622, 0.0126005, -0.975256)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.24369, 0.0126005, 0.254371)
 
 [node name="Hocker7" parent="." instance=ExtResource("5_a2iwf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.84282, 0, 0.157277)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.23029, 0, 1.3869)
 
 [node name="Hocker8" parent="." instance=ExtResource("5_a2iwf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.58384, 0, -1.03353)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.97131, 0, 0.196097)
 
 [node name="Hocker9" parent="." instance=ExtResource("5_a2iwf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.84205, 0, -2.26928)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.22952, 0, -1.03965)
 
 [node name="Großer Tisch" parent="." instance=ExtResource("7_0oxc3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.404428, 0.690094, -2.74111)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.98347, 0, -1.51137)
 
 [node name="Hocker10" parent="." instance=ExtResource("5_a2iwf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.57277, 0, -2.71864)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.96024, 0, -1.48901)
 
 [node name="Hocker11" parent="." instance=ExtResource("5_a2iwf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.292088, 0, -1.70758)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.67956, 0, -0.477953)
 
 [node name="Hocker12" parent="." instance=ExtResource("5_a2iwf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.966131, 0, -1.73005)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42134, 0, -0.500423)
 
 [node name="Hocker13" parent="." instance=ExtResource("5_a2iwf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.40409, 0, -2.71864)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0166187, 0, -1.48901)
