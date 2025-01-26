@@ -182,3 +182,11 @@ func _on_openxr_pose_recentered() -> void:
 	# User recentered view, we have to react to this by recentering the view.
 	# This is game implementation dependent.
 	emit_signal("pose_recentered")
+	
+# Test if a given node is of the specified class
+func is_xr_class(node : Node, type : String) -> bool:
+	if node.has_method("is_xr_class"):
+		if node.is_xr_class(type):
+			return true
+		
+	return node.is_class(type)

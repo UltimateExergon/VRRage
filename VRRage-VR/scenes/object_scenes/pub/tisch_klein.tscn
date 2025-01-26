@@ -5,6 +5,7 @@
 [ext_resource type="Script" path="res://scripts/destruction.gd" id="3_p4scg"]
 
 [node name="TischKlein" instance=ExtResource("1_2ryas")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.619808, 0)
 script = ExtResource("2_fpekg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
