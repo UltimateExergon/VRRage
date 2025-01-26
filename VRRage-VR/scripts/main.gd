@@ -72,6 +72,7 @@ func load_level(levelname : String) -> void:
 	add_child(level)
 	if levelname != "level_select":
 		craftingRecipes = load(recipePath + levelname + recipeFormat).records
+		print(levelname)
 		score_label = get_node(levelname + "/Score")
 	startPos = level.get_startPos()
 	level.add_to_group("LEVEL")

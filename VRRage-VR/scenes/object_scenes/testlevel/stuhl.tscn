@@ -1,13 +1,13 @@
 [gd_scene load_steps=15 format=4 uid="uid://ijpoii8btt68"]
 
 [ext_resource type="Script" path="res://scripts/destruction.gd" id="1_6hc1i"]
-[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_aefwt"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_aefwt"]
 [ext_resource type="PackedScene" uid="uid://ctsmotcwywjp4" path="res://assets/models/testlevel/stuhl_kaputt.glb" id="2_ihkwt"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="3_5jl1l"]
-[ext_resource type="Animation" path="res://addons/godot-xr-tools/hands/animations/left/Grip 1.res" id="3_16aim"]
+[ext_resource type="Animation" uid="uid://dqa0h82y3qn1t" path="res://addons/godot-xr-tools/hands/animations/left/Grip 1.res" id="3_16aim"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="4_573tt"]
-[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_ipk51"]
-[ext_resource type="Animation" path="res://addons/godot-xr-tools/hands/animations/right/Grip 1.res" id="6_jqmd2"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_ipk51"]
+[ext_resource type="Animation" uid="uid://daqddcrbpam0c" path="res://addons/godot-xr-tools/hands/animations/right/Grip 1.res" id="6_jqmd2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pd58o"]
 resource_name = "Stuhl"

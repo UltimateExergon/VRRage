@@ -57,7 +57,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.600067, 2.50794, -4.97487)
 [node name="Teleporter" parent="." instance=ExtResource("4_l552s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.48097, -0.0549912, -5.87064)
 teleport_level = "level_select"
-label_text = "Levelauwahl"
+label_text = "Levelauswahl"
 
 [node name="Regale" type="Node3D" parent="."]
 

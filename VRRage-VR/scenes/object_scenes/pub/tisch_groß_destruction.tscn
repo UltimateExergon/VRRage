@@ -52,6 +52,9 @@ script = ExtResource("1_yi2wk")
 fragmented = ExtResource("2_2bmg8")
 
 [node name="TischGroß" parent="." instance=ExtResource("3_nl16v")]
+collision_mask = 196623
+contact_monitor = true
+max_contacts_reported = 1
 
 [node name="Großer Tisch" type="MeshInstance3D" parent="TischGroß"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.738, 0.775, 0.231)
@@ -64,6 +67,8 @@ shape = SubResource("ConvexPolygonShape3D_xxqdi")
 
 [node name="GrabPointHandLeft" parent="TischGroß" instance=ExtResource("4_hxdkf")]
 transform = Transform3D(4.08322e-09, 0.995628, 0.0934133, 4.35203e-08, -0.0934133, 0.995628, 1, 0, -4.37114e-08, 0, 0.583705, -0.509452)
+snap_hand = false
 
 [node name="GrabPointHandRight" parent="TischGroß" instance=ExtResource("5_2nm64")]
 transform = Transform3D(5.68657e-09, 0.991502, 0.130094, 4.33399e-08, -0.130094, 0.991502, 1, 0, -4.37114e-08, 0, 0.587472, 0.539103)
+snap_hand = false

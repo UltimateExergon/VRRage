@@ -84,6 +84,9 @@ script = ExtResource("1_qu6sr")
 fragmented = ExtResource("2_x6w5x")
 
 [node name="Barhocker" parent="." instance=ExtResource("3_1ajed")]
+collision_mask = 196623
+contact_monitor = true
+max_contacts_reported = 1
 
 [node name="Barhocker" type="MeshInstance3D" parent="Barhocker"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -96,6 +99,8 @@ shape = SubResource("ConvexPolygonShape3D_2cgow")
 
 [node name="GrabPointHandLeft" parent="Barhocker" instance=ExtResource("4_al3id")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.324554, 1.02985, -0.117799)
+snap_hand = false
 
 [node name="GrabPointHandRight" parent="Barhocker" instance=ExtResource("5_mqg6o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.323607, 1.03346, -0.0939908)
+snap_hand = false
