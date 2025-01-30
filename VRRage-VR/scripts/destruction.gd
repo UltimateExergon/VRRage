@@ -128,9 +128,10 @@ static func _random_direction() -> Vector3:
 func _on_body_entered(body: Node):
 	var rigidBody = get_children()[0]
 	
-	if rigidBody.linear_velocity.length() > 1 and !rigidBody.got_picked_up and body.is_in_group("room"):
-		self.destroy()
-		
-	elif destroyable_by.size() > 0 and body.is_in_group("hand") == false:
-		if check_destroyable(body) == true:
-			self.destroy()
+	if !rigidBody.got_picked_up:
+		if destroyable_by.size() > 0 and body.is_in_group("room") == false:
+			if check_destroyable(body) == true:
+				self.destroy()
+		else:
+			if rigidBody.linear_velocity.length() > 1 and body.is_in_group("room"):
+				self.destroy()
