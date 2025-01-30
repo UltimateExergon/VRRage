@@ -94,16 +94,13 @@ func teleport_player():
 	
 func craft(item1, item2):
 	ingredients.append([item1.get_dropID(), item2.get_dropID()])
-	print("ATTEMTPING TO CRAFT WITH INGREDIENTS: ", ingredients)
 	if ingredients.size() == 2:
 		var new_item = match_items()
 		if new_item != null:
-			print("CRAFTING RECIPE FOUND, PERFORMING CRAFT OF ITEM: ", new_item)
 			spawn_crafted_item(new_item, item1.global_position)
 			item1.queue_free()
 			item2.queue_free()
 		else: 
-			print("NO RECIPE FOUND FOR: ", ingredients)
 			item1.collision_reported = false
 			item2.collision_reported = false
 			ingredients.clear()
@@ -111,17 +108,12 @@ func craft(item1, item2):
 func spawn_crafted_item(itemID : String, pos : Vector3):
 	var item = load(itemPath + current_level + "/" + itemID + itemFormat).instantiate()
 	item.global_position = pos
-	print("CRAFTED NEW ITEM AT POSITION: ", item.global_position)
 	get_node(current_level).add_child(item)
 		
 func check_for_recipe(items : Array):
-	print("CHECKING FOR RECIPES WITH ITEMS: ", items)
 	for i in craftingRecipes:
-		print("CHECKING RECIPE: ", i)
 		var recipe_ingredients : Array = [i[0], i[1]]
-		print("INGREDIENTS: ", recipe_ingredients)
 		if (items[0] == recipe_ingredients[0] or items[0] == recipe_ingredients[1]) and (items[1] == recipe_ingredients[0] or items[1] == recipe_ingredients[1]):
-			print("RETURNING RECIPE RESULT: ", i[2])
 			return i[2]
 			
 	return null
@@ -129,8 +121,6 @@ func check_for_recipe(items : Array):
 func match_items():
 	var item1 : Array = ingredients[0]
 	var item2 : Array = ingredients[1]
-	
-	print("MATCHING ITEMS: ", item1, item2)
 	
 	if item1[0] == item2[1] and item1[1] == item2[0]:
 		return check_for_recipe(item1)
@@ -144,7 +134,7 @@ func increase_score(points : int):
 
 # Handle OpenXR session ready
 func _on_openxr_session_begun() -> void:
-	load_level("testlevel")
+	load_level("level_select")
 	load_player()
 	
 # Handle OpenXR visible state

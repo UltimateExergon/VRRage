@@ -5,6 +5,7 @@ const itemPath : String = "res://scenes/items/"
 const itemFormat : String = ".tscn"
 
 @export var fragmented : PackedScene: set = set_fragmented
+@export var destroyable_by : Array = [] : get = get_destroyableBy
 @export var dropID : String = ""
 @export var score_points : int = 100
 var shard_container
@@ -27,6 +28,7 @@ func _ready():
 	var body = get_children()[0]
 	body.add_to_group("DESTRUCTIBLE")
 	body.body_entered.connect(_on_body_entered)
+	body.name = self.name
 
 func destroy() -> void:
 	self.position = self.get_children()[0].global_position
@@ -43,6 +45,9 @@ func destroy() -> void:
 	add_timer()
 
 	self.get_children()[0].queue_free()
+	
+func get_destroyableBy() -> Array:
+	return destroyable_by
 	
 func add_score_points():
 	main_node.increase_score(score_points)
@@ -93,6 +98,15 @@ func add_drop():
 		print("Spawned Drop at: ", item.global_position)
 		add_child(item)
 		
+func check_destroyable(body) -> bool:
+	var id = body.name
+	print("Destroyable Check for ID: ", id)
+	for i in destroyable_by:
+		if i == id:
+			return true
+			
+	return false
+		
 func set_currentLevel(levelname : String) -> void:
 	current_level = levelname
 		
@@ -113,5 +127,10 @@ static func _random_direction() -> Vector3:
 	
 func _on_body_entered(body: Node):
 	var rigidBody = get_children()[0]
+	
 	if rigidBody.linear_velocity.length() > 1 and !rigidBody.got_picked_up and body.is_in_group("room"):
 		self.destroy()
+		
+	elif destroyable_by.size() > 0 and body.is_in_group("hand") == false:
+		if check_destroyable(body) == true:
+			self.destroy()
