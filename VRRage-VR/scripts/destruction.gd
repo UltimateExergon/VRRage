@@ -12,6 +12,8 @@ var shard_container
 
 var current_level : String : set = set_currentLevel
 
+var linear_velocity : float
+
 @export_group("Collision")
 @export_flags_3d_physics var collision_mask = 1
 
@@ -29,6 +31,10 @@ func _ready():
 	body.add_to_group("DESTRUCTIBLE")
 	body.body_entered.connect(_on_body_entered)
 	body.name = self.name
+	
+func _physics_process(delta: float) -> void:
+	if get_children()[0] is RigidBody3D:
+		linear_velocity = get_children()[0].linear_velocity.length()
 
 func destroy() -> void:
 	self.position = self.get_children()[0].global_position
@@ -41,11 +47,11 @@ func destroy() -> void:
 	for shard in _get_shards():
 		_add_shard(shard, saved_velocity)
 	
-	add_drop()
+	add_drop(saved_velocity)
 	add_score_points()
 	#add_timer()
 
-	#self.get_children()[0].queue_free()
+	self.get_children()[0].queue_free()
 	
 func get_destroyableBy() -> Array:
 	return destroyable_by
@@ -88,22 +94,37 @@ func _add_shard(original: MeshInstance3D, old_velocity: Vector3) -> void:
 	body.apply_impulse(old_velocity + _random_direction() * explosion_power,
 			-original.position.normalized())
 			
-func add_drop():
+func add_drop(old_velocity: Vector3):
 	if dropID != "":
 		var item = load(itemPath + current_level + "/" + dropID + itemFormat).instantiate()
 		print(item)
-		if item.get_class() == "RigidBody3D" :
-			item.set_dropID(dropID)
-		else:
-			item.get_children()[0].set_dropID(dropID)
+		
+		var rigidBody = get_rigid_body(item)
+		rigidBody.set_dropID(dropID)
+		
 		print("Spawned Drop at: ", item.global_position)
 		add_child(item)
+		rigidBody.linear_velocity = old_velocity
+		
+func get_rigid_body(node: Node) -> RigidBody3D:
+	if node is RigidBody3D:
+		return node
+		
+	for child in node.get_children():
+		if child is RigidBody3D:
+			return child
+		else:
+			if child.get_child_count() > 0:
+				return get_rigid_body(child)
+	return null
 		
 func check_destroyable(body) -> bool:
-	var id = body.name
+	if body.get_child_count() < 1:
+		return false
+	var id = body.get_children()[1].name
+	
 	print("Destroyable Check for ID: ", id)
 	for i in destroyable_by:
-		print(i)
 		if i == id:
 			return true
 			
@@ -129,10 +150,11 @@ static func _random_direction() -> Vector3:
 	
 func _on_body_entered(body: Node):
 	var rigidBody = get_children()[0]
-	print(body.get_scene_file_path())
+	var enteringRigidBody = get_rigid_body(body)
+
 	if !rigidBody.got_picked_up:
-		if destroyable_by.size() > 0 and body.is_in_group("room") == false:
-			if check_destroyable(body) == true:
+		if destroyable_by.size() > 0 and !body.is_in_group("room"):
+			if check_destroyable(body) and enteringRigidBody.linear_velocity.length() > 5:
 				self.destroy()
 		else:
 			if rigidBody.linear_velocity.length() > 1 and body.is_in_group("room"):

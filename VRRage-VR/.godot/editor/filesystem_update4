@@ -17,3 +17,5 @@ res://scenes/items/birthday/holzteil.tscn
 res://scripts/main.gd
 res://scenes/object_scenes/pub/tisch_groß_destruction.tscn
 res://scenes/object_scenes/pub/barhocker_destruction.tscn
+res://scenes/items/birthday/gabel.tscn
+res://scenes/object_scenes/pub/tisch_klein_destruction.tscn
