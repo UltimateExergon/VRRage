@@ -32,13 +32,14 @@ func _ready():
 
 func destroy() -> void:
 	self.position = self.get_children()[0].global_position
+	var saved_velocity = self.get_children()[0].linear_velocity
 	
 	var shard_holder : Node3D = Node3D.new()
 	add_child(shard_holder)
 	shard_container = shard_holder
 	
 	for shard in _get_shards():
-		_add_shard(shard)
+		_add_shard(shard, saved_velocity)
 	
 	add_drop()
 	add_score_points()
@@ -68,7 +69,7 @@ func set_fragmented(to: PackedScene) -> void:
 func _get_configuration_warnings() -> PackedStringArray:
 	return ["No fragmented version set"] if not fragmented else []
 
-func _add_shard(original: MeshInstance3D) -> void:
+func _add_shard(original: MeshInstance3D, old_velocity) -> void:
 	var body := RigidBody3D.new()
 	var mesh := MeshInstance3D.new()
 	var shape := CollisionShape3D.new()
@@ -84,7 +85,7 @@ func _add_shard(original: MeshInstance3D) -> void:
 	shape.scale = original.scale
 	shape.shape = _cached_shapes[original]
 	mesh.mesh = original.mesh
-	body.apply_impulse(_random_direction() * explosion_power,
+	body.apply_impulse(old_velocity + _random_direction() * explosion_power,
 			-original.position.normalized())
 			
 func add_drop():
