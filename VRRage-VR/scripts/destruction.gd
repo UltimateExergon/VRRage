@@ -30,7 +30,7 @@ func _ready():
 	body.body_entered.connect(_on_body_entered)
 	body.name = self.name
 
-func destroy(linearVelocity: Vector3 = Vector3(0,0,0)) -> void:
+func destroy() -> void:
 	self.position = self.get_children()[0].global_position
 	var saved_velocity = self.get_children()[0].linear_velocity
 	
@@ -39,7 +39,7 @@ func destroy(linearVelocity: Vector3 = Vector3(0,0,0)) -> void:
 	shard_container = shard_holder
 	
 	for shard in _get_shards():
-		_add_shard(shard, linearVelocity)
+		_add_shard(shard, saved_velocity)
 	
 	add_drop()
 	add_score_points()
@@ -69,7 +69,7 @@ func set_fragmented(to: PackedScene) -> void:
 func _get_configuration_warnings() -> PackedStringArray:
 	return ["No fragmented version set"] if not fragmented else []
 
-func _add_shard(original: MeshInstance3D, linearVelocity: Vector3) -> void:
+func _add_shard(original: MeshInstance3D, old_velocity: Vector3) -> void:
 	var body := RigidBody3D.new()
 	var mesh := MeshInstance3D.new()
 	var shape := CollisionShape3D.new()
@@ -136,4 +136,4 @@ func _on_body_entered(body: Node):
 				self.destroy()
 		else:
 			if rigidBody.linear_velocity.length() > 1 and body.is_in_group("room"):
-				self.destroy(rigidBody.linear_velocity)
+				self.destroy()
