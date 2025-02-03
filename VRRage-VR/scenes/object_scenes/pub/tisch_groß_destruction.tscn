@@ -50,11 +50,13 @@ points = PackedVector3Array(2.17498, 0.75, 0.315723, 2.17498, 0.611541, 0.315723
 [node name="Großer Tisch" type="Node3D"]
 script = ExtResource("1_yi2wk")
 fragmented = ExtResource("2_2bmg8")
+destroyable_by = ["barhocker_destruction"]
 
 [node name="TischGroß" parent="." instance=ExtResource("3_nl16v")]
 collision_mask = 196623
 contact_monitor = true
 max_contacts_reported = 1
+enabled = false
 
 [node name="Großer Tisch" type="MeshInstance3D" parent="TischGroß"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.738, 0.775, 0.231)

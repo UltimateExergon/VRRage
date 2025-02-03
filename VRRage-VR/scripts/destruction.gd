@@ -30,7 +30,7 @@ func _ready():
 	body.body_entered.connect(_on_body_entered)
 	body.name = self.name
 
-func destroy() -> void:
+func destroy(linearVelocity: Vector3 = Vector3(0,0,0)) -> void:
 	self.position = self.get_children()[0].global_position
 	
 	var shard_holder : Node3D = Node3D.new()
@@ -38,13 +38,13 @@ func destroy() -> void:
 	shard_container = shard_holder
 	
 	for shard in _get_shards():
-		_add_shard(shard)
+		_add_shard(shard, linearVelocity)
 	
 	add_drop()
 	add_score_points()
-	add_timer()
+	#add_timer()
 
-	self.get_children()[0].queue_free()
+	#self.get_children()[0].queue_free()
 	
 func get_destroyableBy() -> Array:
 	return destroyable_by
@@ -68,7 +68,7 @@ func set_fragmented(to: PackedScene) -> void:
 func _get_configuration_warnings() -> PackedStringArray:
 	return ["No fragmented version set"] if not fragmented else []
 
-func _add_shard(original: MeshInstance3D) -> void:
+func _add_shard(original: MeshInstance3D, linearVelocity: Vector3) -> void:
 	var body := RigidBody3D.new()
 	var mesh := MeshInstance3D.new()
 	var shape := CollisionShape3D.new()
@@ -84,6 +84,9 @@ func _add_shard(original: MeshInstance3D) -> void:
 	shape.scale = original.scale
 	shape.shape = _cached_shapes[original]
 	mesh.mesh = original.mesh
+	
+	if linearVelocity != Vector3(0,0,0):
+		body.linear_velocity = linearVelocity * .5
 	body.apply_impulse(_random_direction() * explosion_power,
 			-original.position.normalized())
 			
@@ -102,6 +105,7 @@ func check_destroyable(body) -> bool:
 	var id = body.name
 	print("Destroyable Check for ID: ", id)
 	for i in destroyable_by:
+		print(i)
 		if i == id:
 			return true
 			
@@ -127,11 +131,11 @@ static func _random_direction() -> Vector3:
 	
 func _on_body_entered(body: Node):
 	var rigidBody = get_children()[0]
-	
+	print(body.get_scene_file_path())
 	if !rigidBody.got_picked_up:
 		if destroyable_by.size() > 0 and body.is_in_group("room") == false:
 			if check_destroyable(body) == true:
 				self.destroy()
 		else:
 			if rigidBody.linear_velocity.length() > 1 and body.is_in_group("room"):
-				self.destroy()
+				self.destroy(rigidBody.linear_velocity)
