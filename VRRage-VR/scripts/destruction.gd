@@ -32,6 +32,7 @@ func _ready():
 
 func destroy(linearVelocity: Vector3 = Vector3(0,0,0)) -> void:
 	self.position = self.get_children()[0].global_position
+	var saved_velocity = self.get_children()[0].linear_velocity
 	
 	var shard_holder : Node3D = Node3D.new()
 	add_child(shard_holder)
@@ -84,10 +85,7 @@ func _add_shard(original: MeshInstance3D, linearVelocity: Vector3) -> void:
 	shape.scale = original.scale
 	shape.shape = _cached_shapes[original]
 	mesh.mesh = original.mesh
-	
-	if linearVelocity != Vector3(0,0,0):
-		body.linear_velocity = linearVelocity * .5
-	body.apply_impulse(_random_direction() * explosion_power,
+	body.apply_impulse(old_velocity + _random_direction() * explosion_power,
 			-original.position.normalized())
 			
 func add_drop():
