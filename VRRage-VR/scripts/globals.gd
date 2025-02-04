@@ -1,5 +1,6 @@
 extends Node
 
+#Position of main node in get_tree().root.get_children()
 const main_order : int = 3
 
 const levelPath : String = "res://scenes/Level/"

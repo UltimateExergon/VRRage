@@ -1,6 +1,6 @@
+CollisionShape3D
 XRToolsHighlightVisible
 MeshInstance3D
-CollisionShape3D
 RigidBody3D
 XRToolsGrabPointHand
 StaticBody3D
