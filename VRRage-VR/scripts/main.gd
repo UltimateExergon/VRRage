@@ -93,6 +93,7 @@ func load_player() -> void:
 		increase_score(0)
 	
 func teleport_player():
+	print("Moving player to ", startPos)
 	player.global_position = startPos
 	
 func craft(item1, item2):
