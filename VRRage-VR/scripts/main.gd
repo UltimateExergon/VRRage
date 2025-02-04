@@ -88,9 +88,8 @@ func load_player() -> void:
 	teleport_player()
 	add_child(player)
 	
-	player.get_node("OpenXRCompositionLayerQuad").layer_viewport = $SubViewport
-	
 	if current_level != "level_select":
+		player.get_node("OpenXRCompositionLayerQuad").layer_viewport = $SubViewport
 		increase_score(0)
 	
 func teleport_player():

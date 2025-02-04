@@ -1,7 +1,8 @@
+XRToolsHighlightVisible
+MeshInstance3D
 CollisionShape3D
 RigidBody3D
 XRToolsGrabPointHand
-MeshInstance3D
 StaticBody3D
 Node3D
 OmniLight3D
@@ -11,4 +12,3 @@ Panel
 Button
 Control
 Label
-XRToolsPickable
