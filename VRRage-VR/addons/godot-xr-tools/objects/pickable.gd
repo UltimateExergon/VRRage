@@ -55,6 +55,8 @@ enum SecondHandGrab {
 
 @export_category("Item")
 @export var objectID : String
+@export var collisionLayers : Array = [3]
+@export var collisionMasks : Array = [1, 2, 3, 4]
 
 
 # Default layer for held objects is 17:held-object
@@ -125,6 +127,17 @@ func is_xr_class(name : String) -> bool:
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_all_GrabPoints()
+	set_Collisions()
+		
+func set_Collisions():
+	for i in collisionLayers:
+		self.set_collision_layer_value(i, true)
+	
+	for j in collisionMasks:
+		self.set_collision_mask_value(j, true)
+		
+func get_all_GrabPoints():
 	# Get all grab points
 	for child in get_children():
 		var grab_point := child as XRToolsGrabPoint
