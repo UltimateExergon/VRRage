@@ -11,4 +11,4 @@ const recipeFormat : String = ".csv"
 
 @onready var outline_shader = preload("res://shader/outline.gdshader")
 const outline_color : Color = Color8(255, 255, 255, 255)
-const outline_width : float = 10.0
+const outline_width : float = 2.0
