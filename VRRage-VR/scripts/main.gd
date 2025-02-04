@@ -4,14 +4,7 @@ signal focus_lost
 signal focus_gained
 signal pose_recentered
 
-const levelPath : String = "res://scenes/Level/"
-const itemPath : String = "res://scenes/items/"
-const recipePath : String = "res://craftingRecipes/"
-const levelFormat : String = ".tscn"
-const itemFormat : String = ".tscn"
-const recipeFormat : String = ".csv"
-
-@export var maximum_refresh_rate : int = 90
+const max_shards : int = 50
 
 var xr_interface : OpenXRInterface
 var xr_is_focussed = false
@@ -26,6 +19,8 @@ var current_score : int = 0
 var score_label = ""
 
 var player
+
+var active_shards : Array = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -57,6 +52,13 @@ func _ready():
 		print("OpenXR not instantiated!")
 		get_tree().quit()
 		
+func add_active_shard(shard : Node):
+	active_shards.append(shard)
+	
+	while active_shards.size() > max_shards:
+		active_shards[0].queue_free()
+		active_shards.remove_at(0)
+		
 func delete_oldLevel():
 	print("Deleting old level")
 	for i in get_tree().get_nodes_in_group("LEVEL"):
@@ -68,10 +70,10 @@ func load_level(levelname : String) -> void:
 	print("Loading " + levelname)
 	current_level = levelname
 	current_score = 0
-	var level = load(levelPath + levelname + ".tscn").instantiate()
+	var level = load(Globals.levelPath + levelname + ".tscn").instantiate()
 	add_child(level)
 	if levelname != "level_select":
-		craftingRecipes = load(recipePath + levelname + recipeFormat).records
+		craftingRecipes = load(Globals.recipePath + levelname + Globals.recipeFormat).records
 		print(levelname)
 		score_label = get_node(levelname + "/Score")
 	startPos = level.get_startPos()
@@ -106,7 +108,7 @@ func craft(item1, item2):
 			ingredients.clear()
 			
 func spawn_crafted_item(itemID : String, pos : Vector3):
-	var item = load(itemPath + current_level + "/" + itemID + itemFormat).instantiate()
+	var item = load(Globals.itemPath + current_level + "/" + itemID + Globals.itemFormat).instantiate()
 	item.global_position = pos
 	get_node(current_level).add_child(item)
 		

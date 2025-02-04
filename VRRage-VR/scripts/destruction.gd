@@ -1,14 +1,12 @@
 class_name Destruction
 extends Node3D
 
-const itemPath : String = "res://scenes/items/"
-const itemFormat : String = ".tscn"
-
 @export var fragmented : PackedScene: set = set_fragmented
 @export var destroyable_by : Array = [] : get = get_destroyableBy
 @export var dropID : String = ""
 @export var score_points : int = 100
-var shard_container
+
+var shard_container : Node3D
 
 var current_level : String : set = set_currentLevel
 
@@ -30,9 +28,8 @@ func _ready():
 	var body = get_children()[0]
 	body.add_to_group("DESTRUCTIBLE")
 	body.body_entered.connect(_on_body_entered)
-	body.name = self.name
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if get_children()[0] is RigidBody3D:
 		linear_velocity = get_children()[0].linear_velocity.length()
 
@@ -40,9 +37,9 @@ func destroy() -> void:
 	self.position = self.get_children()[0].global_position
 	var saved_velocity = self.get_children()[0].linear_velocity
 	
-	var shard_holder : Node3D = Node3D.new()
-	add_child(shard_holder)
-	shard_container = shard_holder
+	shard_container = Node3D.new()
+	add_child(shard_container)
+	main_node.add_active_shard(shard_container)
 	
 	for shard in _get_shards():
 		_add_shard(shard, saved_velocity)
@@ -96,13 +93,11 @@ func _add_shard(original: MeshInstance3D, old_velocity: Vector3) -> void:
 			
 func add_drop(old_velocity: Vector3):
 	if dropID != "":
-		var item = load(itemPath + current_level + "/" + dropID + itemFormat).instantiate()
-		print(item)
+		var item = load(Globals.itemPath + current_level + "/" + dropID + Globals.itemFormat).instantiate()
 		
 		var rigidBody = get_rigid_body(item)
 		rigidBody.set_dropID(dropID)
 		
-		print("Spawned Drop at: ", item.global_position)
 		add_child(item)
 		rigidBody.linear_velocity = old_velocity
 		
@@ -119,11 +114,8 @@ func get_rigid_body(node: Node) -> RigidBody3D:
 	return null
 		
 func check_destroyable(body) -> bool:
-	if body.get_child_count() < 1:
-		return false
-	var id = body.get_children()[1].name
+	var id = body.objectID
 	
-	print("Destroyable Check for ID: ", id)
 	for i in destroyable_by:
 		if i == id:
 			return true

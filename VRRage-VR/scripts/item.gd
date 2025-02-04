@@ -18,11 +18,21 @@ func _ready():
 		var grab_point := child as XRToolsGrabPoint
 		if grab_point:
 			_grab_points.push_back(grab_point)
+			
+	add_outline_shader()
+			
+func add_outline_shader():
+	var outline_shader = Globals.outline_shader
+	for i in get_children():
+		if i is MeshInstance3D:
+			var mat : Material = i.mesh.surface_get_material(0)
+			mat.set_next_pass(outline_shader)
+			var next_mat : Material = mat.get_next_pass()
+			next_mat.set_shader_param("outline_color", Globals.outline_color)
+			next_mat.set_shader_param("outline_width", Globals.outline_width)
 	
 func _on_body_entered(body):
-	print(self, "BODY ENTERED: ", body, "WITH PICKED UP: ", self.got_picked_up, " AND COLLISION REPORTED: ", collision_reported)
 	if body.is_in_group("CRAFTABLE") and self.got_picked_up == true and collision_reported == false:
-		print("Crafting: ", self, body)
 		collision_reported = true
 		main_node.craft(self, body)
 		
