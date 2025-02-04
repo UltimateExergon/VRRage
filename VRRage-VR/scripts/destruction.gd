@@ -3,6 +3,7 @@ extends Node3D
 
 @export var fragmented : PackedScene: set = set_fragmented
 @export var destroyable_by : Array = [] : get = get_destroyableBy
+@export var hand_destruction : bool = false
 @export var dropID : String = ""
 @export var score_points : int = 100
 
@@ -19,7 +20,7 @@ var linear_velocity : float
 @export var explosion_power: float = 1.0
 @export var vanish_time : int = 5
 
-@onready var main_node = get_tree().root.get_children()[3]
+@onready var main_node = get_tree().root.get_children()[Globals.main_order]
 
 static var _cached_scenes := {}
 static var _cached_shapes := {}
@@ -148,6 +149,7 @@ func _on_body_entered(body: Node):
 		if destroyable_by.size() > 0 and !body.is_in_group("room"):
 			if check_destroyable(body) and enteringRigidBody.linear_velocity.length() > 5:
 				self.destroy()
-		else:
-			if rigidBody.linear_velocity.length() > 1 and body.is_in_group("room"):
+		elif rigidBody.linear_velocity.length() > 1 and body.is_in_group("room"):
 				self.destroy()
+		elif body.is_in_group("hand") and hand_destruction == true:
+			self.destroy()

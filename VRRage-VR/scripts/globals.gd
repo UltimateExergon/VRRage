@@ -1,5 +1,7 @@
 extends Node
 
+const main_order : int = 3
+
 const levelPath : String = "res://scenes/Level/"
 const itemPath : String = "res://scenes/items/"
 const recipePath : String = "res://craftingRecipes/"

@@ -3,7 +3,7 @@ extends Node3D
 @export var teleport_level : String
 @export var label_text : String
 
-@onready var main_node := get_tree().root.get_children()[3]
+@onready var main_node := get_tree().root.get_children()[Globals.main_order]
 
 func _ready():
 	$Label3D.text = "To: " + label_text
