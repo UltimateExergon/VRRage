@@ -1,7 +1,0 @@
-res://assets/models/birthday/stuhl_Cube.res
-res://scenes/object_scenes/office/cubicle_wall.tscn
-res://openxr_action_map.tres
-res://scripts/destruction.gd
-res://addons/godot-xr-tools/hands/animations/left/hand_blend_tree.tres
-res://addons/godot-xr-tools/hands/animations/right/hand_blend_tree.tres
-res://scripts/globals.gd
