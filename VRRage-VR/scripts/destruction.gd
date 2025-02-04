@@ -145,6 +145,8 @@ func _on_body_entered(body: Node):
 	var rigidBody = get_children()[0]
 	var enteringRigidBody = get_rigid_body(body)
 
+	print(body.name)
+
 	if !rigidBody.got_picked_up:
 		if destroyable_by.size() > 0 and !body.is_in_group("room"):
 			if check_destroyable(body) and enteringRigidBody.linear_velocity.length() > 5:

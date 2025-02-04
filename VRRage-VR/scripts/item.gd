@@ -18,18 +18,15 @@ func _ready():
 	add_outline_shader()
 			
 func add_outline_shader():
-	print("Adding outline")
-	var outline_shader : ShaderMaterial = Globals.outline_shader
+	var outline_shader : Shader = Globals.outline_shader
 	for i in get_children():
 		if i is MeshInstance3D:
-			print("Found Mesh")
 			var mat : Material = i.mesh.surface_get_material(0)
-			mat.set_next_pass(outline_shader)
-			print(i.mesh.surface_get_material(1))
-			var next_mat : ShaderMaterial = mat.get_next_pass()
-			if next_mat != null:
-				next_mat.set_shader_param("outline_color", Globals.outline_color)
-				next_mat.set_shader_param("outline_width", Globals.outline_width)
+			var new_mat : ShaderMaterial = ShaderMaterial.new()
+			new_mat.set_shader(outline_shader)
+			new_mat.set_shader_parameter("outline_color", Globals.outline_color)
+			new_mat.set_shader_parameter("outline_width", Globals.outline_width)
+			mat.set_next_pass(new_mat)
 	
 func _on_body_entered(body):
 	if body.is_in_group("CRAFTABLE") and self.got_picked_up == true and collision_reported == false:
