@@ -1,14 +1,14 @@
 [gd_scene load_steps=13 format=3 uid="uid://dy77eurx5l5sg"]
 
 [ext_resource type="Script" path="res://scripts/destruction.gd" id="1_l5d28"]
-[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_p3vlf"]
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_p3vlf"]
 [ext_resource type="PackedScene" uid="uid://1ia2pqmmx6kd" path="res://assets/models/birthday/stuhl_kaputt.glb" id="2_tsimk"]
 [ext_resource type="ArrayMesh" uid="uid://banv8qs4g8v87" path="res://assets/models/birthday/stuhl_Cube.res" id="4_m1737"]
-[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="5_ocfaw"]
-[ext_resource type="Animation" path="res://addons/godot-xr-tools/hands/animations/left/Grip 1.res" id="6_y275v"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="5_ocfaw"]
+[ext_resource type="Animation" uid="uid://dqa0h82y3qn1t" path="res://addons/godot-xr-tools/hands/animations/left/Grip 1.res" id="6_y275v"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="7_ggnd3"]
-[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="8_gyh5w"]
-[ext_resource type="Animation" path="res://addons/godot-xr-tools/hands/animations/right/Grip 1.res" id="9_j4btg"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="8_gyh5w"]
+[ext_resource type="Animation" uid="uid://daqddcrbpam0c" path="res://addons/godot-xr-tools/hands/animations/right/Grip 1.res" id="9_j4btg"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_firlv"]
 points = PackedVector3Array(0.740156, -0.521505, 0.740156, -0.740156, -0.521505, 0.740156, 0.740156, -0.621115, 0.740156, 0.740156, -0.521505, -0.740168, 0.711755, 1.41743, -0.668435, -0.7119, 1.41743, -0.668435, -0.740156, -0.521505, -0.740168, -0.740156, -0.621115, 0.740156, 0.637276, -2.31011, 0.637378, 0.740156, -0.621115, -0.740168, 0.711755, 1.41743, -0.799393, -0.7119, 1.41743, -0.799393, -0.740156, -0.621115, -0.740168, -0.637421, -2.31011, 0.637378, 0.637276, -2.31011, -0.637541, 0.653505, 1.4167, -0.799393, -0.65365, 1.4167, -0.799393, -0.637421, -2.31011, -0.637541)

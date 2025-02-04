@@ -122,7 +122,7 @@ dropID = "testcube"
 [node name="PickableObject" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00270891, 1.16449, 1.61613)
 collision_layer = 4
-collision_mask = 196615
+collision_mask = 196623
 freeze_mode = 1
 continuous_cd = true
 contact_monitor = true

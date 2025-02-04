@@ -53,6 +53,7 @@ fragmented = ExtResource("2_ur0xs")
 destroyable_by = ["barhocker_destruction"]
 
 [node name="TischKlein" parent="." instance=ExtResource("3_jtgqb")]
+collision_mask = 196623
 contact_monitor = true
 max_contacts_reported = 1
 enabled = false

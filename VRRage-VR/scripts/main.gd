@@ -5,7 +5,7 @@ signal focus_gained
 signal pose_recentered
 
 const max_shards : int = 50
-const teleport_cooldown : int = 10
+const teleport_cooldown : int = 1
 
 var xr_interface : OpenXRInterface
 var xr_is_focussed = false
@@ -44,14 +44,13 @@ func _ready():
 			vp.vrs_mode = Viewport.VRS_XR
 		elif int(ProjectSettings.get_setting("xr/openxr/foveation_level")) == 0:
 			push_warning("OpenXR: Recommend setting Foveation level to High in Project Settings")
-
+			
 		# Connect the OpenXR events
 		xr_interface.session_begun.connect(_on_openxr_session_begun)
 		xr_interface.session_visible.connect(_on_openxr_visible_state)
 		xr_interface.session_focussed.connect(_on_openxr_focused_state)
 		xr_interface.session_stopping.connect(_on_openxr_stopping)
 		xr_interface.pose_recentered.connect(_on_openxr_pose_recentered)
-		teleport_timer.timeout.connect(_on_teleport_timer_timeout)
 	else:
 		# We couldn't start OpenXR.
 		print("OpenXR not instantiated!")
@@ -141,6 +140,9 @@ func increase_score(points : int):
 	
 func activate_teleport_timer():
 	can_teleport = false
+	
+	add_child(teleport_timer)
+	teleport_timer.timeout.connect(_on_teleport_timer_timeout)
 	teleport_timer.start(teleport_cooldown)
 	
 func _on_teleport_timer_timeout():
