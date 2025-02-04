@@ -5,7 +5,7 @@ extends XRToolsPickable
 
 var collision_reported : bool = false
 
-@onready var main_node = get_tree().root.get_children()[3]
+@onready var main_node = get_tree().root.get_children()[2]
 
 func _ready():
 	self.contact_monitor = true
@@ -13,12 +13,8 @@ func _ready():
 	self.add_to_group("CRAFTABLE")
 	self.body_entered.connect(_on_body_entered)
 	
-	# Get all grab points
-	for child in get_children():
-		var grab_point := child as XRToolsGrabPoint
-		if grab_point:
-			_grab_points.push_back(grab_point)
-			
+	get_all_GrabPoints()
+	set_Collisions()
 	add_outline_shader()
 			
 func add_outline_shader():
@@ -29,10 +25,9 @@ func add_outline_shader():
 			print("Found Mesh")
 			var mat : Material = i.mesh.surface_get_material(0)
 			mat.set_next_pass(outline_shader)
-			var next_mat : Material = mat.get_next_pass()
-			if next_mat != null:
-				next_mat.set_shader_param("outline_color", Globals.outline_color)
-				next_mat.set_shader_param("outline_width", Globals.outline_width)
+			var next_mat : ShaderMaterial = mat.get_next_pass()
+			next_mat.set_shader_param("outline_color", Globals.outline_color)
+			next_mat.set_shader_param("outline_width", Globals.outline_width)
 			
 			print(next_mat)
 	

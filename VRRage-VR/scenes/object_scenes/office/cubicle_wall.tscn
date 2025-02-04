@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://c1yh3celvb7vb"]
+[gd_scene load_steps=8 format=4 uid="uid://c1yh3celvb7vb"]
 
 [ext_resource type="Script" path="res://scripts/destruction.gd" id="1_y8mnt"]
 [ext_resource type="PackedScene" uid="uid://xiqpeu5sfikg" path="res://assets/models/office/cubicleWall._kaputt.glb" id="2_4csmo"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="3_1d4y1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktxa3"]
 resource_name = "CubicleWall.001"
@@ -49,6 +50,9 @@ script = ExtResource("1_y8mnt")
 fragmented = ExtResource("2_4csmo")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 4
+collision_mask = 15
+script = ExtResource("3_1d4y1")
 
 [node name="Cube" type="MeshInstance3D" parent="RigidBody3D"]
 transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 0, 0)

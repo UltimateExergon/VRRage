@@ -5,6 +5,7 @@ signal focus_gained
 signal pose_recentered
 
 const max_shards : int = 50
+const teleport_cooldown : int = 10
 
 var xr_interface : OpenXRInterface
 var xr_is_focussed = false
@@ -21,6 +22,9 @@ var score_label = ""
 var player
 
 var active_shards : Array = []
+
+@onready var teleport_timer : Timer = Timer.new()
+var can_teleport : bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -47,6 +51,7 @@ func _ready():
 		xr_interface.session_focussed.connect(_on_openxr_focused_state)
 		xr_interface.session_stopping.connect(_on_openxr_stopping)
 		xr_interface.pose_recentered.connect(_on_openxr_pose_recentered)
+		teleport_timer.timeout.connect(_on_teleport_timer_timeout)
 	else:
 		# We couldn't start OpenXR.
 		print("OpenXR not instantiated!")
@@ -89,12 +94,11 @@ func load_player() -> void:
 	add_child(player)
 	
 	if current_level != "level_select":
-		player.get_node("OpenXRCompositionLayerQuad").layer_viewport = $SubViewport
 		increase_score(0)
 	
 func teleport_player():
-	print("Moving player to ", startPos)
 	player.global_position = startPos
+	print("Moving player to ", player.global_position)
 	
 func craft(item1, item2):
 	ingredients.append([item1.get_dropID(), item2.get_dropID()])
@@ -134,6 +138,13 @@ func match_items():
 func increase_score(points : int):
 	current_score += points
 	score_label.update_score(current_score)
+	
+func activate_teleport_timer():
+	can_teleport = false
+	teleport_timer.start(teleport_cooldown)
+	
+func _on_teleport_timer_timeout():
+	can_teleport = true
 	
 
 # Handle OpenXR session ready

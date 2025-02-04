@@ -19,7 +19,7 @@ var linear_velocity : float
 @export var explosion_power: float = 1.0
 @export var vanish_time : int = 5
 
-@onready var main_node = get_tree().root.get_children()[3]
+@onready var main_node = get_tree().root.get_children()[2]
 
 static var _cached_scenes := {}
 static var _cached_shapes := {}
