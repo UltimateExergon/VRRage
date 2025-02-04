@@ -8,3 +8,4 @@ res://scripts/item.gd
 res://scripts/globals.gd
 res://scripts/teleporter.gd
 res://scenes/player.tscn
+res://scenes/object_scenes/office/cubicle_wall.tscn

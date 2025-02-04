@@ -48,6 +48,7 @@ points = PackedVector3Array(1, 1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1
 [node name="CubicleWall" type="Node3D"]
 script = ExtResource("1_y8mnt")
 fragmented = ExtResource("2_4csmo")
+hand_destruction = true
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 collision_layer = 4
