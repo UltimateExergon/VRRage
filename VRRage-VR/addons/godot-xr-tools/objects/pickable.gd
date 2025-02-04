@@ -53,6 +53,9 @@ enum SecondHandGrab {
 	SECOND,				## Second hand grab
 }
 
+@export_category("Item")
+@export var objectID : String
+
 
 # Default layer for held objects is 17:held-object
 const DEFAULT_LAYER := 0b0000_0000_0000_0001_0000_0000_0000_0000
