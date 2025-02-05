@@ -56,11 +56,12 @@ func destroy() -> void:
 	self.get_children()[0].queue_free()
 	
 func add_floatingScore():
-	add_child(Globals.destructionScore)
-	$destructionScore.text = "+" + str(score_points)
+	var destructionScore = Globals.destructionScore.instantiate()
+	add_child(destructionScore)
+	destructionScore.text = "+" + str(score_points)
 	
 	var tween = get_tree().create_tween()
-	tween.tween_property($destructionScore, "position", self.position + scoreTargetLocation, scoreFloatingDuration)
+	tween.tween_property(destructionScore, "position", self.position + scoreTargetLocation, scoreFloatingDuration)
 	
 func get_destroyableBy() -> Array:
 	return destroyable_by
