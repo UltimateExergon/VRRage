@@ -1,6 +1,9 @@
 class_name Destruction
 extends Node3D
 
+const scoreFloatingDuration : float = 1.0
+const scoreTargetLocation : Vector3 = Vector3(0, 10, 0)
+
 @export var fragmented : PackedScene: set = set_fragmented
 @export var destroyable_by : Array = [] : get = get_destroyableBy
 @export var hand_destruction : bool = false
@@ -47,9 +50,17 @@ func destroy() -> void:
 	
 	add_drop(saved_velocity)
 	add_score_points()
+	add_floatingScore()
 	#add_timer()
-
+	
 	self.get_children()[0].queue_free()
+	
+func add_floatingScore():
+	add_child(Globals.destructionScore)
+	$destructionScore.text = "+" + str(score_points)
+	
+	var tween = get_tree().create_tween()
+	tween.tween_property($destructionScore, "position", self.position + scoreTargetLocation, scoreFloatingDuration)
 	
 func get_destroyableBy() -> Array:
 	return destroyable_by

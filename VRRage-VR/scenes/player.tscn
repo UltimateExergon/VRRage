@@ -1,18 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://p6g67fls634d"]
+[gd_scene load_steps=10 format=3 uid="uid://p6g67fls634d"]
 
 [ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="1_s4y1t"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_vsxp3"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="2_a6x7t"]
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="3_08aoj"]
 [ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="4_arkbb"]
-[ext_resource type="Script" path="res://scripts/open_xr_composition_layer_quad.gd" id="5_pj6a8"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_8lfl8"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_erxix"]
-albedo_color = Color(0, 0.972549, 1, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_aqd64"]
-radius = 0.01
-height = 0.01
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8pval"]
 size = Vector3(0.065, 0.11, 0.175)
@@ -21,22 +14,14 @@ size = Vector3(0.065, 0.11, 0.175)
 radius = 0.2
 height = 1.8
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_tslif"]
+radius = 6.107
+
 [node name="Player" type="XROrigin3D"]
+script = ExtResource("1_vsxp3")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6458, 0)
-
-[node name="OpenXRCompositionLayerQuad" type="OpenXRCompositionLayerQuad" parent="." node_paths=PackedStringArray("controller")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.53552, -2.11696)
-visible = false
-alpha_blend = true
-script = ExtResource("5_pj6a8")
-controller = NodePath("../RightHand")
-
-[node name="Pointer" type="MeshInstance3D" parent="OpenXRCompositionLayerQuad"]
-transform = Transform3D(3, 0, 0, 0, -1.31134e-07, -3, 0, 3, -1.31134e-07, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_erxix")
-mesh = SubResource("SphereMesh_aqd64")
 
 [node name="LeftHand" type="XRController3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -1)
@@ -87,3 +72,11 @@ collision_mask = 1017
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.937613, 0)
 shape = SubResource("CapsuleShape3D_niwk8")
+
+[node name="highlightArea" type="Area3D" parent="PlayerBody"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody/highlightArea"]
+shape = SubResource("SphereShape3D_tslif")
+
+[connection signal="body_entered" from="PlayerBody/highlightArea" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="PlayerBody/highlightArea" to="." method="_on_area_3d_body_exited"]

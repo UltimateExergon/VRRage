@@ -23,7 +23,7 @@ var player
 
 var active_shards : Array = []
 
-@onready var teleport_timer : Timer = Timer.new()
+var teleport_timer : Timer
 var can_teleport : bool = true
 
 # Called when the node enters the scene tree for the first time.
@@ -51,10 +51,19 @@ func _ready():
 		xr_interface.session_focussed.connect(_on_openxr_focused_state)
 		xr_interface.session_stopping.connect(_on_openxr_stopping)
 		xr_interface.pose_recentered.connect(_on_openxr_pose_recentered)
+		
+		add_teleportTimer()
+		
 	else:
 		# We couldn't start OpenXR.
 		print("OpenXR not instantiated!")
 		get_tree().quit()
+		
+func add_teleportTimer():
+	teleport_timer = Timer.new()
+	add_child(teleport_timer)
+	teleport_timer.timeout.connect(_on_teleport_timer_timeout)
+	teleport_timer.one_shot = true
 		
 func add_active_shard(shard : Node):
 	active_shards.append(shard)
@@ -78,7 +87,6 @@ func load_level(levelname : String) -> void:
 	add_child(level)
 	if levelname != "level_select":
 		craftingRecipes = load(Globals.recipePath + levelname + Globals.recipeFormat).records
-		print(levelname)
 		score_label = get_node(levelname + "/Score")
 	startPos = level.get_startPos()
 	level.add_to_group("LEVEL")
@@ -97,7 +105,6 @@ func load_player() -> void:
 	
 func teleport_player():
 	player.global_position = startPos
-	print("Moving player to ", player.global_position)
 	
 func craft(item1, item2):
 	ingredients.append([item1.get_dropID(), item2.get_dropID()])
@@ -140,9 +147,6 @@ func increase_score(points : int):
 	
 func activate_teleport_timer():
 	can_teleport = false
-	
-	add_child(teleport_timer)
-	teleport_timer.timeout.connect(_on_teleport_timer_timeout)
 	teleport_timer.start(teleport_cooldown)
 	
 func _on_teleport_timer_timeout():
