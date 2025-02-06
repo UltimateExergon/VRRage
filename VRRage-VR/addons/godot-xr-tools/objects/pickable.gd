@@ -129,6 +129,7 @@ func is_xr_class(name : String) -> bool:
 func _ready():
 	get_all_GrabPoints()
 	set_Collisions()
+	self.highlight_updated.connect(_highlight_updated)
 	if self.enabled == true:
 		add_outline_shader(Globals.outline_color)
 		
@@ -347,7 +348,7 @@ func let_go(by: Node3D, p_linear_velocity: Vector3, p_angular_velocity: Vector3)
 	_grab_driver = null
 	
 	got_picked_up = false
-	add_outline_shader(Globals.outline_color_near)
+	add_outline_shader(Globals.outline_color)
 
 	# Restore RigidBody mode
 	freeze = restore_freeze
@@ -433,6 +434,16 @@ func get_meshes() -> Array:
 			meshes.append(i)
 			
 	return meshes
+	
+func _highlight_updated(body, is_near):
+	if not body.got_picked_up:
+		if is_near:
+			add_outline_shader(Globals.outline_color_near)
+		elif body.is_in_group("CRAFTABLE"):
+			add_outline_shader(Globals.outline_color_crafting)
+		else:
+			add_outline_shader(Globals.outline_color)
+	
 	
 func remove_outline_shader():
 	for i in get_meshes():
