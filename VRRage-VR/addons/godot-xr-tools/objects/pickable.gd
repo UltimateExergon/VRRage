@@ -348,7 +348,6 @@ func let_go(by: Node3D, p_linear_velocity: Vector3, p_angular_velocity: Vector3)
 	_grab_driver = null
 	
 	got_picked_up = false
-	add_outline_shader(Globals.outline_color)
 
 	# Restore RigidBody mode
 	freeze = restore_freeze
