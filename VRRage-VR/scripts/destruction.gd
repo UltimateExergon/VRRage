@@ -111,7 +111,7 @@ func _add_shard(original: MeshInstance3D, old_velocity: Vector3) -> void:
 			
 func add_drop(old_velocity: Vector3):
 	if dropID != "":
-		var item = load(Globals.itemPath + current_level + "/" + dropID + Globals.itemFormat).instantiate()
+		var item = load(Globals.itemPath + current_level + "/" + dropID + Globals.sceneFormat).instantiate()
 		
 		var rigidBody = get_rigid_body(item)
 		rigidBody.set_dropID(dropID)

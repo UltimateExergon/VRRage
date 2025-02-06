@@ -447,11 +447,11 @@ func _highlight_updated(body, is_near):
 	
 func remove_outline_shader():
 	for i in get_meshes():
-		var mat = i.mesh.surface_get_material(0)
+		var mat : Material = i.mesh.surface_get_material(0)
 		mat.set_next_pass(null)
 	
 func add_outline_shader(color : Color):
-	var outline_shader : Shader = Globals.outline_shader
+	var outline_shader : Shader = Globals.outline_shader.duplicate()
 	for i in get_meshes():
 		var mat : Material = i.mesh.surface_get_material(0)
 		var new_mat : ShaderMaterial = ShaderMaterial.new()
