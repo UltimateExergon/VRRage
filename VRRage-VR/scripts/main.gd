@@ -182,6 +182,8 @@ func _on_openxr_focused_state() -> void:
 
 	emit_signal("focus_gained")
 	
+	$Player/OpenXRCompositionLayerQuad.run = true
+
 # Handle OpenXR stopping state
 func _on_openxr_stopping() -> void:
 	# Our session is being stopped.

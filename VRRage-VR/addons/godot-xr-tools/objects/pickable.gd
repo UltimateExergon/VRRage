@@ -129,6 +129,8 @@ func is_xr_class(name : String) -> bool:
 func _ready():
 	get_all_GrabPoints()
 	set_Collisions()
+	if self.enabled == true:
+		add_outline_shader(Globals.outline_color)
 		
 func set_Collisions():
 	for i in collisionLayers:
@@ -281,7 +283,7 @@ func pick_up(by: Node3D) -> void:
 			restore_freeze = freeze
 
 	got_picked_up = true
-	print("ITEM: ", self, " Got Picked Up: ", got_picked_up)
+	remove_outline_shader()
 
 	# turn off physics on our pickable object
 	#freeze = true
@@ -345,7 +347,7 @@ func let_go(by: Node3D, p_linear_velocity: Vector3, p_angular_velocity: Vector3)
 	_grab_driver = null
 	
 	got_picked_up = false
-	print("ITEM: ", self, " Got Dropped: ", got_picked_up)
+	add_outline_shader(Globals.outline_color_near)
 
 	# Restore RigidBody mode
 	freeze = restore_freeze
@@ -422,3 +424,27 @@ func _get_grab_point(grabber : Node3D, current : XRToolsGrabPoint) -> XRToolsGra
 func _set_ranged_grab_method(new_value: int) -> void:
 	ranged_grab_method = new_value
 	can_ranged_grab = new_value != RangedMethod.NONE
+	
+	
+func get_meshes() -> Array:
+	var meshes : Array = []
+	for i in get_children():
+		if i is MeshInstance3D:
+			meshes.append(i)
+			
+	return meshes
+	
+func remove_outline_shader():
+	for i in get_meshes():
+		var mat = i.mesh.surface_get_material(0)
+		mat.set_next_pass(null)
+	
+func add_outline_shader(color : Color):
+	var outline_shader : Shader = Globals.outline_shader
+	for i in get_meshes():
+		var mat : Material = i.mesh.surface_get_material(0)
+		var new_mat : ShaderMaterial = ShaderMaterial.new()
+		new_mat.set_shader(outline_shader)
+		new_mat.set_shader_parameter("outline_color", color)
+		new_mat.set_shader_parameter("outline_width", Globals.outline_width)
+		mat.set_next_pass(new_mat)

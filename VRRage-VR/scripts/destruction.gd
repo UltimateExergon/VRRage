@@ -32,6 +32,8 @@ func _ready():
 	var body = get_children()[0]
 	body.add_to_group("DESTRUCTIBLE")
 	body.body_entered.connect(_on_body_entered)
+	body.contact_monitor = true
+	body.max_contacts_reported = 10
 	
 func _physics_process(_delta: float) -> void:
 	if get_children()[0] is RigidBody3D:
@@ -170,3 +172,4 @@ func _on_body_entered(body: Node):
 				self.destroy()
 		elif body.is_in_group("hand") and hand_destruction == true:
 			self.destroy()
+			

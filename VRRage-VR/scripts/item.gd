@@ -13,35 +13,8 @@ func _ready():
 	self.add_to_group("CRAFTABLE")
 	self.body_entered.connect(_on_body_entered)
 	
-	get_all_GrabPoints()
-	set_Collisions()
-	add_outline_shader()
-			
-func add_outline_shader():
-	var outline_shader : Shader = Globals.outline_shader
-	for i in get_children():
-		if i is MeshInstance3D:
-			var mat : Material = i.mesh.surface_get_material(0)
-			var new_mat : ShaderMaterial = ShaderMaterial.new()
-			new_mat.set_shader(outline_shader)
-			new_mat.set_shader_parameter("outline_color", Globals.outline_color)
-			new_mat.set_shader_parameter("outline_width", Globals.outline_width)
-			mat.set_next_pass(new_mat)
-			
-func get_outline_shader() -> Array:
-	var outline_meshes : Array = []
-	for i in get_children():
-		if i is MeshInstance3D:
-			var meshMat : Material = i.mesh.surface_get_material(0)
-			var shaderMat : ShaderMaterial = meshMat.get_next_pass()
-			outline_meshes.append(shaderMat)
-			
-	return outline_meshes
-	
-func change_highlight(color : Color):
-	var mats = get_outline_shader()
-	for i in mats:
-		i.set_shader_parameter("outline_color", color)
+	super()
+	add_outline_shader(Globals.outline_color_crafting)
 	
 func _on_body_entered(body):
 	if body.is_in_group("CRAFTABLE") and self.got_picked_up == true and collision_reported == false:

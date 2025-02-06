@@ -54,6 +54,7 @@ hand_destruction = true
 collision_layer = 4
 collision_mask = 15
 script = ExtResource("3_1d4y1")
+enabled = false
 
 [node name="Cube" type="MeshInstance3D" parent="RigidBody3D"]
 transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 0, 0)
