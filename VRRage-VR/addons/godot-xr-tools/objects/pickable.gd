@@ -451,10 +451,14 @@ func remove_outline_shader():
 	
 func add_outline_shader(color : Color):
 	var outline_shader : Shader = Globals.outline_shader.duplicate()
+	var outline_shader_2 = outline_shader
 	for i in get_meshes():
 		var mat : Material = i.mesh.surface_get_material(0)
+		mat.resource_local_to_scene = true
 		var new_mat : ShaderMaterial = ShaderMaterial.new()
-		new_mat.set_shader(outline_shader)
+		new_mat.resource_local_to_scene = true
+
+		new_mat.set_shader(outline_shader_2)
 		new_mat.set_shader_parameter("outline_color", color)
 		new_mat.set_shader_parameter("outline_width", Globals.outline_width)
 		mat.set_next_pass(new_mat)
