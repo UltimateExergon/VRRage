@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2pylsda4ptqq"]
+
+[ext_resource type="FontFile" uid="uid://c5j0gq17ej1w6" path="res://assets/fonts/Montserrat-Medium.ttf" id="1_w568e"]
+
+[node name="destructionScore" type="Label3D"]
+billboard = 2
+font = ExtResource("1_w568e")
