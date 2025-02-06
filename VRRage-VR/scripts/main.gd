@@ -83,11 +83,13 @@ func load_level(levelname : String) -> void:
 	print("Loading " + levelname)
 	current_level = levelname
 	current_score = 0
-	var level = load(Globals.levelPath + levelname + ".tscn").instantiate()
+	var level = load(Globals.levelPath + levelname + Globals.sceneFormat).instantiate()
 	add_child(level)
+	
 	if levelname != "level_select":
 		craftingRecipes = load(Globals.recipePath + levelname + Globals.recipeFormat).records
 		score_label = get_node(levelname + "/Score")
+		
 	startPos = level.get_startPos()
 	level.add_to_group("LEVEL")
 
@@ -120,7 +122,7 @@ func craft(item1, item2):
 			ingredients.clear()
 			
 func spawn_crafted_item(itemID : String, pos : Vector3):
-	var item = load(Globals.itemPath + current_level + "/" + itemID + Globals.itemFormat).instantiate()
+	var item = load(Globals.itemPath + current_level + "/" + itemID + Globals.sceneFormat).instantiate()
 	item.global_position = pos
 	get_node(current_level).add_child(item)
 		
