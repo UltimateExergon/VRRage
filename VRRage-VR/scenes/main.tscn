@@ -4,8 +4,3 @@
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_84r0s")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.356863, 1, 0.360784, 1)
