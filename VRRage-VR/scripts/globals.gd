@@ -16,4 +16,5 @@ const outline_color : Color = Color8(255, 255, 255, 50)
 const outline_color_near : Color = Color8(91, 255, 92, 255)
 const outline_color_crafting : Color = Color8(196, 195, 0, 150)
 const outline_color_crafting_near : Color = Color8(196, 195, 0, 200)
+const outline_color_none : Color = Color8(0, 0, 0, 0)
 const outline_width : float = 2.0

@@ -55,6 +55,12 @@ func _input(event):
 func raycast_check():
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
+		
+		if collider.is_in_group("shadertest"):
+			if Input.is_action_just_pressed("E"):
+				collider.change_color(Color8(0, 0, 0, 0))
+		
+		
 		if Input.is_action_just_pressed("E"):
 			if collider.is_in_group("DESTRUCTIBLE"):
 				print("Destructible Object detected")

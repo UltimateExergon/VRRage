@@ -127,6 +127,7 @@ func is_xr_class(name : String) -> bool:
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	make_meshes_unique()
 	get_all_GrabPoints()
 	set_Collisions()
 	self.highlight_updated.connect(_highlight_updated)
@@ -284,7 +285,7 @@ func pick_up(by: Node3D) -> void:
 			restore_freeze = freeze
 
 	got_picked_up = true
-	remove_outline_shader()
+	change_color(Globals.outline_color_none)
 
 	# turn off physics on our pickable object
 	#freeze = true
@@ -426,6 +427,13 @@ func _set_ranged_grab_method(new_value: int) -> void:
 	can_ranged_grab = new_value != RangedMethod.NONE
 	
 	
+func make_meshes_unique():
+	for i in get_children():
+		for m in get_meshes():
+			var mesh_duplicate = m.mesh.duplicate(true)
+			if i is MeshInstance3D:
+				i.mesh = mesh_duplicate
+	
 func get_meshes() -> Array:
 	var meshes : Array = []
 	for i in get_children():
@@ -436,29 +444,34 @@ func get_meshes() -> Array:
 	
 func _highlight_updated(body, is_near):
 	if not body.got_picked_up:
-		if is_near:
-			add_outline_shader(Globals.outline_color_near)
-		elif body.is_in_group("CRAFTABLE"):
-			add_outline_shader(Globals.outline_color_crafting)
+		if body.is_in_group("CRAFTABLE"):
+			if is_near:
+				change_color(Globals.outline_color_crafting_near)
+			else:
+				change_color(Globals.outline_color_crafting)
+		elif is_near:
+			change_color(Globals.outline_color_near)
 		else:
-			add_outline_shader(Globals.outline_color)
+			change_color(Globals.outline_color)
 	
 	
-func remove_outline_shader():
-	for i in get_meshes():
-		var mat : Material = i.mesh.surface_get_material(0)
-		mat.set_next_pass(null)
+func get_surface_mat(ind : int, object : Node):
+	return object.mesh.surface_get_material(ind)
 	
 func add_outline_shader(color : Color):
-	var outline_shader : Shader = Globals.outline_shader.duplicate()
-	var outline_shader_2 = outline_shader
 	for i in get_meshes():
-		var mat : Material = i.mesh.surface_get_material(0)
-		mat.resource_local_to_scene = true
+		var material : Material = get_surface_mat(0, i)
+		i.mesh.surface_set_material(0, material.duplicate(true))
+		
 		var new_mat : ShaderMaterial = ShaderMaterial.new()
-		new_mat.resource_local_to_scene = true
-
-		new_mat.set_shader(outline_shader_2)
+		new_mat.set_shader(Globals.outline_shader)
 		new_mat.set_shader_parameter("outline_color", color)
 		new_mat.set_shader_parameter("outline_width", Globals.outline_width)
-		mat.set_next_pass(new_mat)
+		
+		material = get_surface_mat(0, i)
+		material.set_next_pass(new_mat)
+		
+func change_color(color : Color):
+	for i in get_meshes():
+		var shaderMat : ShaderMaterial = get_surface_mat(0, i).get_next_pass()
+		shaderMat.set_shader_parameter("outline_color", color)
