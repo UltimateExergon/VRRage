@@ -48,7 +48,7 @@ func destroy() -> void:
 	main_node.add_active_shard(shard_container)
 	
 	for shard in _get_shards():
-		_add_shard(shard, saved_velocity)
+		_add_shard(shard, saved_velocity, shard_container.position)
 	
 	add_drop(saved_velocity)
 	add_score_points()
@@ -64,7 +64,7 @@ func add_floatingScore(position: Vector3):
 	
 	var tween = get_tree().create_tween()
 	var tween_pos = position + scoreTargetLocation
-	print(self.position, tween_pos)
+
 	tween.tween_property(destructionScore, "position", tween_pos, scoreFloatingDuration)
 	tween.tween_callback(destructionScore.queue_free)
 	
@@ -90,7 +90,7 @@ func set_fragmented(to: PackedScene) -> void:
 func _get_configuration_warnings() -> PackedStringArray:
 	return ["No fragmented version set"] if not fragmented else []
 
-func _add_shard(original: MeshInstance3D, old_velocity: Vector3) -> void:
+func _add_shard(original: MeshInstance3D, old_velocity: Vector3, old_position: Vector3) -> void:
 	var body := RigidBody3D.new()
 	var mesh := MeshInstance3D.new()
 	var shape := CollisionShape3D.new()
@@ -102,6 +102,7 @@ func _add_shard(original: MeshInstance3D, old_velocity: Vector3) -> void:
 	body.collision_layer = 0
 	body.collision_mask = collision_mask
 	body.set_collision_mask_value(4, true)
+	body.continuous_cd = true
 	mesh.scale = original.scale
 	shape.scale = original.scale
 	shape.shape = _cached_shapes[original]
@@ -132,6 +133,8 @@ func get_rigid_body(node: Node) -> RigidBody3D:
 	return null
 		
 func check_destroyable(body) -> bool:
+	if body is not RigidBody3D:
+		return false
 	var id = body.objectID
 	
 	for i in destroyable_by:
@@ -162,13 +165,11 @@ func _on_body_entered(body: Node):
 	var rigidBody = get_children()[0]
 	var enteringRigidBody = get_rigid_body(body)
 
-	print(body.name)
-
 	if !rigidBody.got_picked_up:
 		if destroyable_by.size() > 0 and !body.is_in_group("room"):
 			if check_destroyable(body) and enteringRigidBody.linear_velocity.length() > 5:
 				self.destroy()
-		elif rigidBody.linear_velocity.length() > 1 and body.is_in_group("room"):
+		elif rigidBody.linear_velocity.length() > 3 and body.is_in_group("room"):
 				self.destroy()
 		elif body.is_in_group("hand") and hand_destruction == true:
 			self.destroy()

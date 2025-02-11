@@ -48,7 +48,7 @@ shadow_mesh = SubResource("ArrayMesh_gf1ms")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xeqj5"]
 margin = 0.01
-size = Vector3(0.0426865, 0.0134277, 0.193422)
+size = Vector3(0.0426865, 0.0134277, 0.213356)
 
 [node name="gabel" type="Node3D"]
 script = ExtResource("1_55hx7")
@@ -63,18 +63,19 @@ script = ExtResource("4_nttdi")
 dropID = "gabel"
 
 [node name="Gabel" type="MeshInstance3D" parent="PickableObject"]
-transform = Transform3D(0.0150238, 0, 0, 0, 0.0150238, 0, 0, 0, 0.0150238, 0, 0, 0)
+transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 0, 0, 0)
 mesh = SubResource("ArrayMesh_s6w5l")
 skeleton = NodePath("")
 
 [node name="GrabPointHandLeft" parent="PickableObject" instance=ExtResource("4_1g8bx")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0155845, 0.0868624, -0.00702298)
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -0.0896411, 0.0120041, -0.0304527)
+visible = true
 snap_hand = false
 
 [node name="GrabPointHandRight" parent="PickableObject" instance=ExtResource("5_cx0gj")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0138359, 0.0839003, -0.00712527)
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.0910007, 0.0124309, -0.0279479)
 snap_hand = false
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="PickableObject"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00174941, 0.00211425, -0.0204082)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.00174941, 0.00211425, -0.0321796)
 shape = SubResource("BoxShape3D_xeqj5")

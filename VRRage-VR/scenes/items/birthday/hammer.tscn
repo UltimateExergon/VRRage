@@ -86,7 +86,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_cnivq")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ehe05"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_goj8t"]
 points = PackedVector3Array(0.99981, -0.862403, 3.73765, 0.885674, -0.671852, 6.40076, 0.99981, -1, 3.73765, 0.99981, -0.761267, 2.50994, 0.885674, -0.699417, 6.40076, 0.129599, -0.526842, 0.300044, -0.885876, -0.671852, 6.40076, 0.99981, -0.89891, 2.50994, -1.00001, -1, 3.73765, 0.250587, -1.00014, -5.04694, 0.269577, -0.953022, -5.88741, 0.269577, -0.815379, -5.88741, -0.885876, -0.699417, 6.40076, 0.184611, -0.808939, -6.02912, -0.1298, -0.526842, 0.300044, -1.00001, -0.761267, 2.50994, -1.00001, -0.862403, 3.73765, -1.00001, -0.89891, 2.50994, -0.269778, -0.953022, -5.88741, -0.250788, -1.00014, -5.04694, 0.184611, -0.903219, -6.02912, 0.0808513, -0.835439, -6.0792, -0.184813, -0.808939, -6.02912, -0.269778, -0.815379, -5.88741, -0.184813, -0.903219, -6.02912, 0.0808513, -0.876719, -6.0792, -0.081053, -0.835439, -6.0792, -0.081053, -0.876719, -6.0792)
 
 [node name="hammer" type="Node3D"]
@@ -103,25 +103,25 @@ continuous_cd = true
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("3_okhlp")
-dropID = "gabel"
+objectID = "hammer"
 
 [node name="Holzteil" type="MeshInstance3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.122959, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.176662, 0.0257223)
 mesh = SubResource("ArrayMesh_aqa51")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.122959, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.176662, 0.0257223)
 shape = SubResource("ConvexPolygonShape3D_t2mmp")
 
 [node name="Gabel" type="MeshInstance3D" parent="RigidBody3D"]
-transform = Transform3D(0, -0.0150238, 0, 0, 0, 0.0150238, -0.0150238, 0, 0, -0.00947143, 0.0386363, -0.0332141)
+transform = Transform3D(-1.09278e-09, -0.025, -1.09278e-09, 0, -1.09278e-09, 0.025, -0.025, 1.09278e-09, 4.77671e-17, -0.00947143, 0.0386363, -0.0332141)
 mesh = SubResource("ArrayMesh_hycam")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(0, -0.0150238, 0, 0, 0, 0.0150238, -0.0150238, 0, 0, -0.00947143, 0.0386363, -0.0332141)
-shape = SubResource("ConvexPolygonShape3D_ehe05")
+transform = Transform3D(-1.09278e-09, -0.025, -1.09278e-09, 0, -1.09278e-09, 0.025, -0.025, 1.09278e-09, 4.77671e-17, -0.00947143, 0.0386363, -0.0332141)
+shape = SubResource("ConvexPolygonShape3D_goj8t")
 
 [node name="GrabPointHandLeft" parent="RigidBody3D" instance=ExtResource("4_3i741")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0162068, 0.0568625, -0.123044)

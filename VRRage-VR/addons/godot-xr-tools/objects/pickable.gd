@@ -131,6 +131,7 @@ func _ready():
 	get_all_GrabPoints()
 	set_Collisions()
 	self.highlight_updated.connect(_highlight_updated)
+	self.continuous_cd = true
 	if self.enabled == true:
 		add_outline_shader(Globals.outline_color)
 		
@@ -446,7 +447,7 @@ func _highlight_updated(body, is_near):
 	if not body.got_picked_up:
 		if body.is_in_group("CRAFTABLE"):
 			if is_near:
-				change_color(Globals.outline_color_crafting_near)
+				change_color(Globals.outline_color_near)
 			else:
 				change_color(Globals.outline_color_crafting)
 		elif is_near:

@@ -32,6 +32,7 @@ tracker = &"left_hand"
 [node name="FunctionPickup" parent="LeftHand/LeftHand" instance=ExtResource("2_a6x7t")]
 pickup_axis_action = "trigger_click"
 action_button_action = "ax_button"
+ranged_enable = false
 
 [node name="SpeedAndCollisionDetection" type="CharacterBody3D" parent="LeftHand/LeftHand" groups=["hand"]]
 collision_layer = 2
@@ -56,6 +57,7 @@ valid_teleport_mask = 4294967287
 [node name="FunctionPickup" parent="RightHand/RightHand" instance=ExtResource("2_a6x7t")]
 pickup_axis_action = "trigger_click"
 action_button_action = "ax_button"
+ranged_enable = false
 
 [node name="SpeedAndCollisionDetection" type="CharacterBody3D" parent="RightHand/RightHand" groups=["hand"]]
 collision_layer = 2

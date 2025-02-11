@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://dwgrubwysepy2" path="res://assets/models/birthday/holzteil_kaputt.glb" id="2_ee75y"]
 [ext_resource type="Script" path="res://scripts/item.gd" id="3_ot6kf"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_rpx84"]
-[ext_resource type="Animation" uid="uid://dqa0h82y3qn1t" path="res://addons/godot-xr-tools/hands/animations/left/Grip 1.res" id="5_uaqu0"]
+[ext_resource type="Animation" uid="uid://dd67rufxwj2u" path="res://addons/godot-xr-tools/hands/animations/left/Grip 3.res" id="5_vqj7s"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="6_f7bpn"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="7_3bjnn"]
-[ext_resource type="Animation" uid="uid://daqddcrbpam0c" path="res://addons/godot-xr-tools/hands/animations/right/Grip 1.res" id="8_pop6s"]
+[ext_resource type="Animation" uid="uid://rs7vpclot07o" path="res://addons/godot-xr-tools/hands/animations/right/Grip 3.res" id="8_34dwt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6mpt0"]
 resource_name = "Material.001"
@@ -52,11 +52,11 @@ points = PackedVector3Array(0.0183648, 0.0129293, 0.0165446, 0.00527347, 0.01292
 
 [sub_resource type="Resource" id="Resource_0yd8t"]
 script = ExtResource("6_f7bpn")
-closed_pose = ExtResource("5_uaqu0")
+closed_pose = ExtResource("5_vqj7s")
 
 [sub_resource type="Resource" id="Resource_mpn7a"]
 script = ExtResource("6_f7bpn")
-closed_pose = ExtResource("8_pop6s")
+closed_pose = ExtResource("8_34dwt")
 
 [node name="holzteil" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.280144, 0)
@@ -73,18 +73,21 @@ max_contacts_reported = 1
 script = ExtResource("3_ot6kf")
 
 [node name="Mesh" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = SubResource("ArrayMesh_ddly1")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_5blto")
 
 [node name="GrabPointHandLeft" parent="RigidBody3D" instance=ExtResource("4_rpx84")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 4.73745e-05, 0.0702831, 0.015627)
+transform = Transform3D(1, 0, 0, 0, -0.225138, -0.974327, 0, 0.974327, -0.225138, -0.0284538, 0.0716674, 0.0614776)
 snap_hand = false
 hand_pose = SubResource("Resource_0yd8t")
 
 [node name="GrabPointHandRight" parent="RigidBody3D" instance=ExtResource("7_3bjnn")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.000668861, 0.0785048, 0.00992488)
+transform = Transform3D(1, 0, 0, 0, -0.161914, -0.986805, 0, 0.986805, -0.161914, 0.0283627, 0.0689166, 0.0573848)
+visible = true
 snap_hand = false
 hand_pose = SubResource("Resource_mpn7a")
