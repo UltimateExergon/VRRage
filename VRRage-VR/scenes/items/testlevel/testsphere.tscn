@@ -17,6 +17,7 @@ points = PackedVector3Array(-0.248934, -0.023101, -4.87268e-05, -0.244158, -0.02
 
 [node name="testsphere" type="RigidBody3D"]
 script = ExtResource("1_xkbvn")
+objectID = "testsphere"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_ekse6")

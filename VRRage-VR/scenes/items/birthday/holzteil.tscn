@@ -71,7 +71,7 @@ freeze_mode = 1
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("3_ot6kf")
-dropID = "holzteil"
+objectID = "holzteil"
 
 [node name="Mesh" type="MeshInstance3D" parent="RigidBody3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)

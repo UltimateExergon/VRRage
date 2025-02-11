@@ -54,9 +54,9 @@ enum SecondHandGrab {
 }
 
 @export_category("Item")
-@export var objectID : String
-@export var collisionLayers : Array = [3]
-@export var collisionMasks : Array = [1, 2, 3, 4]
+@export var objectID : String : get = get_ObjectID ##Identifier of the Objekt, unique
+@export var collisionLayers : Array = [3] ##Collision Layers of the all pickables and items, leave as is
+@export var collisionMasks : Array = [1, 2, 3, 4] ##Collision Masks of the all pickables and items, leave as is
 
 
 # Default layer for held objects is 17:held-object
@@ -89,7 +89,6 @@ const DEFAULT_LAYER := 0b0000_0000_0000_0001_0000_0000_0000_0000
 
 ## Require pick-by to be in the specified group
 @export var picked_by_require : String = ""
-
 
 ## If true, the object can be picked up at range
 var can_ranged_grab: bool = true
@@ -130,8 +129,13 @@ func _ready():
 	make_meshes_unique()
 	get_all_GrabPoints()
 	set_Collisions()
+	
 	self.highlight_updated.connect(_highlight_updated)
+	
+	self.contact_monitor = true
+	self.max_contacts_reported = 160
 	self.continuous_cd = true
+	
 	if self.enabled == true:
 		add_outline_shader(Globals.outline_color)
 		
@@ -148,6 +152,9 @@ func get_all_GrabPoints():
 		var grab_point := child as XRToolsGrabPoint
 		if grab_point:
 			_grab_points.push_back(grab_point)
+			
+func get_ObjectID() -> String:
+	return objectID
 
 
 # Called when the node exits the tree
@@ -463,16 +470,21 @@ func add_outline_shader(color : Color):
 	for i in get_meshes():
 		var material : Material = get_surface_mat(0, i)
 		i.mesh.surface_set_material(0, material.duplicate(true))
-		
-		var new_mat : ShaderMaterial = ShaderMaterial.new()
-		new_mat.set_shader(Globals.outline_shader)
-		new_mat.set_shader_parameter("outline_color", color)
-		new_mat.set_shader_parameter("outline_width", Globals.outline_width)
-		
 		material = get_surface_mat(0, i)
-		material.set_next_pass(new_mat)
+		
+		if material.get_next_pass() == null:
+			var new_mat : ShaderMaterial = ShaderMaterial.new()
+			new_mat.set_shader(Globals.outline_shader)
+			new_mat.set_shader_parameter("outline_color", color)
+			new_mat.set_shader_parameter("outline_width", Globals.outline_width)
+		
+			material.set_next_pass(new_mat)
 		
 func change_color(color : Color):
 	for i in get_meshes():
 		var shaderMat : ShaderMaterial = get_surface_mat(0, i).get_next_pass()
 		shaderMat.set_shader_parameter("outline_color", color)
+		
+func make_invincible():
+	if self.get_parent() is Destruction:
+		self.get_parent().start_invincibility_timer()

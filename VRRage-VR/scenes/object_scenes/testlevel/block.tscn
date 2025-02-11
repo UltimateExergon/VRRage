@@ -9,7 +9,7 @@
 [ext_resource type="Animation" uid="uid://c8dghcftg1thx" path="res://addons/godot-xr-tools/hands/animations/right/Grip Shaft.res" id="6_ilny4"]
 [ext_resource type="Script" path="res://scripts/destruction.gd" id="7_cle0r"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8642x"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nygrf"]
 resource_name = "Block Rot"
 cull_mode = 2
 albedo_color = Color(0.90649, 0.148386, 0.181272, 1)
@@ -27,7 +27,7 @@ cull_mode = 2
 albedo_color = Color(0.897779, 0.906403, 0.156404, 1)
 roughness = 0.5
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_rplxq"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_5e475"]
 _surfaces = [{
 "aabb": AABB(-1, -1, -1, 2, 2, 2),
 "format": 34896613377,
@@ -61,7 +61,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_s6mjf"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_y2ywd"]
 resource_name = "Blöcke_Cube"
 _surfaces = [{
 "aabb": AABB(-1, -1, -1, 2, 2, 2),
@@ -69,7 +69,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 12,
 "index_data": PackedByteArray("AgAEAAYAAgAAAAQABwABAAMABwAFAAEA"),
-"material": SubResource("StandardMaterial3D_8642x"),
+"material": SubResource("StandardMaterial3D_nygrf"),
 "name": "Block Rot",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -101,7 +101,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AAAAAP//VNUAAP////9U1QAAAAAAAFTVAAD//wAAVNX//wAA//9U1f///////1TV//8AAAAAVNX/////AABU1VTVVNVU1VTVVNVU1VTVVNWqKqoqqiqqKqoqqiqqKqoq")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_rplxq")
+shadow_mesh = SubResource("ArrayMesh_5e475")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_og17j"]
 points = PackedVector3Array(1, 1, 1, 1, 1, -1, -1, 1, 1, 1, -1, 1, 1, -1, -1, -1, 1, -1, -1, -1, 1, -1, -1, -1)
@@ -128,10 +128,11 @@ continuous_cd = true
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("3_w3vel")
+objectID = "block"
 
 [node name="Block" type="MeshInstance3D" parent="PickableObject"]
 transform = Transform3D(0.115418, 0, 0, 0, 0.115418, 0, 0, 0, 0.115418, 0.00206272, -0.127259, 0.124717)
-mesh = SubResource("ArrayMesh_s6mjf")
+mesh = SubResource("ArrayMesh_y2ywd")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PickableObject"]

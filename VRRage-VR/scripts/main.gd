@@ -109,7 +109,8 @@ func teleport_player():
 	player.global_position = startPos
 	
 func craft(item1, item2):
-	ingredients.append([item1.get_dropID(), item2.get_dropID()])
+	ingredients.clear()
+	ingredients.append([item1.get_objectID(), item2.get_objectID()])
 	if ingredients.size() == 2:
 		var new_item = match_items()
 		if new_item != null:
