@@ -34,6 +34,13 @@ enabled=PackedStringArray("res://addons/csv-data-importer/plugin.cfg", "res://ad
 
 import/blender/enabled=false
 
+[layer_names]
+
+3d_physics/layer_1="can teleport"
+3d_physics/layer_2="hands"
+3d_physics/layer_3="objects/items"
+3d_physics/layer_4="cant teleport"
+
 [physics]
 
 common/physics_ticks_per_second=180
