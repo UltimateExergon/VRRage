@@ -71,6 +71,7 @@ freeze_mode = 1
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("3_ot6kf")
+dropID = "holzteil"
 
 [node name="Mesh" type="MeshInstance3D" parent="RigidBody3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -88,6 +89,5 @@ hand_pose = SubResource("Resource_0yd8t")
 
 [node name="GrabPointHandRight" parent="RigidBody3D" instance=ExtResource("7_3bjnn")]
 transform = Transform3D(1, 0, 0, 0, -0.161914, -0.986805, 0, 0.986805, -0.161914, 0.0283627, 0.0689166, 0.0573848)
-visible = true
 snap_hand = false
 hand_pose = SubResource("Resource_mpn7a")

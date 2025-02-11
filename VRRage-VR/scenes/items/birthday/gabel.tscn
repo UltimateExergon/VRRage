@@ -69,7 +69,6 @@ skeleton = NodePath("")
 
 [node name="GrabPointHandLeft" parent="PickableObject" instance=ExtResource("4_1g8bx")]
 transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -0.0896411, 0.0120041, -0.0304527)
-visible = true
 snap_hand = false
 
 [node name="GrabPointHandRight" parent="PickableObject" instance=ExtResource("5_cx0gj")]
