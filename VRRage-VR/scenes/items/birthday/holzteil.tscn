@@ -59,7 +59,7 @@ script = ExtResource("6_f7bpn")
 closed_pose = ExtResource("8_34dwt")
 
 [node name="holzteil" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.280144, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00382659, 0)
 script = ExtResource("1_fl3qa")
 fragmented = ExtResource("2_ee75y")
 

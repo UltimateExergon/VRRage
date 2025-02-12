@@ -52,11 +52,10 @@ func destroy() -> void:
 	main_node.add_active_shard(shard_container)
 	
 	var pos = get_rigidBody_position()
-	print("Destruction Node Position During Destruction: ", self.position)
-	#self.position = pos
+	#print("Destruction Node Position During Destruction: ", self.position)
 	shard_container.position = pos
-	print("Moved Destruction Node to: ", self.position)
-	print("Spawned Shard Container at: ", shard_container.position)
+	#print("Moved Destruction Node to: ", self.position)
+	#print("Spawned Shard Container at: ", shard_container.position)
 
 	var saved_velocity = self.get_children()[0].linear_velocity
 
@@ -73,8 +72,7 @@ func destroy() -> void:
 func add_floatingScore():
 	var destructionScore = Globals.destructionScore.instantiate()
 	destructionScore.position = body_position
-	print("Spawning Floating Score at: ", destructionScore.position)
-	print("CHILD TEST ", self.get_children()[0].global_position)
+	#print("Spawning Floating Score at: ", destructionScore.position)
 	add_child(destructionScore)
 	destructionScore.text = "+" + str(score_points)
 	
@@ -131,11 +129,12 @@ func add_drop(old_velocity: Vector3):
 		var item = load(Globals.itemPath + current_level + "/" + dropID + Globals.sceneFormat).instantiate()
 		
 		var rigidBody = get_rigid_body(item)
-		rigidBody.make_invincible()
 		
 		item.position = body_position
 		print("Spawned Drop at: ", item.position)
+		
 		add_child(item)
+		rigidBody.make_invincible()
 		rigidBody.linear_velocity = old_velocity
 		
 func get_rigid_body(node: Node) -> RigidBody3D:
@@ -166,8 +165,8 @@ func set_currentLevel(levelname : String) -> void:
 	
 func start_invincibility_timer():
 	is_destructible = false
-	if is_inside_tree():
-		await get_tree().create_timer(spawn_invincibility_time).timeout
+	#print("Start Timer")
+	await get_tree().create_timer(spawn_invincibility_time).timeout
 	is_destructible = true
 
 static func _random_direction() -> Vector3:

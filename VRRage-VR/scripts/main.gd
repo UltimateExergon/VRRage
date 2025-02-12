@@ -109,8 +109,9 @@ func teleport_player():
 	player.global_position = startPos
 	
 func craft(item1, item2):
-	ingredients.clear()
-	ingredients.append([item1.get_objectID(), item2.get_objectID()])
+	#print("ZU TESTENDE ITEMS ", item1.get_ObjectID(), " ", item2.get_ObjectID())
+	ingredients.append([item1.get_ObjectID(), item2.get_ObjectID()])
+	#print("INGREDIENTS ", ingredients)
 	if ingredients.size() == 2:
 		var new_item = match_items()
 		if new_item != null:
@@ -120,15 +121,17 @@ func craft(item1, item2):
 		else: 
 			item1.collision_reported = false
 			item2.collision_reported = false
-			ingredients.clear()
+		ingredients.clear()
 			
 func spawn_crafted_item(itemID : String, pos : Vector3):
+	#print("SPAWN ITEM ", itemID, " FROM ", Globals.itemPath + current_level + "/" + itemID + Globals.sceneFormat)
 	var item = load(Globals.itemPath + current_level + "/" + itemID + Globals.sceneFormat).instantiate()
 	item.global_position = pos
 	get_node(current_level).add_child(item)
 		
 func check_for_recipe(items : Array):
 	for i in craftingRecipes:
+		#print("CRAFTING RECIPES ", i, " ITEMS: ", items)
 		var recipe_ingredients : Array = [i[0], i[1]]
 		if (items[0] == recipe_ingredients[0] or items[0] == recipe_ingredients[1]) and (items[1] == recipe_ingredients[0] or items[1] == recipe_ingredients[1]):
 			return i[2]
@@ -138,6 +141,7 @@ func check_for_recipe(items : Array):
 func match_items():
 	var item1 : Array = ingredients[0]
 	var item2 : Array = ingredients[1]
+	#print("MATCH ", item1, " AND ", item2)
 	
 	if item1[0] == item2[1] and item1[1] == item2[0]:
 		return check_for_recipe(item1)
