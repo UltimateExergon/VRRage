@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dtgwnv6x1ix2k"
-path="res://.godot/imported/stuhl.glb-7e312047bd5d7d41f8da303f8e7ecdce.scn"
+uid="uid://cyerkwjf8dtb"
+path="res://.godot/imported/cubicle_table.glb-4f07f279c797397b7f10f01deb982cda.scn"
 
 [deps]
 
-source_file="res://assets/models/testlevel/stuhl.glb"
-dest_files=["res://.godot/imported/stuhl.glb-7e312047bd5d7d41f8da303f8e7ecdce.scn"]
+source_file="res://assets/models/office/cubicle_table.glb"
+dest_files=["res://.godot/imported/cubicle_table.glb-4f07f279c797397b7f10f01deb982cda.scn"]
 
 [params]
 
-nodes/root_type="RigidBody3D"
-nodes/root_name="stuhl"
+nodes/root_type=""
+nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false

@@ -42,29 +42,31 @@ func _physics_process(_delta: float) -> void:
 		linear_velocity = get_children()[0].linear_velocity.length()
 
 func destroy() -> void:
-	print("Destruction Node Position During Destruction: ", self.global_position)
-	self.global_position = self.get_children()[0].global_position
-	print("Moved Destruction Node to: ", self.global_position)
-	var saved_velocity = self.get_children()[0].linear_velocity
-	
 	shard_container = Node3D.new()
-	shard_container.global_position = self.global_position
-	print("Spawned Shard Container at: ", shard_container.global_position)
 	add_child(shard_container)
 	main_node.add_active_shard(shard_container)
-	
+
+	add_score_points()
+
+	print("Destruction Node Position During Destruction: ", self.global_position)
+	self.position = self.get_children()[0].global_position
+	print("Moved Destruction Node to: ", self.position)
+	var saved_velocity = self.get_children()[0].linear_velocity
+
+	shard_container.position = self.position
+	print("Spawned Shard Container at: ", shard_container.global_position)
+
 	for shard in _get_shards():
 		_add_shard(shard, saved_velocity)
-	
+
 	add_drop(saved_velocity)
-	add_score_points()
-	add_floatingScore(self.global_position)
-	
+	add_floatingScore(self.position)
+
 	self.get_children()[0].queue_free()
 	
 func add_floatingScore(score_position: Vector3):
 	var destructionScore = Globals.destructionScore.instantiate()
-	destructionScore.global_position = score_position
+	destructionScore.position = score_position
 	print("Spawning Floating Score at: ", score_position)
 	add_child(destructionScore)
 	destructionScore.text = "+" + str(score_points)
@@ -104,10 +106,11 @@ func _add_shard(original: MeshInstance3D, old_velocity: Vector3) -> void:
 	body.add_child(mesh)
 	body.add_child(shape)
 	shard_container.add_child(body, true)
-	body.global_position = shard_container.global_position
+	body.global_position = shard_container.position
 	body.global_rotation = global_rotation
 	body.collision_layer = 0
 	body.collision_mask = collision_mask
+	body.set_collision_mask_value(1, true)
 	body.continuous_cd = true
 	body.contact_monitor = true
 	mesh.scale = original.scale
@@ -122,7 +125,6 @@ func add_drop(old_velocity: Vector3):
 		var item = load(Globals.itemPath + current_level + "/" + dropID + Globals.sceneFormat).instantiate()
 		
 		var rigidBody = get_rigid_body(item)
-		rigidBody.set_dropID(dropID)
 		rigidBody.make_invincible()
 		
 		item.global_position = shard_container.position
@@ -158,7 +160,8 @@ func set_currentLevel(levelname : String) -> void:
 	
 func start_invincibility_timer():
 	is_destructible = false
-	await get_tree().create_timer(spawn_invincibility_time).timeout
+	if is_inside_tree():
+		await get_tree().create_timer(spawn_invincibility_time).timeout
 	is_destructible = true
 
 static func _random_direction() -> Vector3:
