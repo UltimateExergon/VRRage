@@ -19,6 +19,8 @@ var linear_velocity : float
 
 var is_destructible : bool = true
 
+var body_position : Vector3
+
 @export_group("Physics")
 @export var explosion_power: float = 1.0 ##How strong the shards are blown away upon destruction
 
@@ -38,18 +40,20 @@ func _physics_process(_delta: float) -> void:
 	if get_children()[0] is RigidBody3D:
 		linear_velocity = get_children()[0].linear_velocity.length()
 		
-func get_rigidBody_position():
+func get_rigidBody_position() -> Vector3:
 	if get_child(0) is RigidBody3D:
-		return get_child(0).global_position
+		return get_child(0).position
+	return Vector3.ZERO
 
 func destroy() -> void:
+	body_position = get_rigidBody_position()
 	shard_container = Node3D.new()
 	add_child(shard_container)
 	main_node.add_active_shard(shard_container)
 	
 	var pos = get_rigidBody_position()
 	print("Destruction Node Position During Destruction: ", self.position)
-	self.position = pos
+	#self.position = pos
 	shard_container.position = pos
 	print("Moved Destruction Node to: ", self.position)
 	print("Spawned Shard Container at: ", shard_container.position)
@@ -68,7 +72,7 @@ func destroy() -> void:
 	
 func add_floatingScore():
 	var destructionScore = Globals.destructionScore.instantiate()
-	destructionScore.position = get_rigidBody_position()
+	destructionScore.position = body_position
 	print("Spawning Floating Score at: ", destructionScore.position)
 	print("CHILD TEST ", self.get_children()[0].global_position)
 	add_child(destructionScore)
@@ -109,7 +113,7 @@ func _add_shard(original: MeshInstance3D, old_velocity: Vector3) -> void:
 	body.add_child(mesh)
 	body.add_child(shape)
 	shard_container.add_child(body, true)
-	body.position = shard_container.position
+	body.global_position = shard_container.global_position
 	body.global_rotation = global_rotation
 	body.set_collision_layer_value(1, false)
 	body.set_collision_mask_value(1, true)
@@ -129,7 +133,7 @@ func add_drop(old_velocity: Vector3):
 		var rigidBody = get_rigid_body(item)
 		rigidBody.make_invincible()
 		
-		item.position = get_rigidBody_position()
+		item.position = body_position
 		print("Spawned Drop at: ", item.position)
 		add_child(item)
 		rigidBody.linear_velocity = old_velocity
