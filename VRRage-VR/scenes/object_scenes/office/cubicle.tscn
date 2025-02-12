@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbcug48yd8xve"]
+[gd_scene load_steps=3 format=3 uid="uid://bbcug48yd8xve"]
 
 [ext_resource type="PackedScene" uid="uid://c1yh3celvb7vb" path="res://scenes/object_scenes/office/cubicle_wall.tscn" id="1_htpkl"]
+[ext_resource type="PackedScene" uid="uid://dfedeo38wfjaf" path="res://scenes/object_scenes/office/cubicle_table.tscn" id="2_44sxd"]
 
 [node name="Cubicle" type="Node3D"]
 
@@ -11,3 +12,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.1, 
 
 [node name="CubicleWall3" parent="." instance=ExtResource("1_htpkl")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.1, 0, 1.304)
+
+[node name="cubicle_table" parent="." instance=ExtResource("2_44sxd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.991988, 0.694427)
