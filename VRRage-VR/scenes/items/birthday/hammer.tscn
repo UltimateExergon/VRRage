@@ -103,7 +103,6 @@ continuous_cd = true
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("3_okhlp")
-dropID = "hammer"
 
 [node name="Holzteil" type="MeshInstance3D" parent="RigidBody3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.176662, 0.0257223)

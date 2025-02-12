@@ -60,7 +60,6 @@ collision_mask = 196623
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("4_nttdi")
-dropID = ""
 objectID = "gabel"
 
 [node name="Gabel" type="MeshInstance3D" parent="PickableObject"]

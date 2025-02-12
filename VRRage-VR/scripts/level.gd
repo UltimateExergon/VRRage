@@ -7,8 +7,8 @@ func _ready():
 	
 	for i in get_children():
 		if i.is_in_group("room"):
-			i.set_collision_mask(0, false)
-			i.set_collision_layer(0, true)
+			i.set_collision_mask_value(1, false)
+			i.set_collision_layer_value(1, true)
 
 func get_startPos() -> Vector3:
 	return start_pos
