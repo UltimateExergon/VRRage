@@ -1,5 +1,5 @@
-class_name Destruction
 extends Node3D
+class_name Destruction
 
 const scoreFloatingDuration : float = 1.5
 const scoreTargetLocation : Vector3 = Vector3(0, 1.5, 0)

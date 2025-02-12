@@ -5,7 +5,7 @@ signal focus_gained
 signal pose_recentered
 
 const max_shards : int = 50
-const teleport_cooldown : int = 0.5
+const teleport_cooldown : float = 0.5
 
 var xr_interface : OpenXRInterface
 var xr_is_focussed = false
