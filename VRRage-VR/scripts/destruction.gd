@@ -37,39 +37,44 @@ func _ready():
 func _physics_process(_delta: float) -> void:
 	if get_children()[0] is RigidBody3D:
 		linear_velocity = get_children()[0].linear_velocity.length()
+		
+func get_rigidBody_position():
+	if get_child(0) is RigidBody3D:
+		return get_child(0).global_position
 
 func destroy() -> void:
 	shard_container = Node3D.new()
 	add_child(shard_container)
 	main_node.add_active_shard(shard_container)
-
-	add_score_points()
-
-	print("Destruction Node Position During Destruction: ", self.global_position)
-	self.position = self.get_children()[0].global_position
+	
+	var pos = get_rigidBody_position()
+	print("Destruction Node Position During Destruction: ", self.position)
+	self.position = pos
+	shard_container.position = pos
 	print("Moved Destruction Node to: ", self.position)
-	var saved_velocity = self.get_children()[0].linear_velocity
+	print("Spawned Shard Container at: ", shard_container.position)
 
-	shard_container.position = self.position
-	print("Spawned Shard Container at: ", shard_container.global_position)
+	var saved_velocity = self.get_children()[0].linear_velocity
 
 	for shard in _get_shards():
 		_add_shard(shard, saved_velocity)
 
 	add_drop(saved_velocity)
-	add_floatingScore(self.position)
+	add_floatingScore()
+	
+	add_score_points()
 
 	self.get_children()[0].queue_free()
 	
-func add_floatingScore(score_position: Vector3):
+func add_floatingScore():
 	var destructionScore = Globals.destructionScore.instantiate()
-	destructionScore.position = score_position
-	print("Spawning Floating Score at: ", score_position)
+	destructionScore.position = get_rigidBody_position()
+	print("Spawning Floating Score at: ", destructionScore.position)
 	add_child(destructionScore)
 	destructionScore.text = "+" + str(score_points)
 	
 	var tween = get_tree().create_tween()
-	var tween_pos = score_position + scoreTargetLocation
+	var tween_pos = destructionScore.position + scoreTargetLocation
 
 	tween.tween_property(destructionScore, "position", tween_pos, scoreFloatingDuration)
 	tween.tween_callback(destructionScore.queue_free)
@@ -123,7 +128,7 @@ func add_drop(old_velocity: Vector3):
 		var rigidBody = get_rigid_body(item)
 		rigidBody.make_invincible()
 		
-		item.position = shard_container.position
+		item.position = get_rigidBody_position()
 		print("Spawned Drop at: ", item.position)
 		add_child(item)
 		rigidBody.linear_velocity = old_velocity
