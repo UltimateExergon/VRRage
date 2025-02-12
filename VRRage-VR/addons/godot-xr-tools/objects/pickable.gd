@@ -136,8 +136,11 @@ func _ready():
 	self.max_contacts_reported = 160
 	self.continuous_cd = true
 	
-	if self.enabled == true:
-		add_outline_shader(Globals.outline_color)
+	if self.enabled:
+		if self.is_in_group("CRAFTABLE"):
+			add_outline_shader(Globals.outline_color_crafting)
+		else:
+			add_outline_shader(Globals.outline_color)
 		
 func set_Collisions():
 	for i in collisionLayers:

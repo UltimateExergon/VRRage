@@ -70,6 +70,7 @@ func add_floatingScore():
 	var destructionScore = Globals.destructionScore.instantiate()
 	destructionScore.position = get_rigidBody_position()
 	print("Spawning Floating Score at: ", destructionScore.position)
+	print("CHILD TEST ", self.get_children()[0].global_position)
 	add_child(destructionScore)
 	destructionScore.text = "+" + str(score_points)
 	
@@ -112,8 +113,8 @@ func _add_shard(original: MeshInstance3D, old_velocity: Vector3) -> void:
 	body.global_rotation = global_rotation
 	body.set_collision_layer_value(1, false)
 	body.set_collision_mask_value(1, true)
+	body.set_collision_mask_value(4, true)
 	body.continuous_cd = true
-	body.contact_monitor = true
 	mesh.scale = original.scale
 	shape.scale = original.scale
 	shape.shape = _cached_shapes[original]
