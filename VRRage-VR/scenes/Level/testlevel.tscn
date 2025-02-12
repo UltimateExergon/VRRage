@@ -48,7 +48,7 @@ label_text = "Level Selection"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0691, 1.66856, -1.70887)
 
 [node name="chair" parent="." instance=ExtResource("6_rsxg6")]
-transform = Transform3D(-0.995243, 0, 0.0974265, 0, 1, 0, -0.0974265, 0, -0.995243, 4.39241, 0.168138, 0.87831)
+transform = Transform3D(-0.995243, 0, 0.0974265, 0, 1, 0, -0.0974265, 0, -0.995243, 4.39241, 0.299223, 0.87831)
 
 [node name="chair2" parent="." instance=ExtResource("6_rsxg6")]
 transform = Transform3D(-0.995243, 0, 0.0974265, 0, 1, 0, -0.0974265, 0, -0.995243, 4.39241, 0.168138, 2.36936)

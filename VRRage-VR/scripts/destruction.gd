@@ -45,13 +45,14 @@ func destroy() -> void:
 
 	add_score_points()
 
-	print("Destruction Node Position During Destruction: ", self.global_position)
+	print("Destruction Node Position During Destruction: ", self.position)
+	# Assign position of the Rigidbody to the Destruction Node
 	self.position = self.get_children()[0].global_position
 	print("Moved Destruction Node to: ", self.position)
 	var saved_velocity = self.get_children()[0].linear_velocity
 
 	shard_container.position = self.position
-	print("Spawned Shard Container at: ", shard_container.global_position)
+	print("Spawned Shard Container at: ", shard_container.position)
 
 	for shard in _get_shards():
 		_add_shard(shard, saved_velocity)
@@ -64,6 +65,7 @@ func destroy() -> void:
 func add_floatingScore(score_position: Vector3):
 	var destructionScore = Globals.destructionScore.instantiate()
 	destructionScore.position = score_position
+	print("CHILD TEST ", self.get_children()[0].global_position)
 	print("Spawning Floating Score at: ", score_position)
 	add_child(destructionScore)
 	destructionScore.text = "+" + str(score_points)
@@ -107,8 +109,8 @@ func _add_shard(original: MeshInstance3D, old_velocity: Vector3) -> void:
 	body.global_rotation = global_rotation
 	body.set_collision_layer_value(1, false)
 	body.set_collision_mask_value(1, true)
+	body.set_collision_mask_value(4, true)
 	body.continuous_cd = true
-	body.contact_monitor = true
 	mesh.scale = original.scale
 	shape.scale = original.scale
 	shape.shape = _cached_shapes[original]
