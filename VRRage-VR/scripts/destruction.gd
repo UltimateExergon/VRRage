@@ -25,6 +25,7 @@ var body_position : Vector3
 @export var explosion_power: float = 1.0 ##How strong the shards are blown away upon destruction
 
 @onready var main_node = get_tree().root.get_children()[Globals.main_order]
+@onready var invincible_timer : Timer = Timer.new()
 
 static var _cached_scenes := {}
 static var _cached_shapes := {}
@@ -35,6 +36,11 @@ func _ready():
 	body.body_entered.connect(_on_body_entered)
 	body.contact_monitor = true
 	body.max_contacts_reported = 10
+	
+	invincible_timer.autostart = false
+	invincible_timer.one_shot = true
+	add_child(invincible_timer)
+	invincible_timer.timeout.connect(_on_invincible_timer_timeout)
 	
 func _physics_process(_delta: float) -> void:
 	if get_children()[0] is RigidBody3D:
@@ -166,10 +172,8 @@ func set_currentLevel(levelname : String) -> void:
 	
 func start_invincibility_timer():
 	is_destructible = false
-	if is_inside_tree():
-		await get_tree().create_timer(spawn_invincibility_time).timeout
-	is_destructible = true
-
+	invincible_timer.start(spawn_invincibility_time)
+	
 static func _random_direction() -> Vector3:
 	return (Vector3(randf(), randf(), randf()) - Vector3.ONE / 2.0).normalized() * 2.0
 	
@@ -185,4 +189,7 @@ func _on_body_entered(body: Node):
 				self.destroy()
 		elif body.is_in_group("hand") and hand_destruction == true:
 			self.destroy()
+			
+func _on_invincible_timer_timeout():
+	is_destructible = true
 			
