@@ -10,7 +10,7 @@ cull_mode = 2
 albedo_color = Color(0.66331, 0.66331, 0.66331, 1)
 roughness = 0.5
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_6p3mh"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_6na12"]
 _surfaces = [{
 "aabb": AABB(-1, -1, -1, 2, 2, 2),
 "format": 34896613377,
@@ -24,7 +24,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_7mwek"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_bmkis"]
 resource_name = "cubicleWall_Cube_004"
 _surfaces = [{
 "aabb": AABB(-1, -1, -1, 2, 2, 2),
@@ -40,7 +40,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AAAAAP///78AAAAA////vwAAAAD//1TVAAD//////78AAP///////wAA/////1TVAAAAAAAA//8AAAAAAAD/vwAAAAAAAFTVAAD//wAA//8AAP//AAD//wAA//8AAFTV//8AAP///7///wAA////v///AAD//1TV/////////7///////////////////1TV//8AAAAA/////wAAAAD/v///AAAAAFTV/////wAA////////AAD///////8AAFTVAAAAAP9//78AAAAA/39U1QAA/3////+/AAD/f///VNUAAP///3///wAA////f1TVAAD/fwAA//8AAP9/AABU1f9/AAAAAP///38AAAAA/7//f///AAD///9///8AAP//////fwAA//////9/AABU1f//AAD/f/+///8AAP9/VNX//////3//////////f1TV////f////7////9///9U1f9/AAD///+//38AAP///7//f///////v/9//////////3////9/////fwAA/3//v/9//3////+/////f/9/VNX/f/9/AAD//wAA/3//f1TV/////wAA/39U1VTV//////9//79U1VTV/7//vwAA/39U1VTV/7//v/9//79U1VTV/////wAA/3+qKqoq//////9//7+qKqoq/7//vwAA/3+qKqoq/7//v/9//7+qKqoqAAD/f1TVVNX/////VNVU1f9//79U1VTV/7//v1TVVNX/v/+/AAD/f/+//7//f/+//7//v6oqqioAAP9/qiqqKv9//7+qKqoq/////6oqqir/////AAD/f///////f/+//3//vwAA/3//////qiqqKv+//79U1VTV")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_6p3mh")
+shadow_mesh = SubResource("ArrayMesh_6na12")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l8twt"]
 size = Vector3(2.4, 2, 0.2)
@@ -61,7 +61,7 @@ enabled = false
 
 [node name="Cube" type="MeshInstance3D" parent="RigidBody3D"]
 transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 0, 0)
-mesh = SubResource("ArrayMesh_7mwek")
+mesh = SubResource("ArrayMesh_bmkis")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]

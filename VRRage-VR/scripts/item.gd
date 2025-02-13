@@ -4,6 +4,10 @@ var collision_reported : bool = false
 
 @onready var main_node = get_tree().root.get_children()[Globals.main_order]
 
+# Add support for is_xr_class on XRTools classes
+func is_xr_class(name : String) -> bool:
+	return name == "XRToolsPickable"
+
 func _ready():
 	self.add_to_group("CRAFTABLE")
 	self.body_entered.connect(_on_body_entered)
