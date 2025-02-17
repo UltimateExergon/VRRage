@@ -16,7 +16,7 @@ var craftingRecipes : Array
 var ingredients : Array
 
 var current_score : int = 0
-
+var score_multiplier : float = 1.0
 var score_label = ""
 
 var player
@@ -108,6 +108,11 @@ func load_player() -> void:
 func teleport_player():
 	player.global_position = startPos
 	
+func set_timed_multiplier(multiplier : float, m_time : float):
+	score_multiplier += multiplier
+	await get_tree().create_timer(m_time).timeout
+	score_multiplier -= multiplier
+	
 func craft(item1, item2):
 	#print("ZU TESTENDE ITEMS ", item1.get_ObjectID(), " ", item2.get_ObjectID())
 	ingredients.append([item1.get_ObjectID(), item2.get_ObjectID()])
@@ -149,8 +154,8 @@ func match_items():
 		return null
 		
 func increase_score(points : int):
-	current_score += points
-	score_label.update_score(current_score)
+	current_score += points * score_multiplier
+	score_label.update_score(current_score, score_multiplier)
 	
 func activate_teleport_timer():
 	can_teleport = false

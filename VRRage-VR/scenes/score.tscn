@@ -5,7 +5,7 @@
 
 [node name="Score" type="Label3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0332, -4.43286)
-text = "Score: 0"
+text = "Score: 0  x1.0"
 font = ExtResource("1_lug10")
 font_size = 177
 script = ExtResource("1_uecnq")
