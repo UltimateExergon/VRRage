@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://dh2xvlylxuguu"]
+[gd_scene load_steps=22 format=3 uid="uid://dh2xvlylxuguu"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_14gsh"]
 [ext_resource type="ArrayMesh" uid="uid://6r0j371gpkry" path="res://assets/models/birthday/geburtstags_raum.obj" id="1_lbqcs"]
+[ext_resource type="PackedScene" uid="uid://bxop60htjcqab" path="res://assets/models/birthday/geburtstags_raum.blend" id="2_jqr6m"]
 [ext_resource type="PackedScene" uid="uid://brr88ibcpmb4j" path="res://scenes/teleporter.tscn" id="3_nk0ps"]
 [ext_resource type="PackedScene" uid="uid://bbmagsn1leo2j" path="res://scenes/score.tscn" id="4_keygf"]
 [ext_resource type="PackedScene" uid="uid://bvsl5t1vy0b4h" path="res://assets/models/birthday/ess_tisch.blend" id="5_d3wgx"]
@@ -11,9 +12,12 @@
 [ext_resource type="ArrayMesh" uid="uid://dr0x3tv55r54f" path="res://assets/models/birthday/hoher_schrank.obj" id="8_j1d1s"]
 [ext_resource type="PackedScene" uid="uid://dy77eurx5l5sg" path="res://scenes/object_scenes/birthday/b_stuhl.tscn" id="9_b4et4"]
 [ext_resource type="ArrayMesh" uid="uid://fa03r3j0co0m" path="res://assets/models/birthday/kleiner_schrank.obj" id="9_oebsl"]
+[ext_resource type="PackedScene" uid="uid://b1kt3dtng4vqa" path="res://assets/models/birthday/hoher_schrank.blend" id="10_43ohg"]
 [ext_resource type="PackedScene" uid="uid://7h0wdl1creks" path="res://scenes/items/birthday/gabel.tscn" id="10_r2ipv"]
 
 [sub_resource type="Environment" id="Environment_odbat"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d1cck"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4066m"]
 data = PackedVector3Array(-5.9924, 3.2711, 2.6739, -5.9924, 0, 2.6739, -5.704, 3.2711, 2.6739, -5.704, 3.2711, 2.6739, -5.9924, 0, 2.6739, -5.704, 0, 2.6739, -5.704, 4, -5.8707, -5.704, 0, -5.8707, -5.704, 4, -2.6741, -5.704, 4, -2.6741, -5.704, 0, -5.8707, -5.704, 3.2711, -2.6741, -5.704, 3.2711, -2.6741, -5.704, 0, -5.8707, -5.704, 0, -2.6741, -5.9924, 4, -2.6741, -5.9924, 3.2711, -2.6741, -5.9924, 4, -5.8707, -5.9924, 4, -5.8707, -5.9924, 3.2711, -2.6741, -5.9924, 0, -5.8707, -5.9924, 0, -5.8707, -5.9924, 3.2711, -2.6741, -5.9924, 0, -2.6741, -5.704, 3.2711, -2.6741, -5.704, 0, -2.6741, -5.9924, 3.2711, -2.6741, -5.9924, 3.2711, -2.6741, -5.704, 0, -2.6741, -5.9924, 0, -2.6741, -5.9924, 4, 5.8707, -5.9924, 0, 5.8707, -5.9924, 4, 2.6739, -5.9924, 4, 2.6739, -5.9924, 0, 5.8707, -5.9924, 3.2711, 2.6739, -5.9924, 3.2711, 2.6739, -5.9924, 0, 5.8707, -5.9924, 0, 2.6739, -5.9924, 3.2711, -2.6741, -5.9924, 4, -2.6741, -5.9924, 3.2711, 2.6739, -5.9924, 3.2711, 2.6739, -5.9924, 4, -2.6741, -5.9924, 4, 2.6739, -5.704, 4, -2.6741, -5.704, 3.2711, -2.6741, -5.704, 4, 2.6739, -5.704, 4, 2.6739, -5.704, 3.2711, -2.6741, -5.704, 3.2711, 2.6739, -5.704, 3.2711, -2.6741, -5.9924, 3.2711, -2.6741, -5.704, 3.2711, 2.6739, -5.704, 3.2711, 2.6739, -5.9924, 3.2711, -2.6741, -5.9924, 3.2711, 2.6739, -5.704, 4, 2.6739, -5.704, 3.2711, 2.6739, -5.704, 4, 5.8707, -5.704, 4, 5.8707, -5.704, 3.2711, 2.6739, -5.704, 0, 5.8707, -5.704, 0, 5.8707, -5.704, 3.2711, 2.6739, -5.704, 0, 2.6739, 4.81, 0, 5.8707, 4.81, 0, -5.8707, 4.81, 4, 5.8707, 4.81, 4, 5.8707, 4.81, 0, -5.8707, 4.81, 4, -5.8707, -12.5469, 0, -5.8707, -12.5469, 0, 5.8707, -12.5469, 4, -5.8707, -12.5469, 4, -5.8707, -12.5469, 0, 5.8707, -12.5469, 4, 5.8707, 4.81, 0, -5.8707, -12.5469, 0, -5.8707, 4.81, 4, -5.8707, 4.81, 4, -5.8707, -12.5469, 0, -5.8707, -12.5469, 4, -5.8707, -12.5469, 4, 5.8707, -12.5469, 0, 5.8707, 4.81, 4, 5.8707, 4.81, 4, 5.8707, -12.5469, 0, 5.8707, 4.81, 0, 5.8707, 4.81, 0, 5.8707, -12.5469, 0, 5.8707, 4.81, 0, -5.8707, 4.81, 0, -5.8707, -12.5469, 0, 5.8707, -12.5469, 0, -5.8707)
@@ -40,7 +44,16 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_odbat")
 
+[node name="geburtstags_raum" parent="." instance=ExtResource("2_jqr6m")]
+
+[node name="Room" parent="geburtstags_raum" index="0"]
+material_overlay = SubResource("StandardMaterial3D_d1cck")
+
+[node name="StaticBody3D" parent="geburtstags_raum/Room" index="0"]
+collision_mask = 0
+
 [node name="Raum" type="StaticBody3D" parent="." groups=["room"]]
+visible = false
 collision_mask = 0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Raum"]
@@ -93,8 +106,12 @@ mesh = ExtResource("7_eo5kt")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_7jdgb")
 
+[node name="hoher_schrank" parent="." instance=ExtResource("10_43ohg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.55407, 0, -5.25309)
+
 [node name="Hoher Schrank" type="StaticBody3D" parent="." groups=["room"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.55407, 0, -5.25309)
+visible = false
 collision_layer = 8
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Hoher Schrank"]
@@ -167,4 +184,5 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9.478
 [node name="gabel6" parent="." instance=ExtResource("10_r2ipv")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9.22825, 0.921791, 3.39147)
 
+[editable path="geburtstags_raum"]
 [editable path="ess_tisch"]
