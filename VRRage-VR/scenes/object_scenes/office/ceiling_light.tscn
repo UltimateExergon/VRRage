@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnplkome32s60"]
+[gd_scene load_steps=4 format=3 uid="uid://cnplkome32s60"]
 
+[ext_resource type="Script" path="res://scripts/office/ceiling_light.gd" id="1_2saki"]
 [ext_resource type="ArrayMesh" uid="uid://cml23mbqofyer" path="res://assets/models/office/ceiling_light.obj" id="1_pgkei"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xsbd3"]
 size = Vector3(1.59772, 0.152802, 0.749512)
 
 [node name="ceiling_light" type="StaticBody3D"]
+script = ExtResource("1_2saki")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.75, 6.55671e-08, 0, -6.55671e-08, -0.75, 0, 0, 0)
@@ -15,5 +17,6 @@ mesh = ExtResource("1_pgkei")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00186157, 0.00184631, 0.00170898)
 shape = SubResource("BoxShape3D_xsbd3")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+[node name="SpotLight3D" type="SpotLight3D" parent="." groups=["ColorLight"]]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.0816898, 0)
+light_color = Color(0.618934, 0.103454, 0.107558, 1)

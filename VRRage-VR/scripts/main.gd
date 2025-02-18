@@ -109,9 +109,11 @@ func teleport_player():
 	player.global_position = startPos
 	
 func set_timed_multiplier(multiplier : float, m_time : float):
+	print("SCORE MULTIPLIER SET TO: ", multiplier, " FOR: ", m_time, " SECONDS")
 	score_multiplier += multiplier
 	await get_tree().create_timer(m_time).timeout
 	score_multiplier -= multiplier
+	print("SCORE MULTIPLIER RESET TO: ", score_multiplier)
 	
 func craft(item1, item2):
 	#print("ZU TESTENDE ITEMS ", item1.get_ObjectID(), " ", item2.get_ObjectID())

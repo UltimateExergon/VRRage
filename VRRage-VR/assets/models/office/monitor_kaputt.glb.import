@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dtgwnv6x1ix2k"
-path="res://.godot/imported/Stuhl.glb-e046b5a6a49aa9569affa852e79c4cec.scn"
+uid="uid://bhh5iop2yu3u5"
+path="res://.godot/imported/monitor_kaputt.glb-f2ca3ed156c42e3a84d9d996b77aaf46.scn"
 
 [deps]
 
-source_file="res://assets/models/testlevel/Stuhl.glb"
-dest_files=["res://.godot/imported/Stuhl.glb-e046b5a6a49aa9569affa852e79c4cec.scn"]
+source_file="res://assets/models/office/monitor_kaputt.glb"
+dest_files=["res://.godot/imported/monitor_kaputt.glb-f2ca3ed156c42e3a84d9d996b77aaf46.scn"]
 
 [params]
 
-nodes/root_type="RigidBody3D"
-nodes/root_name="stuhl"
+nodes/root_type=""
+nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
