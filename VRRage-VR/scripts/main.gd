@@ -135,6 +135,11 @@ func spawn_crafted_item(itemID : String, pos : Vector3):
 	var item = load(Globals.itemPath + current_level + "/" + itemID + Globals.sceneFormat).instantiate()
 	item.global_position = pos
 	get_node(current_level).add_child(item)
+	
+	# Instantly get picked up
+	var rightHand = $Player/RightHand/RightHand/FunctionPickup
+	print(rightHand)
+	rightHand._pick_up_object(item.get_children()[0])
 		
 func check_for_recipe(items : Array):
 	for i in craftingRecipes:

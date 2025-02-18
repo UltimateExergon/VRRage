@@ -59,7 +59,7 @@ func destroy() -> void:
 	
 	var pos = get_rigidBody_position()
 	#print("Destruction Node Position During Destruction: ", self.position)
-	shard_container.position = pos
+	shard_container.position = pos + Vector3(0,.2,0)
 	#print("Moved Destruction Node to: ", self.position)
 	#print("Spawned Shard Container at: ", shard_container.position)
 
