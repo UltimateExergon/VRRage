@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bbcug48yd8xve"]
+[gd_scene load_steps=5 format=3 uid="uid://bbcug48yd8xve"]
 
 [ext_resource type="PackedScene" uid="uid://c1yh3celvb7vb" path="res://scenes/object_scenes/office/cubicle_wall.tscn" id="1_htpkl"]
 [ext_resource type="PackedScene" uid="uid://c7mlcctj5ccad" path="res://scenes/object_scenes/office/coffee_table.tscn" id="2_xre2j"]
+[ext_resource type="PackedScene" uid="uid://cw8pkvvwlkotb" path="res://scenes/object_scenes/office/computer.tscn" id="3_r6t2v"]
+[ext_resource type="PackedScene" uid="uid://02x5grhkb113" path="res://scenes/object_scenes/office/monitor.tscn" id="4_sc344"]
 
 [node name="Cubicle" type="Node3D"]
 
@@ -15,4 +17,10 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.2, 0, -1, 0, -4.37114e-08, -1.1
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.2, 0, -1, 0, -4.37114e-08, 1.1, 1.2, 1.304)
 
 [node name="coffee_table" parent="." instance=ExtResource("2_xre2j")]
-transform = Transform3D(-2.84124e-08, 0, 0.5, 0, 0.6, 0, -0.65, 0, -2.18557e-08, 0, 0, 0.744975)
+transform = Transform3D(-2.84124e-08, 0, 0.5, 0, 0.6, 0, -0.65, 0, -2.18557e-08, 0, 0, 0.757254)
+
+[node name="computer" parent="." instance=ExtResource("3_r6t2v")]
+transform = Transform3D(-3.27835e-08, 0, -0.75, 0, 0.75, 0, 0.75, 0, -3.27835e-08, -0.736117, 1.53238, 0.50328)
+
+[node name="monitor" parent="." instance=ExtResource("4_sc344")]
+transform = Transform3D(-3.27835e-08, 0, -0.75, 0, 0.75, 0, 0.75, 0, -3.27835e-08, 0.21596, 1.15587, 0.611374)
