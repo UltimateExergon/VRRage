@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b2k24x8wwwc7q"
+path="res://.godot/imported/Regal AK 1.obj-5609990583f39af0ae7a00550339c75a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Regal AK 1.obj-5609990583f39af0ae7a00550339c75a.mesh"]
+
+source_file="res://assets/models/pub/Regal AK 1.obj"
+dest_files=["res://.godot/imported/Regal AK 1.obj-5609990583f39af0ae7a00550339c75a.mesh", "res://.godot/imported/Regal AK 1.obj-5609990583f39af0ae7a00550339c75a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
