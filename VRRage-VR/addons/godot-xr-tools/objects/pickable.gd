@@ -55,6 +55,7 @@ enum SecondHandGrab {
 
 @export_category("Item")
 @export var objectID : String : get = get_ObjectID ##Identifier of the Objekt, unique
+@export var isStatic : bool = false ##Determines, if object can move or not
 @export var collisionLayers : Array = [3] ##Collision Layers of the all pickables and items, leave as is
 @export var collisionMasks : Array = [1, 2, 3, 4] ##Collision Masks of the all pickables and items, leave as is
 
@@ -141,6 +142,12 @@ func _ready():
 			add_outline_shader(Globals.outline_color_crafting)
 		else:
 			add_outline_shader(Globals.outline_color)
+			
+func _physics_process(delta: float) -> void:
+	if isStatic:
+		self.linear_velocity = Vector3.ZERO
+		self.angular_velocity = Vector3.ZERO
+		pass
 		
 func set_Collisions():
 	for i in collisionLayers:
