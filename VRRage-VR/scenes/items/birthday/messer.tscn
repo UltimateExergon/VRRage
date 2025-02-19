@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdutjwdtbehru"]
+
+[ext_resource type="PackedScene" uid="uid://cwqdny3bnsiiu" path="res://assets/models/birthday/messer.blend" id="1_5dark"]
+[ext_resource type="Script" path="res://scripts/destruction.gd" id="2_vcna7"]
+[ext_resource type="PackedScene" uid="uid://c6cjdjrhkfxu0" path="res://assets/models/birthday/messer_kaputt.blend" id="3_cnkqy"]
+[ext_resource type="Script" path="res://scripts/item.gd" id="4_cis72"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_774m6"]
+margin = 0.01
+size = Vector3(0.021658, 0.00531005, 0.217587)
+
+[node name="messer" instance=ExtResource("1_5dark")]
+script = ExtResource("2_vcna7")
+fragmented = ExtResource("3_cnkqy")
+
+[node name="Messer-rigid" parent="." index="0"]
+script = ExtResource("4_cis72")
+objectID = "messer"
+
+[node name="Messer-rigid" parent="Messer-rigid" index="0"]
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Messer-rigid" index="1"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.00951197, -0.00122743, 0.0135375)
+shape = SubResource("BoxShape3D_774m6")
+
+[node name="CollisionShape3D" parent="Messer-rigid" index="2"]
+visible = false
+disabled = true

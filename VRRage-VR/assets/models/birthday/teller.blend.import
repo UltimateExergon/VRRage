@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cn2hk7n2gq2nb"
-path="res://.godot/imported/gabel_kaputt.blend-78517ccfac283af74acb84818ba7087a.scn"
+uid="uid://chh2yt6angt5m"
+path="res://.godot/imported/teller.blend-2567ef3ae4f5f620360fc61b148497d6.scn"
 
 [deps]
 
-source_file="res://assets/models/birthday/gabel_kaputt.blend"
-dest_files=["res://.godot/imported/gabel_kaputt.blend-78517ccfac283af74acb84818ba7087a.scn"]
+source_file="res://assets/models/birthday/teller.blend"
+dest_files=["res://.godot/imported/teller.blend-2567ef3ae4f5f620360fc61b148497d6.scn"]
 
 [params]
 
