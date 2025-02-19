@@ -81,10 +81,22 @@ func load_level(levelname : String) -> void:
 	delete_oldLevel()
 	
 	print("Loading " + levelname)
+	
+	var path_to_level : String = Globals.levelPath + levelname + Globals.sceneFormat
+	ResourceLoader.load_threaded_request(path_to_level)
+	
 	current_level = levelname
 	current_score = 0
-	var level = load(Globals.levelPath + levelname + Globals.sceneFormat).instantiate()
+	
+	var level = ResourceLoader.load_threaded_get(path_to_level)
+	level = level.instantiate()
 	add_child(level)
+	
+	#print("Loading " + levelname)
+	#current_level = levelname
+	#current_score = 0
+	#var level = load(Globals.levelPath + levelname + Globals.sceneFormat).instantiate()
+	#add_child(level)
 	
 	if levelname != "level_select":
 		craftingRecipes = load(Globals.recipePath + levelname + Globals.recipeFormat).records

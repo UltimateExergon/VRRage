@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://djg8hedao16oo"]
+[gd_scene load_steps=8 format=4 uid="uid://djg8hedao16oo"]
 
 [ext_resource type="Script" path="res://scripts/destruction.gd" id="1_60uai"]
 [ext_resource type="PackedScene" uid="uid://cbg4803jqlij5" path="res://assets/models/office/cookie_kaputt.glb" id="2_3g42k"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="3_wij8s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qws31"]
 resource_name = "Cookie"
@@ -52,6 +53,8 @@ script = ExtResource("1_60uai")
 fragmented = ExtResource("2_3g42k")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
+script = ExtResource("3_wij8s")
+objectID = "cookie"
 
 [node name="Sphere" type="MeshInstance3D" parent="RigidBody3D"]
 mesh = SubResource("ArrayMesh_dffyv")

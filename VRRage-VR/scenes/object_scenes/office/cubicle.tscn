@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbcug48yd8xve"]
+[gd_scene load_steps=6 format=3 uid="uid://bbcug48yd8xve"]
 
 [ext_resource type="PackedScene" uid="uid://c1yh3celvb7vb" path="res://scenes/object_scenes/office/cubicle_wall.tscn" id="1_htpkl"]
 [ext_resource type="PackedScene" uid="uid://c7mlcctj5ccad" path="res://scenes/object_scenes/office/coffee_table.tscn" id="2_xre2j"]
 [ext_resource type="PackedScene" uid="uid://cw8pkvvwlkotb" path="res://scenes/object_scenes/office/computer.tscn" id="3_r6t2v"]
 [ext_resource type="PackedScene" uid="uid://02x5grhkb113" path="res://scenes/object_scenes/office/monitor.tscn" id="4_sc344"]
+[ext_resource type="PackedScene" uid="uid://ud00ecvinato" path="res://scenes/object_scenes/office/keyboard.tscn" id="5_drhn0"]
 
 [node name="Cubicle" type="Node3D"]
 
@@ -24,3 +25,6 @@ transform = Transform3D(-3.27835e-08, 0, -0.75, 0, 0.75, 0, 0.75, 0, -3.27835e-0
 
 [node name="monitor" parent="." instance=ExtResource("4_sc344")]
 transform = Transform3D(-3.27835e-08, 0, -0.75, 0, 0.75, 0, 0.75, 0, -3.27835e-08, 0.21596, 1.15587, 0.611374)
+
+[node name="keyboard" parent="." instance=ExtResource("5_drhn0")]
+transform = Transform3D(-3.27835e-08, 0, 0.75, 0, 0.5, 0, -0.75, 0, -3.27835e-08, 0.166314, 1.13823, 1.08901)
