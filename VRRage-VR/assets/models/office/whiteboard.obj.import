@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d1tix2c3853v0"
+path="res://.godot/imported/whiteboard.obj-12e9b48862b34d8aadbe0a91295fd752.mesh"
+
+[deps]
+
+files=["res://.godot/imported/whiteboard.obj-12e9b48862b34d8aadbe0a91295fd752.mesh"]
+
+source_file="res://assets/models/office/whiteboard.obj"
+dest_files=["res://.godot/imported/whiteboard.obj-12e9b48862b34d8aadbe0a91295fd752.mesh", "res://.godot/imported/whiteboard.obj-12e9b48862b34d8aadbe0a91295fd752.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cktssejr06tm1"]
+
+[ext_resource type="ArrayMesh" uid="uid://d1tix2c3853v0" path="res://assets/models/office/whiteboard.obj" id="1_cd5yr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_papmm"]
+size = Vector3(0.121338, 3.00537, 5.00342)
+
+[node name="whiteboard" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_cd5yr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0435791, 0.00756836, -0.0012207)
+shape = SubResource("BoxShape3D_papmm")
