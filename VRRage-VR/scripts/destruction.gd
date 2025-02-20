@@ -65,8 +65,9 @@ func destroy() -> void:
 
 	var saved_velocity = self.get_children()[0].linear_velocity
 
-	for shard in _get_shards():
-		_add_shard(shard, saved_velocity)
+	if not fragmented == null:
+		for shard in _get_shards():
+			_add_shard(shard, saved_velocity)
 
 	add_drop(saved_velocity)
 	add_floatingScore()
