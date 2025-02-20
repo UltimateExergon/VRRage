@@ -131,6 +131,12 @@ func _ready():
 	get_all_GrabPoints()
 	set_Collisions()
 	
+	if isStatic:
+		self.set_collision_mask_value(2, false)
+		
+	if !objectID:
+		objectID = get_parent_node_3d().name
+	
 	self.highlight_updated.connect(_highlight_updated)
 	
 	self.contact_monitor = true
@@ -147,7 +153,8 @@ func _physics_process(delta: float) -> void:
 	if isStatic:
 		self.linear_velocity = Vector3.ZERO
 		self.angular_velocity = Vector3.ZERO
-		collisionMasks = ["1","3","4"]
+		self.lock_rotation = true
+		self.constant_force = Vector3.ZERO
 		pass
 		
 func set_Collisions():

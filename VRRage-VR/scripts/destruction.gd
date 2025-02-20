@@ -124,8 +124,8 @@ func _add_shard(original: MeshInstance3D, old_velocity: Vector3) -> void:
 	body.set_collision_mask_value(1, true)
 	body.set_collision_mask_value(4, true)
 	body.continuous_cd = true
-	mesh.scale = original.scale
-	shape.scale = original.scale
+	#mesh.scale = original.scale
+	#shape.scale = original.scale
 	shape.shape = _cached_shapes[original]
 	mesh.mesh = original.mesh
 	body.apply_impulse(old_velocity + _random_direction() * explosion_power,
@@ -157,7 +157,7 @@ func get_rigid_body(node: Node) -> RigidBody3D:
 	return null
 		
 func check_destroyable(body) -> bool:
-	if body is not RigidBody3D:
+	if body is not XRToolsPickable:
 		return false
 	var id = body.objectID
 	

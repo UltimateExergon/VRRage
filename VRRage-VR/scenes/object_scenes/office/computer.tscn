@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://mgit7ttbk7dx" path="res://assets/models/office/computer_kaputt.glb" id="2_54ijv"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="3_twtpa"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rkc6o"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eykta"]
 resource_name = "computerHull"
 cull_mode = 2
 albedo_color = Color(0.175876, 0.175876, 0.175876, 1)
@@ -17,7 +17,7 @@ cull_mode = 2
 albedo_color = Color(0.386931, 0.386931, 0.386931, 1)
 roughness = 0.5
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_ug5dx"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_h5mgy"]
 _surfaces = [{
 "aabb": AABB(-1, -1, -1, 2, 2, 2),
 "format": 34896613377,
@@ -41,7 +41,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_xlgt7"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_yfx3m"]
 resource_name = "computer_Cube_001"
 _surfaces = [{
 "aabb": AABB(-1, -1, -1, 2, 2, 2),
@@ -49,7 +49,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 216,
 "index_data": PackedByteArray("XwBRAFgAXwBnAFEACwBlABEACwBtAGUAOgAcAAYAOgBAABwAIQBdAFYAIQAjAF0ABAAWABMABAABABYAIgBhAFoAIgAkAGEAOQAUAA4AOQA1ABQADgAXAAgADgAUABcAEQAlACkAEQBkACUABwAbAA0ABwAdABsAEAAfAAoAEAAZAB8AKAAYAA8AKAAsABgAOAAsACgAOAA8ACwALwBNAD8ALwBHAE0AOwAnACsAOwA3ACcAKwBsAAsAKwAnAGwANgAgACYANgBCACAACQAwACoACQAeADAAMgAkACIAMgA0ACQAQwAjACEAQwAzACMAAgAzAEMAAgAFADMAAwA0ADIAAwASADQAFQBCADYAFQAAAEIACAA3ADsACAAXADcADAA8ADgADAAaADwAKQA1ADkAKQAlADUAKgBAADoAKgAwAEAATABJAEYATABPAEkALgBIADEALgBFAEgAPQBEAC0APQBKAEQAQQBLAD4AQQBOAEsAUgBcAFkAUgBVAFwAVwBiAF4AVwBbAGIAYABrAGgAYABjAGsAZgBUAFAAZgBqAFQAJgBTAGkAJgAgAFMA"),
-"material": SubResource("StandardMaterial3D_rkc6o"),
+"material": SubResource("StandardMaterial3D_eykta"),
 "name": "computerHull",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -69,7 +69,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AAD//wAAVNUAAAAAAABU1QAAAAD//1TVAAD/////VNUAAEjIAABU1QAASMj//1TVAADAwgAAVNUAAMDC//9U1aoqqiqqKqoqqiqqKqoqqiqqKqoqqiqqKqoqqiqqKqoq")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_ug5dx")
+shadow_mesh = SubResource("ArrayMesh_h5mgy")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2cgc2"]
 size = Vector3(1.00244, 1.09705, 0.600769)
@@ -80,12 +80,17 @@ fragmented = ExtResource("2_54ijv")
 score_points = 200
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 5
+collision_mask = 15
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 160
 script = ExtResource("3_twtpa")
 objectID = "computer"
 
 [node name="Cube" type="MeshInstance3D" parent="RigidBody3D"]
 transform = Transform3D(0.5, 0, 0, 0, 0.55, 0, 0, 0, 0.3, 0, 0, 0)
-mesh = SubResource("ArrayMesh_xlgt7")
+mesh = SubResource("ArrayMesh_yfx3m")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
