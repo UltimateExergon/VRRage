@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://ud00ecvinato"]
+[gd_scene load_steps=8 format=4 uid="uid://ud00ecvinato"]
 
 [ext_resource type="Script" path="res://scripts/destruction.gd" id="1_iw203"]
 [ext_resource type="PackedScene" uid="uid://bnqjh6874mroc" path="res://assets/models/office/keyboard_kaputt.glb" id="2_pbgkb"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="3_l0q7l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4buw7"]
 resource_name = "keyboard"
@@ -49,6 +50,7 @@ script = ExtResource("1_iw203")
 fragmented = ExtResource("2_pbgkb")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
+script = ExtResource("3_l0q7l")
 
 [node name="Cube" type="MeshInstance3D" parent="RigidBody3D"]
 transform = Transform3D(0.25, 0, 0, 0, 0.05, 0, 0, 0, 0.5, 0, 0, 0)
