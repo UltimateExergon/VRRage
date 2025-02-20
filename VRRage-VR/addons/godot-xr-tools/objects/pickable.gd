@@ -148,7 +148,6 @@ func _physics_process(delta: float) -> void:
 		self.linear_velocity = Vector3.ZERO
 		self.angular_velocity = Vector3.ZERO
 		collisionMasks = ["1","3","4"]
-		pass
 		
 func set_Collisions():
 	for i in collisionLayers:

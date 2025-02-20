@@ -124,8 +124,8 @@ func _add_shard(original: MeshInstance3D, old_velocity: Vector3) -> void:
 	body.set_collision_mask_value(1, true)
 	body.set_collision_mask_value(4, true)
 	body.continuous_cd = true
-	mesh.scale = original.scale
-	shape.scale = original.scale
+	mesh.scale = self.scale
+	shape.scale = self.scale
 	shape.shape = _cached_shapes[original]
 	mesh.mesh = original.mesh
 	body.apply_impulse(old_velocity + _random_direction() * explosion_power,

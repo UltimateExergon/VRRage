@@ -6,5 +6,5 @@ extends "res://scripts/item.gd"
 func _on_area_3d_body_entered(body):
 	if body.is_in_group("MUG"):
 		print("MUG DETECTED")
-		body.queue_free()
 		main_node.set_timed_multiplier(score_multiplier, multiplier_time)
+		body.queue_free()

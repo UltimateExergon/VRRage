@@ -18,6 +18,7 @@ var ingredients : Array
 var current_score : int = 0
 var score_multiplier : float = 1.0
 var score_label = ""
+var multiplier_timer : Timer
 
 var player
 
@@ -53,6 +54,7 @@ func _ready():
 		xr_interface.pose_recentered.connect(_on_openxr_pose_recentered)
 		
 		add_teleportTimer()
+		add_multiplierTimer()
 		
 	else:
 		# We couldn't start OpenXR.
@@ -64,6 +66,12 @@ func add_teleportTimer():
 	add_child(teleport_timer)
 	teleport_timer.timeout.connect(_on_teleport_timer_timeout)
 	teleport_timer.one_shot = true
+	
+func add_multiplierTimer():
+	multiplier_timer = Timer.new()
+	add_child(multiplier_timer)
+	multiplier_timer.timeout.connect(_on_multiplier_timer_timeout)
+	multiplier_timer.one_shot = true
 		
 func add_active_shard(shard : Node):
 	active_shards.append(shard)
@@ -122,10 +130,8 @@ func teleport_player():
 	
 func set_timed_multiplier(multiplier : float, m_time : float):
 	print("SCORE MULTIPLIER SET TO: ", multiplier, " FOR: ", m_time, " SECONDS")
-	score_multiplier += multiplier
-	await get_tree().create_timer(m_time).timeout
-	score_multiplier -= multiplier
-	print("SCORE MULTIPLIER RESET TO: ", score_multiplier)
+	score_multiplier = multiplier
+	multiplier_timer.start(m_time)
 	
 func craft(item1, item2):
 	#print("ZU TESTENDE ITEMS ", item1.get_ObjectID(), " ", item2.get_ObjectID())
@@ -182,6 +188,10 @@ func activate_teleport_timer():
 	
 func _on_teleport_timer_timeout():
 	can_teleport = true
+	
+func _on_multiplier_timer_timeout():
+	score_multiplier = 1.0
+	print("SCORE MULTIPLIER RESET TO: ", score_multiplier)
 	
 
 # Handle OpenXR session ready

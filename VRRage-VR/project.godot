@@ -30,6 +30,10 @@ window/size/viewport_height=1080
 
 enabled=PackedStringArray("res://addons/csv-data-importer/plugin.cfg", "res://addons/godot-xr-tools/plugin.cfg")
 
+[global_group]
+
+room=""
+
 [layer_names]
 
 3d_physics/layer_1="can teleport"

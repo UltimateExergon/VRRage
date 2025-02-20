@@ -1,15 +1,79 @@
-[gd_scene load_steps=3 format=3 uid="uid://cktssejr06tm1"]
+[gd_scene load_steps=6 format=4 uid="uid://cktssejr06tm1"]
 
-[ext_resource type="ArrayMesh" uid="uid://d1tix2c3853v0" path="res://assets/models/office/whiteboard.obj" id="1_cd5yr"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uuium"]
+resource_name = "wood"
+cull_mode = 2
+albedo_color = Color(0.572864, 0.285844, 0.148554, 1)
+roughness = 0.5
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_papmm"]
-size = Vector3(0.121338, 3.00537, 5.00342)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jaih8"]
+resource_name = "whiteboard"
+cull_mode = 2
+albedo_color = Color(0.92964, 0.92964, 0.92964, 1)
+roughness = 0.0
 
-[node name="whiteboard" type="StaticBody3D"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_mlwsy"]
+_surfaces = [{
+"aabb": AABB(-0.1, -1.5, -2.5, 0.2, 3, 5),
+"format": 34896613377,
+"index_count": 78,
+"index_data": PackedByteArray("AAADAAEAAAACAAMAAgAIAAMAAgAJAAgABwAPAAUABwAMAA8ACgABAAsACgAAAAEAAgAKAAkAAgAAAAoACAABAAMACAALAAEABwAJAAYABwAIAAkABgAKAAQABgAJAAoABQAIAAcABQALAAgABAALAAUABAAKAAsABgAMAAcABgANAAwABQAOAAQABQAPAA4ABAANAAYABAAOAA0A"),
+"name": "wood",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP////8AAAAAAAAAAAAAAAD//wAAAAD///MFC/oAAP//C/oL+gAA///zBfMFAAD//wv68wUAAP////8AAAAA//8AAAAAAAD//wAA//8AAP///////wAAq48L+vMFAACrj/MF8wUAAKuP8wUL+gAAq48L+gv6AAA=")
+}, {
+"aabb": AABB(0.0122424, -1.43025, -2.38375, 1e-05, 2.8605, 4.7675),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray("AQADAAAAAQACAAMA"),
+"name": "whiteboard",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAD//wAAAAAAAAAAAAAAAAAAAAD//wAAAAD/////AAA=")
+}]
+blend_shape_mode = 0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = ExtResource("1_cd5yr")
+[sub_resource type="ArrayMesh" id="ArrayMesh_u6odl"]
+resource_name = "whiteboard_Cube_001"
+_surfaces = [{
+"aabb": AABB(-0.1, -1.5, -2.5, 0.2, 3, 5),
+"attribute_data": PackedByteArray("/18AAP8f/z//X////58AAP/f/z//n////1//v/8f/3//X/+//5//v//f/3//n/+/fGF8QXxhfEF8YXxBgp58QYKefEGCnnxBfGGCfnxhgn58YYJ+gp6CfoKegn6CnoJ+/5//f/+f/3//n/9//1//f/9f/3//X/9//1//P/9f/z//X/8//5//P/+f/z//n/8/gp6CfoKegn58YYJ+fGGCfnxhfEF8YXxBgp58QYKefEE="),
+"format": 34896613399,
+"index_count": 78,
+"index_data": PackedByteArray("AgALAAUAAgAIAAsABgAYAAkABgAbABgAFgArABAAFgAlACsAHgADACEAHgAAAAMABwAfABwABwABAB8AGQAEAAoAGQAiAAQAFwAdABQAFwAaAB0AFAAgAA4AFAAdACAAEQAaABcAEQAjABoADgAjABEADgAgACMAEgAkABUAEgAmACQADwAoAAwADwAqACgADQAnABMADQApACcA"),
+"material": SubResource("StandardMaterial3D_uuium"),
+"name": "wood",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 44,
+"vertex_data": PackedByteArray("AAAAAP///78AAAAA////vwAAAAD//1TVAAD//////78AAP///////wAA/////1TVAAAAAAAA//8AAAAAAAD/vwAAAAAAAFTVAAD//wAA//8AAP//AAD//wAA//8AAFTV///zBQv6AAD///MFC/r/P///8wUL+lTV//8L+gv6AAD//wv6C/r/P///C/oL+lTV///zBfMF/n////MF8wX/P///8wXzBVTV//8L+vMF/n///wv68wX/P///C/rzBVTV/////wAA////////AAD///////8AAFTV//8AAAAA/////wAAAAD/v///AAAAAFTV//8AAP///7///wAA////v///AAD//1TV/////////7///////////////////1TVq48L+vMF/n+rjwv68wX/P6uP8wXzBf5/q4/zBfMF/z+rj/MFC/oAAKuP8wUL+v8/q48L+gv6AACrjwv6C/r/P/////8AAP9/VNVU1f//////f/+/VNVU1f+//78AAP9/VNVU1f+//7//f/+/VNVU1f///3////9/qiqqKv///38AAP9/qiqqKv9///////9/qiqqKv9///8AAP9/qiqqKv+//7//f/+/qiqqKv+//78AAP9/qiqqKv////8AAP9/qiqqKv//////f/+/qiqqKv9///8AAP9//3///////3////9/////f////38AAP9/")
+}, {
+"aabb": AABB(0.0122424, -1.43025, -2.38375, 1e-05, 2.8605, 4.7675),
+"attribute_data": PackedByteArray("gp6Cfnxhgn58YXxBgp58QQ=="),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray("AQADAAAAAQACAAMA"),
+"material": SubResource("StandardMaterial3D_jaih8"),
+"name": "whiteboard",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAD//wAAVNUAAAAAAABU1QAAAAD//1TVAAD/////VNWqKqoqqiqqKqoqqiqqKqoq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_mlwsy")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0435791, 0.00756836, -0.0012207)
-shape = SubResource("BoxShape3D_papmm")
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fdhp0"]
+data = PackedVector3Array(-0.1, -1.5, 2.5, -0.1, 1.5, -2.5, -0.1, 1.5, 2.5, -0.1, -1.5, 2.5, -0.1, -1.5, -2.5, -0.1, 1.5, -2.5, -0.1, -1.5, -2.5, 0.1, 1.5, -2.5, -0.1, 1.5, -2.5, -0.1, -1.5, -2.5, 0.1, -1.5, -2.5, 0.1, 1.5, -2.5, 0.1, 1.43025, -2.38375, 0.0122424, 1.43025, 2.38375, 0.1, 1.43025, 2.38375, 0.1, 1.43025, -2.38375, 0.0122424, 1.43025, -2.38375, 0.0122424, 1.43025, 2.38375, 0.1, -1.5, 2.5, -0.1, 1.5, 2.5, 0.1, 1.5, 2.5, 0.1, -1.5, 2.5, -0.1, -1.5, 2.5, -0.1, 1.5, 2.5, -0.1, -1.5, -2.5, 0.1, -1.5, 2.5, 0.1, -1.5, -2.5, -0.1, -1.5, -2.5, -0.1, -1.5, 2.5, 0.1, -1.5, 2.5, 0.1, 1.5, -2.5, -0.1, 1.5, 2.5, -0.1, 1.5, -2.5, 0.1, 1.5, -2.5, 0.1, 1.5, 2.5, -0.1, 1.5, 2.5, 0.1, 1.43025, -2.38375, 0.1, -1.5, -2.5, 0.1, -1.43025, -2.38375, 0.1, 1.43025, -2.38375, 0.1, 1.5, -2.5, 0.1, -1.5, -2.5, 0.1, -1.43025, -2.38375, 0.1, -1.5, 2.5, 0.1, -1.43025, 2.38375, 0.1, -1.43025, -2.38375, 0.1, -1.5, -2.5, 0.1, -1.5, 2.5, 0.1, 1.43025, 2.38375, 0.1, 1.5, -2.5, 0.1, 1.43025, -2.38375, 0.1, 1.43025, 2.38375, 0.1, 1.5, 2.5, 0.1, 1.5, -2.5, 0.1, -1.43025, 2.38375, 0.1, 1.5, 2.5, 0.1, 1.43025, 2.38375, 0.1, -1.43025, 2.38375, 0.1, -1.5, 2.5, 0.1, 1.5, 2.5, 0.1, -1.43025, -2.38375, 0.0122424, 1.43025, -2.38375, 0.1, 1.43025, -2.38375, 0.1, -1.43025, -2.38375, 0.0122424, -1.43025, -2.38375, 0.0122424, 1.43025, -2.38375, 0.1, 1.43025, 2.38375, 0.0122424, -1.43025, 2.38375, 0.1, -1.43025, 2.38375, 0.1, 1.43025, 2.38375, 0.0122424, 1.43025, 2.38375, 0.0122424, -1.43025, 2.38375, 0.1, -1.43025, 2.38375, 0.0122424, -1.43025, -2.38375, 0.1, -1.43025, -2.38375, 0.1, -1.43025, 2.38375, 0.0122424, -1.43025, 2.38375, 0.0122424, -1.43025, -2.38375, 0.0122424, -1.43025, -2.38375, 0.0122424, 1.43025, 2.38375, 0.0122424, 1.43025, -2.38375, 0.0122424, -1.43025, -2.38375, 0.0122424, -1.43025, 2.38375, 0.0122424, 1.43025, 2.38375)
+
+[node name="whiteboard" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_u6odl")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["room"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_fdhp0")
