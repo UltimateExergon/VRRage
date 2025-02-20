@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=4 uid="uid://7h0wdl1creks"]
 
 [ext_resource type="Script" path="res://scripts/destruction.gd" id="1_55hx7"]
-[ext_resource type="PackedScene" uid="uid://cn2hk7n2gq2nb" path="res://assets/models/birthday/Gabel_kaputt.blend" id="2_lo74h"]
+[ext_resource type="PackedScene" uid="uid://cn2hk7n2gq2nb" path="res://assets/models/birthday/gabel_kaputt.blend" id="2_lo74h"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_1g8bx"]
 [ext_resource type="Script" path="res://scripts/item.gd" id="4_nttdi"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_cx0gj"]
@@ -74,8 +74,6 @@ shape = SubResource("BoxShape3D_xeqj5")
 
 [node name="GrabPointHandLeft" parent="Gabel-rigid" instance=ExtResource("4_1g8bx")]
 transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -0.0896411, 0.0120041, -0.0304527)
-snap_hand = false
 
 [node name="GrabPointHandRight" parent="Gabel-rigid" instance=ExtResource("5_cx0gj")]
 transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.0910007, 0.0124309, -0.0279479)
-snap_hand = false

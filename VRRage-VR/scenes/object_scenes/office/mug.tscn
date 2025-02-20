@@ -64,11 +64,9 @@ shape = SubResource("CylinderShape3D_oient")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.00528026, 0.048673, 0.00591791)
 visible = false
 script = ExtResource("4_faj6d")
-snap_hand = false
 
 [node name="XRToolsGrabPointHand2" type="Marker3D" parent="RigidBody3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.00484981, 0.0471081, -0.0137434)
 visible = false
 script = ExtResource("4_faj6d")
 hand = 1
-snap_hand = false

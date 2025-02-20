@@ -47,7 +47,7 @@ const RIGHT_HAND_PATH := "res://addons/godot-xr-tools/hands/scenes/lowpoly/right
 @export var mode : Mode = Mode.GENERAL
 
 ## Snap the hand mesh to the grab-point
-@export var snap_hand : bool = true
+@export var snap_hand : bool = false
 
 ## Hand pose
 @export var hand_pose : XRToolsHandPoseSettings: set = _set_hand_pose

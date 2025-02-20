@@ -10,7 +10,7 @@ cull_mode = 2
 albedo_color = Color(0.482406, 0.248924, 0.11374, 1)
 roughness = 0.692661
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_0gmho"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_t2ojx"]
 _surfaces = [{
 "aabb": AABB(-1, -17.5, -1, 2, 18.5, 2),
 "format": 34896613377,
@@ -24,7 +24,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_xdjjr"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_nloi3"]
 resource_name = "coffee_table_Cube_001"
 _surfaces = [{
 "aabb": AABB(-1, -17.5, -1, 2, 18.5, 2),
@@ -40,7 +40,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AABS5P///78AAFLk////vwAAUuT//1TVAAD//////78AAP///////wAA/////1TVAABS5AAA//8AAFLkAAD/vwAAUuQAAFTVAAD//wAA//8AAP//AAD//wAA//8AAFTV//9S5P///7///1Lk////v///UuT//1TV/////////7///////////////////1TV//9S5AAA/////1LkAAD/v///UuQAAFTV/////wAA////////AAD///////8AAFTVy8wAAJkZ/7/LzAAAmRn/v8vMAACZGVTVy8w965kZ/7/LzD3rmRn//8vMPeuZGVTVy8wAAMwM///LzAAAzAz/v8vMAADMDFTVy8w968wM///LzD3rzAz//8vMPevMDFTVZeYAAJkZ/79l5gAAmRn/v2XmAACZGVTVZeY965kZ/79l5j3rmRn//2XmPeuZGVTVZeYAAMwM//9l5gAAzAz/v2XmAADMDFTVZeY968wM//9l5j3rzAz//2XmPevMDFTVy8wAADLz/7/LzAAAMvP/v8vMAAAy81TVy8w96zLz/7/LzD3rMvP//8vMPesy81TVy8wAAGXm///LzAAAZeb/v8vMAABl5lTVy8w962Xm///LzD3rZeb//8vMPetl5lTVZeYAADLz/79l5gAAMvP/v2XmAAAy81TVZeY96zLz/79l5j3rMvP//2XmPesy81TVZeYAAGXm//9l5gAAZeb/v2XmAABl5lTVZeY962Xm//9l5j3rZeb//2XmPetl5lTVmRkAADLz/7+ZGQAAMvP/v5kZAAAy81TVmRk96zLz/7+ZGT3rMvP//5kZPesy81TVmRkAAGXm//+ZGQAAZeb/v5kZAABl5lTVmRk962Xm//+ZGT3rZeb//5kZPetl5lTVMzMAADLz/78zMwAAMvP/vzMzAAAy81TVMzM96zLz/78zMz3rMvP//zMzPesy81TVMzMAAGXm//8zMwAAZeb/vzMzAABl5lTVMzM962Xm//8zMz3rZeb//zMzPetl5lTVmRkAAJkZ/7+ZGQAAmRn/v5kZAACZGVTVmRk965kZ/7+ZGT3rmRn//5kZPeuZGVTVmRkAAMwM//+ZGQAAzAz/v5kZAADMDFTVmRk968wM//+ZGT3rzAz//5kZPevMDFTVMzMAAJkZ/78zMwAAmRn/vzMzAACZGVTVMzM965kZ/78zMz3rmRn//zMzPeuZGVTVMzMAAMwM//8zMwAAzAz/vzMzAADMDFTVMzM968wM//8zMz3rzAz//zMzPevMDFTVMjOlyJkZ/78yM6XImRn/vzIzpciZGVTVMjNS5JkZ/78yM1LkmRn//zIzUuSZGVTVMjOlyMwM//8yM6XIzAz/vzIzpcjMDFTVMjNS5MwM//8yM1LkzAz//zIzUuTMDFTVzMylyJkZ/7/MzKXImRn/v8zMpciZGVTVzMxS5JkZ/7/MzFLkmRn//8zMUuSZGVTVzMylyMwM///MzKXIzAz/v8zMpcjMDFTVzMxS5MwM///MzFLkzAz//8zMUuTMDFTVMjOlyDLz/78yM6XIMvP/vzIzpcgy81TVMjNS5DLz/78yM1LkMvP//zIzUuQy81TVMjOlyGXm//8yM6XIZeb/vzIzpchl5lTVMjNS5GXm//8yM1LkZeb//zIzUuRl5lTVzMylyDLz/7/MzKXIMvP/v8zMpcgy81TVzMxS5DLz/7/MzFLkMvP//8zMUuQy81TVzMylyGXm///MzKXIZeb/v8zMpchl5lTVzMxS5GXm///MzFLkZeb//8zMUuRl5lTVy8ylyGXm/7/LzKXIZeb/v8vMpchl5lTVy8xS5GXm/7/LzFLkZeb//8vMUuRl5lTVy8ylyJkZ///LzKXImRn/v8vMpciZGVTVy8xS5JkZ///LzFLkmRn//8vMUuSZGVTVZealyGXm/79l5qXIZeb/v2Xmpchl5lTVZeZS5GXm/79l5lLkZeb//2XmUuRl5lTVZealyJkZ//9l5qXImRn/v2XmpciZGVTVZeZS5JkZ//9l5lLkmRn//2XmUuSZGVTVmRmlyGXm/7+ZGaXIZeb/v5kZpchl5lTVmRlS5GXm/7+ZGVLkZeb//5kZUuRl5lTVmRmlyJkZ//+ZGaXImRn/v5kZpciZGVTVmRlS5JkZ//+ZGVLkmRn//5kZUuSZGVTVMzOlyGXm/78zM6XIZeb/vzMzpchl5lTVMzNS5GXm/78zM1LkZeb//zMzUuRl5lTVMzOlyJkZ//8zM6XImRn/vzMzpciZGVTVMzNS5JkZ//8zM1LkmRn//zMzUuSZGVTV/////wAA/39U1VTV//////9//79U1VTV/7//vwAA/39U1VTV/7//v/9//79U1VTV/////wAA/3+qKqoq//////9//7+qKqoq/7//vwAA/3+qKqoq/7//v/9//7+qKqoq/////wAA/39U1VTV//////9//79U1VTV/7//vwAA/39U1VTV/7//v/9//79U1VTV/////wAA/3+qKqoq//////9//7+qKqoq/7//vwAA/3+qKqoq/7//v/9//7+qKqoq/////wAA/39U1VTV//////9//79U1VTV/7//vwAA/39U1VTV/7//v/9//79U1VTV/////wAA/3+qKqoq//////9//7+qKqoq/7//vwAA/3+qKqoq/7//v/9//7+qKqoq/////wAA/39U1VTV//////9//79U1VTV/7//vwAA/39U1VTV/7//v/9//79U1VTV/////wAA/3+qKqoq//////9//7+qKqoq/7//vwAA/3+qKqoq/7//v/9//7+qKqoq/////wAA/39U1VTV//////9//79U1VTV/7//vwAA/39U1VTV/7//v/9//79U1VTV/////wAA/3+qKqoq//////9//7+qKqoq/7//vwAA/3+qKqoq/7//v/9//7+qKqoq/////wAA/39U1VTV//////9//79U1VTV/7//vwAA/39U1VTV/7//v/9//79U1VTV/////wAA/3+qKqoq//////9//7+qKqoq/7//vwAA/3+qKqoq/7//v/9//7+qKqoq/////wAA/39U1VTV//////9//79U1VTV/7//vwAA/39U1VTV/7//v/9//79U1VTV/////wAA/3+qKqoq//////9//7+qKqoq/7//vwAA/3+qKqoq/7//v/9//7+qKqoq/////wAA/39U1VTV//////9//79U1VTV/7//vwAA/39U1VTV/7//v/9//79U1VTV/////wAA/3+qKqoq//////9//7+qKqoq/7//vwAA/3+qKqoq/7//v/9//7+qKqoq/////wAA/39U1VTV//////9//79U1VTV/7//vwAA/39U1VTV/7//v/9//79U1VTV/////wAA/3+qKqoq//////9//7+qKqoq/7//vwAA/3+qKqoq/7//v/9//7+qKqoq")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_0gmho")
+shadow_mesh = SubResource("ArrayMesh_t2ojx")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6mqtk"]
 size = Vector3(2, 0.4, 4)
@@ -53,13 +53,18 @@ script = ExtResource("1_s83qi")
 fragmented = ExtResource("2_ebwm4")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 5
+collision_mask = 15
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 160
 script = ExtResource("2_ao0o1")
 objectID = "coffee_table"
 enabled = false
 
 [node name="Cube" type="MeshInstance3D" parent="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 2, 0, 1.75, 0)
-mesh = SubResource("ArrayMesh_xdjjr")
+mesh = SubResource("ArrayMesh_nloi3")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
