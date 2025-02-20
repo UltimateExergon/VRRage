@@ -4,13 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://bnqjh6874mroc" path="res://assets/models/office/keyboard_kaputt.glb" id="2_pbgkb"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="3_l0q7l"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4buw7"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j0vgx"]
 resource_name = "keyboard"
 cull_mode = 2
 albedo_color = Color(0.195973, 0.195973, 0.195973, 1)
 roughness = 0.215596
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_vub0t"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_tby23"]
 _surfaces = [{
 "aabb": AABB(-1, -1, -1, 2, 2.17648, 2),
 "format": 34359742465,
@@ -24,7 +24,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_psy7n"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ttwcl"]
 resource_name = "keyboard_Cube_001"
 _surfaces = [{
 "aabb": AABB(-1, -1, -1, 2, 2.17648, 2),
@@ -32,7 +32,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 180,
 "index_data": PackedByteArray("OABIAHIAOAAcAEgARwB5AGkARwA3AHkAAQBXAAQAAQBNAFcALABqAFoALABAAGoAIwBhAFQAIwArAGEACAAUAAsACAAXABQABwBOAAEABwBvAE4ACgBvAAcACgBjAG8ABABjAAoABABWAGMAEwANABAAEwAWAA0ABQAOAAIABQARAA4AAAAVAAYAAAAMABUACQAPAAMACQASAA8AGgAgAB4AJgAuACgAMgA6ADQAPgBEAEIASgBRAE8AWABeAFwAZABsAGYAcAB2AHQAJwAiABsAJwAqACIAHwBSAEsAHwAhAFIAUABgAFkAUABTAGAAXQApAC8AXQBfACkAPAAtACQAPABBAC0AVQBrAGIAVQBbAGsAZwBDAEUAZwBtAEMAMwBGAD8AMwA2AEYAZQB4AHEAZQBoAHgAdQA1ADsAdQB3ADUAGAA5ADAAGAAdADkAbgBJAEwAbgBzAEkAJQAxAD0AJQAZADEA"),
-"material": SubResource("StandardMaterial3D_4buw7"),
+"material": SubResource("StandardMaterial3D_j0vgx"),
 "name": "keyboard",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -40,7 +40,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("s2Z1vwAAgD+zZnU/s2Z1vwAAgD+zZnU/s2Z1vwAAgD+zZnU/s2Z1vwAAgD+zZnW/s2Z1vwAAgD+zZnW/s2Z1vwAAgD+zZnW/s2Z1PwAAgD+zZnU/s2Z1PwAAgD+zZnU/s2Z1PwAAgD+zZnU/s2Z1PwAAgD+zZnW/s2Z1PwAAgD+zZnW/s2Z1PwAAgD+zZnW/s2Z1v/KWlj+zZnU/s2Z1v/KWlj+zZnU/s2Z1v/KWlj+zZnU/s2Z1v/KWlj+zZnW/s2Z1v/KWlj+zZnW/s2Z1v/KWlj+zZnW/s2Z1P/KWlj+zZnW/s2Z1P/KWlj+zZnW/s2Z1P/KWlj+zZnW/s2Z1P/KWlj+zZnU/s2Z1P/KWlj+zZnU/s2Z1P/KWlj+zZnU/csB5vwAAgL9ywHk/csB5vwAAgL9ywHk/csB5vwAAgL9ywHk/csB5vwAAgL9ywHk/csB5v3LAeb8AAIA/csB5v3LAeb8AAIA/csB5v3LAeb8AAIA/csB5v3LAeb8AAIA/AACAv3LAeb9ywHk/AACAv3LAeb9ywHk/AACAv3LAeb9ywHk/AACAv3LAeb9ywHk/csB5vwAAgL9ywHm/csB5vwAAgL9ywHm/csB5vwAAgL9ywHm/csB5vwAAgL9ywHm/AACAv3LAeb9ywHm/AACAv3LAeb9ywHm/AACAv3LAeb9ywHm/AACAv3LAeb9ywHm/csB5v3LAeb8AAIC/csB5v3LAeb8AAIC/csB5v3LAeb8AAIC/csB5v3LAeb8AAIC/csB5PwAAgL9ywHk/csB5PwAAgL9ywHk/csB5PwAAgL9ywHk/csB5PwAAgL9ywHk/AACAP3LAeb9ywHk/AACAP3LAeb9ywHk/AACAP3LAeb9ywHk/AACAP3LAeb9ywHk/csB5P3LAeb8AAIA/csB5P3LAeb8AAIA/csB5P3LAeb8AAIA/csB5P3LAeb8AAIA/csB5PwAAgL9ywHm/csB5PwAAgL9ywHm/csB5PwAAgL9ywHm/csB5PwAAgL9ywHm/csB5P3LAeb8AAIC/csB5P3LAeb8AAIC/csB5P3LAeb8AAIC/csB5P3LAeb8AAIC/AACAP3LAeb9ywHm/AACAP3LAeb9ywHm/AACAP3LAeb9ywHm/AACAP3LAeb9ywHm/csB5v3LAeT8AAIA/csB5v3LAeT8AAIA/csB5v3LAeT8AAIA/csB5v3LAeT8AAIA/csB5vwAAgD9ywHk/csB5vwAAgD9ywHk/csB5vwAAgD9ywHk/csB5vwAAgD9ywHk/csB5vwAAgD9ywHk/AACAv3LAeT9ywHk/AACAv3LAeT9ywHk/AACAv3LAeT9ywHk/AACAv3LAeT9ywHk/csB5vwAAgD9ywHm/csB5vwAAgD9ywHm/csB5vwAAgD9ywHm/csB5vwAAgD9ywHm/csB5vwAAgD9ywHm/csB5v3LAeT8AAIC/csB5v3LAeT8AAIC/csB5v3LAeT8AAIC/csB5v3LAeT8AAIC/AACAv3LAeT9ywHm/AACAv3LAeT9ywHm/AACAv3LAeT9ywHm/AACAv3LAeT9ywHm/csB5PwAAgD9ywHm/csB5PwAAgD9ywHm/csB5PwAAgD9ywHm/csB5PwAAgD9ywHm/AACAP3LAeT9ywHm/AACAP3LAeT9ywHm/AACAP3LAeT9ywHm/AACAP3LAeT9ywHm/csB5P3LAeT8AAIC/csB5P3LAeT8AAIC/csB5P3LAeT8AAIC/csB5P3LAeT8AAIC/csB5PwAAgD9ywHk/csB5PwAAgD9ywHk/csB5PwAAgD9ywHk/csB5PwAAgD9ywHk/csB5P3LAeT8AAIA/csB5P3LAeT8AAIA/csB5P3LAeT8AAIA/csB5P3LAeT8AAIA/AACAP3LAeT9ywHk/AACAP3LAeT9ywHk/AACAP3LAeT9ywHk/AACAP3LAeT9ywHk//3//f////z//f///AAD/vwAA/3////+//////////7//f///AAD/vwAA/3////+//3//f////z//f///AAD/v////3////+//////////7//f///AAD/v////3////+//3//f////z//f///AAD/vwAA/3////+//////////7//f///AAD/vwAA/3////+//////////7//f///AAD/v////3////+//3//f////z//f///AAD/v////3////+//3//P/9//9//fwAA////v1RVVFX/P//f/z//P/8//9//f/9//3/+//9//z//f//fVFVUVf8//9//P/9//3///1RVVFX/P//f/z//f/9/////P/8//z//3wAA/3//f////78AAP+/////fwAA////v6oqqir/P//f/z//P/8//9+qKqoq/z//3wAA/7//f////z//P/8//98AAP9//3//////////f////78AAP+///+qKqoq/z//3wAA/7//f////3//P/9//9//fwAA////v6qqVFX/f/7f/7//P/6//t+qqlRV/3/+3/+//3//f/7//7//P/6//t////9//3////9//3//f/7//3//P/9//9+qqlRV/3/+3/+//3//f/7//78AAP+/////fwAA////v1TVqir/v////7//P/6//t///////3/+//+/AAD/v///VNWqKv+///////+//3/+/1TVqir/v///////v/9//v//v/8//r/+3////3//f////3//f/9//v//f/+//z/+/1RVqqr/v//f/z//f/9/////f/+//z/+//9///8AAP+//3///wAA/79UVaqq/7//3/8//7//v//fVFWqqv+//9//P/9//3////8//7//v//fAAD/f/9/////v////3//3/9///8AAP+//3///wAA/7+qKlTV/7//3/8//7//v//f//////9/////v////3//36oqVNX/v//fAAD/v/9///+qKlTV/7//3wAA/7//f////z//v/+//98AAP9//3////+/////f//f/3///wAA/79U1VTV/3/+3/+//7//P//fVNVU1f9//t////+//3////+//7//P//f////f/9//////////3////+/////f//fVNVU1f9//t////+//3////9//7//P/7//3///wAA/7+qqqqq/z/+//+//78AQP7f/3//f/9//v//f/+//z/+/6qqqqr/P/7//7//f/9//v+qqqqq/z/+//+//3//f/7//7//vwBA/t////9//3///w==")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_vub0t")
+shadow_mesh = SubResource("ArrayMesh_tby23")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bj3bq"]
 size = Vector3(0.495285, 0.109131, 1)
@@ -50,11 +50,17 @@ script = ExtResource("1_iw203")
 fragmented = ExtResource("2_pbgkb")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 5
+collision_mask = 15
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 160
 script = ExtResource("3_l0q7l")
+objectID = "keyboard"
 
 [node name="Cube" type="MeshInstance3D" parent="RigidBody3D"]
 transform = Transform3D(0.25, 0, 0, 0, 0.05, 0, 0, 0, 0.5, 0, 0, 0)
-mesh = SubResource("ArrayMesh_psy7n")
+mesh = SubResource("ArrayMesh_ttwcl")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
