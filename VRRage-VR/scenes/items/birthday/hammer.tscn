@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c1aa1nj3ll706" path="res://assets/materials/wood2/finewood_27_basecolor-1K.png" id="4_2dbc6"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_3i741"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_jjo5f"]
-[ext_resource type="Texture2D" uid="uid://vwmo433120aj" path="res://assets/materials/wood2/finewood_27_roughness-1K.png" id="5_w03xo"]
+[ext_resource type="Texture2D" uid="uid://ckhcajena2oxk" path="res://assets/materials/wood2/finewood_27_roughness-1K.png" id="5_w03xo"]
 [ext_resource type="Texture2D" uid="uid://c1yimpjkgnd2s" path="res://assets/materials/wood2/finewood_27_normal-1K.png" id="6_mfxcx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w8qvg"]
@@ -111,8 +111,6 @@ shape = SubResource("ConvexPolygonShape3D_7we04")
 
 [node name="GrabPointHandLeft" parent="Hammer-rigid" instance=ExtResource("4_3i741")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0162068, 0.0568625, -0.123044)
-snap_hand = false
 
 [node name="GrabPointHandRight" parent="Hammer-rigid" instance=ExtResource("5_jjo5f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00679484, 0.0570835, -0.119805)
-snap_hand = false
