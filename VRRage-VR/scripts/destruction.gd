@@ -157,7 +157,7 @@ func get_rigid_body(node: Node) -> RigidBody3D:
 	return null
 		
 func check_destroyable(body) -> bool:
-	if body is not RigidBody3D:
+	if body is not XRToolsPickable:
 		return false
 	var id = body.objectID
 	

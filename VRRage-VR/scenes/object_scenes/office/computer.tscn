@@ -81,12 +81,16 @@ fragmented = ExtResource("2_m8cem")
 score_points = 200
 
 [node name="computer-rigid" type="RigidBody3D" parent="."]
+collision_layer = 5
+collision_mask = 15
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 160
 script = ExtResource("3_twtpa")
 objectID = "computer"
 
 [node name="computer-rigid" type="MeshInstance3D" parent="computer-rigid"]
 mesh = SubResource("ArrayMesh_f7071")
-skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="computer-rigid"]
 shape = SubResource("ConvexPolygonShape3D_5awsf")

@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdutjwdtbehru"]
+[gd_scene load_steps=8 format=3 uid="uid://bdutjwdtbehru"]
 
 [ext_resource type="PackedScene" uid="uid://cwqdny3bnsiiu" path="res://assets/models/birthday/messer.blend" id="1_5dark"]
 [ext_resource type="Script" path="res://scripts/destruction.gd" id="2_vcna7"]
 [ext_resource type="PackedScene" uid="uid://c6cjdjrhkfxu0" path="res://assets/models/birthday/messer_kaputt.blend" id="3_cnkqy"]
 [ext_resource type="Script" path="res://scripts/item.gd" id="4_cis72"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="5_uiin8"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="6_jnx1c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_774m6"]
 margin = 0.01
@@ -27,3 +29,9 @@ shape = SubResource("BoxShape3D_774m6")
 [node name="CollisionShape3D" parent="Messer-rigid" index="2"]
 visible = false
 disabled = true
+
+[node name="GrabPointHandLeft" parent="Messer-rigid" index="3" instance=ExtResource("5_uiin8")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.0800867, -0.013669, 0)
+
+[node name="GrabPointHandRight" parent="Messer-rigid" index="4" instance=ExtResource("6_jnx1c")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.0734999, 0.00924093, -0.0252111)

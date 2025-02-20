@@ -110,9 +110,15 @@ fragmented = ExtResource("2_3wxvc")
 score_points = 500
 
 [node name="buro_door-rigid" type="RigidBody3D" parent="."]
+collision_layer = 5
+collision_mask = 13
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 160
 script = ExtResource("3_nfg7l")
 objectID = "buro_door"
 isStatic = true
+collisionMasks = [1, 3, 4]
 enabled = false
 
 [node name="buro_door-rigid" type="MeshInstance3D" parent="buro_door-rigid"]
