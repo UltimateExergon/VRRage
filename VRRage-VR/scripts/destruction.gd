@@ -82,7 +82,9 @@ func add_floatingScore():
 	destructionScore.position = body_position
 	#print("Spawning Floating Score at: ", destructionScore.position)
 	add_child(destructionScore)
-	destructionScore.text = "+" + str(score_points)
+	
+	var score : int = score_points * main_node.get_score_multiplier()
+	destructionScore.text = "+" + str(score)
 	
 	var tween = get_tree().create_tween()
 	var tween_pos = destructionScore.position + scoreTargetLocation
@@ -125,8 +127,8 @@ func _add_shard(original: MeshInstance3D, old_velocity: Vector3) -> void:
 	body.set_collision_mask_value(1, true)
 	body.set_collision_mask_value(4, true)
 	body.continuous_cd = true
-	mesh.scale = self.scale
-	shape.scale = self.scale
+	mesh.scale = original.scale
+	shape.scale = original.scale
 	shape.shape = _cached_shapes[original]
 	mesh.mesh = original.mesh
 	body.apply_impulse(old_velocity + _random_direction() * explosion_power,

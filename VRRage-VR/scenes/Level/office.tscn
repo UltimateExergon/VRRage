@@ -274,39 +274,39 @@ transform = Transform3D(0.19557, 0, -0.98069, 0, 1, 0, 0.98069, 0, 0.19557, 4.92
 [node name="CookiePlate" type="Node3D" parent="mainroom"]
 
 [node name="plate" parent="mainroom/CookiePlate" instance=ExtResource("13_lrxsx")]
-transform = Transform3D(0.151766, 0, -0.130258, 0, 0.2, 0, 0.130258, 0, 0.151766, -1.39223, 2.022, -1.09736)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.39223, 1.95458, -1.09736)
 
 [node name="cookie" parent="mainroom/CookiePlate" instance=ExtResource("14_fv5qy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53794, 2.01951, -1.08178)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53794, 2.04698, -1.08178)
 
 [node name="cookie2" parent="mainroom/CookiePlate" instance=ExtResource("14_fv5qy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37985, 2.01951, -0.920913)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37985, 2.04698, -0.920913)
 
 [node name="cookie3" parent="mainroom/CookiePlate" instance=ExtResource("14_fv5qy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42268, 2.01951, -1.21228)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42268, 2.04698, -1.21228)
 
 [node name="cookie4" parent="mainroom/CookiePlate" instance=ExtResource("14_fv5qy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.36702, 2.01951, -1.06531)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.36702, 2.04698, -1.06531)
 
 [node name="cookie5" parent="mainroom/CookiePlate" instance=ExtResource("14_fv5qy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.23667, 2.01975, -1.13535)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.23667, 2.04722, -1.13535)
 
 [node name="cookie6" parent="mainroom/CookiePlate" instance=ExtResource("14_fv5qy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.33197, 2.06897, -1.13535)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.33197, 2.09644, -1.13535)
 
 [node name="cookie7" parent="mainroom/CookiePlate" instance=ExtResource("14_fv5qy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.48861, 2.06897, -1.12474)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.48861, 2.09644, -1.12474)
 
 [node name="potplants" type="Node3D" parent="mainroom"]
 
 [node name="pot" parent="mainroom/potplants" instance=ExtResource("10_6qcx8")]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 12.6646, 1.17143, 4.57302)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6646, 1.17143, 4.57302)
 
 [node name="pot3" parent="mainroom/potplants" instance=ExtResource("10_6qcx8")]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -1.78942, 1.1464, 4.57302)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78942, 1.1464, 4.57302)
 
 [node name="pot2" parent="mainroom/potplants" instance=ExtResource("10_6qcx8")]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 12.6646, 1.1464, -4.30088)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6646, 1.1464, -4.30088)
 
 [node name="lights" type="Node3D" parent="mainroom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.274657, 0)

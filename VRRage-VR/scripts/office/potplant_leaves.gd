@@ -16,10 +16,9 @@ func _ready():
 	emitTimer.timeout.connect(_on_emitTimer_timeout)
 	
 	particleEmitter.emitting = false
+	particleEmitter.amount = particleAmount
 
 func destroy() -> void:
-	particleEmitter.amount = particleAmount
-	
 	self.get_children()[0].queue_free()
 	
 	particleEmitter.emitting = true

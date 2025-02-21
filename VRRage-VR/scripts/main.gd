@@ -27,6 +27,10 @@ var active_shards : Array = []
 var teleport_timer : Timer
 var can_teleport : bool = true
 
+var loading : bool = false
+var path_to_level : String = ""
+var levelName : String
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	xr_interface = XRServer.find_interface("OpenXR")
@@ -61,6 +65,19 @@ func _ready():
 		print("OpenXR not instantiated!")
 		get_tree().quit()
 		
+func _process(delta):
+	if loading == true:
+		#3 = Loading finished; 2 Loading failed; 1 = in progress, 0 = invalid resource
+		var loading_status = ResourceLoader.load_threaded_get_status(path_to_level)
+		match loading_status:
+			0:
+				print("LEVEL INVALID RESOURCE")
+			2:
+				print("LOADING LEVEL FAILED")
+			3:
+				print("LOADING SUCCESSFUL")
+				switch_level()
+		
 func add_teleportTimer():
 	teleport_timer = Timer.new()
 	add_child(teleport_timer)
@@ -80,41 +97,43 @@ func add_active_shard(shard : Node):
 		active_shards[0].queue_free()
 		active_shards.remove_at(0)
 		
+func get_score_multiplier() -> float:
+	return score_multiplier
+		
 func delete_oldLevel():
 	print("Deleting old level")
 	for i in get_tree().get_nodes_in_group("LEVEL"):
 		i.queue_free()
 		
 func load_level(levelname : String) -> void:
-	delete_oldLevel()
-	
 	print("Loading " + levelname)
 	
-	var path_to_level : String = Globals.levelPath + levelname + Globals.sceneFormat
+	path_to_level = Globals.levelPath + levelname + Globals.sceneFormat
 	ResourceLoader.load_threaded_request(path_to_level)
+	loading = true
+	player.get_node("XRCamera3D/LoadingLabel").visible = !player.get_node("XRCamera3D/LoadingLabel").visible
+		
+func switch_level():
+	delete_oldLevel()
 	
-	current_level = levelname
+	current_level = levelName
 	current_score = 0
 	
 	var level = ResourceLoader.load_threaded_get(path_to_level)
 	level = level.instantiate()
 	add_child(level)
 	
-	#print("Loading " + levelname)
-	#current_level = levelname
-	#current_score = 0
-	#var level = load(Globals.levelPath + levelname + Globals.sceneFormat).instantiate()
-	#add_child(level)
-	
-	if levelname != "level_select":
-		craftingRecipes = load(Globals.recipePath + levelname + Globals.recipeFormat).records
-		score_label = get_node(levelname + "/Score")
+	if levelName != "level_select":
+		craftingRecipes = load(Globals.recipePath + levelName + Globals.recipeFormat).records
+		score_label = get_node(levelName + "/Score")
 		
 	startPos = level.get_startPos()
 	level.add_to_group("LEVEL")
-
+	
 	for i in get_tree().get_nodes_in_group("DESTRUCTIBLE"):
-		i.get_parent().set_currentLevel(levelname)
+		i.get_parent().set_currentLevel(levelName)
+		
+	player.get_node("XRCamera3D/LoadingLabel").visible = !player.get_node("XRCamera3D/LoadingLabel").visible
 	
 func load_player() -> void:
 	print("Loading Player")
