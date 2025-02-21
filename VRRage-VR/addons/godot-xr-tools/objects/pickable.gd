@@ -133,6 +133,7 @@ func _ready():
 	
 	if isStatic:
 		self.set_collision_mask_value(2, false)
+		self.lock_rotation = true
 		
 	if !objectID:
 		objectID = get_parent_node_3d().name
@@ -153,10 +154,6 @@ func _physics_process(delta: float) -> void:
 	if isStatic:
 		self.linear_velocity = Vector3.ZERO
 		self.angular_velocity = Vector3.ZERO
-
-		collisionMasks = ["1","3","4"]
-
-		self.lock_rotation = true
 		self.constant_force = Vector3.ZERO
 		
 func set_Collisions():
