@@ -31,6 +31,7 @@ static var _cached_scenes := {}
 static var _cached_shapes := {}
 
 func _ready():
+	print(self)
 	var body = get_children()[0]
 	body.add_to_group("DESTRUCTIBLE")
 	body.body_entered.connect(_on_body_entered)

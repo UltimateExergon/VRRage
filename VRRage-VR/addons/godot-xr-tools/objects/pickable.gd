@@ -133,6 +133,7 @@ func _ready():
 	
 	if isStatic:
 		self.set_collision_mask_value(2, false)
+		self.set_collision_layer_value(3, false)
 		self.lock_rotation = true
 		
 	if !objectID:

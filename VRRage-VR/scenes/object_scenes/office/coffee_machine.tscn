@@ -80,6 +80,7 @@ height = 0.578726
 radius = 0.240758
 
 [node name="coffee_machine-rigid" type="RigidBody3D"]
+continuous_cd = true
 script = ExtResource("1_vbgvw")
 objectID = "coffee_machine"
 

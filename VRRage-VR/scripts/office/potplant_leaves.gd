@@ -25,9 +25,6 @@ func destroy() -> void:
 	particleEmitter.emitting = true
 	emitTimer.start()
 	
-	self.get_children()[0].queue_free()
-	particleEmitter.emitting = true
-	
 	add_floatingScore()
 	add_score_points()
 	

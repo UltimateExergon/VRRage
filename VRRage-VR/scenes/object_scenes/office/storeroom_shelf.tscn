@@ -17,7 +17,7 @@ cull_mode = 2
 albedo_color = Color(0.658285, 0.45387, 0.18211, 1)
 roughness = 0.5
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_ac7o6"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_e3y3n"]
 _surfaces = [{
 "aabb": AABB(-0.1, -2, -1.6, 3.2, 4, 1.7),
 "format": 34896613377,
@@ -41,7 +41,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_l3ybi"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_3ot5j"]
 resource_name = "storeroom_shelf_Cube_001"
 _surfaces = [{
 "aabb": AABB(-0.1, -2, -1.6, 3.2, 4, 1.7),
@@ -69,7 +69,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AAAAAP///78AAAAA////vwAAAAD//1TVAACGB////78AAIYH/////wAAhgf//1TVAAAAAAAA//8AAAAAAAD/vwAAAAAAAFTVAACGBwAA//8AAIYHAAD//wAAhgcAAFTV//8AAP///7///wAA////v///AAD//1TV//+GB////7///4YH////////hgf//1TV//8AAAAA/////wAAAAD/v///AAAAAFTV//+GBwAA/////4YHAAD/////hgcAAFTVAACWg////78AAJaD////vwAAloP//1TVAAAdi////78AAB2L/////wAAHYv//1TVAACWgwAA//8AAJaDAAD/vwAAloMAAFTVAAAdiwAA//8AAB2LAAD//wAAHYsAAFTV//+Wg////7///5aD////v///loP//1TV//8di////7///x2L////////HYv//1TV//+WgwAA/////5aDAAD/v///loMAAFTV//8diwAA/////x2LAAD/////HYsAAFTVAAB4+P///78AAHj4////vwAAePj//1TVAAD//////78AAP///////wAA/////1TVAAB4+AAA//8AAHj4AAD/vwAAePgAAFTVAAD//wAA//8AAP//AAD//wAA//8AAFTV//94+P///7///3j4////v///ePj//1TV/////////7///////////////////1TV//94+AAA/////3j4AAD/v///ePgAAFTV/////wAA////////AAD///////8AAFTVAAAAAP9//78AAAAA/39U1QAAwwP///+/AADDA///VNUAAIYH/3///wAAhgf/f1TVAADDAwAA//8AAMMDAABU1f9/AAAAAP///38AAAAA/7//f4YHAAD///9/hgcAAP/////DAwAA/////8MDAABU1f//AAD/f/+///8AAP9/VNX//4YH/3//////hgf/f1TV///DA////7///8MD//9U1f9/AAD///+//38AAP///7//f4YH////v/9/hgf/////AACWg/9//78AAJaD/39U1QAAWof///+/AABah///VNUAAB2L/3///wAAHYv/f1TVAABahwAA//8AAFqHAABU1f9/loMAAP///3+WgwAA/7//fx2LAAD///9/HYsAAP////9ahwAA/////1qHAABU1f//loP/f/+///+Wg/9/VNX//x2L/3//////HYv/f1TV//9ah////7///1qH//9U1f9/loP///+//3+Wg////7//fx2L////v/9/HYv/////AAB4+P9//78AAHj4/39U1QAAO/z///+/AAA7/P//VNUAAP///3///wAA////f1TVAAA7/AAA//8AADv8AABU1f9/ePgAAP///394+AAA/7//f///AAD///9///8AAP////87/AAA/////zv8AABU1f//ePj/f/+///94+P9/VNX//////3//////////f1TV//87/P///7///zv8//9U1f9/ePj///+//394+P///7//f///////v/9//////////3////9/////f3j4/3//v/9/O/z///+///87/P9/VNX/fzv8AAD//wAAO/z/f1TV/38di/9/////f5aD/3//v/9/Wof///+///9ah/9/VNX/f1qHAAD//wAAWof/f1TV/3+GB/9/////fwAA/3//v/9/wwP///+////DA/9/VNX/f8MDAAD//wAAwwP/f1TV/////wAA/39U1VTV//////9//79U1VTV/7//vwAA/39U1VTV/7//v/9//79U1VTV/////wAA/3+qKqoq//////9//7+qKqoq/7//vwAA/3+qKqoq/7//v/9//7+qKqoq/////wAA/39U1VTV//////9//79U1VTV/7//vwAA/39U1VTV/7//v/9//79U1VTV/////wAA/3+qKqoq//////9//7+qKqoq/7//vwAA/3+qKqoq/7//v/9//7+qKqoq/////wAA/39U1VTV//////9//79U1VTV/7//vwAA/39U1VTV/7//v/9//79U1VTV/////wAA/3+qKqoq//////9//7+qKqoq/7//vwAA/3+qKqoq/7//v/9//7+qKqoqAAD/f1TVVNX/////VNVU1f9//79U1VTV/7//v1TVVNX/v/+/AAD/f/+//7//f/+//7//v6oqqioAAP9/qiqqKv9//7+qKqoq/////6oqqir/////AAD/f///////f/+/AAD/f1TVVNX/////VNVU1f9//79U1VTV/7//v1TVVNX/v/+/AAD/f/+//7//f/+//7//v6oqqioAAP9/qiqqKv9//7+qKqoq/////6oqqir/////AAD/f///////f/+/AAD/f1TVVNX/////VNVU1f9//79U1VTV/7//v1TVVNX/v/+/AAD/f/+//7//f/+//7//v6oqqioAAP9/qiqqKv9//7+qKqoq/////6oqqir/////AAD/f///////f/+//3//vwAA/3//////qiqqKv+//79U1VTV/3//vwAA/3//////qiqqKv+//79U1VTV/3//vwAA/3//////qiqqKv+//79U1VTV")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_ac7o6")
+shadow_mesh = SubResource("ArrayMesh_e3y3n")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fgunq"]
 points = PackedVector3Array(-0.1, -2, -1.6, 3.09969, -2, -1.6, -0.1, -2, 0.1, -0.1, 2, -1.6, 3.09969, -2, 0.1, 3.09969, 2, -1.6, -0.1, 2, 0.1, 3.09969, 2, 0.1)
@@ -82,18 +82,19 @@ score_points = 150
 
 [node name="storeroom_shelf-rigid" type="RigidBody3D" parent="."]
 collision_layer = 5
-collision_mask = 15
+collision_mask = 13
+lock_rotation = true
 continuous_cd = true
 contact_monitor = true
 max_contacts_reported = 160
 script = ExtResource("3_71vfr")
 objectID = "storeroom_shelf"
 isStatic = true
-collisionMasks = ["1", "3", "4"]
+collisionMasks = [1, 3, 4]
 enabled = false
 
 [node name="storeroom_shelf-rigid" type="MeshInstance3D" parent="storeroom_shelf-rigid"]
-mesh = SubResource("ArrayMesh_l3ybi")
+mesh = SubResource("ArrayMesh_3ot5j")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="storeroom_shelf-rigid"]
