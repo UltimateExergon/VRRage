@@ -190,10 +190,10 @@ func _on_body_entered(body: Node):
 		if destroyable_by.size() > 0 and !body.is_in_group("room"):
 			if check_destroyable(body) and enteringRigidBody.linear_velocity.length() > 5:
 				self.destroy()
-		elif rigidBody.linear_velocity.length() > 3 and body.is_in_group("room"):
-				self.destroy()
 		elif body.is_in_group("hand") and hand_destruction == true:
 			self.destroy()
+		elif rigidBody.linear_velocity.length() > 3 and body.is_in_group("room"):
+				self.destroy()
 			
 func _on_invincible_timer_timeout():
 	is_destructible = true
