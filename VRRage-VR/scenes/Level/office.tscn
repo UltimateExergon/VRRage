@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://caytk8kmociio"]
+[gd_scene load_steps=35 format=4 uid="uid://caytk8kmociio"]
 
 [ext_resource type="Script" path="res://scripts/office/office_level.gd" id="1_5hv1r"]
 [ext_resource type="PackedScene" uid="uid://brr88ibcpmb4j" path="res://scenes/teleporter.tscn" id="3_bde34"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://coa2k0wgn5h6p" path="res://scenes/object_scenes/office/mug.tscn" id="9_oblgo"]
 [ext_resource type="PackedScene" uid="uid://br4e21qve0e7b" path="res://scenes/object_scenes/office/potplant.tscn" id="10_6qcx8"]
 [ext_resource type="PackedScene" uid="uid://brynm8ou30pw" path="res://scenes/object_scenes/office/coffee_machine.tscn" id="10_sm3tj"]
+[ext_resource type="PackedScene" uid="uid://cvk0hrsi23m8j" path="res://scenes/object_scenes/office/box.tscn" id="11_io6fh"]
 [ext_resource type="PackedScene" uid="uid://d0s4d6doghj8m" path="res://scenes/object_scenes/office/destructable_wall.tscn" id="12_02yl0"]
 [ext_resource type="PackedScene" uid="uid://c8rw53ermqr4e" path="res://scenes/object_scenes/office/toilet_paper.tscn" id="12_uiqmb"]
 [ext_resource type="PackedScene" uid="uid://eid461qt1ab0" path="res://scenes/object_scenes/office/storeroom_shelf.tscn" id="12_voai2"]
@@ -21,8 +22,10 @@
 [ext_resource type="PackedScene" uid="uid://bp0ac4gtulkah" path="res://scenes/object_scenes/office/fusebox.tscn" id="15_3pduq"]
 [ext_resource type="PackedScene" uid="uid://wgqr63wfgcme" path="res://scenes/object_scenes/office/bathroom_door.tscn" id="16_7cw8i"]
 [ext_resource type="PackedScene" uid="uid://cr7qlacf3bs5a" path="res://scenes/object_scenes/office/buro_door.tscn" id="19_pyrpr"]
+[ext_resource type="PackedScene" uid="uid://binqjbq7rvyw5" path="res://scenes/object_scenes/office/broom.tscn" id="20_c72qf"]
 [ext_resource type="PackedScene" uid="uid://cktssejr06tm1" path="res://scenes/object_scenes/office/whiteboard.tscn" id="20_y64yl"]
 [ext_resource type="PackedScene" uid="uid://bqvu3r7an2g7m" path="res://scenes/object_scenes/office/buro_table.tscn" id="21_xjac5"]
+[ext_resource type="PackedScene" uid="uid://cb4qko0wg71hv" path="res://scenes/object_scenes/office/boss_dummy.tscn" id="25_cttgv"]
 
 [sub_resource type="Environment" id="Environment_eolnp"]
 background_mode = 1
@@ -168,7 +171,7 @@ environment = SubResource("Environment_eolnp")
 transform = Transform3D(1, 0, 0, 0, 0.116255, 0.993219, 0, -0.993219, 0.116255, 0, 9.25763, -0.97809)
 
 [node name="Teleporter" parent="." instance=ExtResource("3_bde34")]
-transform = Transform3D(1, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 3.30432, 0.665549, -5.63295)
+transform = Transform3D(1, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 3.30432, 0.704257, -5.63295)
 teleport_level = "level_select"
 label_text = "Level Auswahl"
 
@@ -211,6 +214,9 @@ transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -6.00198, 2.16064, -
 
 [node name="fusebox" parent="storeroom" instance=ExtResource("15_3pduq")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -6.02596, 4.0172, -2.54076)
+
+[node name="box" parent="storeroom" instance=ExtResource("11_io6fh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.97772, 2.59319, -4.35338)
 
 [node name="storeroom_door" parent="storeroom" instance=ExtResource("5_1bh72")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -3.0286, 2.51664, -2.90027)
@@ -338,6 +344,9 @@ transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 9.1002
 [node name="coffee_table" parent="mainroom" instance=ExtResource("8_g1752")]
 transform = Transform3D(0.75, 0, 0, 0, 0.6, 0, 0, 0, 0.65, -1.59744, 0.894294, -0.457964)
 
+[node name="broom" parent="mainroom" instance=ExtResource("20_c72qf")]
+transform = Transform3D(-0.0033424, -0.124329, 0.992235, -0.000418806, 0.992241, 0.124328, -0.999994, 0, -0.00336853, -2.03308, 1.12287, -4.24864)
+
 [node name="coffee_machine" parent="mainroom" instance=ExtResource("10_sm3tj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.67133, 2.50771, -0.030591)
 
@@ -358,3 +367,6 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.60663, 1.34735, -7.69
 
 [node name="buro_door" parent="buro" instance=ExtResource("19_pyrpr")]
 transform = Transform3D(0.72, 0, 0, 0, 0.85, 0, 0, 0, 0.7, 8.5928, 2.47382, -4.98613)
+
+[node name="bossDummy" parent="buro" instance=ExtResource("25_cttgv")]
+transform = Transform3D(-4.34811e-08, -2.68301e-11, -1, 0, 1, -2.37037e-10, 1, 0, -4.34811e-08, 8.44179, 0.904992, -9.00243)
