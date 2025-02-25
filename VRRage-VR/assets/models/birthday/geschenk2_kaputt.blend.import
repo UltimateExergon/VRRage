@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cn2hk7n2gq2nb"
-path="res://.godot/imported/gabel_kaputt.blend-78517ccfac283af74acb84818ba7087a.scn"
+uid="uid://bimu66k7nnj3h"
+path="res://.godot/imported/geschenk2_kaputt.blend-edf521f0c758ddd11de464d2cb36e9a4.scn"
 
 [deps]
 
-source_file="res://assets/models/birthday/gabel_kaputt.blend"
-dest_files=["res://.godot/imported/gabel_kaputt.blend-78517ccfac283af74acb84818ba7087a.scn"]
+source_file="res://assets/models/birthday/geschenk2_kaputt.blend"
+dest_files=["res://.godot/imported/geschenk2_kaputt.blend-edf521f0c758ddd11de464d2cb36e9a4.scn"]
 
 [params]
 
