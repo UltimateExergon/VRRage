@@ -10,6 +10,7 @@ const spawn_invincibility_time : float = 1.0
 @export var hand_destruction : bool = false ##Object can be destroyed by touching it with hand
 @export var dropID : String = "" ##Scene Name of the Item to drop (- the .tscn)
 @export var score_points : int = 100 ##Score Points awarded upon destruction
+@export var hits_left : int = 0 ##How many more hits until the object is destroyed
 
 var shard_container : Node3D
 
@@ -186,14 +187,17 @@ func _on_body_entered(body: Node):
 	var rigidBody = get_children()[0]
 	var enteringRigidBody = get_rigid_body(body)
 
-	if rigidBody.got_picked_up == false and is_destructible == true:
-		if destroyable_by.size() > 0 and !body.is_in_group("room"):
-			if check_destroyable(body) and enteringRigidBody.linear_velocity.length() > 5:
+	if hits_left == 0:
+		if rigidBody.got_picked_up == false and is_destructible == true:
+			if destroyable_by.size() > 0 and !body.is_in_group("room"):
+				if check_destroyable(body) and enteringRigidBody.linear_velocity.length() > 5:
+					self.destroy()
+			elif body.is_in_group("hand") and hand_destruction == true:
 				self.destroy()
-		elif body.is_in_group("hand") and hand_destruction == true:
-			self.destroy()
-		elif rigidBody.linear_velocity.length() > 3 and body.is_in_group("room"):
-				self.destroy()
+			elif rigidBody.linear_velocity.length() > 3 and body.is_in_group("room"):
+					self.destroy()
+	else:
+		hits_left -= 1
 			
 func _on_invincible_timer_timeout():
 	is_destructible = true

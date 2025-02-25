@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://caytk8kmociio"]
+[gd_scene load_steps=37 format=4 uid="uid://caytk8kmociio"]
 
 [ext_resource type="Script" path="res://scripts/office/office_level.gd" id="1_5hv1r"]
 [ext_resource type="PackedScene" uid="uid://brr88ibcpmb4j" path="res://scenes/teleporter.tscn" id="3_bde34"]
@@ -25,7 +25,9 @@
 [ext_resource type="PackedScene" uid="uid://binqjbq7rvyw5" path="res://scenes/object_scenes/office/broom.tscn" id="20_c72qf"]
 [ext_resource type="PackedScene" uid="uid://cktssejr06tm1" path="res://scenes/object_scenes/office/whiteboard.tscn" id="20_y64yl"]
 [ext_resource type="PackedScene" uid="uid://bqvu3r7an2g7m" path="res://scenes/object_scenes/office/buro_table.tscn" id="21_xjac5"]
+[ext_resource type="PackedScene" uid="uid://42w2qsakuuwx" path="res://scenes/object_scenes/office/drawer.tscn" id="24_0lqct"]
 [ext_resource type="PackedScene" uid="uid://cb4qko0wg71hv" path="res://scenes/object_scenes/office/boss_dummy.tscn" id="25_cttgv"]
+[ext_resource type="PackedScene" uid="uid://b4a74p1etpiom" path="res://scenes/object_scenes/office/jalousie.tscn" id="28_tgfvg"]
 
 [sub_resource type="Environment" id="Environment_eolnp"]
 background_mode = 1
@@ -187,6 +189,9 @@ shape = SubResource("ConcavePolygonShape3D_dc3l4")
 
 [node name="Score" parent="." instance=ExtResource("4_ndelg")]
 transform = Transform3D(0.6, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0.0048262, 3.57219, -4.76005)
+text = "Score: 0  
+x1.0"
+show_multiplier = true
 
 [node name="destructable_wall" parent="." instance=ExtResource("12_02yl0")]
 transform = Transform3D(0.65, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -4.13428, 2.72264, -0.906176)
@@ -198,13 +203,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.461719, 0, 0)
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -2.97455, 2.47079, 1.98141)
 
 [node name="toilet" parent="bathroom" instance=ExtResource("7_jcogi")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -5.2712, 1.89092, 2.87581)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -5.2712, 1.89092, 2.40059)
 
 [node name="sink" parent="bathroom" instance=ExtResource("8_vcooe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.51437, 2.42506, 0.767618)
 
 [node name="toilet_paper_holder" parent="bathroom" instance=ExtResource("8_tan71")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.80011, 2.23537, 3.90194)
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -5.79615, 2.01384, 3.56465)
 
 [node name="storeroom" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.500816, 0, 0)
@@ -312,7 +317,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6646, 1.17143, 4.57302)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78942, 1.1464, 4.57302)
 
 [node name="pot2" parent="mainroom/potplants" instance=ExtResource("10_6qcx8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6646, 1.1464, -4.30088)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6646, 1.1464, -4.25084)
 
 [node name="lights" type="Node3D" parent="mainroom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.274657, 0)
@@ -356,6 +361,9 @@ transform = Transform3D(-3.27835e-08, 0, -0.75, 0, 0.75, 0, 0.75, 0, -3.27835e-0
 [node name="buro" type="Node3D" parent="."]
 transform = Transform3D(0.999999, -0.000675271, -0.000769526, 0.000676275, 0.999999, 0.0012817, 0.000768644, -0.00128223, 0.999999, 0, 0, 0)
 
+[node name="drawer" parent="buro" instance=ExtResource("24_0lqct")]
+transform = Transform3D(-4.33065e-08, -2.68301e-11, -1, 0, 1, -4.11887e-10, 1, 0, -4.33065e-08, 12.1243, 1.7448, -7.47319)
+
 [node name="ceiling_light" parent="buro" instance=ExtResource("8_5i3rv")]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 10.5224, 4.52586, -7.35122)
 
@@ -370,3 +378,35 @@ transform = Transform3D(0.72, 0, 0, 0, 0.85, 0, 0, 0, 0.7, 8.5928, 2.47382, -4.9
 
 [node name="bossDummy" parent="buro" instance=ExtResource("25_cttgv")]
 transform = Transform3D(-4.34811e-08, -2.68301e-11, -1, 0, 1, -2.37037e-10, 1, 0, -4.34811e-08, 8.44179, 0.904992, -9.00243)
+
+[node name="pot" parent="buro" instance=ExtResource("10_6qcx8")]
+transform = Transform3D(1, -2.68301e-11, 5.82077e-10, 5.84578e-10, 1, 0, -5.82077e-10, 0, 1, 12.0083, 1.18039, -9.26501)
+
+[node name="pot2" parent="buro" instance=ExtResource("10_6qcx8")]
+transform = Transform3D(1, -2.68301e-11, 6.40284e-10, 6.42785e-10, 1, 0, -6.40284e-10, 0, 1, 12.011, 1.17582, -5.70593)
+
+[node name="jalousien" type="Node3D" parent="."]
+
+[node name="jalousie" parent="jalousien" instance=ExtResource("28_tgfvg")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2.14869, 5.15149)
+
+[node name="jalousie8" parent="jalousien" instance=ExtResource("28_tgfvg")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.34969, 2.14869, 4.04276)
+
+[node name="jalousie2" parent="jalousien" instance=ExtResource("28_tgfvg")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5, 2.149, 5.151)
+
+[node name="jalousie3" parent="jalousien" instance=ExtResource("28_tgfvg")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 10, 2.149, 5.151)
+
+[node name="jalousie4" parent="jalousien" instance=ExtResource("28_tgfvg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13.2292, 2.149, 2.97142)
+
+[node name="jalousie5" parent="jalousien" instance=ExtResource("28_tgfvg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13.229, 2.149, -2.029)
+
+[node name="jalousie6" parent="jalousien" instance=ExtResource("28_tgfvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.814, 2.149, -9.85662)
+
+[node name="jalousie7" parent="jalousien" instance=ExtResource("28_tgfvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.814, 2.149, -9.86374)
