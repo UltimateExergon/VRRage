@@ -71,13 +71,17 @@ func _process(delta):
 		var loading_status = ResourceLoader.load_threaded_get_status(path_to_level)
 		match loading_status:
 			0:
-				print("LEVEL INVALID RESOURCE")
+				pass
+				#print("LEVEL INVALID RESOURCE")
 			2:
 				print("LOADING LEVEL FAILED")
 			3:
 				print("LOADING SUCCESSFUL")
 				switch_level()
 		
+	if !multiplier_timer.is_stopped() and is_instance_valid(score_label):
+		score_label.update_score(current_score, score_multiplier, multiplier_timer.time_left)
+	
 func add_teleportTimer():
 	teleport_timer = Timer.new()
 	add_child(teleport_timer)
@@ -108,30 +112,34 @@ func delete_oldLevel():
 func load_level(levelname : String) -> void:
 	print("Loading " + levelname)
 	
-	path_to_level = Globals.levelPath + levelname + Globals.sceneFormat
+	current_level = levelname
+	path_to_level = Globals.levelPath + current_level + Globals.sceneFormat
 	ResourceLoader.load_threaded_request(path_to_level)
 	loading = true
-	player.get_node("XRCamera3D/LoadingLabel").visible = !player.get_node("XRCamera3D/LoadingLabel").visible
+	if player:
+		player.get_node("XRCamera3D/LoadingLabel").visible = !player.get_node("XRCamera3D/LoadingLabel").visible
 		
 func switch_level():
+	#print("Switching to ", current_level)
 	delete_oldLevel()
 	
-	current_level = levelName
 	current_score = 0
+	score_multiplier = 1.0
+	multiplier_timer.stop()
 	
 	var level = ResourceLoader.load_threaded_get(path_to_level)
 	level = level.instantiate()
 	add_child(level)
 	
-	if levelName != "level_select":
-		craftingRecipes = load(Globals.recipePath + levelName + Globals.recipeFormat).records
-		score_label = get_node(levelName + "/Score")
+	if current_level != "level_select":
+		craftingRecipes = load(Globals.recipePath + current_level + Globals.recipeFormat).records
+		score_label = get_node(current_level + "/Score")
 		
 	startPos = level.get_startPos()
 	level.add_to_group("LEVEL")
 	
 	for i in get_tree().get_nodes_in_group("DESTRUCTIBLE"):
-		i.get_parent().set_currentLevel(levelName)
+		i.get_parent().set_currentLevel(current_level)
 		
 	player.get_node("XRCamera3D/LoadingLabel").visible = !player.get_node("XRCamera3D/LoadingLabel").visible
 	
@@ -148,8 +156,9 @@ func teleport_player():
 	player.global_position = startPos
 	
 func set_timed_multiplier(multiplier : float, m_time : float):
-	print("SCORE MULTIPLIER SET TO: ", multiplier, " FOR: ", m_time, " SECONDS")
+	#print("SCORE MULTIPLIER SET TO: ", multiplier, " FOR: ", m_time, " SECONDS")
 	score_multiplier = multiplier
+	score_label.update_score(current_score, score_multiplier)
 	multiplier_timer.start(m_time)
 	
 func craft(item1, item2):
@@ -175,12 +184,10 @@ func spawn_crafted_item(itemID : String, pos : Vector3):
 	
 	# Instantly get picked up
 	var rightHand = $Player/RightHand/RightHand/FunctionPickup
-	print(rightHand)
 	rightHand._pick_up_object(item.get_children()[0])
 		
 func check_for_recipe(items : Array):
 	for i in craftingRecipes:
-		#print("CRAFTING RECIPES ", i, " ITEMS: ", items)
 		var recipe_ingredients : Array = [i[0], i[1]]
 		if (items[0] == recipe_ingredients[0] or items[0] == recipe_ingredients[1]) and (items[1] == recipe_ingredients[0] or items[1] == recipe_ingredients[1]):
 			return i[2]
@@ -210,7 +217,7 @@ func _on_teleport_timer_timeout():
 	
 func _on_multiplier_timer_timeout():
 	score_multiplier = 1.0
-	print("SCORE MULTIPLIER RESET TO: ", score_multiplier)
+	#print("SCORE MULTIPLIER RESET TO: ", score_multiplier)
 	
 
 # Handle OpenXR session ready

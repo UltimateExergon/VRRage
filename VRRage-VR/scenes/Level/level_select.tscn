@@ -31,11 +31,6 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Raum"]
 shape = SubResource("ConvexPolygonShape3D_1syp0")
 
-[node name="Teleporter" parent="." instance=ExtResource("1_n2a6i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0524111, -5.38576)
-teleport_level = "testlevel"
-label_text = "Testlevel"
-
 [node name="Teleporter2" parent="." instance=ExtResource("1_n2a6i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0447845, 5.26871)
 teleport_level = "birthday"
@@ -47,11 +42,14 @@ teleport_level = "office"
 label_text = "Büro"
 
 [node name="Teleporter4" parent="." instance=ExtResource("1_n2a6i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.46727, 0.0720582, 5.21268)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9022, 0.0720582, 0.0938386)
 teleport_level = "markt"
 label_text = "Supermarkt"
 
 [node name="Teleporter5" parent="." instance=ExtResource("1_n2a6i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.51301, 0.0988855, -4.66867)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.340443, 0.0988855, -4.66867)
 teleport_level = "pub"
 label_text = "Bar"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.116255, 0.993219, 0, -0.993219, 0.116255, 0, 12.0109, 1.51668)

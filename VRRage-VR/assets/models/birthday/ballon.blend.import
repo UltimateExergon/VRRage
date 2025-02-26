@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bimu66k7nnj3h"
-path="res://.godot/imported/geschenk2_kaputt.blend-edf521f0c758ddd11de464d2cb36e9a4.scn"
+uid="uid://wy4ifajfywuk"
+path="res://.godot/imported/ballon.blend-5de93702740f0983ce67fc5f80120c33.scn"
 
 [deps]
 
-source_file="res://assets/models/birthday/geschenk2_kaputt.blend"
-dest_files=["res://.godot/imported/geschenk2_kaputt.blend-edf521f0c758ddd11de464d2cb36e9a4.scn"]
+source_file="res://assets/models/birthday/ballon.blend"
+dest_files=["res://.godot/imported/ballon.blend-5de93702740f0983ce67fc5f80120c33.scn"]
 
 [params]
 
@@ -31,13 +31,7 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"nodes": {
-"PATH:Lattice": {
-"import/skip_import": true
-}
-}
-}
+_subresources={}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true

@@ -59,7 +59,6 @@ enum SecondHandGrab {
 @export var collisionLayers : Array = [3] ##Collision Layers of the all pickables and items, leave as is
 @export var collisionMasks : Array = [1, 2, 3, 4] ##Collision Masks of the all pickables and items, leave as is
 
-
 # Default layer for held objects is 17:held-object
 const DEFAULT_LAYER := 0b0000_0000_0000_0001_0000_0000_0000_0000
 
@@ -117,8 +116,8 @@ var got_picked_up : bool = false
 
 
 # Remember some state so we can return to it when the user drops the object
-@onready var original_collision_mask : int = collision_mask
-@onready var original_collision_layer : int = collision_layer
+var original_collision_mask : int
+var original_collision_layer : int
 
 # Add support for is_xr_class on XRTools classes
 func is_xr_class(name : String) -> bool:
@@ -131,9 +130,13 @@ func _ready():
 	get_all_GrabPoints()
 	set_Collisions()
 	
+	original_collision_mask = collision_mask
+	original_collision_layer = collision_layer
+	
 	if isStatic:
 		self.set_collision_mask_value(2, false)
 		self.set_collision_layer_value(3, false)
+		self.set_collision_layer_value(4, true)
 		self.lock_rotation = true
 		
 	if !objectID:
@@ -158,6 +161,7 @@ func _physics_process(delta: float) -> void:
 		self.constant_force = Vector3.ZERO
 		
 func set_Collisions():
+	self.set_collision_layer_value(1, false)
 	for i in collisionLayers:
 		self.set_collision_layer_value(i, true)
 	
@@ -268,7 +272,7 @@ func drop_and_free():
 func pick_up(by: Node3D) -> void:
 	# Skip if not enabled
 	if not enabled:
-		print("TRIED TO PICK UP ", self.name, " BUT ENABLED: ", enabled)
+		#print("TRIED TO PICK UP ", self.name, " BUT ENABLED: ", enabled)
 		return
 
 	# Find the grabber information
@@ -311,7 +315,7 @@ func pick_up(by: Node3D) -> void:
 		_:
 			restore_freeze = freeze
 			
-	print("SAVING RESTORE FREEZE AS: ", restore_freeze)
+	#print("SAVING RESTORE FREEZE AS: ", restore_freeze)
 
 	got_picked_up = true
 	change_color(Globals.outline_color_none)
@@ -320,7 +324,7 @@ func pick_up(by: Node3D) -> void:
 	#freeze = true
 	collision_layer = picked_up_layer
 	#collision_mask = 0
-	print("SET COLLISION LAYER TO: ", collision_layer, " SET MASK TO: ", collision_mask)
+	#print("SET COLLISION LAYER TO: ", collision_layer, " SET MASK TO: ", collision_mask)
 
 	# Find a suitable primary hand grab
 	var by_grab_point := _get_grab_point(by, null)
@@ -341,7 +345,7 @@ func pick_up(by: Node3D) -> void:
 	picked_up.emit(self)
 	grabbed.emit(self, by)
 	
-	print("SUCCESSFULLY PICKED UP ", self.name, " WITH GOT_PICKED_UP: ", got_picked_up)
+	#print("SUCCESSFULLY PICKED UP ", self.name, " WITH GOT_PICKED_UP: ", got_picked_up)
 
 
 # Called when this object is dropped
@@ -383,12 +387,12 @@ func let_go(by: Node3D, p_linear_velocity: Vector3, p_angular_velocity: Vector3)
 	got_picked_up = false
 
 	# Restore RigidBody mode
-	print("RESTORING FREEZE MODE FOR ", self, " TO ", restore_freeze)
+	#print("RESTORING FREEZE MODE FOR ", self, " TO ", restore_freeze)
 	freeze = restore_freeze
 	collision_mask = original_collision_mask
 	collision_layer = original_collision_layer
 	
-	print("SET COLLISION LAYER TO: ", collision_layer, " SET MASK TO: ", collision_mask)
+	#print("SET COLLISION LAYER TO: ", collision_layer, " SET MASK TO: ", collision_mask)
 
 	# Set velocity
 	linear_velocity = p_linear_velocity
@@ -397,7 +401,7 @@ func let_go(by: Node3D, p_linear_velocity: Vector3, p_angular_velocity: Vector3)
 	# let interested parties know
 	dropped.emit(self)
 	
-	print("SUCCESSFULLY DROPPED ", self.name, " WITH GOT_PICKED_UP: ", got_picked_up)
+	#print("SUCCESSFULLY DROPPED ", self.name, " WITH GOT_PICKED_UP: ", got_picked_up)
 
 
 ## Get the node currently holding this object

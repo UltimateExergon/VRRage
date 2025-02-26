@@ -94,6 +94,8 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_qol6v")
 
 [node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 65540
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.150704, -0.127961, 0.0108178)

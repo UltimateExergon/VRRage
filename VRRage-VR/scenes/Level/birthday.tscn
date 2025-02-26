@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://dh2xvlylxuguu"]
+[gd_scene load_steps=30 format=4 uid="uid://dh2xvlylxuguu"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_14gsh"]
 [ext_resource type="PackedScene" uid="uid://bxop60htjcqab" path="res://assets/models/birthday/geburtstags_raum.blend" id="2_jqr6m"]
@@ -18,9 +18,13 @@
 [ext_resource type="Texture2D" uid="uid://umfhrfv1com5" path="res://assets/materials/wood4/Wood026_1K-PNG_NormalGL.png" id="13_t8qme"]
 [ext_resource type="PackedScene" uid="uid://bs4otxurqoot6" path="res://scenes/object_scenes/birthday/teller.tscn" id="15_5qoog"]
 [ext_resource type="PackedScene" uid="uid://bdutjwdtbehru" path="res://scenes/items/birthday/messer.tscn" id="16_uj1g8"]
-[ext_resource type="PackedScene" uid="uid://dep2vqeo5vyn5" path="res://scenes/object_scenes/birthday/geschenk1.tscn" id="19_4v3na"]
-[ext_resource type="PackedScene" uid="uid://b5mwuuhyxfsmf" path="res://scenes/object_scenes/birthday/geschenk2.tscn" id="20_7d25n"]
-[ext_resource type="PackedScene" uid="uid://bibuxk4nkkd11" path="res://scenes/object_scenes/birthday/geschenk3.tscn" id="21_nwo2n"]
+[ext_resource type="PackedScene" uid="uid://dep2vqeo5vyn5" path="res://scenes/object_scenes/birthday/geschenk_normal.tscn" id="19_4v3na"]
+[ext_resource type="PackedScene" uid="uid://b5mwuuhyxfsmf" path="res://scenes/object_scenes/birthday/geschenk_big.tscn" id="20_7d25n"]
+[ext_resource type="PackedScene" uid="uid://bibuxk4nkkd11" path="res://scenes/object_scenes/birthday/geschenk_small.tscn" id="21_nwo2n"]
+[ext_resource type="PackedScene" uid="uid://dnhwmftub3yt5" path="res://scenes/object_scenes/birthday/ballon_blue.tscn" id="23_evqr8"]
+[ext_resource type="PackedScene" uid="uid://blfcqm0gaxg4i" path="res://scenes/object_scenes/birthday/ballon_green.tscn" id="23_pltbx"]
+[ext_resource type="PackedScene" uid="uid://bn8ccdqussnlf" path="res://scenes/object_scenes/birthday/ballon_yellow.tscn" id="24_4leya"]
+[ext_resource type="PackedScene" uid="uid://bqcwpno6e4yv3" path="res://scenes/object_scenes/birthday/ballon_red.tscn" id="25_wop3f"]
 
 [sub_resource type="Environment" id="Environment_odbat"]
 
@@ -39,7 +43,7 @@ normal_texture = ExtResource("13_t8qme")
 uv1_scale = Vector3(0.9, 0.9, 1)
 uv1_offset = Vector3(0, 0.1, 0)
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_xdgxy"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_2fdwy"]
 _surfaces = [{
 "aabb": AABB(-0.416319, 0.313777, 0.465014, 1.32287, 2.27243, 0.0220878),
 "format": 34896613377,
@@ -53,7 +57,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_sx53d"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_cau44"]
 resource_name = "hoher_schrank_Cube_003"
 _surfaces = [{
 "aabb": AABB(-0.416319, 0.313777, 0.465014, 1.32287, 2.27243, 0.0220878),
@@ -69,7 +73,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("WhNDC/////9aE0ML//9U1VoTQwv/////WhO79P////9aE7v0//9U1VoTu/T/////AAAAAAAA//8AAAAAAABU1QAAAAAAAP//AAD//wAA//8AAP//AABU1QAA//8AAP//tmpDC/////+2akML//9U1bZqQwv/////tmq79P////+2arv0//9U1bZqu/T/////EH4AAAAA//8QfgAAAAD//xB+AAAAAFTVEH4AAAAA//8Qfv//AAD//xB+//8AAP//EH7//wAAVNUQfv//AAD//1oTM23/////WhMzbf//VNVaEzNt/////wAA72EAAP//AADvYQAA//8Qfu9hAAD//xB+72EAAP//EH7vYQAA//+2ajNt/////7ZqM23//1TVtmozbf////9aE6tW/////1oTq1b//1TVWhOrVv////8AAP///////wAA/////1TVAAD///////8Qfv///////xB+/////1TVEH7///////+2aqtW/////7Zqq1b//1TVtmqrVv////9aEzNtGIz//1oTM20YjFTVWhMzbRiM//9aE7v0GIz//1oTu/QYjFTVWhO79BiM//+2arv0GIz//7Zqu/QYjFTVtmq79BiM//+2ajNtGIz//7ZqM20YjFTVtmozbRiM//8Qfu9h/////xB+72H/////EH4AAP////8QfgAA//9U1RB+AAD/////AAAAAP////8AAAAA//9U1QAAAAD/////AADvYf////8AAO9h/////7Zqq1YYjP//tmqrVhiMVNW2aqtWGIz//7ZqQwsYjP//tmpDCxiMVNW2akMLGIz//1oTQwsYjP//WhNDCxiMVNVaE0MLGIz//1oTq1YYjP//WhOrVhiMVNVaE6tWGIz//0iVQwv/////SJVDC///VNVIlUML/////0iVu/T/////SJW79P//VNVIlbv0/////+6BAAAAAP//7oEAAAAA///ugQAAAABU1e6BAAAAAP//7oH//wAA///ugf//AAD//+6B//8AAFTV7oH//wAA//+l7EML/////6XsQwv//1TVpexDC/////+l7Lv0/////6Xsu/T//1TVpey79P///////wAAAAD/////AAAAAFTV//8AAAAA////////AAD///////8AAFTV/////wAA//9IlTNt/////0iVM23//1TVSJUzbf/////uge9hAAD//+6B72EAAP//7oHvYQAA/////+9hAAD/////72EAAP//pewzbf////+l7DNt//9U1aXsM23/////SJWrVv////9IlatW//9U1UiVq1b/////7oH////////ugf////9U1e6B//////////////////////////9U1f//////////peyrVv////+l7KtW//9U1aXsq1b/////SJUzbRiM//9IlTNtGIxU1UiVM20YjP//SJW79BiM//9Ilbv0GIxU1UiVu/QYjP//pey79BiM//+l7Lv0GIxU1aXsu/QYjP//pewzbRiM//+l7DNtGIxU1aXsM20YjP/////vYf///////+9h////////AAD///////8AAP//VNX//wAA/////+6BAAD/////7oEAAP//VNXugQAA/////+6B72H/////7oHvYf////+l7KtWGIz//6Xsq1YYjFTVpeyrVhiM//+l7EMLGIz//6XsQwsYjFTVpexDCxiM//9IlUMLGIz//0iVQwsYjFTVSJVDCxiM//9IlatWGIz//0iVq1YYjFTVSJWrVhiM////f/9/VNWqKv+//3//f/9/VFVUVf+//3////9/VFVUVf8//3////9/VNWqKv8//3//f/9/VNWqKv8//3//f/9/VFVUVf8//3//f/9/////f1RVVFX/v/9//3//f////39U1aoq/7//f/9//39U1aoq/7//f////3//P/9//3//f////3//v/9//3//f1TVqir/P/9//3//f1RVVFX/v/9//3//f1TVqir/P/9//3//f1TVqir/v/9//3//f1RVVFX/P/9//3//f1TVqir/v/9//3//f1RVVFX/v/9//3//f1RVVFX/P/9//3//f1TVqir/P/9//3//f/+//3//f/9/VFVUVf+//3//f/9/VFVUVf8//3//f/9//z//f/9//39UVVRV/z//f/9//39U1aoq/z//f/9//39U1aoq/7//f/9//39UVVRV/7//f/9//39U1aoq/7//f/9//39UVVRV/7//f/9//3////9/VFVUVf8//3//f/9/////f1TVqir/P/9//3//f1TVqir/P/9//3//f1RVVFX/P/9/////f1RVVFX/v/9/////f1TVqir/v/9//3//f1TVqir/v/9//3//f////3//P/9/////f/+//3//f/9/VNWqKv8//3//f/9/VFVUVf+//3//f/9/VNWqKv8//3//f/9/VNWqKv+//3//f/9/VFVUVf8//3//f/9/VNWqKv+//3//f/9/VFVUVf+//3//f/9/VFVUVf8//3//f/9/VNWqKv8//3//f/9//7//f/9//39UVVRV/7//f/9//39UVVRV/z//f/9//3//P/9//3//f1RVVFX/P/9//3//f1TVqir/P/9//3//f1TVqir/v/9//3//f1RVVFX/v/9/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_xdgxy")
+shadow_mesh = SubResource("ArrayMesh_2fdwy")
 
 [node name="birthday" type="Node3D"]
 script = ExtResource("1_14gsh")
@@ -112,6 +116,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.55407, 0, -5.25309)
 script = ExtResource("8_vmch5")
 fragmented = ExtResource("9_ad7m5")
 destroyable_by = ["hammer"]
+hand_destruction = true
 
 [node name="Schranktuer-rigid" parent="hoher_schrank" index="0" groups=["room"]]
 collision_layer = 8
@@ -128,7 +133,7 @@ collisionMasks = [1, 3, 4]
 enabled = false
 
 [node name="Schranktuer-rigid" parent="hoher_schrank/Schranktuer-rigid" index="0"]
-mesh = SubResource("ArrayMesh_sx53d")
+mesh = SubResource("ArrayMesh_cau44")
 
 [node name="StaticBody3D" parent="hoher_schrank/Schrank" index="0" groups=["room"]]
 collision_layer = 9
@@ -145,7 +150,7 @@ collision_layer = 8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.11058, 1.01846, -2.06472)
 
 [node name="teller2" parent="Teller" instance=ExtResource("15_5qoog")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.11058, 1.02049, -1.17465)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.11058, 1.03217, -1.17465)
 
 [node name="teller3" parent="Teller" instance=ExtResource("15_5qoog")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.11058, 1.02049, -0.195787)
@@ -296,19 +301,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.293942, 0.841969, 0.791125)
 [node name="Geschenke" type="Node3D" parent="."]
 
 [node name="geschenk1" parent="Geschenke" instance=ExtResource("19_4v3na")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.95921, 1.01359, 4.93681)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.95921, 1.01359, 5.16573)
 
 [node name="geschenk2" parent="Geschenke" instance=ExtResource("19_4v3na")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.18319, 1.04085, 4.77998)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.09859, 1.04085, 5.17818)
 
 [node name="geschenk3" parent="Geschenke" instance=ExtResource("20_7d25n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.92485, 1.03315, 4.83188)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.92485, 1.03315, 5.04676)
 
 [node name="geschenk4" parent="Geschenke" instance=ExtResource("21_nwo2n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.14964, 1.01359, 4.29994)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.14964, 1.01359, 4.66516)
 
 [node name="geschenk5" parent="Geschenke" instance=ExtResource("21_nwo2n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.56408, 1.01359, 4.50315)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.56408, 1.01359, 4.68968)
+
+[node name="Ballons" type="Node3D" parent="."]
+
+[node name="ballon" parent="Ballons" instance=ExtResource("23_pltbx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.23264, -2.38419e-07, -4.74483)
+
+[node name="ballon2" parent="Ballons" instance=ExtResource("23_evqr8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.28844, 0, -5.36823)
+
+[node name="ballon3" parent="Ballons" instance=ExtResource("24_4leya")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.57792, 0, -5.48024)
+
+[node name="ballon4" parent="Ballons" instance=ExtResource("25_wop3f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.80644, -2.38419e-07, -5.07858)
 
 [editable path="geburtstags_raum"]
 [editable path="ess_tisch"]

@@ -32,12 +32,12 @@ static var _cached_scenes := {}
 static var _cached_shapes := {}
 
 func _ready():
-	print(self)
 	var body = get_children()[0]
 	body.add_to_group("DESTRUCTIBLE")
-	body.body_entered.connect(_on_body_entered)
-	body.contact_monitor = true
-	body.max_contacts_reported = 10
+	if body is RigidBody3D:
+		body.body_entered.connect(_on_body_entered)
+		body.contact_monitor = true
+		body.max_contacts_reported = 10
 	
 	invincible_timer.autostart = false
 	invincible_timer.one_shot = true
@@ -119,19 +119,25 @@ func _add_shard(original: MeshInstance3D, old_velocity: Vector3) -> void:
 	var body := RigidBody3D.new()
 	var mesh := MeshInstance3D.new()
 	var shape := CollisionShape3D.new()
+	var orig_mesh = get_children()[0].get_children()[0]
+	
 	body.add_child(mesh)
 	body.add_child(shape)
 	shard_container.add_child(body, true)
+	
 	body.global_position = shard_container.global_position
 	body.global_rotation = global_rotation
+	
 	body.set_collision_layer_value(1, false)
 	body.set_collision_mask_value(1, true)
 	body.set_collision_mask_value(4, true)
 	body.continuous_cd = true
-	mesh.scale = original.scale
-	shape.scale = original.scale
+	
+	mesh.scale = orig_mesh.scale
+	shape.scale = orig_mesh.scale
 	shape.shape = _cached_shapes[original]
 	mesh.mesh = original.mesh
+	
 	body.apply_impulse(old_velocity + _random_direction() * explosion_power,
 			-shard_container.position.normalized())
 			
@@ -188,12 +194,11 @@ func _on_body_entered(body: Node):
 	var enteringRigidBody = get_rigid_body(body)
 
 	if rigidBody.got_picked_up == false and is_destructible == true:
-		if destroyable_by.size() > 0 and !body.is_in_group("room"):
+		if destroyable_by.size() > 0:
 			if check_destroyable(body) and enteringRigidBody.linear_velocity.length() > 5:
 				check_hits_left()
 		elif body.is_in_group("hand") and hand_destruction == true:
 			check_hits_left()
-
 		elif rigidBody.linear_velocity.length() > 3 and body.is_in_group("room"):
 			check_hits_left()
 
