@@ -187,15 +187,19 @@ func _on_body_entered(body: Node):
 	var rigidBody = get_children()[0]
 	var enteringRigidBody = get_rigid_body(body)
 
+	if rigidBody.got_picked_up == false and is_destructible == true:
+		if destroyable_by.size() > 0 and !body.is_in_group("room"):
+			if check_destroyable(body) and enteringRigidBody.linear_velocity.length() > 5:
+				check_hits_left()
+		elif body.is_in_group("hand") and hand_destruction == true:
+			check_hits_left()
+
+		elif rigidBody.linear_velocity.length() > 3 and body.is_in_group("room"):
+			check_hits_left()
+
+func check_hits_left():
 	if hits_left == 0:
-		if rigidBody.got_picked_up == false and is_destructible == true:
-			if destroyable_by.size() > 0 and !body.is_in_group("room"):
-				if check_destroyable(body) and enteringRigidBody.linear_velocity.length() > 5:
-					self.destroy()
-			elif body.is_in_group("hand") and hand_destruction == true:
-				self.destroy()
-			elif rigidBody.linear_velocity.length() > 3 and body.is_in_group("room"):
-					self.destroy()
+		self.destroy()
 	else:
 		hits_left -= 1
 			
