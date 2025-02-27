@@ -1,16 +1,17 @@
-[gd_scene load_steps=8 format=4 uid="uid://cvk0hrsi23m8j"]
+[gd_scene load_steps=9 format=4 uid="uid://cvk0hrsi23m8j"]
 
 [ext_resource type="Script" path="res://scripts/destruction.gd" id="1_a14mj"]
 [ext_resource type="PackedScene" uid="uid://brt4qniydx7hg" path="res://assets/models/office/blendfiles/box_kaputt.blend" id="2_j6gvu"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="3_57u72"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand.gd" id="4_8jpij"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4dp7y"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j2iku"]
 resource_name = "Box"
 cull_mode = 2
 albedo_color = Color(0.906734, 0.626387, 0.281156, 1)
 roughness = 0.5
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_k16gh"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_y8li6"]
 _surfaces = [{
 "aabb": AABB(-0.5, -0.5, -0.75, 1, 1, 1.5),
 "format": 34896613377,
@@ -24,7 +25,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_aeb2s"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_re5r3"]
 resource_name = "box_Cube"
 _surfaces = [{
 "aabb": AABB(-0.5, -0.5, -0.75, 1, 1, 1.5),
@@ -32,7 +33,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 36,
 "index_data": PackedByteArray("AQATAA0AAQAHABMACQASAAYACQAVABIAFwAOABQAFwARAA4AEAAKAAQAEAAWAAoABQAIAAIABQALAAgADwAAAAwADwADAAAA"),
-"material": SubResource("StandardMaterial3D_4dp7y"),
+"material": SubResource("StandardMaterial3D_j2iku"),
 "name": "Box",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -40,7 +41,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("/////wAA////////AAD///////8AAFTV//8AAAAA/////wAAAAD/v///AAAAAFTV/////////7///////////////////1TV//8AAP///7///wAA////v///AAD//1TVAAD//wAA//8AAP//AAD//wAA//8AAFTVAAAAAAAA//8AAAAAAAD/vwAAAAAAAFTVAAD//////78AAP///////wAA/////1TVAAAAAP///78AAAAA////vwAAAAD//1TV/7//v/9//7+qKqoq/7//vwAA/3+qKqoq//////9//7+qKqoq/////wAA/3+qKqoq/7//v/9//79U1VTV/7//vwAA/39U1VTV//////9//79U1VTV/////wAA/39U1VTV")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_k16gh")
+shadow_mesh = SubResource("ArrayMesh_y8li6")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3w2qy"]
 points = PackedVector3Array(0.5, 0.5, 0.75, 0.5, -0.5, 0.75, 0.5, 0.5, -0.75, -0.5, 0.5, 0.75, -0.5, -0.5, 0.75, 0.5, -0.5, -0.75, -0.5, 0.5, -0.75, -0.5, -0.5, -0.75)
@@ -50,14 +51,30 @@ script = ExtResource("1_a14mj")
 fragmented = ExtResource("2_j6gvu")
 
 [node name="box-rigid" type="RigidBody3D" parent="."]
+collision_layer = 4
+collision_mask = 15
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 160
 script = ExtResource("3_57u72")
 objectID = "box"
 
 [node name="box-rigid" type="MeshInstance3D" parent="box-rigid"]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
-mesh = SubResource("ArrayMesh_aeb2s")
+mesh = SubResource("ArrayMesh_re5r3")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="box-rigid"]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_3w2qy")
+
+[node name="Left" type="Marker3D" parent="box-rigid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.352472, 0, 0.473439)
+visible = false
+script = ExtResource("4_8jpij")
+
+[node name="XRToolsGrabPointHand" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.347555, 0, 0.474041)
+visible = false
+script = ExtResource("4_8jpij")
+hand = 1

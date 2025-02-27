@@ -3,12 +3,11 @@
 importer="com.timothyqiu.godot-csv-importer"
 type="Resource"
 uid="uid://bb0aw8r1830lu"
-path="res://.godot/imported/office.csv-9c3e87658bf7e97d537f9866bbc8191a.res"
+valid=false
 
 [deps]
 
 source_file="res://craftingRecipes/office.csv"
-dest_files=["res://.godot/imported/office.csv-9c3e87658bf7e97d537f9866bbc8191a.res"]
 
 [params]
 

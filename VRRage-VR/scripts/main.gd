@@ -70,9 +70,6 @@ func _process(delta):
 		#3 = Loading finished; 2 Loading failed; 1 = in progress, 0 = invalid resource
 		var loading_status = ResourceLoader.load_threaded_get_status(path_to_level)
 		match loading_status:
-			0:
-				pass
-				#print("LEVEL INVALID RESOURCE")
 			2:
 				print("LOADING LEVEL FAILED")
 			3:

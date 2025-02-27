@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cn2hk7n2gq2nb"
-path="res://.godot/imported/Gabel_kaputt.blend-b141e7c81416c5a6c6db495bbb667706.scn"
+uid="uid://dwrsks2ue0sk5"
+path="res://.godot/imported/toilet_hammer.blend-f1d339910f35410e709dddf5983c39d8.scn"
 
 [deps]
 
-source_file="res://assets/models/birthday/Gabel_kaputt.blend"
-dest_files=["res://.godot/imported/Gabel_kaputt.blend-b141e7c81416c5a6c6db495bbb667706.scn"]
+source_file="res://assets/models/office/blendfiles/toilet_hammer.blend"
+dest_files=["res://.godot/imported/toilet_hammer.blend-f1d339910f35410e709dddf5983c39d8.scn"]
 
 [params]
 

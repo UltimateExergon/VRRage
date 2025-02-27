@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=4 uid="uid://brynm8ou30pw"]
+[gd_scene load_steps=9 format=4 uid="uid://brynm8ou30pw"]
 
 [ext_resource type="Script" path="res://scripts/office/coffe_machine.gd" id="1_vbgvw"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand.gd" id="2_n020o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nd5cy"]
 resource_name = "BlackPlastic"
@@ -100,5 +101,16 @@ collision_mask = 65540
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.150704, -0.127961, 0.0108178)
 shape = SubResource("CylinderShape3D_a0s1f")
+
+[node name="left" type="Marker3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0.271795)
+visible = false
+script = ExtResource("2_n020o")
+
+[node name="right" type="Marker3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -0.26287)
+visible = false
+script = ExtResource("2_n020o")
+hand = 1
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

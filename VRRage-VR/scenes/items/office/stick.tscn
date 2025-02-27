@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://bhfhpk61eapo4"]
+[gd_scene load_steps=7 format=4 uid="uid://bhfhpk61eapo4"]
 
 [ext_resource type="Script" path="res://scripts/item.gd" id="1_s3kym"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand.gd" id="2_ie6nh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2w2te"]
 resource_name = "Tree"
@@ -55,3 +56,12 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_hs6ps")
+
+[node name="left" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0677892, -0.376062, -0.0542515)
+script = ExtResource("2_ie6nh")
+
+[node name="right" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0623155, -0.355172, -0.0424823)
+script = ExtResource("2_ie6nh")
+hand = 1
