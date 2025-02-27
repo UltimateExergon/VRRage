@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://coa2k0wgn5h6p"]
+[gd_scene load_steps=9 format=4 uid="uid://coa2k0wgn5h6p"]
 
 [ext_resource type="Script" path="res://scripts/destruction.gd" id="1_f24wb"]
 [ext_resource type="PackedScene" uid="uid://dv1mtlcd0hmdt" path="res://assets/models/office/blendfiles/mug_kaputt.blend" id="2_8iubk"]
 [ext_resource type="Script" path="res://scripts/item.gd" id="3_rh2ut"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand.gd" id="4_vofdp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s1ub6"]
 
@@ -44,12 +45,14 @@ points = PackedVector3Array(0.0259459, -0.0114526, -0.35, 0.0259459, 0.0114037, 
 [node name="Mug" type="Node3D"]
 script = ExtResource("1_f24wb")
 fragmented = ExtResource("2_8iubk")
+score_points = 80
 
 [node name="mug-rigid" type="RigidBody3D" parent="." groups=["MUG"]]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("3_rh2ut")
+objectID = "mug"
 
 [node name="mug-rigid" type="MeshInstance3D" parent="mug-rigid"]
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0, 0)
@@ -59,3 +62,14 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="mug-rigid"]
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_3mvgl")
+
+[node name="left" type="Marker3D" parent="mug-rigid"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0704867, -0.0877651, -0.0458272)
+visible = false
+script = ExtResource("4_vofdp")
+
+[node name="right" type="Marker3D" parent="mug-rigid"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.142784, -0.025907, -0.0833241)
+visible = false
+script = ExtResource("4_vofdp")
+hand = 1
