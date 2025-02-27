@@ -32,6 +32,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -1)
 tracker = &"left_hand"
 
 [node name="LeftHand" parent="LeftHand" groups=["hand"] instance=ExtResource("1_s4y1t")]
+grip_action = "trigger"
 
 [node name="FunctionPickup" parent="LeftHand/LeftHand" instance=ExtResource("2_a6x7t")]
 pickup_axis_action = "trigger_click"
@@ -51,6 +52,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -1)
 tracker = &"right_hand"
 
 [node name="RightHand" parent="RightHand" instance=ExtResource("3_08aoj")]
+grip_action = "trigger"
 
 [node name="FunctionTeleport" parent="RightHand/RightHand" instance=ExtResource("4_arkbb")]
 teleport_button_action = "primary"

@@ -1,9 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://rynn5wsvtykk"]
+[gd_scene load_steps=9 format=3 uid="uid://rynn5wsvtykk"]
 
 [ext_resource type="PackedScene" uid="uid://brr88ibcpmb4j" path="res://scenes/teleporter.tscn" id="1_n2a6i"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_s1xfp"]
+[ext_resource type="Texture2D" uid="uid://xevlnxikqe3d" path="res://assets/textures/industrial_sunset_puresky_1k.hdr" id="2_66akw"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_701tu"]
+panorama = ExtResource("2_66akw")
+energy_multiplier = 0.5
+
+[sub_resource type="Sky" id="Sky_b3cy1"]
+sky_material = SubResource("PanoramaSkyMaterial_701tu")
 
 [sub_resource type="Environment" id="Environment_7e4a7"]
+background_mode = 2
+sky = SubResource("Sky_b3cy1")
 ambient_light_color = Color(0.794338, 0.769397, 0.760934, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_3mhjb"]

@@ -322,7 +322,7 @@ func pick_up(by: Node3D) -> void:
 
 	# turn off physics on our pickable object
 	#freeze = true
-	collision_layer = picked_up_layer
+	collision_layer = picked_up_layer #17
 	#collision_mask = 0
 	#print("SET COLLISION LAYER TO: ", collision_layer, " SET MASK TO: ", collision_mask)
 
