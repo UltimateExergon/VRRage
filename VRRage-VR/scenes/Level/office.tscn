@@ -27,7 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://bqvu3r7an2g7m" path="res://scenes/object_scenes/office/buro_table.tscn" id="21_xjac5"]
 [ext_resource type="PackedScene" uid="uid://42w2qsakuuwx" path="res://scenes/object_scenes/office/drawer.tscn" id="24_0lqct"]
 [ext_resource type="PackedScene" uid="uid://cb4qko0wg71hv" path="res://scenes/object_scenes/office/boss_dummy.tscn" id="25_cttgv"]
-[ext_resource type="PackedScene" uid="uid://b5ql6d1u6vke7" path="res://scenes/object_scenes/office/safe.tscn" id="28_j7iyh"]
+[ext_resource type="PackedScene" path="res://scenes/object_scenes/office/safe.tscn" id="28_j7iyh"]
 [ext_resource type="PackedScene" uid="uid://b4a74p1etpiom" path="res://scenes/object_scenes/office/jalousie.tscn" id="28_tgfvg"]
 
 [sub_resource type="Environment" id="Environment_eolnp"]

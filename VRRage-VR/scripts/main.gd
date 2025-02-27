@@ -159,7 +159,7 @@ func set_timed_multiplier(multiplier : float, m_time : float):
 	multiplier_timer.start(m_time)
 	
 func craft(item1, item2):
-	#print("ZU TESTENDE ITEMS ", item1.get_ObjectID(), " ", item2.get_ObjectID())
+	print("ZU TESTENDE ITEMS ", item1.get_ObjectID(), " ", item2.get_ObjectID())
 	ingredients.append([item1.get_ObjectID(), item2.get_ObjectID()])
 	#print("INGREDIENTS ", ingredients)
 	if ingredients.size() == 2:

@@ -14,5 +14,5 @@ func _notification(what: int) -> void:
 			on_predelete()
 
 func on_predelete() -> void:
-	baseball_bat.enabled = true
-	print(baseball_bat.enabled)
+	if is_instance_valid(baseball_bat):
+		baseball_bat.enabled = true

@@ -1,6 +1,6 @@
 extends Destruction
 
-@onready var leaves = $RigidBody3D/leaves
+@onready var leaves = find_child("leaves")
 
 func destroy() -> void:
 	leaves.destroy()
