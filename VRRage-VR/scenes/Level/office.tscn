@@ -272,21 +272,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.14507, 0, -0.354326)
 transform = Transform3D(0.20984, 0, 0.977736, 0, 1, 0, -0.977736, 0, 0.20984, 0.358097, 2.11055, 1.62586)
 
 [node name="Mug2" parent="mainroom/Mugs" instance=ExtResource("9_oblgo")]
-transform = Transform3D(0.20984, 0, 0.977736, 0, 1, 0, -0.977736, 0, 0.20984, -6.24967, 2.1341, 0.913368)
+transform = Transform3D(0.20984, 0, 0.977736, 0, 1, 0, -0.977736, 0, 0.20984, -6.50013, 2.1341, 0.913368)
 
 [node name="Mug3" parent="mainroom/Mugs" instance=ExtResource("9_oblgo")]
-transform = Transform3D(0.20984, 0, 0.977736, 0, 1, 0, -0.977736, 0, 0.20984, -6.46364, 2.1334, 0.991445)
+transform = Transform3D(0.20984, 0, 0.977736, 0, 1, 0, -0.977736, 0, 0.20984, -6.7141, 2.1334, 0.991445)
 
 [node name="Mug4" parent="mainroom/Mugs" instance=ExtResource("9_oblgo")]
-transform = Transform3D(0.20984, 0, 0.977736, 0, 1, 0, -0.977736, 0, 0.20984, -6.65002, 2.1379, 0.913368)
+transform = Transform3D(0.20984, 0, 0.977736, 0, 1, 0, -0.977736, 0, 0.20984, -6.90049, 2.1379, 0.913368)
 
 [node name="Mug5" parent="mainroom/Mugs" instance=ExtResource("9_oblgo")]
-transform = Transform3D(0.20984, 0, 0.977736, 0, 1, 0, -0.977736, 0, 0.20984, -6.90112, 2.14067, 0.913368)
+transform = Transform3D(0.20984, 0, 0.977736, 0, 1, 0, -0.977736, 0, 0.20984, -7.15158, 2.14067, 0.913368)
 
 [node name="Mug6" parent="mainroom/Mugs" instance=ExtResource("9_oblgo")]
 transform = Transform3D(0.19557, 0, -0.98069, 0, 1, 0, 0.98069, 0, 0.19557, 4.92469, 2.11786, -1.01545)
 
 [node name="CookiePlate" type="Node3D" parent="mainroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.475081, 0, 0)
 
 [node name="plate" parent="mainroom/CookiePlate" instance=ExtResource("13_lrxsx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.39223, 1.95458, -1.09736)
@@ -351,14 +352,14 @@ transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.247
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 9.10025, 4.79618, -3)
 
 [node name="coffee_table" parent="mainroom" instance=ExtResource("8_g1752")]
-transform = Transform3D(0.75, 0, 0, 0, 0.6, 0, 0, 0, 0.65, -1.59744, 0.894294, -0.457964)
+transform = Transform3D(0.65, 0, 0, 0, 0.6, 0, 0, 0, 0.65, -1.6889, 0.894294, -0.457964)
 
 [node name="broom" parent="mainroom" instance=ExtResource("20_c72qf")]
 transform = Transform3D(-0.0033424, -0.124329, 0.992235, -0.000418806, 0.992241, 0.124328, -0.999994, 0, -0.00336853, -2.03308, 1.12287, -4.24864)
 collision_layer = 4
 
 [node name="coffee_machine" parent="mainroom" instance=ExtResource("10_sm3tj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.67133, 2.50771, -0.030591)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.86533, 2.50771, -0.030591)
 
 [node name="whiteboard" parent="mainroom" instance=ExtResource("20_y64yl")]
 transform = Transform3D(-3.27835e-08, 0, -0.75, 0, 0.75, 0, 0.75, 0, -3.27835e-08, 0, 3, -4.77787)

@@ -11,6 +11,9 @@ const spawn_invincibility_time : float = 1.0
 @export var dropID : String = "" ##Scene Name of the Item to drop (- the .tscn)
 @export var score_points : int = 100 ##Score Points awarded upon destruction
 @export var hits_left : int = 0 ##How many more hits until the object is destroyed
+@export var particleAmount : int = 250 ##How many particles to be emitted upon destruction by CPU/GPU Particle Nodes
+
+var particleEmitTime : float = 0.1
 
 var shard_container : Node3D
 
@@ -22,11 +25,14 @@ var is_destructible : bool = true
 
 var body_position : Vector3
 
+var particleEmitters : Array = []
+
 @export_group("Physics")
 @export var explosion_power: float = 1.0 ##How strong the shards are blown away upon destruction
 
 @onready var main_node = get_tree().root.get_children()[Globals.main_order]
 @onready var invincible_timer : Timer = Timer.new()
+@onready var emitTimer : Timer = Timer.new()
 
 static var _cached_scenes := {}
 static var _cached_shapes := {}
@@ -39,10 +45,23 @@ func _ready():
 		body.contact_monitor = true
 		body.max_contacts_reported = 10
 	
+	particleEmitters = check_for_particleEmitters()
+	if particleEmitters.is_empty() == false:
+		add_emitTimer()
+	
+	add_invincibleTimer()
+	
+func add_invincibleTimer():
 	invincible_timer.autostart = false
 	invincible_timer.one_shot = true
 	add_child(invincible_timer)
 	invincible_timer.timeout.connect(_on_invincible_timer_timeout)
+	
+func add_emitTimer():
+	emitTimer.autostart = false
+	emitTimer.one_shot = true
+	add_child(emitTimer)
+	emitTimer.timeout.connect(_on_emitTimer_timeout)
 	
 func _physics_process(_delta: float) -> void:
 	if get_children()[0] is RigidBody3D:
@@ -72,11 +91,31 @@ func destroy() -> void:
 			_add_shard(shard, saved_velocity)
 
 	add_drop(saved_velocity)
+	emit_Particles()
 	add_floatingScore()
 	
 	add_score_points()
 
 	self.get_children()[0].queue_free()
+	
+func emit_Particles():
+	if particleEmitters.is_empty() == false:
+		for i in particleEmitters:
+			if not hits_left == 0:
+				i.amount = particleAmount / hits_left
+			else:
+				i.amount = particleAmount
+			i.emitting = true
+			
+		emitTimer.start(particleEmitTime)
+	
+func check_for_particleEmitters() -> Array:
+	var particles : Array = []
+	for i in self.get_children():
+		if i is GPUParticles3D or i is CPUParticles3D:
+			particles.append(i)
+			
+	return particles
 	
 func add_floatingScore():
 	var destructionScore = Globals.destructionScore.instantiate()
@@ -210,4 +249,8 @@ func check_hits_left():
 			
 func _on_invincible_timer_timeout():
 	is_destructible = true
+	
+func _on_emitTimer_timeout():
+	for i in particleEmitters:
+		i.emitting = false
 			
