@@ -245,6 +245,7 @@ func check_hits_left():
 	if hits_left == 0:
 		self.destroy()
 	else:
+		emit_Particles()
 		hits_left -= 1
 			
 func _on_invincible_timer_timeout():
