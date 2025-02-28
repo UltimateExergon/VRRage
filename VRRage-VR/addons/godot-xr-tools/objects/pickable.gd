@@ -56,8 +56,10 @@ enum SecondHandGrab {
 @export_category("Item")
 @export var objectID : String : get = get_ObjectID ##Identifier of the Objekt, unique
 @export var isStatic : bool = false ##Determines, if object can move or not
-@export var collisionLayers : Array = [3] ##Collision Layers of the all pickables and items, leave as is
-@export var collisionMasks : Array = [1, 2, 3, 4] ##Collision Masks of the all pickables and items, leave as is
+
+
+var collisionLayers : Array = [3] ##Collision Layers of the all pickables and items, leave as is
+var collisionMasks : Array = [1, 2, 3, 4] ##Collision Masks of the all pickables and items, leave as is
 
 # Default layer for held objects is 17:held-object
 const DEFAULT_LAYER := 0b0000_0000_0000_0001_0000_0000_0000_0000
@@ -323,6 +325,7 @@ func pick_up(by: Node3D) -> void:
 	# turn off physics on our pickable object
 	#freeze = true
 	collision_layer = picked_up_layer #17
+	set_collision_mask_value(17, true)
 	#collision_mask = 0
 	#print("SET COLLISION LAYER TO: ", collision_layer, " SET MASK TO: ", collision_mask)
 

@@ -5,13 +5,23 @@ const scoreFloatingDuration : float = 1.5
 const scoreTargetLocation : Vector3 = Vector3(0, 1.5, 0)
 const spawn_invincibility_time : float = 1.0
 
+@export_category("Destruction")
 @export var fragmented : PackedScene: set = set_fragmented ##Destroyed Version of the Mesh
 @export var destroyable_by : Array = [] : get = get_destroyableBy ##Only these Objects can destroy the Object, leave empty if all can
 @export var hand_destruction : bool = false ##Object can be destroyed by touching it with hand
+@export var hits_left : int = 0 ##How many more hits until the object is destroyed
 @export var dropID : String = "" ##Scene Name of the Item to drop (- the .tscn)
 @export var score_points : int = 100 ##Score Points awarded upon destruction
-@export var hits_left : int = 0 ##How many more hits until the object is destroyed
+
+@export_group("Physics")
+@export var explosion_power: float = 1.0 ##How strong the shards are blown away upon destruction
+
+@export_category("Sound")
+@export var destructionSound : String = "" ##Filename in assets/sound/sound_effects without .mp3
+
+@export_category("Destruction Particles")
 @export var particleAmount : int = 250 ##How many particles to be emitted upon destruction by CPU/GPU Particle Nodes
+
 
 var particleEmitTime : float = 0.1
 
@@ -27,18 +37,16 @@ var body_position : Vector3
 
 var particleEmitters : Array = []
 
-@export_group("Physics")
-@export var explosion_power: float = 1.0 ##How strong the shards are blown away upon destruction
-
 @onready var main_node = get_tree().root.get_children()[Globals.main_order]
 @onready var invincible_timer : Timer = Timer.new()
 @onready var emitTimer : Timer = Timer.new()
+@onready var soundPlayer : AudioStreamPlayer3D = AudioStreamPlayer3D.new()
 
 static var _cached_scenes := {}
 static var _cached_shapes := {}
 
 func _ready():
-	var body = get_children()[0]
+	var body = self.get_children()[0]
 	body.add_to_group("DESTRUCTIBLE")
 	if body is RigidBody3D:
 		body.body_entered.connect(_on_body_entered)
@@ -50,6 +58,20 @@ func _ready():
 		add_emitTimer()
 	
 	add_invincibleTimer()
+	add_soundPlayer()
+	
+func add_soundPlayer():
+	var audio_stream : AudioStreamMP3
+	if not destructionSound == "":
+		audio_stream = load(Globals.soundeffectPath + destructionSound + Globals.soundFormat)
+	else:
+		audio_stream = Globals.default_destruction_sound
+		
+	soundPlayer.stream = audio_stream
+	soundPlayer.volume_db = Globals.volumeDB
+	soundPlayer.max_db = Globals.maxDB
+	soundPlayer.autoplay = false
+	self.get_children()[0].add_child(soundPlayer)
 	
 func add_invincibleTimer():
 	invincible_timer.autostart = false
@@ -96,6 +118,9 @@ func destroy() -> void:
 	
 	add_score_points()
 
+	soundPlayer.play()
+	await soundPlayer.finished
+	
 	self.get_children()[0].queue_free()
 	
 func emit_Particles():

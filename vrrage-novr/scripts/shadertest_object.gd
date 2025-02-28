@@ -25,6 +25,9 @@ func _ready():
 		material = get_surface_mat(0, i)
 		material.set_next_pass(new_mat)
 		
+	print(self.collision_layer)
+	print(self.collision_mask)
+		
 func make_meshes_unique():
 	for i in get_children():
 		for m in get_meshes():

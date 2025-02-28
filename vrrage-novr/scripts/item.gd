@@ -7,6 +7,8 @@ func _ready():
 	self.max_contacts_reported = 160
 	self.add_to_group("CRAFTABLE")
 	self.body_entered.connect(_on_body_entered)
+	print(self.collision_layer)
+	print(self.collision_mask)
 	
 func _on_body_entered(body):
 	if body.is_in_group("CRAFTABLE"):

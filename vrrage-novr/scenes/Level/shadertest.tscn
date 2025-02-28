@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://2oayxbuigx8v"]
+[gd_scene load_steps=11 format=3 uid="uid://2oayxbuigx8v"]
 
 [ext_resource type="PackedScene" uid="uid://ntux64wp5hmy" path="res://scenes/player.tscn" id="1_mxrpx"]
 [ext_resource type="Script" path="res://scripts/shadertest_object.gd" id="2_qvplg"]
+[ext_resource type="Script" path="res://scripts/item.gd" id="3_q2r3q"]
 
 [sub_resource type="Environment" id="Environment_a2wox"]
 
@@ -46,6 +47,7 @@ shape = SubResource("ConcavePolygonShape3D_dryty")
 
 [node name="testcube" type="RigidBody3D" parent="." groups=["shadertest"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.739449, -3.95559)
+collision_layer = 7
 script = ExtResource("2_qvplg")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="testcube"]
@@ -56,7 +58,7 @@ shape = SubResource("ConvexPolygonShape3D_xgjmp")
 
 [node name="testcube2" type="RigidBody3D" parent="." groups=["shadertest"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.66327, 0.739449, -3.95559)
-script = ExtResource("2_qvplg")
+script = ExtResource("3_q2r3q")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="testcube2"]
 mesh = SubResource("BoxMesh_hcyou")

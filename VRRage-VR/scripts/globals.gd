@@ -8,8 +8,11 @@ const main_order : int = 3
 const levelPath : String = "res://scenes/Level/"
 const itemPath : String = "res://scenes/items/"
 const recipePath : String = "res://craftingRecipes/"
+const musicPath : String = "res://assets/sound/music/"
+const soundeffectPath : String = "res://assets/sound/sound_effects/"
 const sceneFormat : String = ".tscn"
 const recipeFormat : String = ".csv"
+const soundFormat : String = ".mp3"
 
 @onready var destructionScore = preload("res://scenes/destruction_score.tscn")
 
@@ -20,6 +23,13 @@ const outline_color_crafting : Color = Color8(196, 195, 0, 150)
 const outline_color_crafting_near : Color = Color8(196, 195, 0, 200)
 const outline_color_none : Color = Color8(0, 0, 0, 0)
 const outline_width : float = 2.0
+
+@onready var default_music : AudioStreamMP3 = preload("res://assets/sound/music/test_music.mp3")
+@onready var default_destruction_sound : AudioStreamMP3 = preload("res://assets/sound/sound_effects/test_sound.mp3")
+const maxDB : float = 3.0
+const volumeDB : float = 0.0
+const maxMusicDB : float = 2.0
+const MusicVolumeDB : float = 0.0
 
 func update_highscore(score : int, level : String) -> void:
 	var current_highscore : int = highscores.get(level)

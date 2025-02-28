@@ -40,6 +40,7 @@ room=""
 3d_physics/layer_2="hands"
 3d_physics/layer_3="objects/items"
 3d_physics/layer_4="cant teleport"
+3d_physics/layer_17="picked_up"
 
 [physics]
 

@@ -27,7 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://bqvu3r7an2g7m" path="res://scenes/object_scenes/office/buro_table.tscn" id="21_xjac5"]
 [ext_resource type="PackedScene" uid="uid://42w2qsakuuwx" path="res://scenes/object_scenes/office/drawer.tscn" id="24_0lqct"]
 [ext_resource type="PackedScene" uid="uid://cb4qko0wg71hv" path="res://scenes/object_scenes/office/boss_dummy.tscn" id="25_cttgv"]
-[ext_resource type="PackedScene" path="res://scenes/object_scenes/office/safe.tscn" id="28_j7iyh"]
+[ext_resource type="PackedScene" uid="uid://b5ql6d1u6vke7" path="res://scenes/object_scenes/office/safe.tscn" id="28_j7iyh"]
 [ext_resource type="PackedScene" uid="uid://b4a74p1etpiom" path="res://scenes/object_scenes/office/jalousie.tscn" id="28_tgfvg"]
 
 [sub_resource type="Environment" id="Environment_eolnp"]
@@ -166,6 +166,8 @@ data = PackedVector3Array(10, 2.5, 6, 10.803, 2.5, -6, 10, 2.5, -6, 10, 2.5, 6, 
 [node name="office" type="Node3D" groups=["Level"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162022, -0.864617, 3.6567)
 script = ExtResource("1_5hv1r")
+start_pos = null
+level_music = null
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_eolnp")
@@ -204,13 +206,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.461719, 0, 0)
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -2.97455, 2.47079, 1.98141)
 
 [node name="toilet" parent="bathroom" instance=ExtResource("7_jcogi")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -5.2712, 1.89092, 2.40059)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -5.2712, 1.79123, 2.40059)
 
 [node name="sink" parent="bathroom" instance=ExtResource("8_vcooe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.51437, 2.42506, 0.767618)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.51437, 2.13751, 0.767618)
 
 [node name="toilet_paper_holder" parent="bathroom" instance=ExtResource("8_tan71")]
-transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -5.79615, 2.01384, 3.56465)
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -5.79615, 1.79358, 3.56465)
 
 [node name="storeroom" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.500816, 0, 0)
