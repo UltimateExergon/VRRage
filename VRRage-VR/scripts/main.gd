@@ -103,6 +103,9 @@ func get_score_multiplier() -> float:
 		
 func delete_oldLevel():
 	print("Deleting old level")
+
+	Globals.update_highscore(current_score, current_level)
+
 	for i in get_tree().get_nodes_in_group("LEVEL"):
 		i.queue_free()
 		
