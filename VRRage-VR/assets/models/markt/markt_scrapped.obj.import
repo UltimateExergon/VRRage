@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dt407quq03y1i"
+path="res://.godot/imported/markt_scrapped.obj-12951532469165d4509184e9f14f89bd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/markt_scrapped.obj-12951532469165d4509184e9f14f89bd.mesh"]
+
+source_file="res://assets/models/markt/markt_scrapped.obj"
+dest_files=["res://.godot/imported/markt_scrapped.obj-12951532469165d4509184e9f14f89bd.mesh", "res://.godot/imported/markt_scrapped.obj-12951532469165d4509184e9f14f89bd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

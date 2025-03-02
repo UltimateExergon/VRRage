@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://e38qiq2cim1p"
+path="res://.godot/imported/markt_textured.obj-50aea4acca127d3954df87ee999babab.mesh"
+
+[deps]
+
+files=["res://.godot/imported/markt_textured.obj-50aea4acca127d3954df87ee999babab.mesh"]
+
+source_file="res://assets/models/markt/markt_textured.obj"
+dest_files=["res://.godot/imported/markt_textured.obj-50aea4acca127d3954df87ee999babab.mesh", "res://.godot/imported/markt_textured.obj-50aea4acca127d3954df87ee999babab.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
