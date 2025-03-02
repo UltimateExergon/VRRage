@@ -166,8 +166,6 @@ data = PackedVector3Array(10, 2.5, 6, 10.803, 2.5, -6, 10, 2.5, -6, 10, 2.5, 6, 
 [node name="office" type="Node3D" groups=["Level"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162022, -0.864617, 3.6567)
 script = ExtResource("1_5hv1r")
-start_pos = null
-level_music = null
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_eolnp")

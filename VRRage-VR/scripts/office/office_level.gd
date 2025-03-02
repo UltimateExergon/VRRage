@@ -4,7 +4,6 @@ const normal_background_color : Color = Color8(137, 137, 137, 255)
 const alert_background_color : Color = Color8(54, 54, 54, 255)
 
 @onready var world_environment : Environment = $WorldEnvironment.environment
-@onready var musicPlayer : AudioStreamPlayer = AudioStreamPlayer.new()
 
 func _ready():
 	super()

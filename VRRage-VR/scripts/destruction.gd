@@ -136,7 +136,7 @@ func emit_Particles():
 	
 func check_for_particleEmitters() -> Array:
 	var particles : Array = []
-	for i in self.get_children():
+	for i in self.get_child(0).get_children():
 		if i is GPUParticles3D or i is CPUParticles3D:
 			particles.append(i)
 			
