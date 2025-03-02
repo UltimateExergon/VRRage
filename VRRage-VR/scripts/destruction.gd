@@ -108,6 +108,10 @@ func destroy() -> void:
 
 	var saved_velocity = self.get_children()[0].linear_velocity
 
+	for i in self.get_child(0).get_children():
+		if i is MeshInstance3D or i is CollisionShape3D or i is CollisionPolygon3D:
+			i.visible = false
+
 	if not fragmented == null:
 		for shard in _get_shards():
 			_add_shard(shard, saved_velocity)
@@ -126,6 +130,7 @@ func destroy() -> void:
 func emit_Particles():
 	if particleEmitters.is_empty() == false:
 		for i in particleEmitters:
+			i.one_shot = true
 			if not hits_left == 0:
 				i.amount = particleAmount / hits_left
 			else:
