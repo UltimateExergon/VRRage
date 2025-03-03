@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beetjc0iuhg1"
-path.s3tc="res://.godot/imported/Wooden_Floor_wdipfjw_2K_Roughness.jpg-d46b6bc0de305b379e3280b523c3462d.s3tc.ctex"
+uid="uid://dvy6drku14l2e"
+path.s3tc="res://.godot/imported/markt_textured_Poliigon_TilesCeramicWhite_6956_BaseColor.jpg-b2a272274acc4bf9ed7a61f59d940f2f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "b3978ce297d4d35ccd6734bca00bd2c7"
+}
 
 [deps]
 
-source_file="res://assets/materials/wood_parquet/Wooden_Floor_wdipfjw_2K_Roughness.jpg"
-dest_files=["res://.godot/imported/Wooden_Floor_wdipfjw_2K_Roughness.jpg-d46b6bc0de305b379e3280b523c3462d.s3tc.ctex"]
+source_file="res://assets/models/markt/markt_textured_Poliigon_TilesCeramicWhite_6956_BaseColor.jpg"
+dest_files=["res://.godot/imported/markt_textured_Poliigon_TilesCeramicWhite_6956_BaseColor.jpg-b2a272274acc4bf9ed7a61f59d940f2f.s3tc.ctex"]
 
 [params]
 

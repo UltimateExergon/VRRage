@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beetjc0iuhg1"
-path.s3tc="res://.godot/imported/Wooden_Floor_wdipfjw_2K_Roughness.jpg-d46b6bc0de305b379e3280b523c3462d.s3tc.ctex"
+uid="uid://4uew5x4lpfbi"
+path.s3tc="res://.godot/imported/bathroom_tiles_basecolor.jpg-48cb70331469feb557ca4ae267007500.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/materials/wood_parquet/Wooden_Floor_wdipfjw_2K_Roughness.jpg"
-dest_files=["res://.godot/imported/Wooden_Floor_wdipfjw_2K_Roughness.jpg-d46b6bc0de305b379e3280b523c3462d.s3tc.ctex"]
+source_file="res://assets/materials/bathroom_tiles/bathroom_tiles_basecolor.jpg"
+dest_files=["res://.godot/imported/bathroom_tiles_basecolor.jpg-48cb70331469feb557ca4ae267007500.s3tc.ctex"]
 
 [params]
 

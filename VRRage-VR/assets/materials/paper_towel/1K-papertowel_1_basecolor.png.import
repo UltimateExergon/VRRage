@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beetjc0iuhg1"
-path.s3tc="res://.godot/imported/Wooden_Floor_wdipfjw_2K_Roughness.jpg-d46b6bc0de305b379e3280b523c3462d.s3tc.ctex"
+uid="uid://cr4d8sm8wd5r7"
+path.s3tc="res://.godot/imported/1K-papertowel_1_basecolor.png-9312bd7b8ee9f96910c8815aa2cd2fc0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/materials/wood_parquet/Wooden_Floor_wdipfjw_2K_Roughness.jpg"
-dest_files=["res://.godot/imported/Wooden_Floor_wdipfjw_2K_Roughness.jpg-d46b6bc0de305b379e3280b523c3462d.s3tc.ctex"]
+source_file="res://assets/materials/paper_towel/1K-papertowel_1_basecolor.png"
+dest_files=["res://.godot/imported/1K-papertowel_1_basecolor.png-9312bd7b8ee9f96910c8815aa2cd2fc0.s3tc.ctex"]
 
 [params]
 

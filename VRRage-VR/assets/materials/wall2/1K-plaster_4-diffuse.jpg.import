@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beetjc0iuhg1"
-path.s3tc="res://.godot/imported/Wooden_Floor_wdipfjw_2K_Roughness.jpg-d46b6bc0de305b379e3280b523c3462d.s3tc.ctex"
+uid="uid://c7m113c0ixf8i"
+path.s3tc="res://.godot/imported/1K-plaster_4-diffuse.jpg-98468e57ff6382c1bd9dd8d5c237b560.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/materials/wood_parquet/Wooden_Floor_wdipfjw_2K_Roughness.jpg"
-dest_files=["res://.godot/imported/Wooden_Floor_wdipfjw_2K_Roughness.jpg-d46b6bc0de305b379e3280b523c3462d.s3tc.ctex"]
+source_file="res://assets/materials/wall2/1K-plaster_4-diffuse.jpg"
+dest_files=["res://.godot/imported/1K-plaster_4-diffuse.jpg-98468e57ff6382c1bd9dd8d5c237b560.s3tc.ctex"]
 
 [params]
 
