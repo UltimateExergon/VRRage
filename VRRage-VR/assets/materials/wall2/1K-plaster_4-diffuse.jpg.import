@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvy6drku14l2e"
-path.s3tc="res://.godot/imported/markt_textured_Poliigon_TilesCeramicWhite_6956_BaseColor.jpg-b2a272274acc4bf9ed7a61f59d940f2f.s3tc.ctex"
+uid="uid://c7m113c0ixf8i"
+path.s3tc="res://.godot/imported/1K-plaster_4-diffuse.jpg-98468e57ff6382c1bd9dd8d5c237b560.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "b3978ce297d4d35ccd6734bca00bd2c7"
-}
 
 [deps]
 
-source_file="res://assets/models/markt/markt_textured_Poliigon_TilesCeramicWhite_6956_BaseColor.jpg"
-dest_files=["res://.godot/imported/markt_textured_Poliigon_TilesCeramicWhite_6956_BaseColor.jpg-b2a272274acc4bf9ed7a61f59d940f2f.s3tc.ctex"]
+source_file="res://assets/materials/wall2/1K-plaster_4-diffuse.jpg"
+dest_files=["res://.godot/imported/1K-plaster_4-diffuse.jpg-98468e57ff6382c1bd9dd8d5c237b560.s3tc.ctex"]
 
 [params]
 

@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvy6drku14l2e"
-path.s3tc="res://.godot/imported/markt_textured_Poliigon_TilesCeramicWhite_6956_BaseColor.jpg-b2a272274acc4bf9ed7a61f59d940f2f.s3tc.ctex"
+uid="uid://cr4d8sm8wd5r7"
+path.s3tc="res://.godot/imported/1K-papertowel_1_basecolor.png-9312bd7b8ee9f96910c8815aa2cd2fc0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "b3978ce297d4d35ccd6734bca00bd2c7"
-}
 
 [deps]
 
-source_file="res://assets/models/markt/markt_textured_Poliigon_TilesCeramicWhite_6956_BaseColor.jpg"
-dest_files=["res://.godot/imported/markt_textured_Poliigon_TilesCeramicWhite_6956_BaseColor.jpg-b2a272274acc4bf9ed7a61f59d940f2f.s3tc.ctex"]
+source_file="res://assets/materials/paper_towel/1K-papertowel_1_basecolor.png"
+dest_files=["res://.godot/imported/1K-papertowel_1_basecolor.png-9312bd7b8ee9f96910c8815aa2cd2fc0.s3tc.ctex"]
 
 [params]
 

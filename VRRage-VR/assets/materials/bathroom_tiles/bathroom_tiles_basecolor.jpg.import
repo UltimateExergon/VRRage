@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvy6drku14l2e"
-path.s3tc="res://.godot/imported/markt_textured_Poliigon_TilesCeramicWhite_6956_BaseColor.jpg-b2a272274acc4bf9ed7a61f59d940f2f.s3tc.ctex"
+uid="uid://4uew5x4lpfbi"
+path.s3tc="res://.godot/imported/bathroom_tiles_basecolor.jpg-48cb70331469feb557ca4ae267007500.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "b3978ce297d4d35ccd6734bca00bd2c7"
-}
 
 [deps]
 
-source_file="res://assets/models/markt/markt_textured_Poliigon_TilesCeramicWhite_6956_BaseColor.jpg"
-dest_files=["res://.godot/imported/markt_textured_Poliigon_TilesCeramicWhite_6956_BaseColor.jpg-b2a272274acc4bf9ed7a61f59d940f2f.s3tc.ctex"]
+source_file="res://assets/materials/bathroom_tiles/bathroom_tiles_basecolor.jpg"
+dest_files=["res://.godot/imported/bathroom_tiles_basecolor.jpg-48cb70331469feb557ca4ae267007500.s3tc.ctex"]
 
 [params]
 
