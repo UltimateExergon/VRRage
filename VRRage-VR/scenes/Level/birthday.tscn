@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://dh2xvlylxuguu"]
+[gd_scene load_steps=52 format=4 uid="uid://dh2xvlylxuguu"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_14gsh"]
 [ext_resource type="PackedScene" uid="uid://bxop60htjcqab" path="res://assets/models/birthday/geburtstags_raum.blend" id="2_jqr6m"]
@@ -24,7 +24,12 @@
 [ext_resource type="PackedScene" uid="uid://bibuxk4nkkd11" path="res://scenes/object_scenes/birthday/geschenk_small.tscn" id="21_nwo2n"]
 [ext_resource type="PackedScene" uid="uid://dnhwmftub3yt5" path="res://scenes/object_scenes/birthday/ballon.tscn" id="23_evqr8"]
 [ext_resource type="PackedScene" uid="uid://blg68g7c3b03l" path="res://scenes/object_scenes/birthday/pinata.tscn" id="26_w6hbc"]
-[ext_resource type="PackedScene" uid="uid://b2w6v05oevd21" path="res://assets/models/birthday/disco_ball.blend" id="27_wcbqe"]
+[ext_resource type="PackedScene" uid="uid://b5wl46da5pw1" path="res://scenes/object_scenes/birthday/glass.tscn" id="27_bqt8w"]
+[ext_resource type="PackedScene" uid="uid://crbg87xfcel6d" path="res://scenes/object_scenes/birthday/disco_ball.tscn" id="27_grr0i"]
+[ext_resource type="PackedScene" uid="uid://dr2ic0pu5qgvq" path="res://scenes/object_scenes/office/plate.tscn" id="27_jnylm"]
+[ext_resource type="PackedScene" uid="uid://c0cmr17g41rda" path="res://assets/models/birthday/decken_lampe.blend" id="28_401ih"]
+[ext_resource type="PackedScene" uid="uid://bu14xbuhv57pv" path="res://scenes/object_scenes/birthday/cake.tscn" id="29_dwfis"]
+[ext_resource type="PackedScene" uid="uid://cpsu4s4wyy1ik" path="res://scenes/object_scenes/birthday/bilderrahmen.tscn" id="30_8me7h"]
 
 [sub_resource type="Environment" id="Environment_tgb2i"]
 
@@ -238,7 +243,12 @@ script = ExtResource("1_14gsh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.116255, 0.993219, 0, -0.993219, 0.116255, 0, 9.25763, -0.97809)
-light_energy = 0.5
+visible = false
+light_energy = 0.1
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -4.06775, -5.82073, -0.97809)
+light_energy = 0.1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_tgb2i")
@@ -249,7 +259,40 @@ environment = SubResource("Environment_tgb2i")
 collision_mask = 0
 
 [node name="Point" parent="geburtstags_raum" index="1"]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 3.54401, 0)
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0.0711194, 3.73748, 0)
+light_energy = 5.0
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_blur = 10.0
+omni_range = 10.0
+
+[node name="Point2" type="OmniLight3D" parent="geburtstags_raum"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0.0711194, 3.73748, 0)
+light_color = Color(1, 1, 1, 1)
+light_energy = 0.4
+light_cull_mask = 4294967294
+shadow_bias = 0.0
+shadow_blur = 10.0
+omni_range = 10.0
+
+[node name="Point_001" parent="geburtstags_raum" index="3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -9.20646, 3.68068, 0)
+light_energy = 5.0
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_blur = 10.0
+omni_range = 10.0
+
+[node name="Point_002" type="OmniLight3D" parent="geburtstags_raum"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -9.20646, 3.68068, 0)
+light_color = Color(1, 1, 1, 1)
+light_energy = 0.4
+light_cull_mask = 4294967294
+shadow_bias = 0.0
+shadow_blur = 10.0
+omni_range = 10.0
 
 [node name="Teleporter" parent="." instance=ExtResource("3_nk0ps")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.81377, -0.218406, 0)
@@ -285,11 +328,6 @@ continuous_cd = true
 contact_monitor = true
 max_contacts_reported = 160
 script = ExtResource("10_gvfxs")
-objectID = "schrank"
-isStatic = true
-collisionLayers = []
-collisionMasks = [1, 3, 4, 17]
-enabled = false
 
 [node name="Schranktuer-rigid" parent="hoher_schrank/Schranktuer-rigid" index="0"]
 mesh = SubResource("ArrayMesh_bktua")
@@ -480,7 +518,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.56408, 1.01359, 4.68968)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.04543)
 
 [node name="ballon" parent="Ballons" instance=ExtResource("23_evqr8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.79077, 0, -5.33822)
+transform = Transform3D(1, 0, 0, 0, 0.95327, 0.30212, 0, -0.30212, 0.95327, -4.79077, 0, -4.973)
 
 [node name="Ballon-rigid" parent="Ballons/ballon/Ballon-rigid" index="0"]
 mesh = SubResource("ArrayMesh_kqbrv")
@@ -490,8 +528,19 @@ color = Color(1, 0, 0, 1)
 [node name="String" parent="Ballons/ballon" index="3"]
 mesh = SubResource("ImmediateMesh_teyfk")
 
+[node name="ballon5" parent="Ballons" instance=ExtResource("23_evqr8")]
+transform = Transform3D(1, 0, 0, 0, 0.983826, -0.179128, 0, 0.179128, 0.983826, -4.67358, 0, -4.86437)
+
+[node name="Ballon-rigid" parent="Ballons/ballon5/Ballon-rigid" index="0"]
+mesh = SubResource("ArrayMesh_kqbrv")
+surface_material_override/0 = SubResource("StandardMaterial3D_njurs")
+color = Color(1, 0, 0, 1)
+
+[node name="String" parent="Ballons/ballon5" index="3"]
+mesh = SubResource("ImmediateMesh_teyfk")
+
 [node name="ballon2" parent="Ballons" instance=ExtResource("23_evqr8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.28844, 0, -5.07605)
+transform = Transform3D(0.965527, -0.260302, 0, 0.260302, 0.965527, 0, 0, 0, 1, -4.83846, 0, -5.00896)
 
 [node name="Ballon-rigid" parent="Ballons/ballon2/Ballon-rigid" index="0"]
 mesh = SubResource("ArrayMesh_niijx")
@@ -513,7 +562,7 @@ color = Color(0.063, 0.63, 0, 1)
 mesh = SubResource("ImmediateMesh_g5421")
 
 [node name="ballon4" parent="Ballons" instance=ExtResource("23_evqr8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.28844, 0, -5.36823)
+transform = Transform3D(0.972667, -0.222041, -0.0679526, 0.232206, 0.930086, 0.28464, -5.11774e-09, -0.292639, 0.956223, -4.88282, 0, -4.98455)
 
 [node name="Ballon-rigid" parent="Ballons/ballon4/Ballon-rigid" index="0"]
 mesh = SubResource("ArrayMesh_eqc23")
@@ -523,21 +572,91 @@ color = Color(1, 0.522911, 0.159363, 1)
 [node name="String" parent="Ballons/ballon4" index="3"]
 mesh = SubResource("ImmediateMesh_om4le")
 
+[node name="ballon6" parent="Ballons" instance=ExtResource("23_evqr8")]
+transform = Transform3D(0.944674, 0.328009, 0, -0.328009, 0.944674, 0, 0, 0, 1, -4.82025, 0, -5.0316)
+
+[node name="Ballon-rigid" parent="Ballons/ballon6/Ballon-rigid" index="0"]
+mesh = SubResource("ArrayMesh_eqc23")
+surface_material_override/0 = SubResource("StandardMaterial3D_yv6b0")
+color = Color(1, 0.522911, 0.159363, 1)
+
+[node name="String" parent="Ballons/ballon6" index="3"]
+mesh = SubResource("ImmediateMesh_om4le")
+
 [node name="pinata" parent="." instance=ExtResource("26_w6hbc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5933, 4.0065, 2.85847)
 
 [node name="baseball_bat" parent="." instance=ExtResource("3_y7ash")]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -1.63016, 1.11798, -4.12857)
 
-[node name="disco_ball" parent="." instance=ExtResource("27_wcbqe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.01157, 2.10595, -1.78331)
-
-[node name="Sphere" parent="disco_ball" index="0"]
-transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0.921284, 1.47262, 1.76332)
-
 [node name="ReflectionProbe" type="ReflectionProbe" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.80822, 1.97962, 0.0219727)
 size = Vector3(19.7192, 4.15118, 11.7861)
+
+[node name="Gläser" type="Node3D" parent="."]
+
+[node name="glass" parent="Gläser" instance=ExtResource("27_bqt8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.39103, 1.12278, 2.49873)
+
+[node name="glass2" parent="Gläser" instance=ExtResource("27_bqt8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.39103, 1.12278, 1.57025)
+
+[node name="glass3" parent="Gläser" instance=ExtResource("27_bqt8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.39103, 1.12278, 0.61593)
+
+[node name="glass4" parent="Gläser" instance=ExtResource("27_bqt8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.38168, 1.12278, -0.370435)
+
+[node name="glass5" parent="Gläser" instance=ExtResource("27_bqt8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.39103, 1.12278, -1.3688)
+
+[node name="glass6" parent="Gläser" instance=ExtResource("27_bqt8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.39103, 1.12278, -2.24222)
+
+[node name="glass7" parent="Gläser" instance=ExtResource("27_bqt8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0356, 1.12278, -1.99815)
+
+[node name="glass8" parent="Gläser" instance=ExtResource("27_bqt8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0356, 1.12278, -0.960447)
+
+[node name="glass9" parent="Gläser" instance=ExtResource("27_bqt8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0356, 1.12278, 0.00472802)
+
+[node name="glass10" parent="Gläser" instance=ExtResource("27_bqt8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0356, 1.12278, 0.936868)
+
+[node name="glass11" parent="Gläser" instance=ExtResource("27_bqt8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0356, 1.12278, 1.82923)
+
+[node name="glass12" parent="Gläser" instance=ExtResource("27_bqt8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0356, 1.12278, 2.83335)
+
+[node name="plate" parent="." instance=ExtResource("27_jnylm")]
+transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, -9.79235, 0.956353, 0.43034)
+
+[node name="cake" parent="." instance=ExtResource("29_dwfis")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.79688, 1.19394, 0.427566)
+
+[node name="disco_ball" parent="." instance=ExtResource("27_grr0i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.54014, 3.24652, -9.44138e-05)
+
+[node name="decken_lampe" parent="." instance=ExtResource("28_401ih")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0753579, 2.65872, 0.0246027)
+
+[node name="Lampe" parent="decken_lampe" index="0"]
+layers = 2
+
+[node name="decken_lampe2" parent="." instance=ExtResource("28_401ih")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2038, 2.65872, 0.0246027)
+
+[node name="Lampe" parent="decken_lampe2" index="0"]
+layers = 2
+
+[node name="bilderrahmen" parent="." instance=ExtResource("30_8me7h")]
+transform = Transform3D(-0.611458, 0, 0.791277, 0, 1, 0, -0.791277, 0, -0.611458, 0.145897, 1.43973, -4.22047)
+
+[node name="bilderrahmen2" parent="." instance=ExtResource("30_8me7h")]
+transform = Transform3D(0.208014, 0, 0.978126, 0, 1, 0, -0.978126, 0, 0.208014, 1.4201, 1.42913, -4.11273)
 
 [editable path="geburtstags_raum"]
 [editable path="ess_tisch"]
@@ -545,7 +664,10 @@ size = Vector3(19.7192, 4.15118, 11.7861)
 [editable path="hoher_schrank"]
 [editable path="kleiner_schrank"]
 [editable path="Ballons/ballon"]
+[editable path="Ballons/ballon5"]
 [editable path="Ballons/ballon2"]
 [editable path="Ballons/ballon3"]
 [editable path="Ballons/ballon4"]
-[editable path="disco_ball"]
+[editable path="Ballons/ballon6"]
+[editable path="decken_lampe"]
+[editable path="decken_lampe2"]

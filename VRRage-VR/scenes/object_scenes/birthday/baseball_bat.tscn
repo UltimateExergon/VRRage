@@ -123,7 +123,7 @@ continuous_cd = true
 contact_monitor = true
 max_contacts_reported = 160
 script = ExtResource("1_dgnwj")
-objectID = "bat"
+objectID = "baseball_bat"
 
 [node name="Bat-rigid" type="MeshInstance3D" parent="Bat-rigid"]
 mesh = SubResource("ArrayMesh_w3jgp")

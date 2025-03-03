@@ -67,9 +67,11 @@ shape = SubResource("ConvexPolygonShape3D_bsl1t")
 
 [node name="left" type="Marker3D" parent="plate-rigid"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.258686, 0.0266942, 0.149407)
+visible = false
 script = ExtResource("4_tqql8")
 
 [node name="right" type="Marker3D" parent="plate-rigid"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.263353, 0.0223224, 0.140267)
+visible = false
 script = ExtResource("4_tqql8")
 hand = 1

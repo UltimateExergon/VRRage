@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7ke7mhnjna6s"]
+
+[ext_resource type="PackedScene" uid="uid://d1ecieo86p0gm" path="res://assets/models/birthday/hammer_2.blend" id="1_lu62t"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_4pv7m"]
+[ext_resource type="Script" path="res://scripts/destruction.gd" id="2_yuxay"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="3_f7ihw"]
+[ext_resource type="PackedScene" uid="uid://cmun5fh47e5eb" path="res://assets/models/birthday/hammer_2_kaputt.blend" id="3_hby0m"]
+[ext_resource type="Script" path="res://scripts/item.gd" id="3_nvf02"]
+
+[node name="hammer_messer" instance=ExtResource("1_lu62t")]
+script = ExtResource("2_yuxay")
+fragmented = ExtResource("3_hby0m")
+score_points = 300
+
+[node name="Hammer-rigid" parent="." index="0"]
+script = ExtResource("3_nvf02")
+
+[node name="Hammer-rigid" parent="Hammer-rigid" index="0"]
+transform = Transform3D(1.67, 0, 0, 0, 1.67, 0, 0, 0, 1.67, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="Hammer-rigid" index="1"]
+transform = Transform3D(1.67, 0, 0, 0, 1.67, 0, 0, 0, 1.67, 0, 0, 0)
+
+[node name="GrabPointHandLeft" parent="Hammer-rigid" index="2" instance=ExtResource("2_4pv7m")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -0.090134, 0.000410772, 0.0270286)
+
+[node name="GrabPointHandRight" parent="Hammer-rigid" index="3" instance=ExtResource("3_f7ihw")]
+transform = Transform3D(0.0174524, 4.29485e-08, 0.999848, 0.999848, -4.37047e-08, -0.0174524, 4.29485e-08, 1, -4.37047e-08, -0.084556, -0.0263066, 0.0372239)

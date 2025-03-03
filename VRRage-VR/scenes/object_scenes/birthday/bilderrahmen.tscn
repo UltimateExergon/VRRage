@@ -1,0 +1,120 @@
+[gd_scene load_steps=20 format=4 uid="uid://cpsu4s4wyy1ik"]
+
+[ext_resource type="Script" path="res://scripts/destruction.gd" id="1_63l11"]
+[ext_resource type="PackedScene" uid="uid://ddhqtnhy0ygs3" path="res://assets/models/birthday/bilderrahmen_kaputt.blend" id="2_unh4c"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="3_ufld2"]
+[ext_resource type="Texture2D" uid="uid://2klvoy7xf4ad" path="res://assets/textures/istockphoto-1477970026-612x612.jpg" id="4_50m5w"]
+[ext_resource type="Texture2D" uid="uid://c1aa1nj3ll706" path="res://assets/materials/wood2/finewood_27_basecolor-1K.png" id="5_s0hbl"]
+[ext_resource type="Texture2D" uid="uid://b4wn3xb6dlv52" path="res://assets/materials/wood2/finewood_27_roughness-1K.png" id="6_pb42k"]
+[ext_resource type="Texture2D" uid="uid://c1yimpjkgnd2s" path="res://assets/materials/wood2/finewood_27_normal-1K.png" id="7_363nd"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="8_ioy22"]
+[ext_resource type="Animation" uid="uid://dqa0h82y3qn1t" path="res://addons/godot-xr-tools/hands/animations/left/Grip 1.res" id="9_5aihr"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="10_losx8"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="11_ipaoc"]
+[ext_resource type="Animation" uid="uid://daqddcrbpam0c" path="res://addons/godot-xr-tools/hands/animations/right/Grip 1.res" id="12_rep0u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6mht4"]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_texture = ExtResource("4_50m5w")
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k7vsv"]
+resource_name = "Wood"
+cull_mode = 2
+albedo_texture = ExtResource("5_s0hbl")
+metallic_texture = ExtResource("6_pb42k")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("6_pb42k")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("7_363nd")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8n6m3"]
+_surfaces = [{
+"aabb": AABB(-0.207021, -0.0224481, -0.123201, 0.414042, 0.0448963, 0.246402),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray("AAADAAEAAAACAAMA"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAOv+AAC2/0gI//8AAEgAtvcAAAAA/////xMBAAA=")
+}, {
+"aabb": AABB(-0.23802, -0.26276, -0.157567, 0.476023, 0.307103, 0.314153),
+"format": 34896613377,
+"index_count": 114,
+"index_data": PackedByteArray("AwAMAAIAAwAPAAwACAAHAAsACAAGAAcABAAHAAYAFgAEAAUABwAEABYABAAKAAUABAAJAAoACAAEAAYACAAJAAQAFgALAAcACwAFAAoACwAWAAUAAAAIAAIAAAAJAAgAAQAJAAAAAQAKAAkAAwAKAAEAAwALAAoAAgALAAMAAgAIAAsADQAPAA4ADQAMAA8AAAAOAAEAAAANAA4AAQAPAAMAAQAOAA8AAgANAAAAAgAMAA0AEQAQABIAFQAUABMAEQATABAAEQAVABMAEgAVABEAEgAUABUAEAAUABIAEAATABQA"),
+"name": "Wood",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 23,
+"vertex_data": PackedByteArray("De801yjnAABM72v7Nh8AAKIQ/tVQ5gAA4hA1+l4eAACv/yG8dvoAAP//Uun4AAAADwC9un75AABeAO3nAAAAAAAAatEG/wAAoP/O0v//AADv////gAYAAE8Amv6IBQAArBAWx7zjAAAW70zIk+QAAFbvg+yiHAAA7BBN68obAAAr0XsD7HkAAB+A898JMAAA1i+bAk95AAAx0eAAjG8AANwvAADvbgAAIoCA4Y4oAAAugJ/ofAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_534lu"]
+resource_name = "bilderrahmen_Plane"
+_surfaces = [{
+"aabb": AABB(-0.207021, -0.0224481, -0.123201, 0.414042, 0.0448963, 0.246402),
+"attribute_data": PackedByteArray("AAD///////8AAAAA//8AAA=="),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray("AAADAAEAAAACAAMA"),
+"material": SubResource("StandardMaterial3D_6mht4"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAOv+27i2/0gI///buEgAtvcAANu4/////xMB27iU/4WAlP+FgJT/hYCU/4WA")
+}, {
+"aabb": AABB(-0.23802, -0.26276, -0.157567, 0.476023, 0.307103, 0.314153),
+"attribute_data": PackedByteArray("Lqb2fQ5JNHqDlyEv0K4JAt0JNHqDl0ZuLqYJAufgyj4OSSH25+DvfdCu9n3dCSH2HKL1/XG3Ky9s+19yZvD1/fVU9f1xt/Z9HKJfcmz79f2DySsvZvBfcvVUX3KDyfZ9efT1/eJQ9f2DwqIucb6iLnn0X3LiUF9ycen1/XG+bX0JAl9ycelfcgkC9f2Dwm19vqoJAlvc0T4upgiCvqr2fS6m9f0OnCgvX7MJAl/l9f0OnE1uW9z2fV+z9n1f5QiCcJNNbknYpDCwSU1uSdjPfB2MQ0iWzc98cJM5IrBJOSKWzaQwMJBNbgkCOSL41OEwMJA5IgkCTW7m0OEwnkVDSDXW9n2pz/Z9ZvAquPVUKrg="),
+"format": 34896613399,
+"index_count": 114,
+"index_data": PackedByteArray("CQAlAAcACQAtACUAGgAXACMAGgAUABcADAAWABIAQwAMABAAFgAMAEMADQAfABEADQAbAB8AGAAOABMAGAAcAA4AQgAhABUAIQAPAB4AIQBCAA8AAQAZAAgAAQAdABkABAAdAAEABAAgAB0ACwAgAAQACwAiACAACAAiAAsACAAZACIAKAAvACsAKAAmAC8AAgAsAAUAAgApACwAAwAuAAoAAwAqAC4ABgAnAAAABgAkACcANAAyADcAPwA9ADoAMwA7ADEAMwBAADsAOABBADUAOAA+AEEAMAA8ADYAMAA5ADwA"),
+"material": SubResource("StandardMaterial3D_k7vsv"),
+"name": "Wood",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 68,
+"vertex_data": PackedByteArray("De801yjn4/oN7zTXKOelzw3vNNco52DZTO9r+zYfKMBM72v7Nh9S00zva/s2H2DZohD+1VDm4/qiEP7VUOZy2aIQ/tVQ5lLT4hA1+l4ectniEDX6Xh4owOIQNfpeHqXPr/8hvHb6s9mv/yG8dvpy2a//Ibx2+nPA//9S6fgA5vj//1Lp+ACz2f//Uun4AHLZDwC9un75s9kPAL26fvlzwA8Avbp++WDZXgDt5wAA5vheAO3nAACz2V4A7ecAAGDZAABq0Qb/c8AAAGrRBv/70gAAatEG/2DZoP/O0v//ctmg/87S//9zwKD/ztL//4nP7////4AG5vjv////gAZy2e////+ABvvSTwCa/ogF5vhPAJr+iAWJz08Amv6IBWDZrBAWx7zj4/qsEBbHvONy2awQFse841/RFu9MyJPk4/oW70zIk+Rf0RbvTMiT5GDZVu+D7KIcKMBW74Psohxf0Vbvg+yiHGDZ7BBN68obctnsEE3ryhsowOwQTevKG1/RK9F7A+x5D9Ar0XsD7HnL+SvRewPseTXBH4Dz3wkw5fsfgPPfCTA1wR+A898JMCD81i+bAk95D9DWL5sCT3k1wdYvmwJPefj5MdHgAIxvD9Ax0eAAjG/49jHR4ACMb9T53C8AAO9uD9DcLwAA72749twvAADvbu75IoCA4Y4o+PYigIDhjijw+yKAgOGOKAv8LoCf6HwA5vgugJ/ofACz2cXCdD2+qW2n2lL0pUx2i3bmpSyp2lL0pcXCdD3/JeAs5qUsqQAm4CxMdot2vqltpwQt6tL/JeAsPnN1c8nDcDwELerS/yXgLAQt6tI+c3Vz2lL0pcnDcDwELerS2lL0pT5zdXM9pgSp2lL0pf8l4Cw+c3Vz3alfp8nDcDz/JeAsPaYEqcnDcDzdqV+n2lL0pcXCdD3/JeAsC9g2KMXCdD0L2DYo2lL0pUx2i3YL2DYo2lL0pQAm4CxMdot2C9g2KAgn89jQs72VPPAOEHuyaZc88A4QreisMggn89g88A4QZ+oLNAgn89izRINEyrPElQgn89izRINEb+oRNLNEg0R0snKXvei5MsnDcDwELerS")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_8n6m3")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0aths"]
+points = PackedVector3Array(-0.237368, 0.0154539, -0.157567, -0.149069, -0.26276, -0.0214315, -0.237927, -0.0387461, 0.148591, -0.237461, 0.0426591, -0.150801, 0.238003, 0.0171373, -0.156398, 0.150962, -0.261708, -0.0206935, -0.149069, -0.259664, -0.00870056, -0.23802, -0.0115409, 0.155387, 0.237397, -0.0370927, 0.149791, 0.237863, 0.0443425, -0.149602, 0.237304, -0.00988752, 0.156586, 0.150915, -0.258582, -0.00796254, 0.206457, -0.0045968, 0.126081)
+
+[sub_resource type="Resource" id="Resource_uhaox"]
+script = ExtResource("10_losx8")
+closed_pose = ExtResource("9_5aihr")
+
+[sub_resource type="Resource" id="Resource_pr1qc"]
+script = ExtResource("10_losx8")
+closed_pose = ExtResource("12_rep0u")
+
+[node name="bilderrahmen" type="Node3D"]
+script = ExtResource("1_63l11")
+fragmented = ExtResource("2_unh4c")
+
+[node name="bild-rigid" type="RigidBody3D" parent="."]
+transform = Transform3D(0.00431252, -0.814557, -0.580068, 2.98023e-08, 0.580073, -0.814564, 0.999991, 0.0035128, 0.00250161, 0, 0, 0)
+script = ExtResource("3_ufld2")
+objectID = "bilderrahmen"
+
+[node name="bild-rigid" type="MeshInstance3D" parent="bild-rigid"]
+mesh = SubResource("ArrayMesh_534lu")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bild-rigid"]
+shape = SubResource("ConvexPolygonShape3D_0aths")
+
+[node name="GrabPointHandLeft" parent="bild-rigid" instance=ExtResource("8_ioy22")]
+transform = Transform3D(0.999991, 0.00158037, -0.00401255, 0.00351285, 0.241225, 0.970463, 0.00250161, -0.970468, 0.241217, -0.217085, -0.0697416, -0.0496649)
+hand_pose = SubResource("Resource_uhaox")
+
+[node name="GrabPointHandRight" parent="bild-rigid" instance=ExtResource("11_ipaoc")]
+transform = Transform3D(0.999987, 0.00479099, -0.00161715, 3.84809e-05, 0.312592, 0.949887, 0.0050564, -0.949875, 0.312588, 0.222128, -0.0636962, -0.0453598)
+hand_pose = SubResource("Resource_pr1qc")
