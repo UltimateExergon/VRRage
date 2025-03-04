@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6rop2f07wy1b"
+uid="uid://cqw80d3qu6xci"
 path.s3tc="res://.godot/imported/markt_textured_Poliigon_TilesCeramicWhite_6956_Normal.png-b4762bbd2ceeeddd6db9995e56dd96b8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "3fe52b758f97bfe49e265c370bf4e7bb"
 }
 
 [deps]
