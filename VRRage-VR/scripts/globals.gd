@@ -31,6 +31,8 @@ const volumeDB : float = 0.0
 const maxMusicDB : float = 2.0
 const MusicVolumeDB : float = 0.0
 
+@onready var default_particleEmitter = preload("res://scenes/default_particle_emitter.tscn")
+
 func update_highscore(score : int, level : String) -> void:
 	var current_highscore : int = highscores.get(level)
 	if score > current_highscore:

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ctsmotcwywjp4"
-path="res://.godot/imported/stuhl_kaputt.glb-f3425875beffa245d695c7f09df71d12.scn"
+path="res://.godot/imported/Stuhl_kaputt.glb-780df269b2351a2fa0b5a4acb49e2623.scn"
 
 [deps]
 
-source_file="res://assets/models/testlevel/stuhl_kaputt.glb"
-dest_files=["res://.godot/imported/stuhl_kaputt.glb-f3425875beffa245d695c7f09df71d12.scn"]
+source_file="res://assets/models/testlevel/Stuhl_kaputt.glb"
+dest_files=["res://.godot/imported/Stuhl_kaputt.glb-780df269b2351a2fa0b5a4acb49e2623.scn"]
 
 [params]
 

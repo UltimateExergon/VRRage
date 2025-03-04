@@ -71,7 +71,7 @@ transform = Transform3D(0.65, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -4.13428, 2.72264, -
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.461719, 0, 0)
 
 [node name="bathroom_door" parent="bathroom" instance=ExtResource("16_7cw8i")]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -2.97455, 2.47079, 1.98141)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.97455, 2.47079, 1.98141)
 
 [node name="toilet" parent="bathroom" instance=ExtResource("7_jcogi")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -5.2712, 1.79123, 2.40059)
@@ -86,7 +86,7 @@ transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.500816, 0, 0)
 
 [node name="storeroom_shelf" parent="storeroom" instance=ExtResource("12_voai2")]
-transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -6.00198, 2.16064, -3.80489)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.00198, 2.16064, -3.80489)
 
 [node name="fusebox" parent="storeroom" instance=ExtResource("15_3pduq")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -6.02596, 4.0172, -2.54076)
@@ -243,10 +243,10 @@ transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 10.522
 transform = Transform3D(-1, 0.000698136, -0.000382723, -0.000698297, -1, 0.000398056, -0.00038243, 0.000398337, 1, 6.72779, 4.52586, -7.35587)
 
 [node name="buro_table" parent="buro" instance=ExtResource("21_xjac5")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.60663, 1.34735, -7.69037)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.60663, 1.34735, -7.69037)
 
 [node name="buro_door" parent="buro" instance=ExtResource("19_pyrpr")]
-transform = Transform3D(0.72, 0, 0, 0, 0.85, 0, 0, 0, 0.7, 8.5928, 2.47382, -4.98613)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5928, 2.47382, -4.98613)
 
 [node name="bossDummy" parent="buro" instance=ExtResource("25_cttgv")]
 transform = Transform3D(-4.34811e-08, -2.68301e-11, -1, 0, 1, -2.37037e-10, 1, 0, -4.34811e-08, 8.44179, 0.904992, -9.00243)

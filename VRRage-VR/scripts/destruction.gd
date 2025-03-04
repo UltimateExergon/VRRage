@@ -20,7 +20,7 @@ const spawn_invincibility_time : float = 1.0
 @export var destructionSound : String = "" ##Filename in assets/sound/sound_effects without .mp3
 
 @export_category("Destruction Particles")
-@export var particleAmount : int = 250 ##How many particles to be emitted upon destruction by CPU/GPU Particle Nodes
+@export var particleAmount : int = 240 ##How many particles to be emitted upon destruction by CPU/GPU Particle Nodes
 
 
 var particleEmitTime : float = 0.1
@@ -37,7 +37,7 @@ var body_position : Vector3
 
 var particleEmitters : Array = []
 
-@onready var main_node = get_tree().root.get_children()[Globals.main_order]
+@onready var main_node = get_tree().root.get_child(Globals.main_order)
 @onready var invincible_timer : Timer = Timer.new()
 @onready var emitTimer : Timer = Timer.new()
 @onready var soundPlayer : AudioStreamPlayer3D = AudioStreamPlayer3D.new()
@@ -46,7 +46,7 @@ static var _cached_scenes := {}
 static var _cached_shapes := {}
 
 func _ready():
-	var body = self.get_children()[0]
+	var body = self.get_child(0)
 	body.add_to_group("DESTRUCTIBLE")
 	if body is RigidBody3D:
 		body.body_entered.connect(_on_body_entered)
@@ -56,9 +56,20 @@ func _ready():
 	particleEmitters = check_for_particleEmitters()
 	if particleEmitters.is_empty() == false:
 		add_emitTimer()
+	else:
+		add_default_particleEmitter()
 	
 	add_invincibleTimer()
 	add_soundPlayer()
+	
+func add_default_particleEmitter():
+	var default = Globals.default_particleEmitter.instantiate()
+	default.emitting = false
+	get_child(0).add_child(default)
+	
+	particleEmitters = check_for_particleEmitters()
+	if particleEmitters.is_empty():
+		print("Adding default particle emitter failed")
 	
 func add_soundPlayer():
 	var audio_stream : AudioStreamMP3
@@ -71,7 +82,7 @@ func add_soundPlayer():
 	soundPlayer.volume_db = Globals.volumeDB
 	soundPlayer.max_db = Globals.maxDB
 	soundPlayer.autoplay = false
-	self.get_children()[0].add_child(soundPlayer)
+	self.get_child(0).add_child(soundPlayer)
 	
 func add_invincibleTimer():
 	invincible_timer.autostart = false
@@ -86,8 +97,8 @@ func add_emitTimer():
 	emitTimer.timeout.connect(_on_emitTimer_timeout)
 	
 func _physics_process(_delta: float) -> void:
-	if get_children()[0] is RigidBody3D:
-		linear_velocity = get_children()[0].linear_velocity.length()
+	if get_child(0) is RigidBody3D:
+		linear_velocity = get_child(0).linear_velocity.length()
 		
 func get_rigidBody_position() -> Vector3:
 	if get_child(0) is RigidBody3D:
@@ -106,7 +117,7 @@ func destroy() -> void:
 	#print("Moved Destruction Node to: ", self.position)
 	#print("Spawned Shard Container at: ", shard_container.position)
 
-	var saved_velocity = self.get_children()[0].linear_velocity
+	var saved_velocity = get_child(0).linear_velocity
 
 	for i in self.get_child(0).get_children():
 		if i is MeshInstance3D or i is CollisionShape3D or i is CollisionPolygon3D:
@@ -125,7 +136,7 @@ func destroy() -> void:
 	soundPlayer.play()
 	await soundPlayer.finished
 	
-	self.get_children()[0].queue_free()
+	self.get_child(0).queue_free()
 	
 func emit_Particles():
 	if particleEmitters.is_empty() == false:
@@ -188,7 +199,7 @@ func _add_shard(original: MeshInstance3D, old_velocity: Vector3) -> void:
 	var body := RigidBody3D.new()
 	var mesh := MeshInstance3D.new()
 	var shape := CollisionShape3D.new()
-	var orig_mesh = get_children()[0].get_children()[0]
+	var orig_mesh = get_child(0).get_children()[0]
 	
 	body.add_child(mesh)
 	body.add_child(shape)
@@ -259,7 +270,7 @@ static func _random_direction() -> Vector3:
 	return (Vector3(randf(), randf(), randf()) - Vector3.ONE / 2.0).normalized() * 2.0
 	
 func _on_body_entered(body: Node):
-	var rigidBody = get_children()[0]
+	var rigidBody = get_child(0)
 	var enteringRigidBody = get_rigid_body(body)
 
 	if rigidBody.got_picked_up == false and is_destructible == true:
