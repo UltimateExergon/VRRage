@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://0kp8ph3yegdp"]
+
+[ext_resource type="Script" path="res://scripts/destruction.gd" id="1_er18x"]
+[ext_resource type="PackedScene" uid="uid://bpik73tmg1jjm" path="res://assets/models/pub/Pflanze_kaputt.blend" id="2_6pkx6"]
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="3_jtgqb"]
+[ext_resource type="PackedScene" uid="uid://c01h8qubh5osp" path="res://assets/models/pub/Pflanze.blend" id="4_f52sv"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_lbewb"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_i5cdv"]
+
+[node name="Pflanze" type="Node3D"]
+script = ExtResource("1_er18x")
+fragmented = ExtResource("2_6pkx6")
+destroyable_by = ["barhocker_destruction"]
+
+[node name="Pflanze" parent="." instance=ExtResource("3_jtgqb")]
+collision_mask = 196623
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 160
+objectID = "Pflanze"
+
+[node name="Pflanze2" parent="Pflanze" instance=ExtResource("4_f52sv")]
+
+[node name="GrabPointHandLeft" parent="Pflanze" instance=ExtResource("4_lbewb")]
+transform = Transform3D(0.915613, -0.365914, -0.166613, 0.15871, -0.0518103, 0.985965, -0.369411, -0.929205, 0.0106359, -0.318891, 0.385017, 0.0447862)
+
+[node name="GrabPointHandRight" parent="Pflanze" instance=ExtResource("5_i5cdv")]
+transform = Transform3D(0.92909, 0.294586, 0.223632, -0.217257, -0.0546413, 0.974584, 0.299318, -0.954062, 0.0132342, 0.304884, 0.382967, 0.0447862)

@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://cenukpfporvah"]
+
+[ext_resource type="Script" path="res://scripts/destruction.gd" id="1_yi2wk"]
+[ext_resource type="PackedScene" uid="uid://6420yhi60ap0" path="res://assets/models/pub/Großer Tisch_kaputt.blend" id="2_ltj55"]
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="3_nl16v"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_hxdkf"]
+[ext_resource type="PackedScene" uid="uid://cqx7v4bqb8j55" path="res://assets/models/pub/Großer Tisch.blend" id="4_j3jwo"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_2nm64"]
+
+[node name="Großer Tisch" type="Node3D"]
+script = ExtResource("1_yi2wk")
+fragmented = ExtResource("2_ltj55")
+destroyable_by = ["barhocker_destruction"]
+
+[node name="TischGroß" parent="." instance=ExtResource("3_nl16v")]
+collision_mask = 196623
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 160
+objectID = "Großer Tisch"
+enabled = false
+
+[node name="Großer Tisch" parent="TischGroß" instance=ExtResource("4_j3jwo")]
+
+[node name="GrabPointHandLeft" parent="TischGroß" instance=ExtResource("4_hxdkf")]
+transform = Transform3D(4.08322e-09, 0.995628, 0.0934133, 4.35203e-08, -0.0934133, 0.995628, 1, 0, -4.37114e-08, 0, 0.814352, -0.509452)
+
+[node name="GrabPointHandRight" parent="TischGroß" instance=ExtResource("5_2nm64")]
+transform = Transform3D(5.68657e-09, 0.991502, 0.130094, 4.33399e-08, -0.130094, 0.991502, 1, 0, -4.37114e-08, 0, 0.818119, 0.539103)
