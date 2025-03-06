@@ -98,6 +98,7 @@ continuous_cd = true
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("3_hq4dq")
+objectID = "hammer_gabel"
 
 [node name="Hammer-rigid" type="MeshInstance3D" parent="Hammer-rigid"]
 transform = Transform3D(-1.09278e-09, -0.025, -1.09278e-09, 0, -1.09278e-09, 0.025, -0.025, 1.09278e-09, 4.77671e-17, -0.014, 0.039, -0.038)

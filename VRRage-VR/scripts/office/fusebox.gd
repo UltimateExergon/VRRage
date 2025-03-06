@@ -1,9 +1,25 @@
 extends Destruction
 
-func destroy():
-	print("FUSEBOX DESTROYED")
-	for i in get_tree().root.get_children():
-		if i.is_in_group("ColorLight") or i.is_in_group("Level"):
-			i.set_alert_color()
+@onready var rigid = self.get_child(0)
+@onready var saved_transform = rigid.transform
 
-	super()
+var destroyed : bool = false
+
+func destroy():
+	if not destroyed:
+		print("FUSEBOX DESTROYED")
+		destroyed = true
+		
+		for i in get_tree().get_nodes_in_group("ColorLight"):
+			i.set_alert_color()
+			
+		for j in get_tree().get_nodes_in_group("Level"):
+			j.set_alert_color()
+
+		super()
+	
+func _physics_process(delta: float) -> void:
+	super(delta)
+	
+	if not destroyed:
+		rigid.transform = saved_transform

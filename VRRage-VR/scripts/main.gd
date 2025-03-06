@@ -6,6 +6,7 @@ signal pose_recentered
 
 const max_shards : int = 50
 const teleport_cooldown : float = 0.5
+const loadingLabel_Visibility_Time : float = 5.0
 
 var xr_interface : OpenXRInterface
 var xr_is_focussed = false
@@ -95,7 +96,8 @@ func add_active_shard(shard : Node):
 	active_shards.append(shard)
 	
 	while active_shards.size() > max_shards:
-		active_shards[0].queue_free()
+		if is_instance_valid(active_shards[0]):
+			active_shards[0].queue_free()
 		active_shards.remove_at(0)
 		
 func get_score_multiplier() -> float:
@@ -104,20 +106,22 @@ func get_score_multiplier() -> float:
 func delete_oldLevel():
 	print("Deleting old level")
 
-	Globals.update_highscore(current_score, current_level)
-
 	for i in get_tree().get_nodes_in_group("LEVEL"):
 		i.queue_free()
 		
 func load_level(levelname : String) -> void:
 	print("Loading " + levelname)
 	
+	if current_level:
+		Globals.update_highscore(current_score, current_level)
+	
 	current_level = levelname
 	path_to_level = Globals.levelPath + current_level + Globals.sceneFormat
 	ResourceLoader.load_threaded_request(path_to_level)
 	loading = true
 	if player:
-		player.get_node("XRCamera3D/LoadingLabel").visible = !player.get_node("XRCamera3D/LoadingLabel").visible
+		switch_loadingLabel_Visibility()
+		enable_teleport(false)
 		
 func switch_level():
 	#print("Switching to ", current_level)
@@ -141,6 +145,16 @@ func switch_level():
 	for i in get_tree().get_nodes_in_group("DESTRUCTIBLE"):
 		i.get_parent().set_currentLevel(current_level)
 		
+		
+	await get_tree().create_timer(loadingLabel_Visibility_Time)
+	switch_loadingLabel_Visibility()
+	enable_teleport(true)
+		
+func enable_teleport(tp : bool):
+	for j in get_tree().get_nodes_in_group("teleport"):
+		j.enabled = tp
+		
+func switch_loadingLabel_Visibility():
 	player.get_node("XRCamera3D/LoadingLabel").visible = !player.get_node("XRCamera3D/LoadingLabel").visible
 	
 func load_player() -> void:

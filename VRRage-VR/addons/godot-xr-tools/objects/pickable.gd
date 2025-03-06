@@ -147,7 +147,7 @@ func _ready():
 	self.highlight_updated.connect(_highlight_updated)
 	
 	self.contact_monitor = true
-	self.max_contacts_reported = 160
+	self.max_contacts_reported = 250
 	self.continuous_cd = true
 	
 	if self.enabled:
@@ -394,6 +394,7 @@ func let_go(by: Node3D, p_linear_velocity: Vector3, p_angular_velocity: Vector3)
 	freeze = restore_freeze
 	collision_mask = original_collision_mask
 	collision_layer = original_collision_layer
+	set_collision_mask_value(17, false)
 	
 	#print("SET COLLISION LAYER TO: ", collision_layer, " SET MASK TO: ", collision_mask)
 

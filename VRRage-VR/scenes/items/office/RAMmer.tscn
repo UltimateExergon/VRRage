@@ -1,11 +1,11 @@
-[gd_scene load_steps=12 format=4 uid="uid://cy4icb04amoj0"]
+[gd_scene load_steps=12 format=4 uid="uid://0m4dohlo6gnv"]
 
 [ext_resource type="Script" path="res://scripts/destruction.gd" id="1_7tvll"]
 [ext_resource type="PackedScene" uid="uid://bveec0p03fhaa" path="res://assets/models/office/blendfiles/RAMmer_kaputt.blend" id="2_vko2c"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="3_6b7kf"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand.gd" id="4_v0bqp"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kbnya"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xfsry"]
 resource_name = "Tree"
 cull_mode = 2
 albedo_color = Color(0.47236, 0.245759, 0.170095, 1)
@@ -30,7 +30,7 @@ cull_mode = 2
 albedo_color = Color(0.0954713, 0.0954713, 0.0954713, 1)
 roughness = 0.729358
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_v7qug"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_446kl"]
 _surfaces = [{
 "aabb": AABB(-0.1, -0.65, -0.1, 0.2, 1.3, 0.2),
 "format": 34896613377,
@@ -77,7 +77,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_qxhmr"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_bdto6"]
 resource_name = "RAMmer_Cylinder_001"
 _surfaces = [{
 "aabb": AABB(-0.1, -0.65, -0.1, 0.2, 1.3, 0.2),
@@ -86,7 +86,7 @@ _surfaces = [{
 "index_count": 372,
 "index_data": PackedByteArray("AQAKAAQAAQAHAAoACAAQAAsACAANABAADgAWABEADgATABYAFAAcABcAFAAZABwAGgAiAB0AGgAfACIAIAAoACMAIAAlACgAJgAuACkAJgArAC4ALAA1AC8ALAAyADUAMQA7ADQAMQA4ADsANwBBADoANwA+AEEAPQBHAEAAPQBEAEcAQwBNAEYAQwBKAE0ASQBTAEwASQBQAFMATwBZAFIATwBWAFkAVQBfAFgAVQBcAF8AWwBkAF4AWwBhAGQAYgBqAGUAYgBnAGoAaABwAGsAaABtAHAAbgB2AHEAbgBzAHYAdAB8AHcAdAB5AHwAegCCAH0AegB/AIIAgACIAIMAgACFAIgAhgCOAIkAhgCLAI4AjACUAI8AjACRAJQAkgCbAJUAkgCYAJsAlwChAJoAlwCeAKEAnQCnAKAAnQCkAKcAowCtAKYAowCqAK0AqQCzAKwAqQCwALMArwC5ALIArwC2ALkADwADAAkAAwC3AL0AtwCrALEAqwCfAKUAnwCTAJkAkwCHAI0AhwB7AIEAewBvAHUAbwBjAGkAYwBXAF0AVwBLAFEASwA/AEUAPwAzADkAMwAnAC0AJwAbACEAGwAPABUADwC3AAMAtwCfAKsAnwCHAJMAhwBvAHsAbwBXAGMAVwA/AEsAPwAnADMAJwAPABsADwCfALcAnwBvAIcAbwA/AFcAPwAPACcADwBvAJ8AbwAPAD8AtQC/ALgAtQC8AL8AuwAFAL4AuwACAAUAugAGAAAABgASAAwAEgAeABgAHgAqACQAKgA2ADAANgBCADwAQgBOAEgATgBaAFQAWgBmAGAAZgByAGwAcgB+AHgAfgCKAIQAigCWAJAAlgCiAJwAogCuAKgArgC6ALQAugASAAYAEgAqAB4AKgBCADYAQgBaAE4AWgByAGYAcgCKAH4AigCiAJYAogC6AK4AugAqABIAKgBaAEIAWgCKAHIAigC6AKIAugBaACoAWgC6AIoA"),
 "lods": [0.0066457, PackedByteArray("AQAQAAQAAQAHABAABwATABAAEwAoABAAEwAfACgAHwArACgAKwBAACgAKwAxAEAAMQBDAEAAQwBYAEAAQwBPAFgATwBVAFgAVQBwAFgAVQBnAHAAZwBzAHAAcwCIAHAAcwB/AIgAfwCLAIgAiwCgAIgAiwCXAKAAlwCjAKAAowC4AKAAowCvALgArwC1ALgAtQAFALgAtQACAAUADwC3AAMADwCfALcADwBvAJ8AnwBvAIcAbwAPAD8APwAPACcAbwA/AFcAtAAGAAAAtAASAAYAEgAqAB4AtAAqABIAKgBCADAAKgBUAEIAtABUACoAQgBUAE4AogC0AK4AigC0AKIAVAC0AIoAigCiAJYAVACKAHIAcgCKAH4AVAByAGYA"), 0.0250388, PackedByteArray("AQDWAAQAAQATANYAEwArANYAKwDXANYAKwAxANcAMQDZANcA2QDaANgA2QBnANoAZwDbANoA2wDcANoA2wCXANwAlwCvANwArwAFANwArwACAAUADwCfAAMADwBvAJ8AbwAPAD8ArgASAAAArgAqABIArgBOACoAKgBOADAATgCuAH4AfgCuAJYATgB+AGYA"), 0.117298, PackedByteArray("AQAQAAQAAQDNABAAzgDRAMwAzgDPANEA0AB/ANIAfwDUANIA1ADLANMA1QACAMsADwBvAAMAlgAqAAAAlgBOACoATgCWAH4A"), 0.16431, PackedByteArray("wADGAMIAwQDEAMcAxQDJAHAAygDDAMgAygACAAUAlgAqAAAA")],
-"material": SubResource("StandardMaterial3D_kbnya"),
+"material": SubResource("StandardMaterial3D_xfsry"),
 "name": "Tree",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -132,7 +132,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AAD//wAAAAAAAP//AAD/PwAA//9xHP5/AAD//3Ec/z8AAP//4zgAAAAA///jOP8/AAD//1VV/n8AAP//VVX/PwAA///GcQAAAAD//8Zx/z8AAP//OI7+fwAA//84jv8/AAD//6qqAAAAAP//qqr/PwAA//8bx/5/AAD//xvH/z8AAP//jeMAAAAA//+N4/8/AAD//////n8AAP//////PwAAAAAAAAAAAAAAAAAA/z8AAAAAcRz+fwAAAABxHP8/AAAAAOM4AAAAAAAA4zj/PwAAAABVVf5/AAAAAFVV/z8AAAAAxnEAAAAAAADGcf8/AAAAADiO/n8AAAAAOI7/PwAAAACqqgAAAAAAAKqq/z8AAAAAG8f+fwAAAAAbx/8/AAAAAI3jAAAAAAAAjeP/PwAAAAD///5/AAAAAP///z++0v//jeMAAL7S//+N4/8/vtL//43jVNW+0v/////+f77S//////8/vtL/////VNW+0gAAjeMAAL7SAACN4/8/vtIAAI3jVNW+0gAA///+f77SAAD///8/vtIAAP//VNVA7P//qqoAAEDs//+qqv8/QOz//6qqVNVA7P//G8f+f0Ds//8bx/8/QOz//xvHVNVA7AAAqqoAAEDsAACqqv8/QOwAAKqqVNVA7AAAG8f+f0DsAAAbx/8/QOwAABvHVNX/////xnEAAP/////Gcf8//////8ZxVNX/////OI7+f/////84jv8//////ziOVNX//wAAxnEAAP//AADGcf8///8AAMZxVNX//wAAOI7+f///AAA4jv8///8AADiOVNW29f//4zgAALb1///jOP8/tvX//+M4VNW29f//VVX+f7b1//9VVf8/tvX//1VVVNW29QAA4zgAALb1AADjOP8/tvUAAOM4VNW29QAAVVX+f7b1AABVVf8/tvUAAFVVVNVR7v//AAAAAFHu//8AAP8/Ue7//wAAVNVR7v//cRz+f1Hu//9xHP8/Ue7//3EcVNVR7gAAAAAAAFHuAAAAAP8/Ue4AAAAAVNVR7gAAcRz+f1HuAABxHP8/Ue4AAHEcVNX///9/////f/9///////9/////f////3//f///////f////3////9//3///////3////9/////f/9///////9/////f////3//f///////f////38AAP9//3///wAA/3////9/AAD/f/9///8AAP9/////fwAA/3//f///AAD/f////38AAP9//3///wAA/3////9/AAD/f/9///8AAP9/////f////3+qKqoq/3///////3+qKqoq////fwAA/3+qKqoq/3///wAA/3+qKqoq////f////3+qKqoq/3///////3+qKqoq////fwAA/3+qKqoq/3///wAA/3+qKqoq////f////3+qKqoq/3///////3+qKqoq////fwAA/3+qKqoq/3///wAA/3+qKqoq////f////3+qKqoq/3///////3+qKqoq////fwAA/3+qKqoq/3///wAA/3+qKqoq////f////3+qKqoq/3///////3+qKqoq////fwAA/3+qKqoq/3///wAA/3+qKqoq")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_v7qug")
+shadow_mesh = SubResource("ArrayMesh_446kl")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4x5k0"]
 points = PackedVector3Array(0.0299922, 0.883562, 0.3, 0.0259397, 0.909981, 0.259417, -0.0300118, 0.883562, 0.3, 0.0299922, 0.643494, 0.3, 0.0980619, 0.649908, 0.0194988, 0.1, 0.649908, 0, 0.0259397, 0.909981, -0.259475, -0.0259593, 0.909981, 0.259417, -0.1, 0.649908, 0, -0.0980814, 0.649908, 0.0194988, -0.0300118, 0.643494, 0.3, 0, -0.65, 0.0999608, 0.0194988, -0.65, 0.0980227, 0.0382537, -0.65, 0.0923845, 0.0555403, -0.65, 0.0831049, 0.070693, -0.65, 0.0706539, 0.0831441, -0.65, 0.0555012, 0.0923845, -0.65, 0.0382341, 0.0980619, -0.65, 0.0194988, 0.1, -0.65, 0, 0.0980619, 0.649908, -0.0195576, 0.0299922, 0.883562, -0.3, -0.0259593, 0.909981, -0.259475, -0.0980814, 0.649908, -0.0195576, -0.1, -0.65, 0, -0.0300118, 0.883562, -0.3, -0.0980814, -0.65, 0.0194988, -0.0924041, -0.65, 0.0382341, -0.0831637, -0.65, 0.0555012, -0.0707126, -0.65, 0.0706539, -0.0555599, -0.65, 0.0831049, -0.0382733, -0.65, 0.0923845, -0.0195184, -0.65, 0.0980227, 0.0980619, -0.65, -0.0195576, 0.0438528, 0.815146, -0.245497, 0.0299922, 0.643494, -0.3, -0.0980814, -0.65, -0.0195576, -0.0300118, 0.643494, -0.3, 0.0923845, -0.65, -0.0382929, 0.0438528, 0.72932, -0.245497, 0.0831441, -0.65, -0.0555599, 0.070693, -0.65, -0.0707126, 0.0555403, -0.65, -0.0831637, 0.0382537, -0.65, -0.0924432, 0.0194988, -0.65, -0.0980815, 0, -0.65, -0.10002, -0.0924041, -0.65, -0.0382929, -0.0195184, -0.65, -0.0980815, -0.0382733, -0.65, -0.0924432, -0.0555599, -0.65, -0.0831637, -0.0707126, -0.65, -0.0707126, -0.0831637, -0.65, -0.0555599)
@@ -152,7 +152,7 @@ script = ExtResource("3_6b7kf")
 objectID = "RAMmer"
 
 [node name="RAMmer-rigid" type="MeshInstance3D" parent="RAMmer-rigid"]
-mesh = SubResource("ArrayMesh_qxhmr")
+mesh = SubResource("ArrayMesh_bdto6")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RAMmer-rigid"]

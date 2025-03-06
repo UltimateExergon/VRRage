@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="3_twtpa"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand.gd" id="4_ds17f"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jo1lq"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bofld"]
 resource_name = "computerHull"
 cull_mode = 2
 albedo_color = Color(0.175876, 0.175876, 0.175876, 1)
@@ -18,7 +18,7 @@ cull_mode = 2
 albedo_color = Color(0.386931, 0.386931, 0.386931, 1)
 roughness = 0.5
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_j2muo"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_jlrgd"]
 _surfaces = [{
 "aabb": AABB(-0.5, -0.55, -0.3, 1, 1.1, 0.6),
 "format": 34896613377,
@@ -42,7 +42,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_2ijhh"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_m8bp3"]
 resource_name = "computer_Cube_001"
 _surfaces = [{
 "aabb": AABB(-0.5, -0.55, -0.3, 1, 1.1, 0.6),
@@ -50,7 +50,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 216,
 "index_data": PackedByteArray("XwBRAFgAXwBnAFEACwBlABEACwBtAGUAOgAcAAYAOgBAABwAIQBdAFYAIQAjAF0ABAAWABMABAABABYAIgBhAFoAIgAkAGEAOQAUAA4AOQA1ABQADgAXAAgADgAUABcAEQAlACkAEQBkACUABwAbAA0ABwAdABsAEAAfAAoAEAAZAB8AKAAYAA8AKAAsABgAOAAsACgAOAA8ACwALwBNAD8ALwBHAE0AOwAnACsAOwA3ACcAKwBsAAsAKwAnAGwANgAgACYANgBCACAACQAwACoACQAeADAAMgAkACIAMgA0ACQAQwAjACEAQwAzACMAAgAzAEMAAgAFADMAAwA0ADIAAwASADQAFQBCADYAFQAAAEIACAA3ADsACAAXADcADAA8ADgADAAaADwAKQA1ADkAKQAlADUAKgBAADoAKgAwAEAATABJAEYATABPAEkALgBIADEALgBFAEgAPQBEAC0APQBKAEQAQQBLAD4AQQBOAEsAUgBcAFkAUgBVAFwAVwBiAF4AVwBbAGIAYABrAGgAYABjAGsAZgBUAFAAZgBqAFQAJgBTAGkAJgAgAFMA"),
-"material": SubResource("StandardMaterial3D_jo1lq"),
+"material": SubResource("StandardMaterial3D_bofld"),
 "name": "computerHull",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -70,7 +70,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AAD//wAAVNUAAAAAAABU1QAAAAD//1TVAAD/////VNUAAEjIAABU1QAASMj//1TVAADAwgAAVNUAAMDC//9U1aoqqiqqKqoqqiqqKqoqqiqqKqoqqiqqKqoqqiqqKqoq")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_j2muo")
+shadow_mesh = SubResource("ArrayMesh_jlrgd")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5awsf"]
 points = PackedVector3Array(-0.5, -0.55, -0.3, 0.5, -0.55, -0.3, -0.5, -0.55, 0.3, -0.5, 0.526096, -0.3, 0.5, -0.55, 0.3, 0.5, 0.526096, -0.3, -0.5, 0.526096, 0.3, -0.478367, 0.55, -0.28702, 0.5, 0.526096, 0.3, 0.478269, 0.55, -0.28702, -0.478367, 0.55, 0.286962, 0.478269, 0.55, 0.286962)
@@ -87,14 +87,16 @@ collision_layer = 4
 collision_mask = 15
 continuous_cd = true
 contact_monitor = true
-max_contacts_reported = 160
+max_contacts_reported = 250
 script = ExtResource("3_twtpa")
 objectID = "computer"
 
 [node name="computer-rigid" type="MeshInstance3D" parent="computer-rigid"]
-mesh = SubResource("ArrayMesh_2ijhh")
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+mesh = SubResource("ArrayMesh_m8bp3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="computer-rigid"]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_5awsf")
 
 [node name="left" type="Marker3D" parent="computer-rigid"]

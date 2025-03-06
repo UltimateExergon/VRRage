@@ -104,7 +104,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_048or")
 
-[node name="ceiling_light" type="StaticBody3D"]
+[node name="ceiling_light" type="StaticBody3D" groups=["ColorLight"]]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_2saki")
 
@@ -117,6 +117,6 @@ transform = Transform3D(0.8, 0, 0, 0, 0.075, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("ArrayMesh_ot30j")
 skeleton = NodePath("")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="." groups=["ColorLight"]]
-transform = Transform3D(1, 0, 0, 0, -8.74228e-09, 1, 0, -1, -8.74228e-09, 0, -0.00816898, 0)
-light_color = Color(0.618934, 0.103454, 0.107558, 1)
+[node name="SpotLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.049e-08, 0.226209, 0)
+light_color = Color(0.64, 0.64, 0.64, 1)

@@ -24,7 +24,6 @@ func add_levelMusic() -> void:
 		
 	musicPlayer.stream = music_stream
 	musicPlayer.volume_db = Globals.MusicVolumeDB
-	musicPlayer.max_db = Globals.maxMusicDB
 	add_child(musicPlayer)
 	
 	musicPlayer.play()

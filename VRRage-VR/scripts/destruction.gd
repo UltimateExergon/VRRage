@@ -12,6 +12,7 @@ const spawn_invincibility_time : float = 1.0
 @export var hits_left : int = 0 ##How many more hits until the object is destroyed
 @export var dropID : String = "" ##Scene Name of the Item to drop (- the .tscn)
 @export var score_points : int = 100 ##Score Points awarded upon destruction
+@export var destroy_everything : bool = false ##Enables the item to destroy EVERYTHING
 
 @export_group("Physics")
 @export var explosion_power: float = 1.0 ##How strong the shards are blown away upon destruction
@@ -36,6 +37,8 @@ var is_destructible : bool = true
 var body_position : Vector3
 
 var particleEmitters : Array = []
+
+var can_destroy : bool = true
 
 @onready var main_node = get_tree().root.get_child(Globals.main_order)
 @onready var invincible_timer : Timer = Timer.new()
@@ -70,6 +73,8 @@ func add_default_particleEmitter():
 	particleEmitters = check_for_particleEmitters()
 	if particleEmitters.is_empty():
 		print("Adding default particle emitter failed")
+	else:
+		add_emitTimer()
 	
 func add_soundPlayer():
 	var audio_stream : AudioStreamMP3
@@ -106,37 +111,40 @@ func get_rigidBody_position() -> Vector3:
 	return Vector3.ZERO
 
 func destroy() -> void:
-	body_position = get_rigidBody_position()
-	shard_container = Node3D.new()
-	add_child(shard_container)
-	main_node.add_active_shard(shard_container)
+	if can_destroy:
+		soundPlayer.play()
+
+		can_destroy = false
+		body_position = get_rigidBody_position()
+		shard_container = Node3D.new()
+		add_child(shard_container)
+		main_node.add_active_shard(shard_container)
 	
-	var pos = get_rigidBody_position()
-	#print("Destruction Node Position During Destruction: ", self.position)
-	shard_container.position = pos + Vector3(0,.2,0)
-	#print("Moved Destruction Node to: ", self.position)
-	#print("Spawned Shard Container at: ", shard_container.position)
+		var pos = get_rigidBody_position()
+		#print("Destruction Node Position During Destruction: ", self.position)
+		shard_container.position = pos + Vector3(0,.2,0)
+		#print("Moved Destruction Node to: ", self.position)
+		#print("Spawned Shard Container at: ", shard_container.position)
 
-	var saved_velocity = get_child(0).linear_velocity
+		var saved_velocity = get_child(0).linear_velocity
 
-	for i in self.get_child(0).get_children():
-		if i is MeshInstance3D or i is CollisionShape3D or i is CollisionPolygon3D:
-			i.visible = false
+		for i in self.get_child(0).get_children():
+			if i is MeshInstance3D or i is CollisionShape3D or i is CollisionPolygon3D:
+				i.visible = false
 
-	if not fragmented == null:
-		for shard in _get_shards():
-			_add_shard(shard, saved_velocity)
+		if not fragmented == null:
+			for shard in _get_shards():
+				_add_shard(shard, saved_velocity)
 
-	add_drop(saved_velocity)
-	emit_Particles()
-	add_floatingScore()
+		add_drop(saved_velocity)
+		emit_Particles()
+		add_floatingScore()
 	
-	add_score_points()
+		add_score_points()
 
-	soundPlayer.play()
-	await soundPlayer.finished
+		await soundPlayer.finished
 	
-	self.get_child(0).queue_free()
+		self.get_child(0).queue_free()
 	
 func emit_Particles():
 	if particleEmitters.is_empty() == false:
@@ -183,7 +191,8 @@ func _get_shards() -> Array[Node]:
 	if not fragmented in _cached_scenes:
 		_cached_scenes[fragmented] = fragmented.instantiate()
 		for shard_mesh in _cached_scenes[fragmented].get_children():
-			_cached_shapes[shard_mesh] = shard_mesh.mesh.create_convex_shape()
+			if shard_mesh is MeshInstance3D:
+				_cached_shapes[shard_mesh] = shard_mesh.mesh.create_convex_shape()
 	return (_cached_scenes[fragmented].get_children() as Array)\
 			.filter(func(node): return node is MeshInstance3D)
 	
@@ -228,7 +237,7 @@ func add_drop(old_velocity: Vector3):
 		var rigidBody = get_rigid_body(item)
 		
 		item.position = body_position
-		print("Spawned Drop at: ", item.position)
+		print("Spawned Drop ", dropID, " at ", item.position)
 		
 		add_child(item)
 		rigidBody.make_invincible()
@@ -272,14 +281,23 @@ static func _random_direction() -> Vector3:
 func _on_body_entered(body: Node):
 	var rigidBody = get_child(0)
 	var enteringRigidBody = get_rigid_body(body)
-
+	
+	var enteringLinearSpeed
+	var enteringAngularSpeed
+	
 	if rigidBody.got_picked_up == false and is_destructible == true:
-		if destroyable_by.size() > 0:
-			if check_destroyable(body) and enteringRigidBody.linear_velocity.length() > 5:
-				check_hits_left()
-		elif body.is_in_group("hand") and hand_destruction == true:
+		if enteringRigidBody and body.get_parent() is Destruction:
+			enteringLinearSpeed = enteringRigidBody.linear_velocity.length()
+			enteringAngularSpeed = enteringRigidBody.angular_velocity.length()
+			if (enteringLinearSpeed > 4) or (enteringAngularSpeed > 20):
+				if destroyable_by.size() > 0:
+					if check_destroyable(body):
+						check_hits_left()
+				if body.get_parent().destroy_everything:
+					check_hits_left()
+		elif body.is_in_group("hand") and hand_destruction == true and destroyable_by.size() == 0:
 			check_hits_left()
-		elif rigidBody.linear_velocity.length() > 3 and body.is_in_group("room"):
+		elif rigidBody.linear_velocity.length() > 2 and body.is_in_group("room") and destroyable_by.size() == 0:
 			check_hits_left()
 
 func check_hits_left():
@@ -294,5 +312,6 @@ func _on_invincible_timer_timeout():
 	
 func _on_emitTimer_timeout():
 	for i in particleEmitters:
-		i.emitting = false
+		if is_instance_valid(i):
+			i.emitting = false
 			
