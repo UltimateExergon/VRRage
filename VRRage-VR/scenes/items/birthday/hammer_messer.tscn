@@ -14,6 +14,7 @@ score_points = 300
 
 [node name="Hammer-rigid" parent="." index="0"]
 script = ExtResource("3_nvf02")
+objectID = "hammer_messer"
 
 [node name="Hammer-rigid" parent="Hammer-rigid" index="0"]
 transform = Transform3D(1.67, 0, 0, 0, 1.67, 0, 0, 0, 1.67, 0, 0, 0)

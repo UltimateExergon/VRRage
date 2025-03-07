@@ -13,8 +13,8 @@ linear_accel_min = 0.999998
 linear_accel_max = 5.0
 radial_accel_min = 0.999998
 radial_accel_max = 5.0
-scale_min = 0.1
-scale_max = 0.5
+scale_min = 0.05
+scale_max = 0.1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d7x4l"]
 transparency = 1

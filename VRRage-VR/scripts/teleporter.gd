@@ -11,7 +11,7 @@ func _ready():
 	
 	$Label3D.text = default_text
 	
-	if level_highscore > -1:
+	if teleport_level != "level_select":
 		var highscore_text : String = "\nHighscore: " + str(level_highscore)
 		$Label3D.text += highscore_text
 
