@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dkxaq5r4tdgyv"
+path="res://.godot/imported/Türen.obj-454c571db6043a7a53b7eb2074fd3b00.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Türen.obj-454c571db6043a7a53b7eb2074fd3b00.mesh"]
+
+source_file="res://assets/models/pub/Türen.obj"
+dest_files=["res://.godot/imported/Türen.obj-454c571db6043a7a53b7eb2074fd3b00.mesh", "res://.godot/imported/Türen.obj-454c571db6043a7a53b7eb2074fd3b00.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
