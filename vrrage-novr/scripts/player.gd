@@ -53,7 +53,8 @@ func _input(event):
 		look_rot.x = clamp(look_rot.x, min_angle, max_angle)
 		
 func raycast_check():
-	if raycast.is_colliding():
+	if raycast.is_colliding() and raycast.get_collider() != null:
+		print( raycast.get_collider())
 		var collider = raycast.get_collider()
 		
 		if collider.is_in_group("shadertest"):

@@ -55,6 +55,15 @@ func _ready():
 		body.body_entered.connect(_on_body_entered)
 		body.contact_monitor = true
 		body.max_contacts_reported = 10
+		
+	var pos = get_rigidBody_position()
+	shard_container = Node3D.new()
+	add_child(shard_container)
+	shard_container.position = pos + Vector3(0,.2,0)
+	
+	if not fragmented == null:
+		for shard in _get_shards():
+			_add_shard(shard)
 	
 	particleEmitters = check_for_particleEmitters()
 	if particleEmitters.is_empty() == false:
@@ -115,26 +124,14 @@ func destroy() -> void:
 		soundPlayer.play()
 
 		can_destroy = false
-		body_position = get_rigidBody_position()
-		shard_container = Node3D.new()
-		add_child(shard_container)
 		main_node.add_active_shard(shard_container)
-	
-		var pos = get_rigidBody_position()
-		#print("Destruction Node Position During Destruction: ", self.position)
-		shard_container.position = pos + Vector3(0,.2,0)
-		#print("Moved Destruction Node to: ", self.position)
-		#print("Spawned Shard Container at: ", shard_container.position)
 
 		var saved_velocity = get_child(0).linear_velocity
+		start_shards(saved_velocity)
 
 		for i in self.get_child(0).get_children():
 			if i is MeshInstance3D or i is CollisionShape3D or i is CollisionPolygon3D:
 				i.visible = false
-
-		if not fragmented == null:
-			for shard in _get_shards():
-				_add_shard(shard, saved_velocity)
 
 		add_drop(saved_velocity)
 		emit_Particles()
@@ -204,7 +201,7 @@ func set_fragmented(to: PackedScene) -> void:
 func _get_configuration_warnings() -> PackedStringArray:
 	return ["No fragmented version set"] if not fragmented else []
 
-func _add_shard(original: MeshInstance3D, old_velocity: Vector3) -> void:
+func _add_shard(original: MeshInstance3D) -> void:
 	var body := RigidBody3D.new()
 	var mesh := MeshInstance3D.new()
 	var shape := CollisionShape3D.new()
@@ -214,21 +211,30 @@ func _add_shard(original: MeshInstance3D, old_velocity: Vector3) -> void:
 	body.add_child(shape)
 	shard_container.add_child(body, true)
 	
-	body.global_position = shard_container.global_position
+	#body.global_position = shard_container.global_position
 	body.global_rotation = global_rotation
 	
+	body.continuous_cd = false
 	body.set_collision_layer_value(1, false)
 	body.set_collision_mask_value(1, true)
 	body.set_collision_mask_value(4, true)
-	body.continuous_cd = true
 	
 	mesh.scale = orig_mesh.scale
 	shape.scale = orig_mesh.scale
 	shape.shape = _cached_shapes[original]
 	mesh.mesh = original.mesh
 	
-	body.apply_impulse(old_velocity + _random_direction() * explosion_power,
-			-shard_container.position.normalized())
+	body.freeze_mode = RigidBody3D.FREEZE_MODE_STATIC
+	body.freeze = true
+	body.visible = false
+	
+func start_shards(old_velocity : Vector3):
+	shard_container.position = self.get_child(0).position
+	
+	for i in shard_container.get_children():
+		i.visible = true
+		i.freeze = false
+		i.apply_impulse(old_velocity + _random_direction() * explosion_power, -shard_container.position.normalized())
 			
 func add_drop(old_velocity: Vector3):
 	if dropID != "":
