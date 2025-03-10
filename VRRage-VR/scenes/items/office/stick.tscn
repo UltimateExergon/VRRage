@@ -51,17 +51,21 @@ script = ExtResource("1_s3kym")
 objectID = "stick"
 
 [node name="stick-rigid" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("ArrayMesh_1kgat")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_hs6ps")
 
 [node name="left" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0677892, -0.376062, -0.0542515)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0218558, -0.239325, -0.0542515)
+visible = false
 script = ExtResource("2_ie6nh")
 
 [node name="right" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0623155, -0.355172, -0.0424823)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.036767, -0.253847, -0.0862978)
+visible = false
 script = ExtResource("2_ie6nh")
 hand = 1

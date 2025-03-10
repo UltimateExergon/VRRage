@@ -19,16 +19,16 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.2, 0, -1, 0, -4.37114e-08, -1.1
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.2, 0, -1, 0, -4.37114e-08, 1.1, 1.2, 1.304)
 
 [node name="coffee_table" parent="." instance=ExtResource("2_xre2j")]
-transform = Transform3D(-2.84124e-08, 0, 0.5, 0, 0.6, 0, -0.65, 0, -2.18557e-08, 0, 0, 0.757254)
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0, 0, 0.757254)
 
 [node name="monitor" parent="." instance=ExtResource("4_sc344")]
-transform = Transform3D(-3.27835e-08, 0, -0.75, 0, 0.75, 0, 0.75, 0, -3.27835e-08, 0.21596, 1.22746, 0.551043)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.21596, 1.04492, 0.472958)
 
 [node name="keyboard" parent="." instance=ExtResource("5_drhn0")]
-transform = Transform3D(-3.27835e-08, 0, 0.75, 0, 0.5, 0, -0.75, 0, -3.27835e-08, 0.166314, 1.13823, 1.08901)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 0.667, 0, -1, 0, -4.37114e-08, 0.166314, 0.953349, 1.01838)
 
 [node name="computer" parent="." instance=ExtResource("3_r6t2v")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.746632, 1.52453, 0.502209)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.737294, 1.34309, 0.578991)
 
 [node name="office_chair" parent="." instance=ExtResource("6_jtfp8")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.0939007, 2.26069)

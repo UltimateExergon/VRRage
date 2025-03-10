@@ -59,12 +59,10 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_mmesu")
 
 [node name="left" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0283795, -0.42698, -0.0707739)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0283795, -0.607167, -0.0707739)
 script = ExtResource("2_dbjd6")
 
 [node name="right" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0298347, -0.431476, -0.0690106)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0298347, -0.611663, -0.0690106)
 script = ExtResource("2_dbjd6")
 hand = 1

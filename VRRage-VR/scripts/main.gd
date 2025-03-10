@@ -4,7 +4,7 @@ signal focus_lost
 signal focus_gained
 signal pose_recentered
 
-const max_shards : int = 50
+const max_shards : int = 40
 const teleport_cooldown : float = 0.5
 const loadingLabel_Visibility_Time : float = 5.0
 
@@ -31,6 +31,8 @@ var can_teleport : bool = true
 var loading : bool = false
 var path_to_level : String = ""
 var levelName : String
+
+var loadingScreenTimer : Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -60,6 +62,7 @@ func _ready():
 		
 		add_teleportTimer()
 		add_multiplierTimer()
+		add_loadingScreenTimer()
 		
 	else:
 		# We couldn't start OpenXR.
@@ -91,6 +94,12 @@ func add_multiplierTimer():
 	add_child(multiplier_timer)
 	multiplier_timer.timeout.connect(_on_multiplier_timer_timeout)
 	multiplier_timer.one_shot = true
+	
+func add_loadingScreenTimer():
+	loadingScreenTimer = Timer.new()
+	add_child(loadingScreenTimer)
+	loadingScreenTimer.timeout.connect(_on_loadingScreen_timer_timeout)
+	loadingScreenTimer.one_shot = true
 		
 func add_active_shard(shard : Node):
 	active_shards.append(shard)
@@ -146,9 +155,7 @@ func switch_level():
 		i.get_parent().set_currentLevel(current_level)
 		
 		
-	await get_tree().create_timer(loadingLabel_Visibility_Time)
-	switch_loadingLabel_Visibility()
-	enable_teleport(true)
+	loadingScreenTimer.start(loadingLabel_Visibility_Time)
 		
 func enable_teleport(tp : bool):
 	for j in get_tree().get_nodes_in_group("teleport"):
@@ -232,6 +239,10 @@ func _on_teleport_timer_timeout():
 func _on_multiplier_timer_timeout():
 	score_multiplier = 1.0
 	#print("SCORE MULTIPLIER RESET TO: ", score_multiplier)
+	
+func _on_loadingScreen_timer_timeout():
+	switch_loadingLabel_Visibility()
+	enable_teleport(true)
 	
 
 # Handle OpenXR session ready
