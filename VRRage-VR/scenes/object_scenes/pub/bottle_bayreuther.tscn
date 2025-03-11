@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhd31kra2pv3i"]
+
+[ext_resource type="Script" path="res://scripts/destruction.gd" id="1_qu6sr"]
+[ext_resource type="PackedScene" uid="uid://7n50s2ym4g60" path="res://assets/models/pub/bottle_bayreuther_kaputt.blend" id="2_tp4st"]
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="3_1ajed"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_al3id"]
+[ext_resource type="PackedScene" uid="uid://dal813bllgks" path="res://assets/models/pub/bottle_bayreuther.blend" id="4_lyj3h"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_mqg6o"]
+
+[node name="bottle bayreuther" type="Node3D"]
+script = ExtResource("1_qu6sr")
+fragmented = ExtResource("2_tp4st")
+
+[node name="bottle bayreuther" parent="." instance=ExtResource("3_1ajed")]
+collision_mask = 196623
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 250
+objectID = "barhocker_destruction"
+
+[node name="bottle_bayreuther" parent="bottle bayreuther" instance=ExtResource("4_lyj3h")]
+
+[node name="GrabPointHandLeft" parent="bottle bayreuther" instance=ExtResource("4_al3id")]
+transform = Transform3D(0.888616, 0.226175, -0.399006, -0.20633, 0.974087, 0.0926461, 0.409621, 0, 0.912256, 0.0566353, 0.23052, -0.0921177)
+
+[node name="GrabPointHandRight" parent="bottle bayreuther" instance=ExtResource("5_mqg6o")]
+transform = Transform3D(0.880728, -0.136822, 0.45343, 0.121647, 0.990596, 0.0626282, -0.457734, 0, 0.889089, -0.0559157, 0.229966, -0.0783367)

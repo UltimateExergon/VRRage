@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://doai8qx72mnql"]
+
+[ext_resource type="Script" path="res://scripts/destruction.gd" id="1_qu6sr"]
+[ext_resource type="PackedScene" uid="uid://c6oad8c50lr74" path="res://assets/models/pub/bottle_normal_kaputt.blend" id="2_xttns"]
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="3_1ajed"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_al3id"]
+[ext_resource type="PackedScene" uid="uid://dbfxvsahk5xgx" path="res://assets/models/pub/bottle_normal.blend" id="4_pan3x"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_mqg6o"]
+
+[node name="bottle normal" type="Node3D"]
+script = ExtResource("1_qu6sr")
+fragmented = ExtResource("2_xttns")
+
+[node name="bottle normal" parent="." instance=ExtResource("3_1ajed")]
+collision_mask = 196623
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 250
+objectID = "barhocker_destruction"
+
+[node name="bottle_normal" parent="bottle normal" instance=ExtResource("4_pan3x")]
+
+[node name="GrabPointHandLeft" parent="bottle normal" instance=ExtResource("4_al3id")]
+transform = Transform3D(0.983935, 0.178527, 0, -0.175643, 0.968036, -0.179043, -0.031964, 0.176166, 0.983841, 0.0186179, 0.233699, -0.0840101)
+
+[node name="GrabPointHandRight" parent="bottle normal" instance=ExtResource("5_mqg6o")]
+transform = Transform3D(1, 0, 0, 0, 0.932235, -0.361852, 0, 0.361852, 0.932235, -0.0144419, 0.23538, -0.0795833)

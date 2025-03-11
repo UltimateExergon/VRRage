@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjdtefbe0dgsf"]
+
+[ext_resource type="Script" path="res://scripts/destruction.gd" id="1_qu6sr"]
+[ext_resource type="PackedScene" uid="uid://cv7vqefw8rkwd" path="res://assets/models/pub/bierglas_kaputt.blend" id="2_yfl42"]
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="3_1ajed"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_al3id"]
+[ext_resource type="PackedScene" uid="uid://cqwd1xpgcxjb5" path="res://assets/models/pub/bierglas.blend" id="4_ug368"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_mqg6o"]
+
+[node name="bierglas" type="Node3D"]
+script = ExtResource("1_qu6sr")
+fragmented = ExtResource("2_yfl42")
+
+[node name="bierglas" parent="." instance=ExtResource("3_1ajed")]
+collision_mask = 196623
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 250
+objectID = "barhocker_destruction"
+
+[node name="bierglas" parent="bierglas" instance=ExtResource("4_ug368")]
+
+[node name="GrabPointHandLeft" parent="bierglas" instance=ExtResource("4_al3id")]
+transform = Transform3D(0.868562, 0, -0.49558, 0, 1, 0, 0.49558, 0, 0.868562, 0.00863747, 0.260311, -0.0991239)
+
+[node name="GrabPointHandRight" parent="bierglas" instance=ExtResource("5_mqg6o")]
+transform = Transform3D(0.90502, 0, 0.425369, 0, 1, 0, -0.425369, 0, 0.90502, -0.00116605, 0.259757, -0.0995714)

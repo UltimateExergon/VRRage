@@ -7,21 +7,21 @@
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_al3id"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_mqg6o"]
 
-[node name="barhocker_destruction" type="Node3D"]
+[node name="barhocker" type="Node3D"]
 script = ExtResource("1_qu6sr")
 fragmented = ExtResource("2_44qg2")
 
-[node name="barhocker_destruction" parent="." instance=ExtResource("3_1ajed")]
+[node name="barhocker" parent="." instance=ExtResource("3_1ajed")]
 collision_mask = 196623
 continuous_cd = true
 contact_monitor = true
 max_contacts_reported = 250
 objectID = "barhocker_destruction"
 
-[node name="Barhocker" parent="barhocker_destruction" instance=ExtResource("4_6w6um")]
+[node name="Barhocker" parent="barhocker" instance=ExtResource("4_6w6um")]
 
-[node name="GrabPointHandLeft" parent="barhocker_destruction" instance=ExtResource("4_al3id")]
+[node name="GrabPointHandLeft" parent="barhocker" instance=ExtResource("4_al3id")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.239262, 0.684793, -0.117799)
 
-[node name="GrabPointHandRight" parent="barhocker_destruction" instance=ExtResource("5_mqg6o")]
+[node name="GrabPointHandRight" parent="barhocker" instance=ExtResource("5_mqg6o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.236733, 0.684239, -0.0939908)

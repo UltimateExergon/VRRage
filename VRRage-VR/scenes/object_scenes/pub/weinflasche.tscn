@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://eigm6swltxko"]
+
+[ext_resource type="Script" path="res://scripts/destruction.gd" id="1_qu6sr"]
+[ext_resource type="PackedScene" uid="uid://clvds6jsldeml" path="res://assets/models/pub/weinflasche_kaputt.blend" id="2_cpph4"]
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="3_1ajed"]
+[ext_resource type="PackedScene" uid="uid://xjne575vq4ab" path="res://assets/models/pub/weinflasche.blend" id="4_0awnv"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_al3id"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_mqg6o"]
+
+[node name="weinflasche" type="Node3D"]
+script = ExtResource("1_qu6sr")
+fragmented = ExtResource("2_cpph4")
+
+[node name="weinflasche" parent="." instance=ExtResource("3_1ajed")]
+collision_mask = 196623
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 250
+objectID = "barhocker_destruction"
+
+[node name="weinflasche" parent="weinflasche" instance=ExtResource("4_0awnv")]
+
+[node name="GrabPointHandLeft" parent="weinflasche" instance=ExtResource("4_al3id")]
+transform = Transform3D(1, 0, 0, 0, 0.957446, -0.288614, 0, 0.288614, 0.957446, 0.00669543, 0.38297, -0.0603471)
+
+[node name="GrabPointHandRight" parent="weinflasche" instance=ExtResource("5_mqg6o")]
+transform = Transform3D(1, 0, 0, 0, 0.972857, -0.231408, 0, 0.231408, 0.972857, -0.011955, 0.375975, -0.0578898)

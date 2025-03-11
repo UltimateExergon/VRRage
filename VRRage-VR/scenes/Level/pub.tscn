@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=4 uid="uid://yg8clck6x474"]
+[gd_scene load_steps=95 format=4 uid="uid://yg8clck6x474"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_bomn3"]
 [ext_resource type="Texture2D" uid="uid://no3olb2rfae2" path="res://assets/models/pub/textures/stone_wall_13-2K/stone_wall_13_basecolor-2K.png" id="2_5usq7"]
@@ -31,6 +31,13 @@
 [ext_resource type="Texture2D" uid="uid://b8boccy12u6qt" path="res://assets/models/pub/textures/grunge_light_ceramic_24-2K/tiling_24_roughness-2K.png" id="21_0wbmp"]
 [ext_resource type="PackedScene" uid="uid://vmlurgbjfpgt" path="res://assets/models/pub/Tür3_kaputt.blend" id="22_4eakp"]
 [ext_resource type="Texture2D" uid="uid://db53neagdtl4j" path="res://assets/models/pub/textures/grunge_light_ceramic_24-2K/tiling_24_normal-2K.png" id="22_jaupq"]
+[ext_resource type="PackedScene" uid="uid://cjdtefbe0dgsf" path="res://scenes/object_scenes/pub/bierglas.tscn" id="32_rp4j8"]
+[ext_resource type="PackedScene" uid="uid://doai8qx72mnql" path="res://scenes/object_scenes/pub/bottle_normal.tscn" id="33_aweba"]
+[ext_resource type="PackedScene" uid="uid://bhd31kra2pv3i" path="res://scenes/object_scenes/pub/bottle_bayreuther.tscn" id="34_thscy"]
+[ext_resource type="PackedScene" uid="uid://cvpyl74t1vttl" path="res://scenes/object_scenes/pub/martini_glas.tscn" id="35_ojx3m"]
+[ext_resource type="PackedScene" uid="uid://eigm6swltxko" path="res://scenes/object_scenes/pub/weinflasche.tscn" id="36_t3plg"]
+[ext_resource type="PackedScene" uid="uid://pbt3kg4kiguo" path="res://scenes/object_scenes/pub/weinglas.tscn" id="37_uss5t"]
+[ext_resource type="PackedScene" uid="uid://b13d1n1yes77d" path="res://scenes/object_scenes/pub/crystal_glass.tscn" id="38_yuga7"]
 
 [sub_resource type="Environment" id="Environment_m3w4k"]
 
@@ -1063,3 +1070,113 @@ transform = Transform3D(0.358058, 0, 0.933699, 0, 1, 0, -0.933699, 0, 0.358058, 
 
 [node name="Pflanze4" parent="PflanzeCollection" instance=ExtResource("19_oi3g0")]
 transform = Transform3D(0.955798, 0, 0.294024, 0, 1, 0, -0.294024, 0, 0.955798, 6.00183, 0.0800422, 9.70888)
+
+[node name="BierglasCollection" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.653851, 1.00444, 2.16409)
+
+[node name="bierglas" parent="BierglasCollection" instance=ExtResource("32_rp4j8")]
+
+[node name="bierglas2" parent="BierglasCollection" instance=ExtResource("32_rp4j8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.88533, 0.00816011, -2.42183)
+
+[node name="BottleNormalCollection" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.476391, 1.00444, 2.27853)
+
+[node name="bottle normal" parent="BottleNormalCollection" instance=ExtResource("33_aweba")]
+
+[node name="bottle normal2" parent="BottleNormalCollection" instance=ExtResource("33_aweba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.23206, -0.00444007, -4.05534)
+
+[node name="bottle normal3" parent="BottleNormalCollection" instance=ExtResource("33_aweba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.14759, -0.00444007, -3.84044)
+
+[node name="bottle normal4" parent="BottleNormalCollection" instance=ExtResource("33_aweba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32447, -0.00444007, -4.02333)
+
+[node name="bottle normal5" parent="BottleNormalCollection" instance=ExtResource("33_aweba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25781, -0.00444007, -3.90772)
+
+[node name="bottle normal6" parent="BottleNormalCollection" instance=ExtResource("33_aweba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4306, -0.00444007, -4.04854)
+
+[node name="bottle normal7" parent="BottleNormalCollection" instance=ExtResource("33_aweba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37785, -0.00444007, -3.89089)
+
+[node name="BottleBayreutherCollection" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.946159, 1.00444, 2.27441)
+
+[node name="bottle bayreuther" parent="BottleBayreutherCollection" instance=ExtResource("34_thscy")]
+
+[node name="bottle bayreuther2" parent="BottleBayreutherCollection" instance=ExtResource("34_thscy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.97529, 0.00816011, -2.46729)
+
+[node name="bottle bayreuther3" parent="BottleBayreutherCollection" instance=ExtResource("34_thscy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20171, -0.00444019, -3.7948)
+
+[node name="bottle bayreuther4" parent="BottleBayreutherCollection" instance=ExtResource("34_thscy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.97053, -0.00444019, -3.67838)
+
+[node name="bottle bayreuther5" parent="BottleBayreutherCollection" instance=ExtResource("34_thscy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.25072, -0.00444007, -3.38102)
+
+[node name="bottle bayreuther6" parent="BottleBayreutherCollection" instance=ExtResource("34_thscy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.63036, -0.00444007, -3.80599)
+
+[node name="bottle bayreuther7" parent="BottleBayreutherCollection" instance=ExtResource("34_thscy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.92466, -0.00443995, -4.04348)
+
+[node name="bottle bayreuther8" parent="BottleBayreutherCollection" instance=ExtResource("34_thscy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.77835, -0.00444007, -3.8072)
+
+[node name="bottle bayreuther9" parent="BottleBayreutherCollection" instance=ExtResource("34_thscy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4843, -0.00444007, -3.97962)
+
+[node name="bottle bayreuther10" parent="BottleBayreutherCollection" instance=ExtResource("34_thscy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.62979, -0.00444007, -3.63618)
+
+[node name="MartiniGlasCollection" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56513, 1.00444, 2.26239)
+
+[node name="martini glas" parent="MartiniGlasCollection" instance=ExtResource("35_ojx3m")]
+
+[node name="martini glas2" parent="MartiniGlasCollection" instance=ExtResource("35_ojx3m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27588, 0, -0.0219038)
+
+[node name="martini glas3" parent="MartiniGlasCollection" instance=ExtResource("35_ojx3m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0316772, -1.19209e-07, 0.175145)
+
+[node name="martini glas4" parent="MartiniGlasCollection" instance=ExtResource("35_ojx3m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.324817, -1.19209e-07, 0.154028)
+
+[node name="martini glas5" parent="MartiniGlasCollection" instance=ExtResource("35_ojx3m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.171588, -2.38419e-07, 0.300823)
+
+[node name="WeinflascheCollection" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.22498, 1.00444, 3.9893)
+
+[node name="weinflasche" parent="WeinflascheCollection" instance=ExtResource("36_t3plg")]
+
+[node name="weinflasche2" parent="WeinflascheCollection" instance=ExtResource("36_t3plg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66432, 0.00816035, -3.83255)
+
+[node name="WeinglasCollection" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2999, 1.00444, 3.80206)
+
+[node name="weinglas" parent="WeinglasCollection" instance=ExtResource("37_uss5t")]
+
+[node name="weinglas2" parent="WeinglasCollection" instance=ExtResource("37_uss5t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.429, 0.00816023, -3.51227)
+
+[node name="CrystalGlassCollection" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.90866, 1, -1.08451)
+
+[node name="crystal glass" parent="CrystalGlassCollection" instance=ExtResource("38_yuga7")]
+
+[node name="crystal glass2" parent="CrystalGlassCollection" instance=ExtResource("38_yuga7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.226154, 0, -0.056437)
+
+[node name="crystal glass3" parent="CrystalGlassCollection" instance=ExtResource("38_yuga7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0242558, 0, -0.186711)
+
+[node name="crystal glass4" parent="CrystalGlassCollection" instance=ExtResource("38_yuga7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12307, 0, -0.0712733)
