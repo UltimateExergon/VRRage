@@ -16,7 +16,7 @@ destroyable_by = ["barhocker_destruction"]
 collision_mask = 196623
 continuous_cd = true
 contact_monitor = true
-max_contacts_reported = 160
+max_contacts_reported = 250
 objectID = "Pflanze"
 
 [node name="Pflanze2" parent="Pflanze" instance=ExtResource("4_f52sv")]
