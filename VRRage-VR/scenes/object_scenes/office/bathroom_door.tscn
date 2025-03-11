@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://wgqr63wfgcme"]
+[gd_scene load_steps=13 format=4 uid="uid://wgqr63wfgcme"]
 
 [ext_resource type="Script" path="res://scripts/destruction.gd" id="1_qpxt1"]
 [ext_resource type="PackedScene" uid="uid://dtaeuhtue2vgb" path="res://assets/models/office/blendfiles/bathroom_door_kaputt.blend" id="2_72kkg"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c1aa1nj3ll706" path="res://assets/materials/wood2/finewood_27_basecolor-1K.png" id="4_5ya73"]
 [ext_resource type="Texture2D" uid="uid://b4wn3xb6dlv52" path="res://assets/materials/wood2/finewood_27_roughness-1K.png" id="5_ii7na"]
 [ext_resource type="Texture2D" uid="uid://c1yimpjkgnd2s" path="res://assets/materials/wood2/finewood_27_normal-1K.png" id="6_siqtc"]
+[ext_resource type="PackedScene" uid="uid://cdj7ppj8k5e4f" path="res://scenes/wood_particle_emitter.tscn" id="7_jh8or"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pe4ny"]
 resource_name = "Wood"
@@ -27,7 +28,7 @@ albedo_color = Color(0.527623, 0.527623, 0.527623, 1)
 metallic = 0.889908
 roughness = 0.5
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_elcxq"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_uvjhi"]
 _surfaces = [{
 "aabb": AABB(-0.197182, -2.15, -1.25, 0.390882, 4.3, 2.5),
 "format": 34896613377,
@@ -51,7 +52,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_ly4l0"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ru2w3"]
 resource_name = "bathroom_door_Cube_001"
 _surfaces = [{
 "aabb": AABB(-0.197182, -2.15, -1.25, 0.390882, 4.3, 2.5),
@@ -79,7 +80,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("QbIAAAAA//9BsgAAAAD//wRQAAAAAP//BFAAAAAA//9Bsv7/AAD//0Gy/v8AAP+/BFD//wAA//8EUP//AAD/v0GyAACoUf//QbIAAKhR//9Bsv7/qFH//0Gy/v+oUf+/BFAAAKhR//8EUAAAqFGZ/wRQ//+oUf+/BFD//6hRsv8yxAAAqFH//zLEAACoUf//MsQAAKhRY9X//wAAqFH/////AACoUVXV6MQ+z2G99P/oxD7PYb3/v+jEPs9hvVXV6MS/MGG99P/oxL8wYb3z/+jEvzBhvf//6MS/MGG9VdVJ/z7PYb30/0n/Ps9hvf+/Sf8+z2G9VdVJ/78wYb30/0n/vzBhvf//Sf+/MGG9VdUyxP7/Yb30/zLE/v9hvf+/MsT+/2G9Y9UyxAAAYb30/zLEAABhvfP/MsQAAGG9//8yxAAAYb1j1f///v9hvfT////+/2G9/7////7/Yb1V1f//AABhvfT///8AAGG9/////wAAYb1V1VnFxbAAAP//WcXFsAAAiupZxcWwAADp7wzD/v8AAP//DMP+/wAA/78Mw/7/AADp71nF/v+eCorqWcX+/54K/79Zxf7/ngrp71nFOU8AAP//WcU5TwAAkfQMwwAAAAD//wzDAAAAAP//DMMAAAAArfRZxf7/Ckf/vwzD/v+oUf//DMP+/6hR/78Mw/7/qFFj1dj+xbAAAP//2P7FsAAAiurY/sWwAAD31dj+xbAAAMHW2P7+/54KiurY/v7/ngr/v9j+/v+eCvfV2P7+/54KGdT//8Wwngr31f//xbCeChnU///FsJ4Kwdb//8WwngpV1dj+OU8AAP//2P45TwAAW/TY/jlPAADB1v//AACeCv////8AAJ4KdvT//wAAngrB1v//AACeClXV2P7+/wpH/7/Y/v7/Ckca1P///v9HXP+////+/0dcGtT///7/R1xV1cPFJ5Tc+vT/w8UnlNz68v/DxSeU3Prv0+jEPs/x8vL/6MQ+z/Hy/7/oxD7P8fLv0+jEPs/x8lXV6MS/MPHy8//oxL8w8fL//+jEvzDx8u/T6MS/MPHyVdXDxddr3Pr0/8PF12vc+vP/w8XXa9z679NJ/z7P8fLy/0n/Ps/x8v+/Sf8+z/Hy79NJ/z7P8fJV1W3+J5Tc+vT/bf4nlNz68v9t/ieU3Prv023+12vc+vT/bf7Xa9z68/9t/tdr3Prv00n/vzDx8vP/Sf+/MPHy//9J/78w8fLv00n/vzDx8lXVAjQAAKhR//8CNAAAqFGZ/wI0AACoUVXVAAAAAKhR//8AAAAAqFFV1Qkz4LwFvfP/CTPgvAW9/78JM+C8Bb1V1QkzHkMFvfL/CTMeQwW9//8JMx5DBb1V1fkA4LwFvfT/+QDgvAW9/7/5AOC8Bb1V1fkAHkMFvfT/+QAeQwW9///5AB5DBb1V1QI0//8FvfT/AjT//wW9/78CNP//Bb1V1QI0AAAFvfT/AjQAAAW9//8CNAAABb1V1QAA//8FvfT/AAD//wW9/78AAP//Bb1V1QAAAAAFvfT/AAAAAAW9//8AAAAABb1V1RUz2j8AAP//FTPaPwAAj/TwNAAAAAD///A0AAAAAP//8DQAAAAApfQVM///GUn/vwI0//83Wv+/AjT//zdawP8CNP//N1pV1RUz//+OCIrqFTP//44I/78VM///jgjp7/A0//8AAP//8DT//wAA/7/wNP//AADp7xUzJMAAAP//FTMkwAAAiuoVMyTAAADp7+0A2j8AAP//7QDaPwAAX/TtANo/AADB1gAAAACOCP//AAAAAI4IdPQAAAAAjgjB1gAAAACOCFXV7QD//xlJ/7/tAP//GUkG1AAA//83Wv+/AAD//zdaBtQAAP//N1pV1e0A//+OCIrq7QD//44I/7/tAP//jgj31e0A//+OCAbU7QAkwAAA///tACTAAACK6u0AJMAAAPfV7QAkwAAAwdYAACTAjgj31QAAJMCOCAbUAAAkwI4IwdYAACTAjghV1Qkz4Lxz+/L/CTPgvHP7/78JM+C8c/tV1Yoy+Zr///T/ijL5mv//8v+KMgVl///0/4oyBWX///P/CTMeQ3P78/8JMx5Dc/v//wkzHkNz+1XVdwH5mv//9P93Afma///y/3cB+Zr//+/T+QDgvHP78v/5AOC8c/v/v/kA4Lxz++/T+QDgvHP7VdX5AB5Dc/vz//kAHkNz+///+QAeQ3P779P5AB5Dc/tV1XcBBWX///T/dwEFZf//8/93AQVl///v007/r4D/f/8/cf9xf/9//z9O/6+AgP8Bf3H/cX////9//3//f/9//z//f/9/gP8Bf/9//z/Djg18////f9KOgHz/f/9//3//P0zVhtX/f/8/qqpVVf////////9/VdVU1f///////////3//P1XVVNX/////////f6qqVVX//////3//P6qqVVX/////gP8Bf0vVhtX///////////9//z9M1YbV/////4D/AX+qqlVV//////9//z+qqlVVTf+xgAD/yIDMvL5xTv+vgID/AX/MvL5xAP/IgID/AX/MvL5xTv+vgMwBQYtO/6+A/3//P6IDM42A/wF//3//f4D/AX9M1YbVTv+vgAD/yICDrABVgqt9VAD/yICA/wF/g6wAVYOsFVaDrABVg6wVVoKrfVSqqlVVTv+vgAsCBXWCq31U/3//PyAAi3aCq31UqqpVVYD/AX+ErBZWgP8Bf4SsFlaqqlVV//////3lBAAx1jDW/eUEAP///38x1jDWVdVU1cIb+v//f/8/MdYw1lXVVNX/////whv6/zHWMNb95QQA////f82pMlaqqlVV//////3lBADNqTJW/////8Ib+v/NqTJWwhv6//9//z/NqTJWqqpVVf9//z/LjlR8qqpVVf9//z9V1VTV/////////3+qqlVV//////9//z+qqlVV/////////39V1VTV//////9//z9V1VTV/////////3+qqlVV//////9//z+qqlVV/////////39V1VTV//////9//z9V1VTVcv9zf7kKG35x/3F//3//P3cMeXz///9/////f8mOLHyqqlVVYP82f////3+98TLDcf9xf////3+98TLDcf9xf2D/Nn+98TLDcf9xfycKzYF91HzU/3//P9AIH4B91HzUVdVU1f///38h1nPT////fyHWc9NV1VTVYP82f////3//1HvTIdZz03H/cX9g/zZ//9R7033UfNT/1HvTIdZz033UfNRV1VTV/eUEAP///3+qqlVV//////3lBAD/////whv6/8Ib+v//f/8/qqpVVf/////95QQAMNYw1v3lBAD///9/MdYw1lXVVNXCG/r//3//PzHWMNZV1VTV/////8Ib+v8x1jDW")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_elcxq")
+shadow_mesh = SubResource("ArrayMesh_uvjhi")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_erasq"]
 points = PackedVector3Array(0.0749739, 2.15, 1.25, 0.19259, -0.0976508, -0.413078, 0.193662, -0.0669246, -0.560885, 0.0749739, 2.15, -1.25, -0.0750121, 2.15, 1.25, 0.0749739, -2.15, 1.25, 0.19129, -0.135533, -0.391298, 0.19259, -0.198669, -0.413078, 0.193662, -0.0669246, -0.828847, 0.193662, -0.229395, -0.560885, -0.0750121, 2.15, -1.25, 0.19194, -0.0669246, -1.05398, 0.19194, -0.117013, -1.08335, 0.0749739, -2.15, -1.25, -0.197182, -0.0669246, -0.561864, -0.195728, -0.109436, -0.38983, -0.194963, -0.130903, -0.377105, -0.0750121, -2.15, 1.25, 0.19129, -0.160787, -0.391298, 0.193662, -0.117013, -1.05398, 0.193662, -0.229395, -1.05398, -0.195766, -0.107332, -1.08335, -0.195766, -0.0669246, -1.05961, -0.197182, -0.0669246, -0.834475, -0.0750121, -2.15, -1.25, 0.19194, -0.179307, -1.08335, -0.197182, -0.229395, -0.561864, -0.195728, -0.186883, -0.38983, -0.194963, -0.165417, -0.377105, -0.197182, -0.107332, -1.05961, -0.195766, -0.188988, -1.08335, -0.197182, -0.229395, -1.05961)
@@ -97,7 +98,7 @@ collision_mask = 13
 lock_rotation = true
 continuous_cd = true
 contact_monitor = true
-max_contacts_reported = 160
+max_contacts_reported = 250
 script = ExtResource("3_1ut5r")
 objectID = "bathroom_door"
 isStatic = true
@@ -105,9 +106,11 @@ enabled = false
 
 [node name="bathroom_door-rigid2" type="MeshInstance3D" parent="bathroom_door-rigid"]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
-mesh = SubResource("ArrayMesh_ly4l0")
+mesh = SubResource("ArrayMesh_ru2w3")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="bathroom_door-rigid"]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_erasq")
+
+[node name="wood_particle_emitter" parent="bathroom_door-rigid" instance=ExtResource("7_jh8or")]

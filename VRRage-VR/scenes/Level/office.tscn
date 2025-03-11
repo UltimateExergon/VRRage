@@ -185,13 +185,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.48861, 2.09644, -1.12474)
 [node name="potplants" type="Node3D" parent="mainroom"]
 
 [node name="pot" parent="mainroom/potplants" instance=ExtResource("10_6qcx8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6646, 1.17143, 4.57302)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6646, 1.12346, 4.57302)
 
 [node name="pot3" parent="mainroom/potplants" instance=ExtResource("10_6qcx8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78942, 1.1464, 4.57302)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78942, 1.12733, 4.57302)
 
 [node name="pot2" parent="mainroom/potplants" instance=ExtResource("10_6qcx8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6646, 1.1464, -4.25084)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6646, 1.1244, -4.25084)
 
 [node name="lights" type="Node3D" parent="mainroom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.255908, 0)
@@ -246,6 +246,9 @@ transform = Transform3D(-3.27835e-08, 0, -0.75, 0, 0.75, 0, 0.75, 0, -3.27835e-0
 
 [node name="StaticBody3D" parent="mainroom/whiteboard/whiteboard" index="0" groups=["room"]]
 
+[node name="whiteboard2" parent="mainroom" instance=ExtResource("23_eascc")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 5.23965, 3, -7.48291)
+
 [node name="buro" type="Node3D" parent="."]
 transform = Transform3D(0.999999, -0.000675271, -0.000769526, 0.000676275, 0.999999, 0.0012817, 0.000768644, -0.00128223, 0.999999, 0, 0, 0)
 
@@ -259,19 +262,19 @@ transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 10.522
 transform = Transform3D(-1, 0.000698136, -0.000382723, -0.000698297, -1, 0.000398056, -0.00038243, 0.000398337, 1, 6.72779, 4.52586, -7.35587)
 
 [node name="buro_table" parent="buro" instance=ExtResource("21_xjac5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.60663, 1.34735, -7.69037)
+transform = Transform3D(1, -2.68301e-11, 1.74623e-10, 1.76556e-10, 1, 0, -1.74623e-10, 0, 1, 8.30273, 1.34756, -7.69014)
 
 [node name="buro_door" parent="buro" instance=ExtResource("19_pyrpr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5928, 2.47382, -4.98613)
 
 [node name="bossDummy" parent="buro" instance=ExtResource("25_cttgv")]
-transform = Transform3D(-4.34811e-08, -2.63753e-11, -1, -5.82077e-10, 1, -3.53452e-10, 1, 5.82077e-10, -4.34811e-08, 8.44302, 2.72281, -9.00009)
+transform = Transform3D(-4.33065e-08, -2.63753e-11, -1, -5.82077e-10, 1, -5.28303e-10, 1, 5.82077e-10, -4.33065e-08, 8.13912, 2.72301, -8.99986)
 
 [node name="pot" parent="buro" instance=ExtResource("10_6qcx8")]
-transform = Transform3D(1, -2.68301e-11, 5.82077e-10, 5.84578e-10, 1, 0, -5.82077e-10, 0, 1, 12.0083, 1.18039, -9.26501)
+transform = Transform3D(1, -2.68301e-11, 6.40284e-10, 6.42785e-10, 1, 0, -6.40284e-10, 0, 1, 12.0083, 1.12802, -9.26508)
 
 [node name="pot2" parent="buro" instance=ExtResource("10_6qcx8")]
-transform = Transform3D(1, -2.68301e-11, 6.40284e-10, 6.42785e-10, 1, 0, -6.40284e-10, 0, 1, 12.011, 1.17582, -5.70593)
+transform = Transform3D(1, -2.68301e-11, 6.98492e-10, 7.01107e-10, 1, 0, -6.98492e-10, 0, 1, 12.011, 1.12651, -5.70599)
 
 [node name="safe" parent="buro" instance=ExtResource("28_j7iyh")]
 transform = Transform3D(-1, -2.68301e-11, -8.74861e-08, -5.57066e-11, 1, 0, 8.74861e-08, 0, -1, 12.2247, 2.87793, -7.46072)
@@ -304,3 +307,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.814, 2.149, -9.86374)
 
 [editable path="room"]
 [editable path="mainroom/whiteboard"]
+[editable path="mainroom/whiteboard2"]
