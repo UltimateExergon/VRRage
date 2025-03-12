@@ -25,7 +25,8 @@ const outline_color_none : Color = Color8(0, 0, 0, 0)
 const outline_width : float = 3.0
 
 @onready var default_music : AudioStreamMP3 = preload("res://assets/sound/music/test_music.mp3")
-@onready var default_destruction_sound : AudioStreamMP3 = preload("res://assets/sound/sound_effects/test_sound.mp3")
+@onready var default_destruction_sound : AudioStreamMP3 = preload("res://assets/sound/sound_effects/default_destructionSound.mp3")
+@onready var levelTimerAlertSound : AudioStreamMP3 = preload("res://assets/sound/sound_effects/levelTimerAlertSound.mp3")
 const maxDB : float = 3.0
 const volumeDB : float = 0.0
 const MusicVolumeDB : float = -1.0

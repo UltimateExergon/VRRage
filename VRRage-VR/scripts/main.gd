@@ -7,6 +7,7 @@ signal pose_recentered
 const max_shards : int = 40
 const teleport_cooldown : float = 0.5
 const loadingLabel_Visibility_Time : float = 5.0
+const level_time : float = 60.0
 
 var xr_interface : OpenXRInterface
 var xr_is_focussed = false
@@ -30,9 +31,10 @@ var can_teleport : bool = true
 
 var loading : bool = false
 var path_to_level : String = ""
-var levelName : String
 
 var loadingScreenTimer : Timer
+var levelTimer : Timer
+var levelTimerAlertSound : AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -63,13 +65,15 @@ func _ready():
 		add_teleportTimer()
 		add_multiplierTimer()
 		add_loadingScreenTimer()
+		add_levelTimer()
+		add_levelTimerAlertSound()
 		
 	else:
 		# We couldn't start OpenXR.
 		print("OpenXR not instantiated!")
 		get_tree().quit()
 		
-func _process(delta):
+func _process(_delta):
 	if loading == true:
 		#3 = Loading finished; 2 Loading failed; 1 = in progress, 0 = invalid resource
 		var loading_status = ResourceLoader.load_threaded_get_status(path_to_level)
@@ -80,8 +84,28 @@ func _process(delta):
 				print("LOADING SUCCESSFUL")
 				switch_level()
 		
-	if !multiplier_timer.is_stopped() and is_instance_valid(score_label):
-		score_label.update_score(current_score, score_multiplier, multiplier_timer.time_left)
+	if current_level != "level_select" and is_instance_valid(score_label):
+		if !multiplier_timer.is_stopped():
+			score_label.update_score(current_score, score_multiplier, levelTimer.time_left, multiplier_timer.time_left)
+		else:
+			score_label.update_score(current_score, score_multiplier, levelTimer.time_left)
+			
+		if levelTimer.time_left <= 10.0 and levelTimerAlertSound.playing == false:
+			levelTimerAlertSound.play()
+		
+func add_levelTimer():
+	levelTimer = Timer.new()
+	levelTimer.autostart = false
+	add_child(levelTimer)
+	teleport_timer.timeout.connect(_on_level_timer_timeout)
+	teleport_timer.one_shot = true
+	
+func add_levelTimerAlertSound():
+	levelTimerAlertSound = AudioStreamPlayer.new()
+	levelTimerAlertSound.stream = Globals.levelTimerAlertSound
+	levelTimerAlertSound.volume_db = Globals.volumeDB
+	levelTimerAlertSound.autoplay = false
+	add_child(levelTimerAlertSound)
 	
 func add_teleportTimer():
 	teleport_timer = Timer.new()
@@ -243,6 +267,11 @@ func _on_multiplier_timer_timeout():
 func _on_loadingScreen_timer_timeout():
 	switch_loadingLabel_Visibility()
 	enable_teleport(true)
+	levelTimer.start(level_time)
+	
+func _on_level_timer_timeout():
+	levelTimerAlertSound.stop()
+	load_level("level_select")
 	
 
 # Handle OpenXR session ready
