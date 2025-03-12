@@ -938,6 +938,7 @@ shape = SubResource("ConvexPolygonShape3D_6c8cc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.95015, 2.38419e-07, -1.70655)
 script = ExtResource("14_iobre")
 fragmented = ExtResource("15_l4k7k")
+destroyable_by = ["pickaxe"]
 
 [node name="Tür 2-rigid" type="RigidBody3D" parent="Room/TürCollection/Tür 2"]
 
@@ -950,9 +951,9 @@ shape = SubResource("ConvexPolygonShape3D_wxwt8")
 
 [node name="Tür 3" type="Node3D" parent="Room/TürCollection"]
 transform = Transform3D(-1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -0.999998, 1.90735e-06, 0, -5.94491)
-visible = false
 script = ExtResource("14_iobre")
 fragmented = ExtResource("22_4eakp")
+destroyable_by = ["pickaxe"]
 
 [node name="Tür 3-rigid" type="RigidBody3D" parent="Room/TürCollection/Tür 3"]
 
