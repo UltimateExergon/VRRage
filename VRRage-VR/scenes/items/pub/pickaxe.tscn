@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://cloxmxc12ckxv"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_apqrm"]
+[ext_resource type="Script" path="res://scripts/item.gd" id="2_l60c2"]
+[ext_resource type="PackedScene" uid="uid://brhjwdj31xlbu" path="res://assets/models/pub/Pickaxe.blend" id="3_1vasx"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_6n2q2"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_1103o"]
+
+[node name="pickaxe" type="Node3D"]
+
+[node name="pickaxe" parent="." instance=ExtResource("1_apqrm")]
+collision_mask = 196623
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 250
+script = ExtResource("2_l60c2")
+objectID = "pickaxe"
+
+[node name="Pickaxe" parent="pickaxe" instance=ExtResource("3_1vasx")]
+
+[node name="GrabPointHandLeft" parent="pickaxe" instance=ExtResource("4_6n2q2")]
+transform = Transform3D(1, 0, 0, 0, 0.996532, -0.0832082, 0, 0.0832082, 0.996532, 0.013702, 0.109688, -0.0854077)
+
+[node name="GrabPointHandRight" parent="pickaxe" instance=ExtResource("5_1103o")]
+transform = Transform3D(1, 0, 0, 0, 0.979575, -0.201078, 0, 0.201078, 0.979575, -0.0125828, 0.126399, -0.0785431)

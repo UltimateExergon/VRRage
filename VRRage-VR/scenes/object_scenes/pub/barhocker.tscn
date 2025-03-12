@@ -10,6 +10,7 @@
 [node name="barhocker" type="Node3D"]
 script = ExtResource("1_qu6sr")
 fragmented = ExtResource("2_44qg2")
+dropID = "metalkeil"
 
 [node name="barhocker" parent="." instance=ExtResource("3_1ajed")]
 collision_mask = 196623

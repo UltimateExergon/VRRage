@@ -11,12 +11,13 @@
 script = ExtResource("1_er18x")
 fragmented = ExtResource("2_5iaoa")
 destroyable_by = ["barhocker_destruction"]
+dropID = "holzblock"
 
 [node name="TischKlein" parent="." instance=ExtResource("3_jtgqb")]
 collision_mask = 196623
 continuous_cd = true
 contact_monitor = true
-max_contacts_reported = 160
+max_contacts_reported = 250
 objectID = "Kleiner Tisch"
 enabled = false
 
