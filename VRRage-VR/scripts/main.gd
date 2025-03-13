@@ -34,7 +34,9 @@ var path_to_level : String = ""
 
 var loadingScreenTimer : Timer
 var levelTimer : Timer
+
 var levelTimerAlertSound : AudioStreamPlayer
+var craftingSound : AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -67,6 +69,7 @@ func _ready():
 		add_loadingScreenTimer()
 		add_levelTimer()
 		add_levelTimerAlertSound()
+		add_craftingSound()
 		
 	else:
 		# We couldn't start OpenXR.
@@ -106,6 +109,13 @@ func add_levelTimerAlertSound():
 	levelTimerAlertSound.volume_db = Globals.volumeDB
 	levelTimerAlertSound.autoplay = false
 	add_child(levelTimerAlertSound)
+	
+func add_craftingSound():
+	craftingSound = AudioStreamPlayer.new()
+	craftingSound.stream = Globals.craftingSound
+	craftingSound.volume_db = Globals.volumeDB
+	craftingSound.autoplay = false
+	add_child(craftingSound)
 	
 func add_teleportTimer():
 	teleport_timer = Timer.new()
@@ -226,6 +236,8 @@ func spawn_crafted_item(itemID : String, pos : Vector3):
 	var item = load(Globals.itemPath + current_level + "/" + itemID + Globals.sceneFormat).instantiate()
 	item.global_position = pos
 	get_node(current_level).add_child(item)
+	
+	craftingSound.play()
 	
 	# Instantly get picked up
 	var rightHand = $Player/RightHand/RightHand/FunctionPickup
