@@ -1,11 +1,59 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmogc34j05jip"]
+[gd_scene load_steps=13 format=4 uid="uid://bmogc34j05jip"]
 
 [ext_resource type="Script" path="res://scripts/destruction.gd" id="1_er18x"]
 [ext_resource type="PackedScene" uid="uid://b0e65g82m6vp8" path="res://assets/models/pub/Kleiner Tisch_kaputt.blend" id="2_5iaoa"]
-[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="3_jtgqb"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="3_tfhtu"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_lbewb"]
-[ext_resource type="PackedScene" uid="uid://c8le1sm6g6fch" path="res://assets/models/pub/Kleiner Tisch.blend" id="4_mifq1"]
+[ext_resource type="Texture2D" uid="uid://d1vp3gtk6s65s" path="res://assets/models/pub/textures/dark_wood_parquet_18-2K/2K-woodparquet_18_basecolor.jpg" id="4_tl28g"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_i5cdv"]
+[ext_resource type="Texture2D" uid="uid://x7npe614jb87" path="res://assets/models/pub/textures/dark_wood_parquet_18-2K/2K-woodparquet_18_roughness.jpg" id="5_tcwng"]
+[ext_resource type="Texture2D" uid="uid://mfmo4kks2owu" path="res://assets/models/pub/textures/dark_wood_parquet_18-2K/2K-woodparquet_18_normal.jpg" id="6_ojgrr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3eh6o"]
+resource_name = "Holz"
+cull_mode = 2
+albedo_texture = ExtResource("4_tl28g")
+metallic_texture = ExtResource("5_tcwng")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("5_tcwng")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("6_ojgrr")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3tqlv"]
+_surfaces = [{
+"aabb": AABB(-0.6545, -2.68221e-07, -0.651603, 1.31725, 1, 1.33674),
+"format": 34896613377,
+"index_count": 132,
+"index_data": PackedByteArray("CQADAAEACQAIAAMACAAHAAMACAAKAAcACgAFAAcACgALAAUACwABAAUACwAJAAEAAAACAAwAAAANAAIABwABAAMABwAFAAEADAAJAAAADAAIAAkABgAIAAwABgAKAAgABAAKAAYABAALAAoAAAALAAQAAAAJAAsABAANAAAABAAPAA0ABgAPAAQABgAOAA8ADAAOAAYADAACAA4ADQARAAIADQASABEAEAAXABMAEAAUABcADwASAA0ADwATABIAAgAQAA4AAgARABAADgATAA8ADgAQABMAFQAXABQAFQAWABcAEgAVABEAEgAWABUAEwAWABIAEwAXABYAEQAUABAAEQAVABQA"),
+"name": "Holz",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("dWdEzvGYAAAAAP////8AAHVnlSoNZwAAAAD//wAAAACJmETO8ZgAAP///////wAAiZhEzg1nAAD/////AAAAAAAAYugAAAAAAABi6P//AAD//2LoAAAAAP//Yuj//wAAdWdEzg1nAAB1Z5Uq8ZgAAImYlSoNZwAAiZiVKvGYAADo0b4JuywAABYuvgm7LAAAFi6+CUPTAADo0b4JQ9MAAOjRAAC7LAAAFi4AALssAAAWLgAAQ9MAAOjRAABD0wAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_kl0ba"]
+resource_name = "Kleiner Tisch_Cube_002"
+_surfaces = [{
+"aabb": AABB(-0.6545, -2.68221e-07, -0.651603, 1.31725, 1, 1.33674),
+"attribute_data": PackedByteArray("w7v/q/io1rhqxmfKRubj3rr6497/f///+Kg2msO7e4eu2vGpuOh76jLwYLp29b2s/38azfioGs0lsv+r+Kg4r2rGZ8oy8GC6uvq9rCWy//8y8OPeYMX/q3yU1rhqxnvARuZgunb1494lshrNMvD/q7r6vaz/f/Sartr/qz2uGs3//+PefJQaza7a4949rjaauvrj3v9/Gs0lsv+rdvX/q///vax8lPSaJbLj3nb1497Du/+rfJQ4r2rGe8Ay8OPew7t7h0bmCcq46Gb0RuZgumDFe4eu2o6zPdJ76kbm3JUlsnuHRuam0z3SZvQy8NyVEe3//0bmy7563ePeuOjj3hHt599G5rSeet3j3vmvGs3k6v//rtrLvnrd///5r/+r5Orn367a49563f//uOj//z3v//8lsuPe5Orj3j3v59890uPeJbIazRHt//890v//JbL/qxHt598lsv//5Or//w=="),
+"format": 34896613399,
+"index_count": 132,
+"index_data": PackedByteArray("IwANAAYAIwAfAA0AHAAZAAsAHAAkABkAJwAUABsAJwArABQAKAAEABIAKAAgAAQAAwAKAC8AAwAzAAoAGgAFAAwAGgATAAUALgAiAAIALgAeACIAFgAdAC0AFgAlAB0AEAAmABcAEAAqACYAAQApAA8AAQAhACkADgAwAAAADgA4ADAAGAA7ABEAGAA3ADsALAA0ABUALAAHADQAMgBCAAkAMgBGAEIAPwBXAEsAPwBOAFcAOQBFADEAOQBJAEUACAA9ADUACABBAD0ANgBKADoANgA+AEoAUABWAE0AUABTAFYARwBRAEMARwBUAFEASABSAEQASABVAFIAQABMADwAQABPAEwA"),
+"material": SubResource("StandardMaterial3D_3eh6o"),
+"name": "Holz",
+"primitive": 3,
+"uv_scale": Vector4(2, 2, 0, 0),
+"vertex_count": 88,
+"vertex_data": PackedByteArray("dWdEzvGY//91Z0TO8ZgR0XVnRM7xmIv6dWdEzvGY//8AAP//////vwAA//////+/AAD/////VNV1Z5UqDWf//3VnlSoNZ0DfdWeVKg1nr8F1Z5UqDWf//wAA//8AAP//AAD//wAA/78AAP//AABU1YmYRM7xmP//iZhEzvGYEdGJmETO8ZiL+omYRM7xmP///////////7//////////v////////1TViZhEzg1n//+JmETODWfe2YmYRM4NZ4v6iZhEzg1n////////AAD///////8AAP+//////wAAVNUAAGLoAAD//wAAYugAAN7ZAABi6AAAi/oAAGLoAABU1QAAYuj///+/AABi6P//EdEAAGLo//+L+gAAYuj//1TV//9i6AAA/////2LoAADe2f//YugAAIv6//9i6AAAVNX//2Lo////v///Yuj//xHR//9i6P//i/r//2Lo//9U1XVnRM4NZ///dWdEzg1n3tl1Z0TODWeL+nVnRM4NZ///dWeVKvGY//91Z5Uq8ZipzHVnlSrxmK/BdWeVKvGY//+JmJUqDWf//4mYlSoNZ0DfiZiVKg1nr8GJmJUqDWf//4mYlSrxmP//iZiVKvGYqcyJmJUq8ZivwYmYlSrxmP//6NG+Cbss///o0b4JuyxA3+jRvgm7LK/B6NG+CbssVNUWLr4Juyz//xYuvgm7LEDfFi6+Cbssr8EWLr4JuyxU1RYuvglD0/+/Fi6+CUPTqcwWLr4JQ9OvwRYuvglD01TV6NG+CUPT/7/o0b4JQ9OpzOjRvglD06/B6NG+CUPTVNXo0QAAuyz//+jRAAC7LP//6NEAALssVNUWLgAAuyz//xYuAAC7LP//Fi4AALssVNUWLgAAQ9P/vxYuAABD0///Fi4AAEPTVNXo0QAAQ9P/v+jRAABD0///6NEAAEPTVNX/f/9/F1gXWOXCMfr/P/9//3//f////39UVaqq////f/LPDDA07ZWl/z//f/8//7////9/VFWqqv9//38XWBdYzIXmQv+//3//f/9/////f6qqVFX///9/QS290syF5kL/v/9//z//v////3+qqlRV/z//v0EtvdLlwjH6VFWqqv9//38XWBdY5cIx+lRVqqr/P/+/QS290syF5kKqqlRV/3//fxdYF1jMheZCqqpUVf///39BLb3S5cIx+v8//3//f/9/fduBJDTtlaX/P/9/////f/LPDDBp2jRt/7//f/9//39924Ekado0bf+//3//P/+/8s8MMGnaNG2qqlRV/z//v/LPDDA07ZWlVFWqqv9//39924EkNO2VpVRVqqr/f/9/fduBJGnaNG2qqlRV/z//v/9//z+qqlRV/z//v/9//z9UVaqq/3//f/9//z9UVaqq/3//f/9//z+qqlRV")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_3tqlv")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a4gif"]
+points = PackedVector3Array(0.662745, 1, 0.685139, -0.6545, 1, 0.685139, 0.662745, 0.907694, 0.685139, 0.662745, 1, -0.651603, -0.6545, 0.907694, 0.685139, -0.6545, 1, -0.651603, 0.425497, -2.68221e-07, 0.451444, 0.662745, 0.907694, -0.651603, -0.417381, -2.68221e-07, 0.451444, -0.6545, 0.907694, -0.651603, 0.425497, -2.68221e-07, -0.41804, -0.417381, -2.68221e-07, -0.41804)
 
 [node name="Kleiner Tisch" type="Node3D"]
 script = ExtResource("1_er18x")
@@ -13,18 +61,18 @@ fragmented = ExtResource("2_5iaoa")
 destroyable_by = ["barhocker_destruction"]
 dropID = "holzblock"
 
-[node name="TischKlein" parent="." instance=ExtResource("3_jtgqb")]
-collision_mask = 196623
-continuous_cd = true
-contact_monitor = true
-max_contacts_reported = 250
-objectID = "Kleiner Tisch"
-enabled = false
+[node name="Kleiner Tisch-rigid" type="RigidBody3D" parent="."]
+script = ExtResource("3_tfhtu")
 
-[node name="Kleiner Tisch" parent="TischKlein" instance=ExtResource("4_mifq1")]
+[node name="Kleiner Tisch-rigid" type="MeshInstance3D" parent="Kleiner Tisch-rigid"]
+mesh = SubResource("ArrayMesh_kl0ba")
+skeleton = NodePath("")
 
-[node name="GrabPointHandLeft" parent="TischKlein" instance=ExtResource("4_lbewb")]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kleiner Tisch-rigid"]
+shape = SubResource("ConvexPolygonShape3D_a4gif")
+
+[node name="GrabPointHandLeft" parent="Kleiner Tisch-rigid" instance=ExtResource("4_lbewb")]
 transform = Transform3D(1, 0, 0, 0, -0.0524754, 0.998622, 0, -0.998622, -0.0524754, -0.643915, 0.819885, 0)
 
-[node name="GrabPointHandRight" parent="TischKlein" instance=ExtResource("5_i5cdv")]
+[node name="GrabPointHandRight" parent="Kleiner Tisch-rigid" instance=ExtResource("5_i5cdv")]
 transform = Transform3D(1, 0, 0, 0, -0.0559784, 0.998432, 0, -0.998432, -0.0559784, 0.651872, 0.817835, 0)
