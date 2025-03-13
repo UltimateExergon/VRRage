@@ -61,5 +61,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99405, 0.0988855, -4.66867)
 teleport_level = "pub"
 label_text = "Bar"
 
+[node name="Teleporter" parent="." instance=ExtResource("1_n2a6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.117115, 5.37046)
+teleport_level = "exit"
+label_text = "Spiel Beenden"
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.116255, 0.993219, 0, -0.993219, 0.116255, 0, 12.0109, 1.51668)

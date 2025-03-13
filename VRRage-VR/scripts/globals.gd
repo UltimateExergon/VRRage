@@ -1,6 +1,6 @@
 extends Node
 
-var highscores : Dictionary = {"birthday": 0, "markt": 0, "pub": 0, "office": 0, "testlevel": 0, "level_select": -1}
+var highscores : Dictionary = {"birthday": 0, "markt": 0, "pub": 0, "office": 0, "testlevel": 0, "level_select": -1, "exit": -1}
 
 #Position of main node in get_tree().root.get_children()
 const main_order : int = 3
