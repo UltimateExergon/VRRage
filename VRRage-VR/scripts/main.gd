@@ -7,7 +7,8 @@ signal pose_recentered
 const max_shards : int = 40
 const teleport_cooldown : float = 0.5
 const loadingLabel_Visibility_Time : float = 5.0
-const level_time : float = 60.0
+
+var level_time : float = 60.0
 
 var xr_interface : OpenXRInterface
 var xr_is_focussed = false
@@ -181,6 +182,7 @@ func switch_level():
 	var level = ResourceLoader.load_threaded_get(path_to_level)
 	level = level.instantiate()
 	add_child(level)
+	level_time = level.get_level_time()
 	
 	if current_level != "level_select":
 		craftingRecipes = load(Globals.recipePath + current_level + Globals.recipeFormat).records
@@ -191,7 +193,6 @@ func switch_level():
 	
 	for i in get_tree().get_nodes_in_group("DESTRUCTIBLE"):
 		i.get_parent().set_currentLevel(current_level)
-		
 		
 	loadingScreenTimer.start(loadingLabel_Visibility_Time)
 		

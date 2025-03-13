@@ -2,6 +2,7 @@ extends Node3D
 
 @export var start_pos : Vector3 : get = get_startPos ##Position at which the player spawns
 @export var level_music : String = "" ##File name in assets/sound/music/ without .mp3
+@export var level_time : float = 60.0
 
 @onready var musicPlayer : AudioStreamPlayer = AudioStreamPlayer.new()
 
@@ -30,3 +31,6 @@ func add_levelMusic() -> void:
 
 func get_startPos() -> Vector3:
 	return start_pos
+	
+func get_level_time() -> float:
+	return level_time
