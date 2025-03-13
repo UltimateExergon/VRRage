@@ -13,7 +13,5 @@ func destroy():
 		super()
 
 func _physics_process(delta: float) -> void:
-	super(delta)
-	
 	if not destroyed:
 		rigid.transform = saved_transform
