@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=4 uid="uid://yg8clck6x474"]
+[gd_scene load_steps=103 format=4 uid="uid://yg8clck6x474"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_bomn3"]
 [ext_resource type="Texture2D" uid="uid://no3olb2rfae2" path="res://assets/models/pub/textures/stone_wall_13-2K/stone_wall_13_basecolor-2K.png" id="2_5usq7"]
@@ -31,7 +31,6 @@
 [ext_resource type="Texture2D" uid="uid://b8boccy12u6qt" path="res://assets/models/pub/textures/grunge_light_ceramic_24-2K/tiling_24_roughness-2K.png" id="21_0wbmp"]
 [ext_resource type="PackedScene" uid="uid://vmlurgbjfpgt" path="res://assets/models/pub/Tür3_kaputt.blend" id="22_4eakp"]
 [ext_resource type="Texture2D" uid="uid://db53neagdtl4j" path="res://assets/models/pub/textures/grunge_light_ceramic_24-2K/tiling_24_normal-2K.png" id="22_jaupq"]
-[ext_resource type="PackedScene" uid="uid://vwoo3053ab2v" path="res://assets/models/pub/Bar.blend" id="26_xsah3"]
 [ext_resource type="PackedScene" uid="uid://cqakpsaru5eju" path="res://assets/models/pub/Toilette_kaputt.blend" id="27_6ia8q"]
 [ext_resource type="Texture2D" uid="uid://bawwwk78ywmd8" path="res://assets/models/pub/textures/tiling_5-2K/2K_tiling_5_basecolor.png" id="28_s41ya"]
 [ext_resource type="Texture2D" uid="uid://x7ubbewk4uy1" path="res://assets/models/pub/textures/tiling_5-2K/2K_tiling_5_roughness.png" id="29_fhhvl"]
@@ -1052,8 +1051,6 @@ collision_layer = 8
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room/RegalCollection/Regal AK 2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_dbdm4")
 
-[node name="Bar" parent="Room" instance=ExtResource("26_xsah3")]
-
 [node name="Node3D" type="Node3D" parent="Room"]
 transform = Transform3D(0.867317, 0, 0, 0, 0.92217, 0, 0, 0, 1.16353, -6.51764, 0.563478, 1.40975)
 script = ExtResource("14_iobre")
@@ -1061,7 +1058,7 @@ fragmented = ExtResource("27_6ia8q")
 destroyable_by = ["pickaxe"]
 
 [node name="Toilette-rigid" type="RigidBody3D" parent="Room/Node3D"]
-transform = Transform3D(0, 0, 1.16353, 0, 0.92217, 0, -0.867317, 0, 0, -7.18532, 0.563478, 3.64381)
+transform = Transform3D(0, 0, 1.16353, 0, 0.92217, 0, -0.867317, 0, 0, -0.760729, -0.038789, 1.64534)
 
 [node name="Toilette-rigid" type="MeshInstance3D" parent="Room/Node3D/Toilette-rigid"]
 mesh = SubResource("ArrayMesh_i6apu")
