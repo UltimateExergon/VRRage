@@ -1,25 +1,73 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0v1yj7jhjjed"]
+[gd_scene load_steps=10 format=4 uid="uid://c0v1yj7jhjjed"]
 
-[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_aae1t"]
-[ext_resource type="PackedScene" uid="uid://2idi76kmkpdg" path="res://assets/models/pub/Metalkeil.blend" id="2_ht18e"]
-[ext_resource type="Script" path="res://scripts/item.gd" id="2_ouv8o"]
+[ext_resource type="Texture2D" uid="uid://yfy7oc3ygpbu" path="res://assets/models/pub/textures/metal_9-2K/metal_9_basecolor-2K.png" id="1_afscd"]
+[ext_resource type="Texture2D" uid="uid://nlb7f2iiao5c" path="res://assets/models/pub/textures/metal_9-2K/metal_9_roughness-2K.png" id="2_u7sfl"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="3_rubb4"]
+[ext_resource type="Texture2D" uid="uid://7glmn84sabm4" path="res://assets/models/pub/textures/metal_9-2K/metal_9_normal-2K.png" id="3_t4eq4"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="4_vofoo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_njv3e"]
+resource_name = "Metal.002"
+cull_mode = 2
+albedo_texture = ExtResource("1_afscd")
+metallic = 1.0
+metallic_texture = ExtResource("2_u7sfl")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_u7sfl")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_t4eq4")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_714yo"]
+_surfaces = [{
+"aabb": AABB(-0.1663, -0.000575066, -0.0280592, 0.332588, 0.136852, 0.0561184),
+"format": 34896613377,
+"index_count": 252,
+"index_data": PackedByteArray("EwAUABIAEwAVABQAEQASABAAEQATABIADwAQAA4ADwARABAADQAOAAwADQAPAA4ABwAIAAYABwAJAAgABQAGAAQABQAHAAYAAwAEAAIAAwAFAAQAAAACAAEAAAADAAIAFQABABQAFQAAAAEAFgAYABkAFgAXABgAKwAXABYAKwAqABcAKQAqACsAKQAoACoAJwAoACkAJwAmACgAJQAmACcAJQAkACYACQAKAAgACQALAAoAHwAgACEAHwAeACAAHQAeAB8AHQAcAB4AGwAcAB0AGwAaABwAGQAaABsAGQAYABoAEwArABUAEwApACsAEQApABMAEQAnACkAAQAqABQAAQAXACoADwAnABEADwAlACcAFAAoABIAFAAqACgAJQANACMAJQAPAA0AEgAmABAAEgAoACYAIwAkACUAIwAiACQACwAfACEACwAJAB8AEAAkAA4AEAAmACQAIAAIAAoAIAAeAAgABgAeABwABgAIAB4AHAAEAAYAHAAaAAQAAgAaABgAAgAEABoAGAABAAIAGAAXAAEAIgAOACQAIgAMAA4ADQAiACMADQAMACIAIQAKAAsAIQAgAAoABwAfAAkABwAdAB8AGwAHAAUAGwAdAAcABQAZABsABQADABkAGQAAABYAGQADAAAAFQAWAAAAFQArABYA"),
+"lods": [0.0489004, PackedByteArray("EQAUABIAEQAVABQAEQASAA4ADQARAA4ADQAOAAwAFQACABQAFQAFAAIABQAKAAIABQALAAoAKwAYAB8AKwAqABgAHwAYACAAHwAgACEAKQAqACsAKQAmACoAIwAmACkAIwAiACYAEQArABUAEQApACsAKQARAA0AKQANACMAFQArAB8AFQAfAAUACwAFAB8ACwAfACEAAgAqABQAAgAYACoAIAAYAAIAIAACAAoAFAAqACYAFAAmABIAEgAmAA4AIgAOACYAIgAMAA4ADQAiACMADQAMACIAIQAKAAsAIQAgAAoA")],
+"name": "Metal.002",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 44,
+"vertex_data": PackedByteArray("/3///wAAAAD/f/////8AAAeelfX+/wAAB56V9QAAAADour3W/v8AAOi6vdYAAAAAhtWopP7/AACG1aikAAAAANnsQWH+/wAA2exBYQAAAAD//yAP/v8AAP//IA8AAAAAAAAgD/7/AAAAACAPAAAAACUTQWH+/wAAJRNBYQAAAAB4Kqik/v8AAHgqqKQAAAAAFkW91v7/AAAWRb3WAAAAAPdhlfX+/wAA92GV9QAAAAC+f8vkAAAAAL5/y+T+/wAAhZzg2v7/AACFnODaAAAAAPO3lb3+/wAA87eVvQAAAAA60QSO/v8AADrRBI4AAAAAkedkTf7/AACR52RNAAAAAJD5AAD+/wAAkPkAAAAAAABuBgAA/v8AAG4GAAAAAAAAyRinTv7/AADJGKdOAAAAAMQuBI7+/wAAxC4EjgAAAAALSJW9/v8AAAtIlb0AAAAAeWPg2v7/AAB5Y+DaAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_quykx"]
+resource_name = "Metalkeil_Cylinder_005"
+_surfaces = [{
+"aabb": AABB(-0.1663, -0.000575066, -0.0280592, 0.332588, 0.136852, 0.0561184),
+"attribute_data": PackedByteArray("Jaj/v0vQDvJL0A7yS9D/vzLgDvIy4A7yqc4DzzLgQeMy4EHjg6b7sEvQQeNL0EHj08lz3TLgKtQy4CrUraGKokvQKtRL0CrU+MHC6jLgXsUy4F7F0pk7lUvQXsVL0F7FZrds9jLgbbcy4G23QI+SiUvQbbdL0G23hKr//zLg3K4y4OGqXoL/fzLgdqBL0OGqhKr/f5no3K4Y8F7FXoL//5nodqD//17FZreSiRjwKtQY8CrUQI9s9v//KtT//yrU+ME7lRjwQeMY8EHj0pnC6v//QeP//0Hj08mKohjwDvIY8A7yraFz3f//DvL//w7yqc77sDLg//8Y8P//g6YDz0vQ////////4aMfwDLgsLsy4LC7B8zevxjwsLsY8LC7ecpCzhjwtckY8LXJU6K8sTLgtcky4LXJ4cX52xjwBdgY8AXYu50FpDLgBdgy4AXYa76c6BjwMuYY8DLmRZZhlzLgMuYy4DLmSLTI8xjw0PMY8NDzIow2jDLg0PMy4NDzJajH/HTk3K4Y8P///382g3TkdqAy4P//Jag2gxjwXsV05Nyu/3/H/P//XsV05Hage7RkjBjwQ7cY8EO3VYya8///Q7f//0O3a75hlxjwD6kY8A+pRZac6P//D6n//w+p4cUFpBjw8JoY8PCau5352///8Jr///Caecq8sRjw3K4Y8JGNU6JCzjLg3K7//5GN"),
+"format": 34896613399,
+"index_count": 252,
+"index_data": PackedByteArray("OgA+ADcAOgBBAD4ANAA4ADEANAA7ADgALgAyACsALgA1ADIAKQAsACYAKQAvACwAFwAZABQAFwAcABkAEQATAA4AEQAWABMACwANAAgACwAQAA0AAQAHAAQAAQAKAAcAQAAFAD0AQAACAAUARABJAEwARABHAEkAggBGAEMAggB/AEYAfACAAIMAfAB5AIAAdgB6AH0AdgBzAHoAcAB0AHcAcABtAHQAHQAgABoAHQAjACAAXwBiAGUAXwBcAGIAWQBbAF4AWQBWAFsAUwBVAFgAUwBQAFUATQBPAFIATQBKAE8AOQCBAD8AOQB7AIEAMwB7ADkAMwB1AHsAAwB+ADwAAwBFAH4ALQB1ADMALQBvAHUAPAB4ADYAPAB+AHgAbwAnAGkAbwAtACcANgByADAANgB4AHIAagBuAHEAagBnAG4AIQBdAGMAIQAbAF0AMABsACoAMAByAGwAYAAYAB4AYABaABgAEgBaAFQAEgAYAFoAVAAMABIAVABOAAwABgBOAEgABgAMAE4ASAADAAYASABFAAMAZgAqAGwAZgAkACoAKABoAGsAKAAlAGgAZAAfACIAZABhAB8AFQBdABsAFQBXAF0AUQAVAA8AUQBXABUADwBLAFEADwAJAEsASwAAAEIASwAJAAAAPwBCAAAAPwCBAEIA"),
+"lods": [0.0489004, PackedByteArray("NAA+ADcANABBAD4ANAA3ACsAKQA0ACsAKQArACYAQAAHAD0AQAAQAAcAEAAgAAcAEAAjACAAggBJAF4AggB/AEkAXgBJAGIAXgBiAGUAfACAAIMAfABzAIAAagBzAHwAagBnAHMAMwCBAD8AMwB7AIEAewAzACcAewAnAGkAPwCBAF0APwBdAA8AIQAPAF0AIQBdAGMABgB+ADwABgBIAH4AYABIAAYAYAAGAB4APAB+AHIAPAByADYANgByACoAZgAqAHIAZgAkACoAKABoAGsAKAAlAGgAZAAfACIAZABhAB8A")],
+"material": SubResource("StandardMaterial3D_njv3e"),
+"name": "Metal.002",
+"primitive": 3,
+"uv_scale": Vector4(1.81109, 2, 0, 0),
+"vertex_count": 132,
+"vertex_data": PackedByteArray("/3///wAA////f///AAC82P9///8AABTS/3///////7//f/////+82P9//////xTSB56V9f7//78HnpX1/v+82AeelfX+/6ffB56V9QAA//8HnpX1AAC82AeelfUAAKff6Lq91v7//7/our3W/v+n3+i6vdb+/zHm6Lq91gAA///our3WAACn3+i6vdYAADHmhtWopP7//7+G1aik/v8x5obVqKT+/w/shtWopAAA//+G1aikAAAx5obVqKQAAA/s2exBYf7//7/Z7EFh/v8P7NnsQWH+/zrx2exBYQAA///Z7EFhAAAP7NnsQWEAADrx//8gD/7//7///yAP/v8e6v//IA/+/zrx//8gDwAA/////yAPAAAe6v//IA8AADrxAAAgD/7//78AACAP/v8e6gAAIA/+/zrxAAAgDwAA//8AACAPAAAe6gAAIA8AADrxJRNBYf7//78lE0Fh/v8P7CUTQWH+/zrxJRNBYQAA//8lE0FhAAAP7CUTQWEAADrxeCqopP7//794Kqik/v8x5ngqqKT+/w/seCqopAAA//94KqikAAAx5ngqqKQAAA/sFkW91v7//78WRb3W/v+n3xZFvdb+/zHmFkW91gAA//8WRb3WAACn3xZFvdYAADHm92GV9f7//7/3YZX1/v8U0vdhlfX+/6ff92GV9QAA///3YZX1AAAU0vdhlfUAAKffvn/L5AAA//++f8vkAADH2L5/y+QAABnSvn/L5P7//7++f8vk/v/H2L5/y+T+/xnShZzg2v7//7+FnODa/v8Z0oWc4Nr+/1zMhZzg2gAA//+FnODaAAAZ0oWc4NoAAFzM87eVvf7//7/zt5W9/v9czPO3lb3+//LH87eVvQAA///zt5W9AABczPO3lb0AAPLHOtEEjv7//7860QSO/v/yxzrRBI7+/8jEOtEEjgAA//860QSOAADyxzrRBI4AAMjEkedkTf7//7+R52RN/v/IxJHnZE3+/6LCkedkTQAA//+R52RNAADIxJHnZE0AAKLCkPkAAP7//7+Q+QAA/v8e6pD5AAD+/6LCkPkAAAAA//+Q+QAAAAAe6pD5AAAAAKLCbgYAAP7//79uBgAA/v+mwm4GAAD+/x7qbgYAAAAA//9uBgAAAACmwm4GAAAAAB7qyRinTv7//7/JGKdO/v/OxMkYp07+/6bCyRinTgAA///JGKdOAADOxMkYp04AAKbCxC4Ejv7//7/ELgSO/v/yx8QuBI7+/87ExC4EjgAA///ELgSOAADyx8QuBI4AAM7EC0iVvf7//78LSJW9/v9czAtIlb3+//LHC0iVvQAA//8LSJW9AABczAtIlb0AAPLHeWPg2v7//795Y+Da/v/H2Hlj4Nr+/1zMeWPg2gAA//95Y+DaAADH2Hlj4NoAAFzM/7//v6KsuKaYqMyu/////6KsuKaYqMyu/////6KsuKY/sH+f/7//v6KsuKY/sH+f/////z+wf59kszSZ/7//vz+wf59kszSZ/////2SzNJkgtryT/7//v2SzNJkgtryT/////yC2vJOLuOaO/7//vyC2vJOLuOaO/////4qVxUqLuOaO/7//v4qVxUqLuOaO/////8TKdOoX8Yw4/7//v8TKdOoX8Yw4/////0LsITYX8Yw4/7//v0LsITYX8Yw4/////8rmZTNC7CE2/7//v8rmZTNC7CE2/////3/gPzDK5mUz/7//v3/gPzDK5mUz/////5iozK5/4D8w/7//v5iozK5/4D8w/7//v6wmVdPGLmLX/////6wmVdPGLmLX/////8YuYteDN8Db/7//v8YuYteDN8Db/////4M3wNudQE7g/7//v4M3wNudQE7g/////51ATuALSgXl/7//v51ATuALSgXl/////wtKBeXgU+/p/7//vwtKBeXgU+/p/////4qVxUrgU+/p/7//v4qVxUrgU+/p/////+RpNizEynTq/7//v+RpNizEynTq//////pkCTbkaTYs/7//v/pkCTbkaTYs/////05gYT/6ZAk2/7//v05gYT/6ZAk2/////8FbfEhOYGE//7//v8FbfEhOYGE//////6wmVdPBW3xI/7//v6wmVdPBW3xI")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_714yo")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_uuwl1"]
+points = PackedVector3Array(-3.8743e-05, 0.136277, 0.0280592, 0.166255, 0.00750262, 0.0280537, 0.141383, 0.0514141, 0.0280537, 0.111106, 0.0874355, 0.0280537, 0.0764994, 0.114214, 0.0280537, 0.0389954, 0.130704, 0.0280537, -3.8743e-05, 0.136277, -0.0280592, -0.0390403, 0.130704, 0.0280537, -0.0765444, 0.114214, 0.0280537, -0.111151, 0.0874355, 0.0280537, -0.141428, 0.0514141, 0.0280537, -0.1663, 0.00750262, 0.0280537, -0.000364304, 0.121729, 0.0280592, 0.166255, 0.00750262, -0.0280592, 0.157921, -0.000575066, 0.0280537, 0.141383, 0.0514141, -0.0280592, 0.111106, 0.0874355, -0.0280592, 0.0764994, 0.114214, -0.0280592, 0.0389954, 0.130704, -0.0280592, -0.0390403, 0.130704, -0.0280592, -0.0765444, 0.114214, -0.0280592, -0.111151, 0.0874355, -0.0280592, -0.141428, 0.0514141, -0.0280592, -0.1663, 0.00750262, -0.0280592, -0.157966, -0.000575066, 0.0280537, 0.157921, -0.000575066, -0.0280592, -0.157966, -0.000575066, -0.0280592)
 
 [node name="metalkeil" type="Node3D"]
 
-[node name="metalkeil" parent="." instance=ExtResource("1_aae1t")]
-collision_mask = 196623
-continuous_cd = true
-contact_monitor = true
-max_contacts_reported = 250
-script = ExtResource("2_ouv8o")
-objectID = "metalkeil"
+[node name="Metalkeil-rigid" type="RigidBody3D" parent="."]
 
-[node name="Metalkeil" parent="metalkeil" instance=ExtResource("2_ht18e")]
+[node name="Metalkeil-rigid" type="MeshInstance3D" parent="Metalkeil-rigid"]
+mesh = SubResource("ArrayMesh_quykx")
+skeleton = NodePath("")
 
-[node name="GrabPointHandLeft" parent="metalkeil" instance=ExtResource("3_rubb4")]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Metalkeil-rigid"]
+shape = SubResource("ConvexPolygonShape3D_uuwl1")
+
+[node name="GrabPointHandLeft" parent="Metalkeil-rigid" instance=ExtResource("3_rubb4")]
 transform = Transform3D(0.211734, 0.973938, -0.0813216, -0.977327, 0.211, -0.017618, 0, 0.0832082, 0.996532, -0.00482376, 0.10343, -0.0979328)
 
-[node name="GrabPointHandRight" parent="metalkeil" instance=ExtResource("4_vofoo")]
+[node name="GrabPointHandRight" parent="Metalkeil-rigid" instance=ExtResource("4_vofoo")]
 transform = Transform3D(0.507132, 0.844265, -0.173303, -0.861868, 0.496774, -0.101973, 9.66586e-09, 0.201078, 0.979575, 0.00594296, 0.163618, -0.0910682)
