@@ -21,5 +21,3 @@ func _on_area_3d_body_entered(body):
 	if body.is_in_group("PLAYER") and main_node.can_teleport == true:
 		print("Player entered teleporter to: ", teleport_level, " at " , self.global_position)
 		main_node.load_level(teleport_level)
-		main_node.teleport_player()
-		main_node.activate_teleport_timer()

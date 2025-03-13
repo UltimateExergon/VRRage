@@ -108,6 +108,7 @@ fragmented = ExtResource("3_5l8le")
 [node name="Teller-rigid2" type="RigidBody3D" parent="." index="0"]
 collision_layer = 4
 collision_mask = 15
+can_sleep = false
 continuous_cd = true
 contact_monitor = true
 max_contacts_reported = 160
@@ -133,7 +134,7 @@ hand_pose = SubResource("Resource_lscbk")
 
 [node name="Teller-rigid" parent="." index="1"]
 visible = false
-collision_layer = 5
+collision_layer = 4
 collision_mask = 15
 continuous_cd = true
 contact_monitor = true
@@ -141,7 +142,10 @@ max_contacts_reported = 160
 
 [node name="Teller-rigid" parent="Teller-rigid" index="0"]
 transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+visible = false
 mesh = SubResource("ArrayMesh_aq2iu")
 
 [node name="CollisionShape3D" parent="Teller-rigid" index="1"]
 transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+visible = false
+disabled = true

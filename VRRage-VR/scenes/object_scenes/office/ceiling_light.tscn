@@ -118,5 +118,7 @@ mesh = SubResource("ArrayMesh_ot30j")
 skeleton = NodePath("")
 
 [node name="SpotLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.049e-08, 0.226209, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.70749e-08, 0.415918, 0)
 light_color = Color(0.64, 0.64, 0.64, 1)
+light_energy = 2.0
+omni_range = 10.0

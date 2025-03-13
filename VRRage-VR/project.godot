@@ -44,8 +44,13 @@ room=""
 
 [physics]
 
-common/physics_ticks_per_second=180
+3d/run_on_separate_thread=true
 3d/physics_engine="JoltPhysics3D"
+
+[rendering]
+
+occlusion_culling/use_occlusion_culling=true
+lights_and_shadows/positional_shadow/atlas_size=2048
 
 [xr]
 

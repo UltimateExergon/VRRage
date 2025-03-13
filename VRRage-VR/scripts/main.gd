@@ -6,15 +6,15 @@ signal pose_recentered
 
 const max_shards : int = 40
 const teleport_cooldown : float = 0.5
-const loadingLabel_Visibility_Time : float = 5.0
+const loadingLabel_Visibility_Time : float = 3.0
 
-var level_time : float = 60.0
+var level_time : float = 120.0
 
 var xr_interface : OpenXRInterface
 var xr_is_focussed = false
 
-var current_level : String
-var startPos : Vector3
+var current_level : String = "level_select"
+var startPos : Vector3 = Vector3.ZERO
 var craftingRecipes : Array
 var ingredients : Array
 
@@ -89,12 +89,13 @@ func _process(_delta):
 				switch_level()
 		
 	if current_level != "level_select" and is_instance_valid(score_label):
+		#print(levelTimer.time_left)
 		if !multiplier_timer.is_stopped():
 			score_label.update_score(current_score, score_multiplier, levelTimer.time_left, multiplier_timer.time_left)
 		else:
 			score_label.update_score(current_score, score_multiplier, levelTimer.time_left)
 			
-		if levelTimer.time_left <= 10.0 and levelTimerAlertSound.playing == false:
+		if levelTimer.time_left <= 10.0 and levelTimer.time_left != 0 and levelTimerAlertSound.playing == false:
 			levelTimerAlertSound.play()
 			
 func _input(event: InputEvent) -> void:
@@ -105,13 +106,13 @@ func add_levelTimer():
 	levelTimer = Timer.new()
 	levelTimer.autostart = false
 	add_child(levelTimer)
-	teleport_timer.timeout.connect(_on_level_timer_timeout)
-	teleport_timer.one_shot = true
+	levelTimer.timeout.connect(_on_level_timer_timeout)
+	levelTimer.one_shot = true
 	
 func add_levelTimerAlertSound():
 	levelTimerAlertSound = AudioStreamPlayer.new()
 	levelTimerAlertSound.stream = Globals.levelTimerAlertSound
-	levelTimerAlertSound.volume_db = Globals.volumeDB
+	levelTimerAlertSound.volume_db = Globals.volumeDB - 5.0
 	levelTimerAlertSound.autoplay = false
 	add_child(levelTimerAlertSound)
 	
@@ -136,6 +137,7 @@ func add_multiplierTimer():
 	
 func add_loadingScreenTimer():
 	loadingScreenTimer = Timer.new()
+	loadingScreenTimer.autostart = false
 	add_child(loadingScreenTimer)
 	loadingScreenTimer.timeout.connect(_on_loadingScreen_timer_timeout)
 	loadingScreenTimer.one_shot = true
@@ -153,8 +155,9 @@ func get_score_multiplier() -> float:
 		
 func delete_oldLevel():
 	print("Deleting old level")
-
+	
 	for i in get_tree().get_nodes_in_group("LEVEL"):
+		print("Deleting", i)
 		i.queue_free()
 		
 func load_level(levelname : String) -> void:
@@ -168,11 +171,13 @@ func load_level(levelname : String) -> void:
 	ResourceLoader.load_threaded_request(path_to_level)
 	loading = true
 	if player:
-		switch_loadingLabel_Visibility()
-		enable_teleport(false)
+		if current_level != "level_select":
+			set_loadingLabel_Visibility(true)
+			enable_teleport(false)
 		
 func switch_level():
-	#print("Switching to ", current_level)
+	print("Switching to ", current_level)
+	print_orphan_nodes()
 	delete_oldLevel()
 	
 	current_score = 0
@@ -195,13 +200,15 @@ func switch_level():
 		i.get_parent().set_currentLevel(current_level)
 		
 	loadingScreenTimer.start(loadingLabel_Visibility_Time)
+	teleport_player()
+	activate_teleport_timer()
 		
 func enable_teleport(tp : bool):
 	for j in get_tree().get_nodes_in_group("teleport"):
 		j.enabled = tp
 		
-func switch_loadingLabel_Visibility():
-	player.get_node("XRCamera3D/LoadingLabel").visible = !player.get_node("XRCamera3D/LoadingLabel").visible
+func set_loadingLabel_Visibility(isVisible: bool):
+	player.get_node("XRCamera3D/LoadingLabel").visible = isVisible
 	
 func load_player() -> void:
 	print("Loading Player")
@@ -218,7 +225,7 @@ func teleport_player():
 func set_timed_multiplier(multiplier : float, m_time : float):
 	#print("SCORE MULTIPLIER SET TO: ", multiplier, " FOR: ", m_time, " SECONDS")
 	score_multiplier = multiplier
-	score_label.update_score(current_score, score_multiplier)
+	score_label.update_score(current_score, score_multiplier, levelTimer.time_left)
 	multiplier_timer.start(m_time)
 	
 func craft(item1, item2):
@@ -268,7 +275,7 @@ func match_items():
 		
 func increase_score(points : int):
 	current_score += points * score_multiplier
-	score_label.update_score(current_score, score_multiplier)
+	score_label.update_score(current_score, score_multiplier, levelTimer.time_left)
 	
 func activate_teleport_timer():
 	can_teleport = false
@@ -282,7 +289,7 @@ func _on_multiplier_timer_timeout():
 	#print("SCORE MULTIPLIER RESET TO: ", score_multiplier)
 	
 func _on_loadingScreen_timer_timeout():
-	switch_loadingLabel_Visibility()
+	set_loadingLabel_Visibility(false)
 	enable_teleport(true)
 	levelTimer.start(level_time)
 	

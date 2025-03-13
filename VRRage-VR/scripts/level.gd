@@ -2,7 +2,7 @@ extends Node3D
 
 @export var start_pos : Vector3 : get = get_startPos ##Position at which the player spawns
 @export var level_music : String = "" ##File name in assets/sound/music/ without .mp3
-@export var level_time : float = 60.0
+@export var level_time : float = 120.0
 
 @onready var musicPlayer : AudioStreamPlayer = AudioStreamPlayer.new()
 

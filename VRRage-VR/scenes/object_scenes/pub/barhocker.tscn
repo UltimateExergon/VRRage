@@ -26,3 +26,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.239262, 0.684793, -0.11779
 
 [node name="GrabPointHandRight" parent="barhocker" instance=ExtResource("5_mqg6o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.236733, 0.684239, -0.0939908)
+
+[editable path="barhocker"]
+[editable path="barhocker/Barhocker"]

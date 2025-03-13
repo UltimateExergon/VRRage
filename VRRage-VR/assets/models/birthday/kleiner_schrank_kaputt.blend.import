@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ckvman4ca1hkn"
-path="res://.godot/imported/gabel.blend-898ba61583b1edfc80a40209a7a14b99.scn"
+uid="uid://bgip4mn1sxhhc"
+path="res://.godot/imported/kleiner_schrank_kaputt.blend-fd3fbc10a84b9da11348c18b09b9a1cc.scn"
 
 [deps]
 
-source_file="res://assets/models/birthday/gabel.blend"
-dest_files=["res://.godot/imported/gabel.blend-898ba61583b1edfc80a40209a7a14b99.scn"]
+source_file="res://assets/models/birthday/kleiner_schrank_kaputt.blend"
+dest_files=["res://.godot/imported/kleiner_schrank_kaputt.blend-fd3fbc10a84b9da11348c18b09b9a1cc.scn"]
 
 [params]
 

@@ -30,11 +30,7 @@ var shard_container : Node3D
 
 var current_level : String : set = set_currentLevel
 
-var linear_velocity : float
-
 var is_destructible : bool = true
-
-var body_position : Vector3
 
 var particleEmitters : Array = []
 
@@ -64,6 +60,8 @@ func _ready():
 	if not fragmented == null:
 		for shard in _get_shards():
 			_add_shard(shard)
+	
+	fragmented = null
 	
 	particleEmitters = check_for_particleEmitters()
 	if particleEmitters.is_empty() == false:
@@ -110,10 +108,6 @@ func add_emitTimer():
 	add_child(emitTimer)
 	emitTimer.timeout.connect(_on_emitTimer_timeout)
 	
-func _physics_process(_delta: float) -> void:
-	if get_child(0) is RigidBody3D:
-		linear_velocity = get_child(0).linear_velocity.length()
-		
 func get_rigidBody_position() -> Vector3:
 	if get_child(0) is RigidBody3D:
 		return get_child(0).position
@@ -165,7 +159,7 @@ func check_for_particleEmitters() -> Array:
 	
 func add_floatingScore():
 	var destructionScore = Globals.destructionScore.instantiate()
-	destructionScore.position = body_position
+	destructionScore.position = shard_container.position
 	#print("Spawning Floating Score at: ", destructionScore.position)
 	add_child(destructionScore)
 	
@@ -214,6 +208,7 @@ func _add_shard(original: MeshInstance3D) -> void:
 	#body.global_position = shard_container.global_position
 	body.global_rotation = global_rotation
 	
+	body.set_physics_process(false)
 	body.continuous_cd = false
 	body.set_collision_layer_value(1, false)
 	body.set_collision_mask_value(1, true)
@@ -234,6 +229,7 @@ func start_shards(old_velocity : Vector3):
 	for i in shard_container.get_children():
 		i.visible = true
 		i.freeze = false
+		i.set_physics_process(true)
 		i.apply_impulse(old_velocity + _random_direction() * explosion_power, -shard_container.position.normalized())
 			
 func add_drop(old_velocity: Vector3):
@@ -242,7 +238,7 @@ func add_drop(old_velocity: Vector3):
 		
 		var rigidBody = get_rigid_body(item)
 		
-		item.position = body_position
+		item.position = shard_container.position
 		print("Spawned Drop ", dropID, " at ", item.position)
 		
 		add_child(item)
@@ -290,6 +286,9 @@ func _on_body_entered(body: Node):
 	
 	var enteringLinearSpeed
 	var enteringAngularSpeed
+	
+	if rigidBody is not XRToolsPickable:
+		return
 	
 	if rigidBody.got_picked_up == false and is_destructible == true:
 		if enteringRigidBody and body.get_parent() is Destruction:

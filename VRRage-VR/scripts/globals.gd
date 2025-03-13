@@ -28,9 +28,9 @@ const outline_width : float = 3.0
 @onready var default_destruction_sound : AudioStreamMP3 = preload("res://assets/sound/sound_effects/default_destructionSound.mp3")
 @onready var levelTimerAlertSound : AudioStreamMP3 = preload("res://assets/sound/sound_effects/levelTimerAlertSound.mp3")
 @onready var craftingSound : AudioStreamMP3 = preload("res://assets/sound/sound_effects/crafting_sound.mp3")
-const maxDB : float = 3.0
+const maxDB : float = 2.0
 const volumeDB : float = 0.0
-const MusicVolumeDB : float = -1.0
+const MusicVolumeDB : float = -10.0
 
 @onready var default_particleEmitter = preload("res://scenes/default_particle_emitter.tscn")
 

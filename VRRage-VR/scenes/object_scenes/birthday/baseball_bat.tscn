@@ -1,5 +1,6 @@
-[gd_scene load_steps=21 format=4 uid="uid://dmuejup42y6fa"]
+[gd_scene load_steps=22 format=4 uid="uid://dmuejup42y6fa"]
 
+[ext_resource type="Script" path="res://scripts/destruction.gd" id="1_7p0v5"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_dgnwj"]
 [ext_resource type="Texture2D" uid="uid://cel1jdjaehk75" path="res://assets/materials/black_leather/1K-Leather_24_Base Color.jpg" id="4_mbu7s"]
 [ext_resource type="Texture2D" uid="uid://bs6cgadtana25" path="res://assets/materials/black_leather/1K-Leather_24_Roughness.jpg" id="5_74213"]
@@ -115,6 +116,9 @@ script = ExtResource("9_pnm4v")
 closed_pose = ExtResource("11_m5jfk")
 
 [node name="baseball_bat" type="Node3D"]
+script = ExtResource("1_7p0v5")
+destroyable_by = ["nothing"]
+destroy_everything = true
 
 [node name="Bat-rigid" type="RigidBody3D" parent="."]
 collision_layer = 4

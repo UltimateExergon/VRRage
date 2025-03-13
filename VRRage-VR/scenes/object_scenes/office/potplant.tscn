@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=4 uid="uid://br4e21qve0e7b"]
 
 [ext_resource type="Script" path="res://scripts/office/potplant_pot.gd" id="1_jg17q"]
-[ext_resource type="PackedScene" uid="uid://bbfgwxjxqfsi6" path="res://assets/models/office/blendfiles/potplant_pot_kaputt.blend" id="2_056lr"]
+[ext_resource type="PackedScene" uid="uid://bbfgwxjxqfsi6" path="res://assets/models/office/blendfiles/potplant_pot_kaputt.blend" id="2_5igiw"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="3_vl2uu"]
 [ext_resource type="Texture2D" uid="uid://bbwpd4kksiabc" path="res://assets/textures/leaf_particle_test.png" id="4_2jsc1"]
 [ext_resource type="Texture2D" uid="uid://b2ktwd8h04qjd" path="res://assets/materials/dirt/red_laterite_soil_stones_diff_1k.jpg" id="4_ddx55"]
@@ -193,7 +193,7 @@ material = SubResource("StandardMaterial3D_4ruvc")
 
 [node name="pot" type="Node3D"]
 script = ExtResource("1_jg17q")
-fragmented = ExtResource("2_056lr")
+fragmented = ExtResource("2_5igiw")
 dropID = "stick"
 score_points = 150
 
@@ -229,6 +229,7 @@ hand = 1
 [node name="leaves" type="Node3D" parent="potplant_pot-rigid"]
 script = ExtResource("5_h114m")
 hand_destruction = true
+score_points = 50
 
 [node name="potplant_leaves-rigid" type="RigidBody3D" parent="potplant_pot-rigid/leaves"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.82376, 0)

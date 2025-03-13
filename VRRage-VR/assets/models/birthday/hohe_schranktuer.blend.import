@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ckvman4ca1hkn"
-path="res://.godot/imported/gabel.blend-898ba61583b1edfc80a40209a7a14b99.scn"
+uid="uid://2ah8xe3u8rgs"
+path="res://.godot/imported/hohe_schranktuer.blend-7c3401b81f3a4f627f4f30c2e1c62033.scn"
 
 [deps]
 
-source_file="res://assets/models/birthday/gabel.blend"
-dest_files=["res://.godot/imported/gabel.blend-898ba61583b1edfc80a40209a7a14b99.scn"]
+source_file="res://assets/models/birthday/hohe_schranktuer.blend"
+dest_files=["res://.godot/imported/hohe_schranktuer.blend-7c3401b81f3a4f627f4f30c2e1c62033.scn"]
 
 [params]
 

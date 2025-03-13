@@ -13,4 +13,4 @@ func update_score(score : int, multiplier : float, level_time : float, multiplie
 			
 		self.text += "\n  x" + str(multiplier) + time_left
 		
-	self.text += "\nVerbleibende Zeit: " + str(round(level_time)) + "s"
+	self.text += "\nTime Left: " + str(round(level_time)) + "s"

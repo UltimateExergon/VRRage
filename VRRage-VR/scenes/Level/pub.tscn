@@ -845,6 +845,7 @@ points = PackedVector3Array(-0.000160694, -0.0743965, 0.274434, -0.0352745, -0.0
 [node name="pub" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.59474, 0.0505797, -4.50883)
 script = ExtResource("1_bomn3")
+start_pos = Vector3(5, 0, 3)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.835088, 0.550116, 0, -0.550116, 0.835088, -2.38747, 2.60028, 4.43756)
@@ -1243,12 +1244,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.429, 0.00816023, -3.51227)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.90866, 1, -1.08451)
 
 [node name="crystal glass" parent="CrystalGlassCollection" instance=ExtResource("38_yuga7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0718831, 0)
 
 [node name="crystal glass2" parent="CrystalGlassCollection" instance=ExtResource("38_yuga7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.226154, 0, -0.056437)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.226154, 0.083721, -0.056437)
 
 [node name="crystal glass3" parent="CrystalGlassCollection" instance=ExtResource("38_yuga7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0242558, 0, -0.186711)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0242558, 0.0547428, -0.186711)
 
 [node name="crystal glass4" parent="CrystalGlassCollection" instance=ExtResource("38_yuga7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12307, 0, -0.0712733)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12307, 0.0575359, -0.0712733)

@@ -101,6 +101,7 @@ fragmented = ExtResource("2_unh4c")
 
 [node name="bild-rigid" type="RigidBody3D" parent="."]
 transform = Transform3D(0.00431252, -0.814557, -0.580068, 2.98023e-08, 0.580073, -0.814564, 0.999991, 0.0035128, 0.00250161, 0, 0, 0)
+can_sleep = false
 script = ExtResource("3_ufld2")
 objectID = "bilderrahmen"
 

@@ -32,6 +32,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6458, 0)
 
 [node name="LoadingLabel" type="Label3D" parent="XRCamera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.04325)
+visible = false
 text = "LOADING"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XRCamera3D/LoadingLabel"]
@@ -49,7 +50,7 @@ grip_action = "trigger"
 pickup_axis_action = "trigger_click"
 action_button_action = "ax_button"
 ranged_enable = false
-ranged_distance = 6.0
+ranged_distance = 7.0
 
 [node name="SpeedAndCollisionDetection" type="CharacterBody3D" parent="LeftHand/LeftHand" groups=["hand"]]
 collision_layer = 2
@@ -71,13 +72,13 @@ teleport_button_action = "primary"
 rotation_action = ""
 player_radius = 0.2
 collision_mask = 1019
-valid_teleport_mask = 4294967287
+valid_teleport_mask = 4294967283
 
 [node name="FunctionPickup" parent="RightHand/RightHand" instance=ExtResource("2_a6x7t")]
 pickup_axis_action = "trigger_click"
 action_button_action = "ax_button"
 ranged_enable = false
-ranged_distance = 6.0
+ranged_distance = 7.0
 
 [node name="SpeedAndCollisionDetection" type="CharacterBody3D" parent="RightHand/RightHand" groups=["hand"]]
 collision_layer = 2

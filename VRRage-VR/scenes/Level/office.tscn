@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://caytk8kmociio"]
+[gd_scene load_steps=32 format=3 uid="uid://caytk8kmociio"]
 
 [ext_resource type="Script" path="res://scripts/office/office_level.gd" id="1_5hv1r"]
 [ext_resource type="PackedScene" uid="uid://brr88ibcpmb4j" path="res://scenes/teleporter.tscn" id="3_bde34"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://cb4qko0wg71hv" path="res://scenes/object_scenes/office/boss_dummy.tscn" id="25_cttgv"]
 [ext_resource type="PackedScene" uid="uid://b5ql6d1u6vke7" path="res://scenes/object_scenes/office/safe.tscn" id="28_j7iyh"]
 [ext_resource type="PackedScene" uid="uid://b4a74p1etpiom" path="res://scenes/object_scenes/office/jalousie.tscn" id="28_tgfvg"]
+[ext_resource type="ArrayOccluder3D" uid="uid://c8abspnlj5o6x" path="res://scenes/Level/office.occ" id="30_hlrxk"]
 
 [sub_resource type="Environment" id="Environment_eolnp"]
 background_mode = 1
@@ -61,7 +62,7 @@ transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 5.14507, 2.73635, -0
 visible = false
 
 [node name="Score" parent="." instance=ExtResource("4_ndelg")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.0048262, 3.40861, -4.76005)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0048262, 3.07452, -4.76005)
 text = "Score: 0  
 x1.0"
 show_multiplier = true
@@ -304,6 +305,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.814, 2.149, -9.85662)
 
 [node name="jalousie7" parent="jalousien" instance=ExtResource("28_tgfvg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.814, 2.149, -9.86374)
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("30_hlrxk")
 
 [editable path="room"]
 [editable path="mainroom/whiteboard"]
