@@ -13,4 +13,11 @@ func _ready():
 func set_alert_color():
 	print("CHANGING LIGHT COLORS")
 	world_environment.set_bg_color(alert_background_color)
+	change_levelMusic()
+	
+func change_levelMusic():
+	musicPlayer.stop()
+	musicPlayer.stream = Globals.office_redlight_music
+	musicPlayer.volume_db = Globals.MusicVolumeDB
+	musicPlayer.start()
 	
