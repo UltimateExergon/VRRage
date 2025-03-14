@@ -38,6 +38,7 @@ var levelTimer : Timer
 
 var levelTimerAlertSound : AudioStreamPlayer
 var craftingSound : AudioStreamPlayer
+var multiplikatorSound : AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -115,6 +116,13 @@ func add_levelTimerAlertSound():
 	levelTimerAlertSound.volume_db = Globals.volumeDB - 5.0
 	levelTimerAlertSound.autoplay = false
 	add_child(levelTimerAlertSound)
+	
+func add_multiplikatorSound():
+	multiplikatorSound = AudioStreamPlayer.new()
+	multiplikatorSound.stream = Globals.multiplikatorStartSound
+	multiplikatorSound.volume_db = Globals.volumeDB - 5.0
+	multiplikatorSound.autoplay = false
+	add_child(multiplikatorSound)
 	
 func add_craftingSound():
 	craftingSound = AudioStreamPlayer.new()
@@ -224,6 +232,8 @@ func teleport_player():
 	
 func set_timed_multiplier(multiplier : float, m_time : float):
 	#print("SCORE MULTIPLIER SET TO: ", multiplier, " FOR: ", m_time, " SECONDS")
+	multiplikatorSound.stream = Globals.multiplikatorStartSound
+	multiplikatorSound.play()
 	score_multiplier = multiplier
 	score_label.update_score(current_score, score_multiplier, levelTimer.time_left)
 	multiplier_timer.start(m_time)
@@ -285,6 +295,8 @@ func _on_teleport_timer_timeout():
 	can_teleport = true
 	
 func _on_multiplier_timer_timeout():
+	multiplikatorSound.stream = Globals.multiplikatorEndSound
+	multiplikatorSound.play()
 	score_multiplier = 1.0
 	#print("SCORE MULTIPLIER RESET TO: ", score_multiplier)
 	
