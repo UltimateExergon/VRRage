@@ -56,6 +56,7 @@ label_text = "Level Auswahl"
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 5.14507, 2.73635, -0.354326)
 
 [node name="StaticBody3D" parent="room/office_room" index="0" groups=["room"]]
+collision_mask = 65537
 
 [node name="CollisionShape3D" parent="room/office_room/StaticBody3D" index="0"]
 visible = false

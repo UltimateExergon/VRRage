@@ -100,7 +100,6 @@ destroy_everything = true
 
 [node name="Pickaxe-rigid" type="RigidBody3D" parent="."]
 script = ExtResource("1_76d2k")
-objectID = "pickaxe"
 
 [node name="Pickaxe-rigid" type="MeshInstance3D" parent="Pickaxe-rigid"]
 mesh = SubResource("ArrayMesh_h3wp5")

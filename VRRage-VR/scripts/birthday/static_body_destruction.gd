@@ -1,6 +1,7 @@
 extends Destruction
 
 func destroy() -> void:
+	print("HIER")
 	if can_destroy:
 		soundPlayer.play()
 
@@ -8,10 +9,7 @@ func destroy() -> void:
 		main_node.add_active_shard(shard_container)
 
 		start_shards(Vector3.ZERO)
-
-		for i in self.get_child(0).get_children():
-			if i is MeshInstance3D or i is CollisionShape3D or i is CollisionPolygon3D:
-				i.visible = false
+		self.get_child(0).visible = false
 
 		add_drop(Vector3.ZERO)
 		emit_Particles()

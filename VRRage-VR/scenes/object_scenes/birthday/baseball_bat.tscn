@@ -130,7 +130,6 @@ contact_monitor = true
 max_contacts_reported = 250
 angular_damp = 10.0
 script = ExtResource("2_4w2l0")
-objectID = "baseball_bat"
 
 [node name="Bat-rigid" type="MeshInstance3D" parent="Bat-rigid"]
 mesh = SubResource("ArrayMesh_xrhmj")

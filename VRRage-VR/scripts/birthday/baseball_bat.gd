@@ -12,5 +12,6 @@ func _on_body_entered(body):
 	
 	if body is StaticBody3D and destruction_node is Destruction:
 		if destruction_node.destroyable_by.has("baseball_bat"):
+			print(body)
 			if (linearSpeed > 4) or (angularSpeed > 20):
 				destruction_node.destroy()
