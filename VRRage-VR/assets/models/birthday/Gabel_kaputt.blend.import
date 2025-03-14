@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b6tkcbbj8rbbx"
-path="res://.godot/imported/gabel_kaputt.blend-78517ccfac283af74acb84818ba7087a.scn"
+path="res://.godot/imported/Gabel_kaputt.blend-b141e7c81416c5a6c6db495bbb667706.scn"
 
 [deps]
 
-source_file="res://assets/models/birthday/gabel_kaputt.blend"
-dest_files=["res://.godot/imported/gabel_kaputt.blend-78517ccfac283af74acb84818ba7087a.scn"]
+source_file="res://assets/models/birthday/Gabel_kaputt.blend"
+dest_files=["res://.godot/imported/Gabel_kaputt.blend-b141e7c81416c5a6c6db495bbb667706.scn"]
 
 [params]
 

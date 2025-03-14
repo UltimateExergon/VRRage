@@ -68,6 +68,7 @@ func _ready():
 		
 		add_teleportTimer()
 		add_multiplierTimer()
+		add_multiplikatorSound()
 		add_loadingScreenTimer()
 		add_levelTimer()
 		add_levelTimerAlertSound()
