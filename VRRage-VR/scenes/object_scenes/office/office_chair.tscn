@@ -109,7 +109,6 @@ points = PackedVector3Array(-1, -0.100113, -0.800165, -1, -0.100113, 0.799844, -
 script = ExtResource("1_7llm2")
 fragmented = ExtResource("2_dphhb")
 score_points = 150
-destroy_everything = true
 
 [node name="office_chair-rigid" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0301425, 0.634283, 0)

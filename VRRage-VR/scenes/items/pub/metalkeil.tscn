@@ -60,6 +60,7 @@ points = PackedVector3Array(-3.8743e-05, 0.136277, 0.0280592, 0.166255, 0.007502
 
 [node name="Metalkeil-rigid" type="RigidBody3D" parent="."]
 script = ExtResource("1_rp5po")
+objectID = "metalkeil"
 
 [node name="Metalkeil-rigid" type="MeshInstance3D" parent="Metalkeil-rigid"]
 mesh = SubResource("ArrayMesh_quykx")

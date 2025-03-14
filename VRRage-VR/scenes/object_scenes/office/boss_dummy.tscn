@@ -125,7 +125,6 @@ fragmented = ExtResource("2_0tlqr")
 hand_destruction = true
 hits_left = 2
 dropID = "safe_key"
-destroy_everything = true
 
 [node name="bossDummy-rigid" type="RigidBody3D" parent="."]
 collision_layer = 8

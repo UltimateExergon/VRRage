@@ -4,9 +4,11 @@
 [ext_resource type="FontFile" uid="uid://c5j0gq17ej1w6" path="res://assets/fonts/Montserrat-Medium.ttf" id="2_n6m2a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a5j3y"]
+resource_local_to_scene = true
 albedo_color = Color(0.0603, 0.67, 0.0603, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_42cru"]
+resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_a5j3y")
 size = Vector3(2, 0.5, 2)
 

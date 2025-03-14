@@ -19,5 +19,5 @@ func change_levelMusic():
 	musicPlayer.stop()
 	musicPlayer.stream = Globals.office_redlight_music
 	musicPlayer.volume_db = Globals.MusicVolumeDB
-	musicPlayer.start()
+	musicPlayer.play()
 	

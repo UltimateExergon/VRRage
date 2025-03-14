@@ -51,8 +51,9 @@ points = PackedVector3Array(0.136761, -0.780814, 0.746624, 0.023085, 0.8, 0.1038
 [node name="fusebox" type="Node3D"]
 script = ExtResource("1_nbibd")
 fragmented = ExtResource("2_s1mjl")
+destroyable_by = ["broom"]
+hand_destruction = true
 score_points = 500
-destroy_everything = true
 
 [node name="fusebox-rigid" type="RigidBody3D" parent="."]
 collision_layer = 8

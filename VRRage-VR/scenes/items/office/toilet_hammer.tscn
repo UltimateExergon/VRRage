@@ -111,6 +111,7 @@ points = PackedVector3Array(-0.5, -0.450217, 0, -0.490407, -0.450217, -0.097592,
 script = ExtResource("1_vjyrr")
 fragmented = ExtResource("2_m0qjl")
 hits_left = 4
+destroy_everything = true
 
 [node name="toilet_hammer-rigid" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04282, 0)

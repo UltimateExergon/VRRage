@@ -50,7 +50,7 @@ grip_action = "trigger"
 pickup_axis_action = "trigger_click"
 action_button_action = "ax_button"
 ranged_enable = false
-ranged_distance = 7.0
+ranged_distance = 8.0
 
 [node name="SpeedAndCollisionDetection" type="CharacterBody3D" parent="LeftHand/LeftHand" groups=["hand"]]
 collision_layer = 2
@@ -78,7 +78,7 @@ valid_teleport_mask = 4294967283
 pickup_axis_action = "trigger_click"
 action_button_action = "ax_button"
 ranged_enable = false
-ranged_distance = 7.0
+ranged_distance = 8.0
 
 [node name="SpeedAndCollisionDetection" type="CharacterBody3D" parent="RightHand/RightHand" groups=["hand"]]
 collision_layer = 2

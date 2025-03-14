@@ -292,17 +292,18 @@ func _on_body_entered(body: Node):
 	
 	if rigidBody.got_picked_up == false and is_destructible == true:
 		if enteringRigidBody and body.get_parent() is Destruction:
-			enteringLinearSpeed = enteringRigidBody.linear_velocity.length()
-			enteringAngularSpeed = enteringRigidBody.angular_velocity.length()
-			if (enteringLinearSpeed > 4) or (enteringAngularSpeed > 20):
+			enteringLinearSpeed = abs(enteringRigidBody.linear_velocity.length())
+			enteringAngularSpeed = abs(enteringRigidBody.angular_velocity.length())
+
+			if enteringLinearSpeed > 3 or enteringAngularSpeed > 15:
 				if destroyable_by.size() > 0:
 					if check_destroyable(body):
 						check_hits_left()
 				if body.get_parent().destroy_everything:
 					check_hits_left()
-		elif body.is_in_group("hand") and hand_destruction == true and destroyable_by.size() == 0:
+		if body.is_in_group("hand") and hand_destruction == true:
 			check_hits_left()
-		elif rigidBody.linear_velocity.length() > 2 and body.is_in_group("room") and destroyable_by.size() == 0:
+		if rigidBody.linear_velocity.length() > 2 and body.is_in_group("room") and destroyable_by.size() == 0:
 			check_hits_left()
 
 func check_hits_left():

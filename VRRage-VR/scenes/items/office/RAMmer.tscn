@@ -141,6 +141,7 @@ points = PackedVector3Array(0.0299922, 0.883562, 0.3, 0.0259397, 0.909981, 0.259
 script = ExtResource("1_7tvll")
 fragmented = ExtResource("2_vko2c")
 hits_left = 3
+destroy_everything = true
 
 [node name="RAMmer-rigid" type="RigidBody3D" parent="."]
 collision_layer = 4

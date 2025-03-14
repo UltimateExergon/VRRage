@@ -80,7 +80,6 @@ points = PackedVector3Array(0.25, 0.0487789, 0.487764, 0.243882, 0.0487789, 0.5,
 [node name="keyboard" type="Node3D"]
 script = ExtResource("1_iw203")
 fragmented = ExtResource("2_4m0p5")
-destroy_everything = true
 
 [node name="keyboard-rigid" type="RigidBody3D" parent="."]
 collision_layer = 4

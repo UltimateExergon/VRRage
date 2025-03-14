@@ -81,7 +81,6 @@ script = ExtResource("1_yrdjk")
 fragmented = ExtResource("2_m8cem")
 dropID = "RAM"
 score_points = 200
-destroy_everything = true
 
 [node name="computer-rigid" type="RigidBody3D" parent="."]
 collision_layer = 4

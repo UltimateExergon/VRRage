@@ -177,6 +177,7 @@ func load_level(levelname : String) -> void:
 		
 func switch_level():
 	print("Switching to ", current_level)
+	levelTimerAlertSound.stop()
 	delete_oldLevel()
 	
 	current_score = 0

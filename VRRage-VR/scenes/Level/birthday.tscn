@@ -131,7 +131,7 @@ resource_local_to_scene = true
 
 [node name="birthday" type="Node3D"]
 script = ExtResource("1_14gsh")
-level_time = 100.0
+level_time = 80.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.116255, 0.993219, 0, -0.993219, 0.116255, 0, 9.25763, -0.97809)
@@ -570,7 +570,7 @@ mesh = SubResource("ImmediateMesh_dngqa")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.11058, 1.01846, -2.06472)
 
 [node name="teller2" parent="Teller" instance=ExtResource("15_5qoog")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.11058, 1.03688, -1.17465)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.11058, 1.06068, -1.17465)
 
 [node name="teller3" parent="Teller" instance=ExtResource("15_5qoog")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.11058, 1.02049, -0.195787)
@@ -787,9 +787,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0356, 1.12278, 2.83335)
 [node name="plate" parent="." instance=ExtResource("27_jnylm")]
 transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, -9.79235, 0.987745, 0.43034)
 
-[node name="CollisionShape3D" parent="plate/plate-rigid" index="1"]
-disabled = true
-
 [node name="cake" parent="." instance=ExtResource("29_dwfis")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.79688, 1.22533, 0.427566)
 
@@ -851,6 +848,5 @@ transform = Transform3D(0.208014, 0, 0.978126, 0, 1, 0, -0.978126, 0, 0.208014, 
 [editable path="Ballons/ballon29"]
 [editable path="Ballons/ballon30"]
 [editable path="Ballons/ballon31"]
-[editable path="plate"]
 [editable path="decken_lampe"]
 [editable path="decken_lampe2"]

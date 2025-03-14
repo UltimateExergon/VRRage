@@ -30,6 +30,7 @@
 [node name="pub" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0973, 0.0505797, -0.107651)
 script = ExtResource("1_bomn3")
+level_time = 100.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.835088, 0.550116, 0, -0.550116, 0.835088, -2.38747, 2.60028, 4.43756)
@@ -114,7 +115,8 @@ enabled = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.05559, -0.0505797, 2.5697)
 script = ExtResource("14_iobre")
 fragmented = ExtResource("27_6ia8q")
-destroyable_by = ["pickaxe"]
+destroyable_by = ["vorschlaghammer"]
+score_points = 500
 
 [node name="Toilette-rigid" parent="Toilette" index="0"]
 script = ExtResource("6_5hq8l")

@@ -96,7 +96,6 @@ points = PackedVector3Array(0.0280537, 0.377495, 0.1663, -0.0280592, 0.377495, 0
 [node name="pickaxe" type="Node3D"]
 script = ExtResource("1_osaed")
 destroyable_by = ["nothing"]
-destroy_everything = true
 
 [node name="Pickaxe-rigid" type="RigidBody3D" parent="."]
 script = ExtResource("1_76d2k")

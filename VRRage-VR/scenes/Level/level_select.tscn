@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://rynn5wsvtykk"]
+[gd_scene load_steps=11 format=3 uid="uid://rynn5wsvtykk"]
 
 [ext_resource type="PackedScene" uid="uid://brr88ibcpmb4j" path="res://scenes/teleporter.tscn" id="1_n2a6i"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_s1xfp"]
@@ -22,6 +22,14 @@ size = Vector3(15, 0.5, 15)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1syp0"]
 points = PackedVector3Array(-7.5, -0.25, -7.5, -7.5, 0.25, -7.5, 7.5, -0.25, -7.5, -7.5, -0.25, 7.5, -7.5, 0.25, 7.5, 7.5, 0.25, -7.5, 7.5, -0.25, 7.5, 7.5, 0.25, 7.5)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sty0c"]
+albedo_color = Color(0.77, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_355ki"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_sty0c")
+size = Vector3(2, 0.5, 2)
+
 [node name="level_select" type="Node3D"]
 script = ExtResource("1_s1xfp")
 level_music = "level_select_music"
@@ -43,29 +51,29 @@ skeleton = NodePath("../..")
 shape = SubResource("ConvexPolygonShape3D_1syp0")
 
 [node name="Teleporter2" parent="." instance=ExtResource("1_n2a6i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.50972, 0.0447845, -4.69)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.705, 0.01, -4.69)
 teleport_level = "birthday"
 label_text = "Birthday Party"
 
 [node name="Teleporter3" parent="." instance=ExtResource("1_n2a6i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36004, 0.104348, -4.66155)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.727, 0.01, -4.662)
 teleport_level = "office"
 label_text = "Büro"
 
-[node name="Teleporter4" parent="." instance=ExtResource("1_n2a6i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9022, 0.0720582, -4.65982)
-teleport_level = "markt"
-label_text = "Supermarkt"
-
 [node name="Teleporter5" parent="." instance=ExtResource("1_n2a6i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99405, 0.0988855, -4.66867)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.063, 0.01, -4.669)
 teleport_level = "pub"
 label_text = "Bar"
 
 [node name="Teleporter" parent="." instance=ExtResource("1_n2a6i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.117115, 5.37046)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 5.37)
 teleport_level = "exit"
 label_text = "Spiel Beenden"
 
+[node name="MeshInstance3D" parent="Teleporter/StaticBody3D" index="0"]
+mesh = SubResource("BoxMesh_355ki")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.116255, 0.993219, 0, -0.993219, 0.116255, 0, 12.0109, 1.51668)
+
+[editable path="Teleporter"]

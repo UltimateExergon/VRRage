@@ -100,7 +100,7 @@ destroy_everything = true
 
 [node name="Vorschlaghammer-rigid" type="RigidBody3D" parent="."]
 script = ExtResource("2_xl44i")
-objectID = "vorschlag"
+objectID = "vorschlaghammer"
 
 [node name="Vorschlaghammer-rigid" type="MeshInstance3D" parent="Vorschlaghammer-rigid"]
 mesh = SubResource("ArrayMesh_05t20")
