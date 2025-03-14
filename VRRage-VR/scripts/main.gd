@@ -177,7 +177,6 @@ func load_level(levelname : String) -> void:
 		
 func switch_level():
 	print("Switching to ", current_level)
-	print_orphan_nodes()
 	delete_oldLevel()
 	
 	current_score = 0

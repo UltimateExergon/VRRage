@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://dh2xvlylxuguu"]
+[gd_scene load_steps=67 format=3 uid="uid://dh2xvlylxuguu"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_14gsh"]
 [ext_resource type="PackedScene" uid="uid://bxop60htjcqab" path="res://assets/models/birthday/geburtstags_raum.blend" id="2_jqr6m"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dmuejup42y6fa" path="res://scenes/object_scenes/birthday/baseball_bat.tscn" id="3_y7ash"]
 [ext_resource type="PackedScene" uid="uid://bbmagsn1leo2j" path="res://scenes/score.tscn" id="4_keygf"]
 [ext_resource type="PackedScene" uid="uid://bvsl5t1vy0b4h" path="res://assets/models/birthday/ess_tisch.blend" id="5_d3wgx"]
+[ext_resource type="Script" path="res://scripts/birthday/static_body_destruction.gd" id="6_ho4v2"]
+[ext_resource type="PackedScene" uid="uid://b066eqphstert" path="res://assets/models/birthday/ess_tisch_kaputt.blend" id="7_bawmy"]
 [ext_resource type="Script" path="res://scripts/destruction.gd" id="8_vmch5"]
 [ext_resource type="PackedScene" uid="uid://cljbmfl3e6g0d" path="res://assets/models/birthday/hoher_schrank_kaputt.blend" id="9_ad7m5"]
 [ext_resource type="PackedScene" uid="uid://dy77eurx5l5sg" path="res://scenes/object_scenes/birthday/b_stuhl.tscn" id="9_b4et4"]
@@ -17,9 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://uc568oow3oaw" path="res://assets/models/birthday/hohe_schranktuer_kaputt.blend" id="12_1eo7m"]
 [ext_resource type="PackedScene" uid="uid://fbrgatri1yik" path="res://assets/models/birthday/kleiner_schrank.blend" id="12_76e03"]
 [ext_resource type="PackedScene" uid="uid://2ah8xe3u8rgs" path="res://assets/models/birthday/hohe_schranktuer.blend" id="13_m6jgx"]
-[ext_resource type="Script" path="res://scripts/birthday/Schrank.gd" id="13_vmpw6"]
 [ext_resource type="PackedScene" uid="uid://bs4otxurqoot6" path="res://scenes/object_scenes/birthday/teller.tscn" id="15_5qoog"]
-[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="15_n5wql"]
 [ext_resource type="PackedScene" uid="uid://bgip4mn1sxhhc" path="res://assets/models/birthday/kleiner_schrank_kaputt.blend" id="15_wf5pq"]
 [ext_resource type="PackedScene" uid="uid://bdutjwdtbehru" path="res://scenes/items/birthday/messer.tscn" id="16_uj1g8"]
 [ext_resource type="PackedScene" uid="uid://dep2vqeo5vyn5" path="res://scenes/object_scenes/birthday/geschenk_normal.tscn" id="19_4v3na"]
@@ -36,219 +36,99 @@
 
 [sub_resource type="Environment" id="Environment_tgb2i"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eo086"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s57uo"]
 resource_local_to_scene = true
 roughness = 0.2
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_odvnn"]
 resource_local_to_scene = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1jdky"]
-resource_local_to_scene = true
-roughness = 0.2
-
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_lyn0s"]
 resource_local_to_scene = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bft66"]
-resource_local_to_scene = true
-roughness = 0.2
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_kp0s7"]
 resource_local_to_scene = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yox6b"]
-resource_local_to_scene = true
-roughness = 0.2
-
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_8mk45"]
 resource_local_to_scene = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_018j0"]
-resource_local_to_scene = true
-roughness = 0.2
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_kcw4p"]
 resource_local_to_scene = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ps38"]
-resource_local_to_scene = true
-roughness = 0.2
-
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_5k8cx"]
 resource_local_to_scene = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ljr0v"]
-resource_local_to_scene = true
-roughness = 0.2
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_mpfao"]
 resource_local_to_scene = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vdubt"]
-resource_local_to_scene = true
-roughness = 0.2
-
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_j4kpb"]
 resource_local_to_scene = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hgwle"]
-resource_local_to_scene = true
-roughness = 0.2
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_i01yk"]
 resource_local_to_scene = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e0q1u"]
-resource_local_to_scene = true
-roughness = 0.2
-
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_1y45k"]
 resource_local_to_scene = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wn6b3"]
-resource_local_to_scene = true
-roughness = 0.2
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_cppib"]
 resource_local_to_scene = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kxm81"]
-resource_local_to_scene = true
-roughness = 0.2
-
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_ie42y"]
 resource_local_to_scene = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1feg1"]
-resource_local_to_scene = true
-roughness = 0.2
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_8unf5"]
 resource_local_to_scene = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tijsx"]
-resource_local_to_scene = true
-roughness = 0.2
-
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_gnhll"]
 resource_local_to_scene = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pphv4"]
-resource_local_to_scene = true
-roughness = 0.2
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_3euju"]
 resource_local_to_scene = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dp5gi"]
-resource_local_to_scene = true
-roughness = 0.2
-
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_en2q1"]
 resource_local_to_scene = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6nqkn"]
-resource_local_to_scene = true
-roughness = 0.2
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_30lyx"]
 resource_local_to_scene = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cp5qp"]
-resource_local_to_scene = true
-roughness = 0.2
-
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_2t7uo"]
 resource_local_to_scene = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6pr3e"]
-resource_local_to_scene = true
-roughness = 0.2
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_cff0d"]
 resource_local_to_scene = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y4ebn"]
-resource_local_to_scene = true
-roughness = 0.2
-
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_hkext"]
 resource_local_to_scene = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lcxxx"]
-resource_local_to_scene = true
-roughness = 0.2
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_v1pkd"]
 resource_local_to_scene = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5pxm6"]
-resource_local_to_scene = true
-roughness = 0.2
-
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_8roj4"]
 resource_local_to_scene = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l6vmb"]
-resource_local_to_scene = true
-roughness = 0.2
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_0gq26"]
 resource_local_to_scene = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tjpbh"]
-resource_local_to_scene = true
-roughness = 0.2
-
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_mnh3m"]
 resource_local_to_scene = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wjvhs"]
-resource_local_to_scene = true
-roughness = 0.2
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_leitk"]
 resource_local_to_scene = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_if32q"]
-resource_local_to_scene = true
-roughness = 0.2
-
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_6bfa4"]
 resource_local_to_scene = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5wbpw"]
-resource_local_to_scene = true
-roughness = 0.2
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_6kmd0"]
 resource_local_to_scene = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wxl5h"]
-resource_local_to_scene = true
-roughness = 0.2
-
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_4jt5s"]
 resource_local_to_scene = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3j00n"]
-resource_local_to_scene = true
-roughness = 0.2
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_v34px"]
 resource_local_to_scene = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lr3bk"]
-resource_local_to_scene = true
-roughness = 0.2
-
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_c53a8"]
 resource_local_to_scene = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_63231"]
-resource_local_to_scene = true
-roughness = 0.2
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_dngqa"]
 resource_local_to_scene = true
@@ -318,48 +198,39 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.37
 
 [node name="ess_tisch" parent="." instance=ExtResource("5_d3wgx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.73944, 0.000656247, 2.22748)
+script = ExtResource("6_ho4v2")
+fragmented = ExtResource("7_bawmy")
+destroyable_by = ["baseball_bat"]
+score_points = 300
+explosion_power = 3.0
 
 [node name="StaticBody3D" parent="ess_tisch/Table" index="0" groups=["room"]]
 collision_layer = 8
 
 [node name="geschenk_tisch" parent="." instance=ExtResource("9_n0ex6")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.49219, 0.012147, 3.86389)
-script = ExtResource("8_vmch5")
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.2772, 0.012147, 3.86389)
+script = ExtResource("6_ho4v2")
 fragmented = ExtResource("10_jp2vb")
 destroyable_by = ["baseball_bat"]
 score_points = 300
+explosion_power = 3.0
 
-[node name="Table-rigid" parent="geschenk_tisch" index="0" groups=["room"]]
+[node name="StaticBody3D" parent="geschenk_tisch/Table" index="0" groups=["room"]]
 collision_layer = 8
-collision_mask = 13
-lock_rotation = true
-script = ExtResource("15_n5wql")
-objectID = "geschenk_tisch"
-isStatic = true
-enabled = false
-
-[node name="Table-rigid" parent="geschenk_tisch/Table-rigid" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38419e-07, 0, -0.785514)
-
-[node name="CollisionShape3D" parent="geschenk_tisch/Table-rigid" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.786)
 
 [node name="hoher_schrank" parent="." instance=ExtResource("10_43ohg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.927, 0, 0)
-script = ExtResource("8_vmch5")
+script = ExtResource("6_ho4v2")
 fragmented = ExtResource("9_ad7m5")
 destroyable_by = ["baseball_bat"]
 score_points = 300
+explosion_power = 3.0
 
-[node name="Schrank-rigid" parent="hoher_schrank" index="0" groups=["room"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.155)
+[node name="Schrank" parent="hoher_schrank" index="0" groups=["room"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0114603, 0, -4.15601)
+
+[node name="StaticBody3D" parent="hoher_schrank/Schrank" index="0"]
 collision_layer = 8
-collision_mask = 13
-lock_rotation = true
-script = ExtResource("13_vmpw6")
-objectID = "hoher_schrank"
-isStatic = true
-enabled = false
 
 [node name="hohe_schranktuer" parent="." instance=ExtResource("13_m6jgx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37303, 0, 0.0448534)
@@ -382,19 +253,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00426483)
 
 [node name="kleiner_schrank" parent="." instance=ExtResource("12_76e03")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.324228, 0, -4.11299)
-script = ExtResource("8_vmch5")
+script = ExtResource("6_ho4v2")
 fragmented = ExtResource("15_wf5pq")
 destroyable_by = ["baseball_bat"]
 score_points = 300
+explosion_power = 3.0
 
-[node name="Schrank-rigid" parent="kleiner_schrank" index="0" groups=["room"]]
+[node name="StaticBody3D" parent="kleiner_schrank/Schrank" index="0" groups=["room"]]
 collision_layer = 8
-collision_mask = 13
-lock_rotation = true
-script = ExtResource("15_n5wql")
-objectID = "kleiner_schrank"
-isStatic = true
-enabled = false
 
 [node name="Ballons" type="Node3D" parent="."]
 transform = Transform3D(0.966953, 0.254956, 0, -0.23403, 0.887586, -0.396763, -0.101157, 0.383651, 0.917921, -4.48884, -2.38419e-07, -3.88658)
@@ -403,7 +269,7 @@ transform = Transform3D(0.966953, 0.254956, 0, -0.23403, 0.887586, -0.396763, -0
 transform = Transform3D(0.9087, -0.405008, -0.101157, 0.41124, 0.826858, 0.383651, -0.0717394, -0.390223, 0.917921, -0.0275831, 0.00949717, 0.0375154)
 
 [node name="Ballon-rigid" parent="Ballons/ballon/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_eo086")
+surface_material_override/0 = SubResource("StandardMaterial3D_s57uo")
 color = Color(0.796331, 0.322796, 0.868338, 1)
 
 [node name="String" parent="Ballons/ballon" index="2"]
@@ -413,7 +279,7 @@ mesh = SubResource("ImmediateMesh_odvnn")
 transform = Transform3D(0.98463, -0.142371, -0.101157, 0.170644, 0.907575, 0.383651, 0.0371867, -0.395016, 0.917921, -0.0715981, -0.0128956, 0.0133832)
 
 [node name="Ballon-rigid" parent="Ballons/ballon2/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_1jdky")
+surface_material_override/0 = null
 color = Color(0.993409, 0.000213893, 0.843332, 1)
 
 [node name="String" parent="Ballons/ballon2" index="2"]
@@ -423,7 +289,7 @@ mesh = SubResource("ImmediateMesh_lyn0s")
 transform = Transform3D(0.966952, -0.253872, -0.0234882, 0.254956, 0.962841, 0.0890819, -2.98023e-07, -0.0921264, 0.995748, -0.0317822, 0.0327182, 0.0919387)
 
 [node name="Ballon-rigid" parent="Ballons/ballon3/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_bft66")
+surface_material_override/0 = null
 color = Color(0.517225, 0.641893, 0.138183, 1)
 
 [node name="String" parent="Ballons/ballon3" index="2"]
@@ -433,7 +299,7 @@ mesh = SubResource("ImmediateMesh_kp0s7")
 transform = Transform3D(0.993605, 0.0501674, -0.101157, -0.007566, 0.923448, 0.383651, 0.11266, -0.380432, 0.917921, 0.0494041, 0.025763, 0.0284922)
 
 [node name="Ballon-rigid" parent="Ballons/ballon4/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_yox6b")
+surface_material_override/0 = null
 color = Color(0.224937, 0.76365, 0.669288, 1)
 
 [node name="String" parent="Ballons/ballon4" index="2"]
@@ -443,7 +309,7 @@ mesh = SubResource("ImmediateMesh_8mk45")
 transform = Transform3D(1, 0, 7.45058e-09, -1.11759e-08, 1, 0, -7.45058e-09, 0, 1, 0, 0, 0)
 
 [node name="Ballon-rigid" parent="Ballons/ballon5/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_018j0")
+surface_material_override/0 = null
 color = Color(0.899801, 0, 0.183142, 1)
 
 [node name="String" parent="Ballons/ballon5" index="2"]
@@ -453,7 +319,7 @@ mesh = SubResource("ImmediateMesh_kcw4p")
 transform = Transform3D(0.966952, -0.234029, -0.101157, 0.254956, 0.887586, 0.383651, -2.98023e-07, -0.396763, 0.917921, 6.04618, 1.60569, 0.0257068)
 
 [node name="Ballon-rigid" parent="Ballons/ballon6/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_2ps38")
+surface_material_override/0 = null
 color = Color(0.836324, 0.460804, 0.923054, 1)
 
 [node name="String" parent="Ballons/ballon6" index="2"]
@@ -463,7 +329,7 @@ mesh = SubResource("ImmediateMesh_5k8cx")
 transform = Transform3D(0.992366, -0.0705339, -0.101157, 0.104325, 0.917567, 0.383651, 0.0657577, -0.391276, 0.917921, 6.16316, 1.62947, 0.0098989)
 
 [node name="Ballon-rigid" parent="Ballons/ballon7/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_ljr0v")
+surface_material_override/0 = null
 color = Color(0.301858, 0.735115, 0.846061, 1)
 
 [node name="String" parent="Ballons/ballon7" index="2"]
@@ -473,7 +339,7 @@ mesh = SubResource("ImmediateMesh_mpfao")
 transform = Transform3D(0.913197, -0.376292, -0.156447, 0.391471, 0.703344, 0.593345, -0.113235, -0.603085, 0.789599, 6.08375, 1.62779, 0.0529883)
 
 [node name="Ballon-rigid" parent="Ballons/ballon8/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_vdubt")
+surface_material_override/0 = null
 color = Color(0.843863, 0.39927, 0.342497, 1)
 
 [node name="String" parent="Ballons/ballon8" index="2"]
@@ -483,7 +349,7 @@ mesh = SubResource("ImmediateMesh_j4kpb")
 transform = Transform3D(0.970099, -0.238735, -0.0437455, 0.242648, 0.958045, 0.15255, 0.00549091, -0.158603, 0.987327, 5.9471, 1.62996, 0.138449)
 
 [node name="Ballon-rigid" parent="Ballons/ballon9/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_hgwle")
+surface_material_override/0 = null
 color = Color(0.484881, 0.813217, 0, 1)
 
 [node name="String" parent="Ballons/ballon9" index="2"]
@@ -493,7 +359,7 @@ mesh = SubResource("ImmediateMesh_i01yk")
 transform = Transform3D(0.864312, -0.500012, -0.0543312, 0.497077, 0.832744, 0.243829, -0.0766737, -0.237751, 0.968295, 6.07843, 1.62541, 0.0507891)
 
 [node name="Ballon-rigid" parent="Ballons/ballon10/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_e0q1u")
+surface_material_override/0 = null
 color = Color(0.421661, 0.695769, 1, 1)
 
 [node name="String" parent="Ballons/ballon10" index="2"]
@@ -503,7 +369,7 @@ mesh = SubResource("ImmediateMesh_1y45k")
 transform = Transform3D(0.966952, -0.234029, -0.101157, 0.254956, 0.887586, 0.383651, -2.98023e-07, -0.396763, 0.917921, 3.15255, 4.12392, 7.36596)
 
 [node name="Ballon-rigid" parent="Ballons/ballon11/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_wn6b3")
+surface_material_override/0 = null
 color = Color(0.892684, 0.598141, 0, 1)
 
 [node name="String" parent="Ballons/ballon11" index="2"]
@@ -513,7 +379,7 @@ mesh = SubResource("ImmediateMesh_cppib")
 transform = Transform3D(0.895752, -0.444141, 0.0191446, 0.433054, 0.881503, 0.188195, -0.100461, -0.160285, 0.981945, 3.17118, 4.09187, 7.28328)
 
 [node name="Ballon-rigid" parent="Ballons/ballon12/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_kxm81")
+surface_material_override/0 = null
 color = Color(0.654902, 0.909804, 0, 1)
 
 [node name="String" parent="Ballons/ballon12" index="2"]
@@ -523,7 +389,7 @@ mesh = SubResource("ImmediateMesh_ie42y")
 transform = Transform3D(0.994649, 0.0129678, -0.102493, 0.019542, 0.950564, 0.309913, 0.101445, -0.310258, 0.945224, 3.18459, 4.12369, 7.34656)
 
 [node name="Ballon-rigid" parent="Ballons/ballon13/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_1feg1")
+surface_material_override/0 = null
 color = Color(0, 1, 1, 1)
 
 [node name="String" parent="Ballons/ballon13" index="2"]
@@ -533,7 +399,7 @@ mesh = SubResource("ImmediateMesh_8unf5")
 transform = Transform3D(0.994315, -0.00622793, -0.106295, 0.0698125, 0.791903, 0.606644, 0.0803972, -0.610616, 0.787835, 3.01996, 4.03638, 7.23508)
 
 [node name="Ballon-rigid" parent="Ballons/ballon14/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_tijsx")
+surface_material_override/0 = null
 color = Color(1, 1, 0, 1)
 
 [node name="String" parent="Ballons/ballon14" index="2"]
@@ -543,7 +409,7 @@ mesh = SubResource("ImmediateMesh_gnhll")
 transform = Transform3D(0.885388, -0.444418, -0.136306, 0.450721, 0.748989, 0.485662, -0.113745, -0.491436, 0.863454, 3.18122, 4.13636, 7.37688)
 
 [node name="Ballon-rigid" parent="Ballons/ballon15/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_pphv4")
+surface_material_override/0 = null
 color = Color(0, 0.972549, 0, 1)
 
 [node name="String" parent="Ballons/ballon15" index="2"]
@@ -553,7 +419,7 @@ mesh = SubResource("ImmediateMesh_3euju")
 transform = Transform3D(0.966952, -0.234029, -0.101157, 0.254956, 0.887586, 0.383651, -2.91065e-07, -0.396763, 0.917921, -2.92428, 3.03331, 8.51061)
 
 [node name="Ballon-rigid" parent="Ballons/ballon16/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_dp5gi")
+surface_material_override/0 = null
 color = Color(0.975664, 4.57242e-06, 1.54018e-06, 1)
 
 [node name="String" parent="Ballons/ballon16" index="2"]
@@ -563,7 +429,7 @@ mesh = SubResource("ImmediateMesh_en2q1")
 transform = Transform3D(0.966952, -0.192942, -0.166661, 0.254956, 0.731758, 0.632082, -4.39257e-07, -0.653684, 0.756767, -2.92036, 3.03139, 8.50398)
 
 [node name="Ballon-rigid" parent="Ballons/ballon17/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_6nqkn")
+surface_material_override/0 = null
 color = Color(0, 0.0784314, 0.411765, 1)
 
 [node name="String" parent="Ballons/ballon17" index="2"]
@@ -573,7 +439,7 @@ mesh = SubResource("ImmediateMesh_30lyx")
 transform = Transform3D(0.862202, -0.49636, -0.101157, 0.494137, 0.780154, 0.383651, -0.111511, -0.38077, 0.917921, -2.9944, 2.98495, 8.44378)
 
 [node name="Ballon-rigid" parent="Ballons/ballon18/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_cp5qp")
+surface_material_override/0 = null
 color = Color(0, 0.984657, 0.533931, 1)
 
 [node name="String" parent="Ballons/ballon18" index="2"]
@@ -583,7 +449,7 @@ mesh = SubResource("ImmediateMesh_2t7uo")
 transform = Transform3D(0.87415, -0.439019, -0.207661, 0.443189, 0.546251, 0.71077, -0.198607, -0.713353, 0.672073, -2.90901, 3.08276, 8.61221)
 
 [node name="Ballon-rigid" parent="Ballons/ballon19/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_6pr3e")
+surface_material_override/0 = null
 color = Color(0.771768, 0.339047, 0.513543, 1)
 
 [node name="String" parent="Ballons/ballon19" index="2"]
@@ -593,7 +459,7 @@ mesh = SubResource("ImmediateMesh_cff0d")
 transform = Transform3D(0.966952, -0.234029, -0.101157, 0.254956, 0.887586, 0.383651, -2.91065e-07, -0.396763, 0.917921, -8.33312, 1.6215, 8.54269)
 
 [node name="Ballon-rigid" parent="Ballons/ballon20/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_y4ebn")
+surface_material_override/0 = null
 color = Color(0.657813, 0.467278, 0.582688, 1)
 
 [node name="String" parent="Ballons/ballon20" index="2"]
@@ -603,7 +469,7 @@ mesh = SubResource("ImmediateMesh_hkext")
 transform = Transform3D(0.991069, 0.0868896, -0.101157, -0.0417218, 0.922535, 0.383651, 0.126656, -0.376004, 0.917921, -8.24886, 1.61361, 8.47533)
 
 [node name="Ballon-rigid" parent="Ballons/ballon21/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_lcxxx")
+surface_material_override/0 = null
 color = Color(0.210332, 0.53325, 0.70614, 1)
 
 [node name="String" parent="Ballons/ballon21" index="2"]
@@ -613,7 +479,7 @@ mesh = SubResource("ImmediateMesh_v1pkd")
 transform = Transform3D(0.966952, -0.196787, -0.162103, 0.254956, 0.74634, 0.614797, -4.21361e-07, -0.635808, 0.771847, -8.32183, 1.61258, 8.51607)
 
 [node name="Ballon-rigid" parent="Ballons/ballon22/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_5pxm6")
+surface_material_override/0 = null
 color = Color(0.748595, 0.232085, 0.287658, 1)
 
 [node name="String" parent="Ballons/ballon22" index="2"]
@@ -623,7 +489,7 @@ mesh = SubResource("ImmediateMesh_8roj4")
 transform = Transform3D(0.989181, 0.130114, -0.067758, -0.0597462, 0.77916, 0.623971, 0.133981, -0.613172, 0.778504, -8.35781, 1.56998, 8.442)
 
 [node name="Ballon-rigid" parent="Ballons/ballon23/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_l6vmb")
+surface_material_override/0 = null
 color = Color(1, 0.541176, 0, 1)
 
 [node name="String" parent="Ballons/ballon23" index="2"]
@@ -633,7 +499,7 @@ mesh = SubResource("ImmediateMesh_0gq26")
 transform = Transform3D(0.966952, -0.234029, -0.101157, 0.254956, 0.887586, 0.383651, -2.93385e-07, -0.396763, 0.917921, -1.77518, -1.0779, -1.36426)
 
 [node name="Ballon-rigid" parent="Ballons/ballon24/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_tjpbh")
+surface_material_override/0 = null
 color = Color(2.55093e-05, 0.274202, 0.781223, 1)
 
 [node name="String" parent="Ballons/ballon24" index="2"]
@@ -643,7 +509,7 @@ mesh = SubResource("ImmediateMesh_mnh3m")
 transform = Transform3D(0.849375, -0.527572, 0.0151161, 0.513707, 0.832946, 0.205684, -0.121104, -0.166937, 0.978502, -1.74279, -1.06119, -1.34598)
 
 [node name="Ballon-rigid" parent="Ballons/ballon25/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_wjvhs")
+surface_material_override/0 = null
 color = Color(0, 0.591824, 0, 1)
 
 [node name="String" parent="Ballons/ballon25" index="2"]
@@ -653,7 +519,7 @@ mesh = SubResource("ImmediateMesh_leitk")
 transform = Transform3D(0.842725, -0.528754, -0.101157, 0.523416, 0.760821, 0.383651, -0.125895, -0.37626, 0.917921, -1.79861, -1.11364, -1.43039)
 
 [node name="Ballon-rigid" parent="Ballons/ballon26/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_if32q")
+surface_material_override/0 = null
 color = Color(0.854902, 0, 0.992157, 1)
 
 [node name="String" parent="Ballons/ballon26" index="2"]
@@ -663,7 +529,7 @@ mesh = SubResource("ImmediateMesh_6bfa4")
 transform = Transform3D(0.992311, 0.0713119, -0.101157, -0.0272261, 0.923077, 0.383651, 0.120734, -0.377947, 0.917921, -7.0787, -2.47452, -1.36032)
 
 [node name="Ballon-rigid" parent="Ballons/ballon27/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_5wbpw")
+surface_material_override/0 = null
 color = Color(0.653973, 0.46353, 0.474677, 1)
 
 [node name="String" parent="Ballons/ballon27" index="2"]
@@ -673,7 +539,7 @@ mesh = SubResource("ImmediateMesh_6kmd0")
 transform = Transform3D(0.966952, -0.251357, -0.0426853, 0.254956, 0.953305, 0.16189, -1.63381e-07, -0.167422, 0.985885, -1.67189, -1.02585, -1.30873)
 
 [node name="Ballon-rigid" parent="Ballons/ballon28/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_wxl5h")
+surface_material_override/0 = null
 color = Color(0.59516, 0.861618, 0.222275, 1)
 
 [node name="String" parent="Ballons/ballon28" index="2"]
@@ -683,7 +549,7 @@ mesh = SubResource("ImmediateMesh_4jt5s")
 transform = Transform3D(0.994245, 0.00249604, -0.107099, 0.00627882, 0.996653, 0.0815107, 0.106944, -0.0817139, 0.990901, -7.05345, -2.52163, -1.48059)
 
 [node name="Ballon-rigid" parent="Ballons/ballon29/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_3j00n")
+surface_material_override/0 = null
 color = Color(0.229539, 0.707847, 0.759603, 1)
 
 [node name="String" parent="Ballons/ballon29" index="2"]
@@ -693,7 +559,7 @@ mesh = SubResource("ImmediateMesh_v34px")
 transform = Transform3D(0.966952, -0.252655, -0.0341781, 0.254956, 0.958225, 0.129625, -1.32659e-07, -0.134055, 0.990974, -7.11095, -2.44768, -1.28124)
 
 [node name="Ballon-rigid" parent="Ballons/ballon30/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_lr3bk")
+surface_material_override/0 = null
 color = Color(0.808239, 0.87114, 0.451187, 1)
 
 [node name="String" parent="Ballons/ballon30" index="2"]
@@ -703,7 +569,7 @@ mesh = SubResource("ImmediateMesh_c53a8")
 transform = Transform3D(0.966952, -0.234029, -0.101157, 0.254956, 0.887586, 0.383651, -2.91065e-07, -0.396763, 0.917921, -7.05705, -2.43762, -1.29053)
 
 [node name="Ballon-rigid" parent="Ballons/ballon31/Ballon-rigid" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_63231")
+surface_material_override/0 = null
 color = Color(0.722078, 0.196657, 0.220631, 1)
 
 [node name="String" parent="Ballons/ballon31" index="2"]
@@ -715,7 +581,7 @@ mesh = SubResource("ImmediateMesh_dngqa")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.11058, 1.01846, -2.06472)
 
 [node name="teller2" parent="Teller" instance=ExtResource("15_5qoog")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.11058, 1.03217, -1.17465)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.11058, 1.03688, -1.17465)
 
 [node name="teller3" parent="Teller" instance=ExtResource("15_5qoog")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.11058, 1.02049, -0.195787)
@@ -930,13 +796,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0356, 1.12278, 1.82923)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0356, 1.12278, 2.83335)
 
 [node name="plate" parent="." instance=ExtResource("27_jnylm")]
-transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, -9.79235, 0.956353, 0.43034)
+transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, -9.79235, 0.987745, 0.43034)
 
 [node name="CollisionShape3D" parent="plate/plate-rigid" index="1"]
 disabled = true
 
 [node name="cake" parent="." instance=ExtResource("29_dwfis")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.79688, 1.19394, 0.427566)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.79688, 1.22533, 0.427566)
 
 [node name="disco_ball" parent="." instance=ExtResource("27_grr0i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.54014, 3.24652, -9.44138e-05)
@@ -958,9 +824,6 @@ transform = Transform3D(-0.611458, 0, 0.791277, 0, 1, 0, -0.791277, 0, -0.611458
 
 [node name="bilderrahmen2" parent="." instance=ExtResource("30_8me7h")]
 transform = Transform3D(0.208014, 0, 0.978126, 0, 1, 0, -0.978126, 0, 0.208014, 0.0470717, 1.42913, -4.05941)
-
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
-bake_mask = 4293918721
 
 [editable path="geburtstags_raum"]
 [editable path="ess_tisch"]

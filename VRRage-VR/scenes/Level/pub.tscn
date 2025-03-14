@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://yg8clck6x474"]
+[gd_scene load_steps=25 format=3 uid="uid://yg8clck6x474"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_bomn3"]
 [ext_resource type="PackedScene" uid="uid://vwoo3053ab2v" path="res://assets/models/pub/Bar.blend" id="2_pgkxv"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://72o6f4gikmiu" path="res://assets/models/pub/Tür1.blend" id="3_6gqhn"]
 [ext_resource type="PackedScene" uid="uid://bbmagsn1leo2j" path="res://scenes/score.tscn" id="4_jcchi"]
 [ext_resource type="PackedScene" uid="uid://cw0qc8nlbnwjj" path="res://scenes/object_scenes/pub/barhocker.tscn" id="5_a2iwf"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="6_5hq8l"]
 [ext_resource type="PackedScene" uid="uid://bmogc34j05jip" path="res://scenes/object_scenes/pub/tisch_klein.tscn" id="6_66xwd"]
 [ext_resource type="PackedScene" uid="uid://d2yosk2bo8brm" path="res://assets/models/pub/Tür2.blend" id="6_foc5g"]
 [ext_resource type="PackedScene" uid="uid://cenukpfporvah" path="res://scenes/object_scenes/pub/tisch_groß.tscn" id="7_0oxc3"]
@@ -26,9 +27,8 @@
 [sub_resource type="Environment" id="Environment_m3w4k"]
 
 [node name="pub" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.59474, 0.0505797, -4.50883)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0973, 0.0505797, -0.107651)
 script = ExtResource("1_bomn3")
-start_pos = Vector3(5, 0, 3)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.835088, 0.550116, 0, -0.550116, 0.835088, -2.38747, 2.60028, 4.43756)
@@ -51,23 +51,75 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.55127, 1.07538, -3.50922)
 [node name="Bar" parent="." instance=ExtResource("2_pgkxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.37675, -3.72529e-09, 1.16786)
 
+[node name="StaticBody3D" parent="Bar/Tresen" index="0" groups=["room"]]
+collision_layer = 8
+
+[node name="StaticBody3D" parent="Bar/Fenster 1" index="0" groups=["room"]]
+collision_layer = 8
+
+[node name="StaticBody3D" parent="Bar/Fenster 2" index="0" groups=["room"]]
+collision_layer = 8
+
+[node name="StaticBody3D" parent="Bar/Fenster 3" index="0" groups=["room"]]
+collision_layer = 8
+
+[node name="StaticBody3D" parent="Bar/Fenster 4" index="0" groups=["room"]]
+collision_layer = 8
+
+[node name="StaticBody3D" parent="Bar/Regal Bar" index="0" groups=["room"]]
+collision_layer = 8
+
+[node name="StaticBody3D" parent="Bar/Fenster AK" index="0" groups=["room"]]
+collision_layer = 8
+
+[node name="StaticBody3D" parent="Bar/Regal AK 1" index="0" groups=["room"]]
+collision_layer = 8
+
+[node name="StaticBody3D" parent="Bar/Regal AK 2" index="0" groups=["room"]]
+collision_layer = 8
+
+[node name="StaticBody3D" parent="Bar/Fenster Klo" index="0" groups=["room"]]
+collision_layer = 8
+
+[node name="StaticBody3D" parent="Bar/Room" index="0" groups=["room"]]
+
 [node name="Tür1" parent="." instance=ExtResource("3_6gqhn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.17872, 0, 4.9534)
 script = ExtResource("14_iobre")
 fragmented = ExtResource("15_l4k7k")
 destroyable_by = ["pickaxe"]
+score_points = 300
+
+[node name="Tür 1-rigid" parent="Tür1" index="0"]
+script = ExtResource("6_5hq8l")
+objectID = "tuer1"
+isStatic = true
+enabled = false
 
 [node name="Tür2" parent="." instance=ExtResource("6_foc5g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75466, -2.38419e-07, -0.352293)
 script = ExtResource("14_iobre")
 fragmented = ExtResource("22_4eakp")
 destroyable_by = ["pickaxe"]
+score_points = 300
+
+[node name="Tür 2-rigid" parent="Tür2" index="0"]
+script = ExtResource("6_5hq8l")
+objectID = "tuer2"
+isStatic = true
+enabled = false
 
 [node name="Toilette" parent="." instance=ExtResource("8_t6qce")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.05559, -0.0505797, 2.5697)
 script = ExtResource("14_iobre")
 fragmented = ExtResource("27_6ia8q")
 destroyable_by = ["pickaxe"]
+
+[node name="Toilette-rigid" parent="Toilette" index="0"]
+script = ExtResource("6_5hq8l")
+objectID = "toilette"
+isStatic = true
+enabled = false
 
 [node name="Teleporter" parent="." instance=ExtResource("3_0vpfk")]
 transform = Transform3D(0.8, 0, 0, 0, 1, 0, 0, 0, 0.8, -8.58225, -0.212283, -3.67707)
@@ -311,3 +363,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0242558, 0.0547428, -0.1867
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12307, 0, -0.0712733)
 
 [editable path="Bar"]
+[editable path="Tür1"]
+[editable path="Tür2"]
+[editable path="Toilette"]

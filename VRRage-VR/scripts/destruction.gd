@@ -237,7 +237,7 @@ func add_drop(old_velocity: Vector3):
 		var item = load(Globals.itemPath + current_level + "/" + dropID + Globals.sceneFormat).instantiate()
 		
 		var rigidBody = get_rigid_body(item)
-		
+
 		item.position = shard_container.position
 		print("Spawned Drop ", dropID, " at ", item.position)
 		
@@ -286,7 +286,7 @@ func _on_body_entered(body: Node):
 	
 	var enteringLinearSpeed
 	var enteringAngularSpeed
-	
+
 	if rigidBody is not XRToolsPickable:
 		return
 	

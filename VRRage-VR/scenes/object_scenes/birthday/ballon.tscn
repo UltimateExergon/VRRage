@@ -56,6 +56,7 @@ resource_local_to_scene = true
 script = ExtResource("1_t8jga")
 destroyable_by = ["messer", "gabel"]
 score_points = 50
+destructionSound = "balloon_pop"
 
 [node name="Ballon-rigid" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.69771, 0)

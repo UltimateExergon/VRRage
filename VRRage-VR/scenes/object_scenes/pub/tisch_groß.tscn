@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=4 uid="uid://cenukpfporvah"]
+[gd_scene load_steps=13 format=4 uid="uid://cenukpfporvah"]
 
 [ext_resource type="Script" path="res://scripts/destruction.gd" id="1_yi2wk"]
 [ext_resource type="PackedScene" uid="uid://6420yhi60ap0" path="res://assets/models/pub/Großer Tisch_kaputt.blend" id="2_ltj55"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="3_f5o0n"]
 [ext_resource type="Texture2D" uid="uid://d1vp3gtk6s65s" path="res://assets/models/pub/textures/dark_wood_parquet_18-2K/2K-woodparquet_18_basecolor.jpg" id="3_kvlgf"]
 [ext_resource type="Texture2D" uid="uid://x7npe614jb87" path="res://assets/models/pub/textures/dark_wood_parquet_18-2K/2K-woodparquet_18_roughness.jpg" id="4_4ayib"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_hxdkf"]
@@ -57,10 +58,13 @@ points = PackedVector3Array(-1.47605, 0.907694, -0.513439, -1.18775, -2.38419e-0
 [node name="Großer Tisch" type="Node3D"]
 script = ExtResource("1_yi2wk")
 fragmented = ExtResource("2_ltj55")
-destroyable_by = ["barhocker_destruction"]
+destroyable_by = ["barhocker"]
 dropID = "holzblock"
 
 [node name="Großer Tisch-rigid" type="RigidBody3D" parent="."]
+script = ExtResource("3_f5o0n")
+objectID = "grosser_tisch"
+enabled = false
 
 [node name="Großer Tisch-rigid" type="MeshInstance3D" parent="Großer Tisch-rigid"]
 mesh = SubResource("ArrayMesh_wu28a")

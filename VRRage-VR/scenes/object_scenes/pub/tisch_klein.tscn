@@ -58,11 +58,13 @@ points = PackedVector3Array(0.662745, 1, 0.685139, -0.6545, 1, 0.685139, 0.66274
 [node name="Kleiner Tisch" type="Node3D"]
 script = ExtResource("1_er18x")
 fragmented = ExtResource("2_5iaoa")
-destroyable_by = ["barhocker_destruction"]
+destroyable_by = ["barhocker"]
 dropID = "holzblock"
 
 [node name="Kleiner Tisch-rigid" type="RigidBody3D" parent="."]
 script = ExtResource("3_tfhtu")
+objectID = "kleiner tisch"
+enabled = false
 
 [node name="Kleiner Tisch-rigid" type="MeshInstance3D" parent="Kleiner Tisch-rigid"]
 mesh = SubResource("ArrayMesh_kl0ba")

@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dhnmoojs48oa" path="res://assets/models/pub/textures/leaf_1-2K/2K-leaf_1-diffuse.jpg" id="7_s7bmy"]
 [ext_resource type="Texture2D" uid="uid://c6q3g5bodgtik" path="res://assets/models/pub/textures/leaf_1-2K/2K-leaf_1-displacement.jpg" id="8_a32um"]
 [ext_resource type="Texture2D" uid="uid://dfomlslu2hxg2" path="res://assets/models/pub/textures/leaf_1-2K/2K-leaf_1-normal.jpg" id="9_udxsd"]
-[ext_resource type="Texture2D" uid="uid://b2fjdsxrog0sl" path="res://assets/models/pub/textures/ground_dirt_4-2K/2K-dirt_4-diffuse.jpg" id="10_pokfr"]
+[ext_resource type="Texture2D" uid="uid://m7kmdlyk5g3b" path="res://assets/models/pub/textures/ground_dirt_4-2K/2K-dirt_4-diffuse.jpg" id="10_pokfr"]
 [ext_resource type="Texture2D" uid="uid://di3pfwu7uutv6" path="res://assets/models/pub/textures/ground_dirt_4-2K/2K-dirt_4-displacement.jpg" id="11_uhjpr"]
 [ext_resource type="Texture2D" uid="uid://dyt72icybjqdk" path="res://assets/models/pub/textures/ground_dirt_4-2K/2K-dirt_4-normal.jpg" id="12_hwu2i"]
 
@@ -136,7 +136,7 @@ points = PackedVector3Array(0.00951913, 0.933168, 0.496984, 0.133338, 0.499937, 
 [node name="Pflanze" type="Node3D"]
 script = ExtResource("1_er18x")
 fragmented = ExtResource("2_6pkx6")
-destroyable_by = ["barhocker_destruction"]
+destroyable_by = ["barhocker"]
 
 [node name="Pflanze-rigid" type="RigidBody3D" parent="."]
 script = ExtResource("3_2n7mx")

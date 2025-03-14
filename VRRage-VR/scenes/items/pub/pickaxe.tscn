@@ -1,6 +1,8 @@
-[gd_scene load_steps=14 format=4 uid="uid://cloxmxc12ckxv"]
+[gd_scene load_steps=16 format=4 uid="uid://cloxmxc12ckxv"]
 
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_76d2k"]
 [ext_resource type="Texture2D" uid="uid://cotx4bm8racc0" path="res://assets/models/pub/textures/metal_9_basecolor-2K.png" id="1_gqkuf"]
+[ext_resource type="Script" path="res://scripts/destruction.gd" id="1_osaed"]
 [ext_resource type="Texture2D" uid="uid://sekc7kljhua3" path="res://assets/models/pub/textures/metal_9_roughness-2K.png" id="2_um7j2"]
 [ext_resource type="Texture2D" uid="uid://bnxgnugprh5ll" path="res://assets/models/pub/textures/metal_9_normal-2K.png" id="3_vp6on"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_6n2q2"]
@@ -92,8 +94,13 @@ shadow_mesh = SubResource("ArrayMesh_7bp2h")
 points = PackedVector3Array(0.0280537, 0.377495, 0.1663, -0.0280592, 0.377495, 0.1663, 0.019748, -0.00064081, 0.0191163, 0.0280537, 0.369397, 0.157933, 0.0280592, 0.506257, 6.18398e-06, 0.0280537, 0.421401, 0.141395, -0.0280592, 0.369397, 0.157933, -0.0197535, -0.00064081, 0.0191163, -0.0280592, 0.421401, 0.141395, 0.019748, -0.00064081, -0.0191691, 0.0280537, 0.369397, -0.157954, 0.0280537, 0.484203, -0.076532, 0.0280537, 0.500654, -0.039028, 0.019748, 0.519704, -0.0191691, 0.019748, 0.519704, 0.0191163, 0.0280537, 0.500654, 0.0390078, 0.0280537, 0.484203, 0.0765118, 0.0280537, 0.457411, 0.111118, 0.0280537, 0.377495, -0.166288, 0.0280537, 0.421401, -0.141415, 0.0280537, 0.457411, -0.111139, -0.0280592, 0.369397, -0.157954, -0.0197535, -0.00064081, -0.0191691, -0.0280592, 0.457411, 0.111118, -0.0280592, 0.484203, -0.076532, -0.0197535, 0.519704, -0.0191691, -0.0197535, 0.519704, 0.0191163, -0.0280592, 0.484203, 0.0765118, -0.0280592, 0.377495, -0.166288, -0.0280592, 0.421401, -0.141415, -0.0280592, 0.457411, -0.111139, -0.0280592, 0.500654, -0.039028, -0.0280592, 0.506257, 6.18398e-06, -0.0280592, 0.500654, 0.0390078)
 
 [node name="pickaxe" type="Node3D"]
+script = ExtResource("1_osaed")
+destroyable_by = ["nothing"]
+destroy_everything = true
 
 [node name="Pickaxe-rigid" type="RigidBody3D" parent="."]
+script = ExtResource("1_76d2k")
+objectID = "pickaxe"
 
 [node name="Pickaxe-rigid" type="MeshInstance3D" parent="Pickaxe-rigid"]
 mesh = SubResource("ArrayMesh_h3wp5")

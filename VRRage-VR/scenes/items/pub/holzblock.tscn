@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=4 uid="uid://bn5ht2ph0mj50"]
+[gd_scene load_steps=11 format=4 uid="uid://bn5ht2ph0mj50"]
 
 [ext_resource type="Texture2D" uid="uid://d1vp3gtk6s65s" path="res://assets/models/pub/textures/dark_wood_parquet_18-2K/2K-woodparquet_18_basecolor.jpg" id="1_4ap0a"]
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_ka3d6"]
 [ext_resource type="Texture2D" uid="uid://x7npe614jb87" path="res://assets/models/pub/textures/dark_wood_parquet_18-2K/2K-woodparquet_18_roughness.jpg" id="2_bmqre"]
 [ext_resource type="Texture2D" uid="uid://mfmo4kks2owu" path="res://assets/models/pub/textures/dark_wood_parquet_18-2K/2K-woodparquet_18_normal.jpg" id="3_bm6we"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_8nchh"]
@@ -55,6 +56,8 @@ points = PackedVector3Array(0.0191476, 0.519704, 0.0197523, -0.0191476, 0.519704
 [node name="holzblock" type="Node3D"]
 
 [node name="holzstab-rigid" type="RigidBody3D" parent="."]
+script = ExtResource("1_ka3d6")
+objectID = "holzblock"
 
 [node name="holzstab-rigid" type="MeshInstance3D" parent="holzstab-rigid"]
 mesh = SubResource("ArrayMesh_q0d8b")
