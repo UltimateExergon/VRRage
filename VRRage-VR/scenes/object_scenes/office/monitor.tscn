@@ -83,6 +83,7 @@ points = PackedVector3Array(0.13251, -0.150841, -0.500098, 0.181257, -0.150841, 
 script = ExtResource("1_0d2pq")
 fragmented = ExtResource("2_cwvrm")
 score_points = 150
+destroy_everything = true
 
 [node name="monitor-rigid" type="RigidBody3D" parent="."]
 collision_layer = 4

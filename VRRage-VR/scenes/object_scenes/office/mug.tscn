@@ -46,6 +46,7 @@ points = PackedVector3Array(0.0259459, -0.0114526, -0.35, 0.0259459, 0.0114037, 
 script = ExtResource("1_f24wb")
 fragmented = ExtResource("2_8iubk")
 score_points = 80
+destroy_everything = true
 
 [node name="mug-rigid" type="RigidBody3D" parent="." groups=["MUG"]]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)

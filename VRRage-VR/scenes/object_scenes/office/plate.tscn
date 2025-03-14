@@ -45,6 +45,7 @@ points = PackedVector3Array(-1.1, -0.0500102, -1.1, -0.831676, -0.141151, -0.555
 [node name="plate" type="Node3D"]
 script = ExtResource("1_vjfvw")
 fragmented = ExtResource("2_qjdsw")
+destroy_everything = true
 
 [node name="plate-rigid" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0911514, 0)

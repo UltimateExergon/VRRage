@@ -99,6 +99,7 @@ points = PackedVector3Array(0.00792608, 1.46041, 0.0406223, -0.256972, -0.073082
 script = ExtResource("1_pip5w")
 fragmented = ExtResource("2_dg6si")
 hits_left = 4
+destroy_everything = true
 
 [node name="broom" type="RigidBody3D" parent="."]
 collision_layer = 4

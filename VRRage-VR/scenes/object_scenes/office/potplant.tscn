@@ -196,6 +196,7 @@ script = ExtResource("1_jg17q")
 fragmented = ExtResource("2_5igiw")
 dropID = "stick"
 score_points = 150
+destroy_everything = true
 
 [node name="potplant_pot-rigid" type="RigidBody3D" parent="."]
 collision_layer = 4

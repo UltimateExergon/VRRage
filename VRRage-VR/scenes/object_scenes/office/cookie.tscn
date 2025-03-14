@@ -52,6 +52,7 @@ shadow_mesh = SubResource("ArrayMesh_lh08b")
 script = ExtResource("1_60uai")
 fragmented = ExtResource("2_netq2")
 score_points = 50
+destroy_everything = true
 
 [node name="cookie-rigid" type="RigidBody3D" parent="."]
 collision_layer = 4

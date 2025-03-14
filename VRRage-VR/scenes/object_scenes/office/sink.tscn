@@ -122,7 +122,6 @@ max_contacts_reported = 160
 script = ExtResource("3_864rh")
 objectID = "sink"
 isStatic = true
-collisionMasks = [1, 3, 4]
 enabled = false
 
 [node name="sink-rigid2" type="MeshInstance3D" parent="sink-rigid"]
