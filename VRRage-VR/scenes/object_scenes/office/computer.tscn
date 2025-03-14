@@ -101,12 +101,12 @@ transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_5awsf")
 
 [node name="left" type="Marker3D" parent="computer-rigid"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.350915, 0, 0.290542)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.254014, -0.320055, 0.214018)
 visible = false
 script = ExtResource("4_ds17f")
 
 [node name="right" type="Marker3D" parent="computer-rigid"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.349894, 0, -0.286986)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.255386, -0.313355, -0.223424)
 visible = false
 script = ExtResource("4_ds17f")
 hand = 1
