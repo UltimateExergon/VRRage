@@ -121,7 +121,7 @@ func add_levelTimerAlertSound():
 func add_multiplikatorSound():
 	multiplikatorSound = AudioStreamPlayer.new()
 	multiplikatorSound.stream = Globals.multiplikatorStartSound
-	multiplikatorSound.volume_db = Globals.volumeDB - 5.0
+	multiplikatorSound.volume_db = Globals.volumeDB
 	multiplikatorSound.autoplay = false
 	add_child(multiplikatorSound)
 	

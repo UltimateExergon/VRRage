@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://chbm0l5v8xonx"
-path="res://.godot/imported/Stuhl.glb-e046b5a6a49aa9569affa852e79c4cec.scn"
+path="res://.godot/imported/stuhl.glb-7e312047bd5d7d41f8da303f8e7ecdce.scn"
 
 [deps]
 
-source_file="res://assets/models/testlevel/Stuhl.glb"
-dest_files=["res://.godot/imported/Stuhl.glb-e046b5a6a49aa9569affa852e79c4cec.scn"]
+source_file="res://assets/models/testlevel/stuhl.glb"
+dest_files=["res://.godot/imported/stuhl.glb-7e312047bd5d7d41f8da303f8e7ecdce.scn"]
 
 [params]
 
