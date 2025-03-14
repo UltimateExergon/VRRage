@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c5nmmvsfmn27o"
-path="res://.godot/imported/vase_kaputt.glb-07ef9f9c24fea5bddeca598b3372adb8.scn"
+path="res://.godot/imported/Vase_kaputt.glb-94ca5a02843af74655dd4b3c65d838af.scn"
 
 [deps]
 
-source_file="res://assets/models/testlevel/vase_kaputt.glb"
-dest_files=["res://.godot/imported/vase_kaputt.glb-07ef9f9c24fea5bddeca598b3372adb8.scn"]
+source_file="res://assets/models/testlevel/Vase_kaputt.glb"
+dest_files=["res://.godot/imported/Vase_kaputt.glb-94ca5a02843af74655dd4b3c65d838af.scn"]
 
 [params]
 

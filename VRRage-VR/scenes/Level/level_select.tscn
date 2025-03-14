@@ -24,6 +24,7 @@ points = PackedVector3Array(-7.5, -0.25, -7.5, -7.5, 0.25, -7.5, 7.5, -0.25, -7.
 
 [node name="level_select" type="Node3D"]
 script = ExtResource("1_s1xfp")
+level_music = "level_select_music"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7e4a7")

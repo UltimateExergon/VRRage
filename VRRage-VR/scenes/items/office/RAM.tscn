@@ -102,8 +102,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_f8lua")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_finw5"]
-points = PackedVector3Array(-0.01, -0.04, -0.1, -0.01, 0.0399942, -0.1, 0.00999793, -0.04, -0.1, -0.01, -0.04, 0.1, -0.00864856, 0.0488573, -0.0864918, 0.00999793, 0.0399942, -0.1, -0.01, 0.0399942, 0.1, 0.0146217, -0.011384, -0.0818324, 0.0149663, -0.011384, -0.00910337, 0.00999793, -0.04, 0.1, 0.00864649, 0.0488573, -0.0864918, -0.00864856, 0.0488573, 0.0864722, 0.0146217, 0.0172319, -0.0818324, 0.00999793, 0.0399942, 0.1, 0.0149663, 0.0172319, -0.00910337, 0.0149663, -0.011384, 0.00908379, 0.0145826, -0.011384, 0.0454385, 0.0140865, -0.011384, 0.0818128, 0.00864649, 0.0488573, 0.0864722, 0.0140865, 0.0172319, 0.0818128, 0.0145826, 0.0172319, 0.0454385, 0.0149663, 0.0172319, 0.00908379)
+[sub_resource type="BoxShape3D" id="BoxShape3D_ylcrg"]
+size = Vector3(0.029541, 0.108032, 0.240776)
 
 [node name="RAM" type="RigidBody3D"]
 collision_layer = 4
@@ -119,9 +119,9 @@ transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 mesh = SubResource("ArrayMesh_rlhfp")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_finw5")
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00158691, 0.00616455, 0.000179291)
+shape = SubResource("BoxShape3D_ylcrg")
 
 [node name="left" type="Marker3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.103447, 0.0292903, 0.098611)

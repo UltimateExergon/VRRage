@@ -22,3 +22,4 @@ func destroy() -> void:
 		await soundPlayer.finished
 		
 		self.get_child(0).queue_free()
+		

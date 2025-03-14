@@ -24,7 +24,7 @@ const outline_color_crafting_near : Color = Color8(196, 195, 0, 200)
 const outline_color_none : Color = Color8(0, 0, 0, 0)
 const outline_width : float = 3.0
 
-@onready var default_music : AudioStreamMP3 = preload("res://assets/sound/music/test_music.mp3")
+@onready var default_music : AudioStreamMP3 = preload("res://assets/sound/music/level_music.mp3")
 @onready var default_destruction_sound : AudioStreamMP3 = preload("res://assets/sound/sound_effects/default_destructionSound.mp3")
 @onready var levelTimerAlertSound : AudioStreamMP3 = preload("res://assets/sound/sound_effects/levelTimerAlertSound.mp3")
 @onready var craftingSound : AudioStreamMP3 = preload("res://assets/sound/sound_effects/crafting_sound.mp3")
