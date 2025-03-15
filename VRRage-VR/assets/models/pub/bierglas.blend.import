@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cqwd1xpgcxjb5"
-path="res://.godot/imported/Bierglas.blend-c932c0bc65a7a259cc7bba233ea24958.scn"
+path="res://.godot/imported/bierglas.blend-b2c2940053f78433b5ffa8a042102d56.scn"
 
 [deps]
 
-source_file="res://assets/models/pub/Bierglas.blend"
-dest_files=["res://.godot/imported/Bierglas.blend-c932c0bc65a7a259cc7bba233ea24958.scn"]
+source_file="res://assets/models/pub/bierglas.blend"
+dest_files=["res://.godot/imported/bierglas.blend-b2c2940053f78433b5ffa8a042102d56.scn"]
 
 [params]
 

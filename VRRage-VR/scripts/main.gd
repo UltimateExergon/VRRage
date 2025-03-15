@@ -201,14 +201,15 @@ func switch_level():
 	if current_level != "level_select":
 		craftingRecipes = load(Globals.recipePath + current_level + Globals.recipeFormat).records
 		score_label = get_node(current_level + "/Score")
+		loadingScreenTimer.start(loadingLabel_Visibility_Time)
+
 		
 	startPos = level.get_startPos()
 	level.add_to_group("LEVEL")
 	
 	for i in get_tree().get_nodes_in_group("DESTRUCTIBLE"):
 		i.get_parent().set_currentLevel(current_level)
-		
-	loadingScreenTimer.start(loadingLabel_Visibility_Time)
+	
 	teleport_player()
 	activate_teleport_timer()
 		

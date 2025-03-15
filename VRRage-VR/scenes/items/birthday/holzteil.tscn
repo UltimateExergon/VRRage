@@ -1,16 +1,17 @@
-[gd_scene load_steps=18 format=4 uid="uid://bdpdnjkc3623u"]
+[gd_scene load_steps=19 format=4 uid="uid://bdpdnjkc3623u"]
 
 [ext_resource type="Script" path="res://scripts/destruction.gd" id="1_fl3qa"]
 [ext_resource type="PackedScene" uid="uid://bh3qw5tiwu18k" path="res://assets/models/birthday/holzteil_kaputt.blend" id="2_albc5"]
 [ext_resource type="Script" path="res://scripts/item.gd" id="3_ot6kf"]
 [ext_resource type="Texture2D" uid="uid://c1aa1nj3ll706" path="res://assets/materials/wood2/finewood_27_basecolor-1K.png" id="4_njfl8"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_rpx84"]
-[ext_resource type="Texture2D" uid="uid://ckhcajena2oxk" path="res://assets/materials/wood2/finewood_27_roughness-1K.png" id="5_by8uv"]
+[ext_resource type="Texture2D" uid="uid://b4wn3xb6dlv52" path="res://assets/materials/wood2/finewood_27_roughness-1K.png" id="5_by8uv"]
 [ext_resource type="Animation" uid="uid://dd67rufxwj2u" path="res://addons/godot-xr-tools/hands/animations/left/Grip 3.res" id="5_vqj7s"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="6_f7bpn"]
 [ext_resource type="Texture2D" uid="uid://c1yimpjkgnd2s" path="res://assets/materials/wood2/finewood_27_normal-1K.png" id="6_i2gj0"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="7_3bjnn"]
 [ext_resource type="Animation" uid="uid://rs7vpclot07o" path="res://addons/godot-xr-tools/hands/animations/right/Grip 3.res" id="8_34dwt"]
+[ext_resource type="PackedScene" uid="uid://cdj7ppj8k5e4f" path="res://scenes/wood_particle_emitter.tscn" id="12_n283j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qny2t"]
 resource_name = "Material.001"
@@ -97,3 +98,7 @@ hand_pose = SubResource("Resource_0yd8t")
 [node name="GrabPointHandRight" parent="holzteil-rigid" instance=ExtResource("7_3bjnn")]
 transform = Transform3D(1, 0, 0, 0, -0.161914, -0.986805, 0, 0.986805, -0.161914, 0.0283627, 0.0689166, 0.0573848)
 hand_pose = SubResource("Resource_mpn7a")
+
+[node name="wood_particle_emitter" parent="holzteil-rigid" instance=ExtResource("12_n283j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.514709, 0)
+amount = 2

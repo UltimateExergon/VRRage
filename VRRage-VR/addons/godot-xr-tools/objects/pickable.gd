@@ -139,7 +139,7 @@ func _ready():
 		self.set_collision_layer_value(3, false)
 		self.set_collision_layer_value(4, true)
 		self.lock_rotation = true
-		self.set_physics_process(false)
+		self.can_sleep = false
 		
 	if !objectID:
 		objectID = get_parent_node_3d().name

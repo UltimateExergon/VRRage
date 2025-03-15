@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://dy77eurx5l5sg"]
+[gd_scene load_steps=20 format=4 uid="uid://dy77eurx5l5sg"]
 
 [ext_resource type="Script" path="res://scripts/destruction.gd" id="1_l5d28"]
 [ext_resource type="PackedScene" uid="uid://ckp4wjngxonoc" path="res://assets/models/birthday/stuhl_kaputt.blend" id="2_pubjt"]
@@ -7,6 +7,7 @@
 [ext_resource type="Animation" uid="uid://dqa0h82y3qn1t" path="res://addons/godot-xr-tools/hands/animations/left/Grip 1.res" id="6_y275v"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="7_ggnd3"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="8_gyh5w"]
+[ext_resource type="PackedScene" uid="uid://cdj7ppj8k5e4f" path="res://scenes/wood_particle_emitter.tscn" id="9_fqtqt"]
 [ext_resource type="Animation" uid="uid://daqddcrbpam0c" path="res://addons/godot-xr-tools/hands/animations/right/Grip 1.res" id="9_j4btg"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hwh5l"]
@@ -106,3 +107,7 @@ hand_pose = SubResource("Resource_r7b3h")
 [node name="GrabPointHandLeft" parent="Stuhl-rigid" instance=ExtResource("5_ocfaw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.198554, 0.322811, 0.124802)
 hand_pose = SubResource("Resource_3oclu")
+
+[node name="wood_particle_emitter" parent="Stuhl-rigid" instance=ExtResource("9_fqtqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.514709, 0)
+amount = 4

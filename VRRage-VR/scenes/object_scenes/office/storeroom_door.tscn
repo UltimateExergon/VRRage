@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://scripts/office/storeroom_door.gd" id="1_7lrsa"]
 [ext_resource type="PackedScene" uid="uid://03qjpar2wukj" path="res://assets/models/office/blendfiles/storeroom_door_kaputt.blend" id="2_jnean"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="3_2krhh"]
-[ext_resource type="Texture2D" uid="uid://nxvnndpiom7v" path="res://assets/materials/wood4/Wood026_1K-PNG_Color.png" id="4_mmgsu"]
-[ext_resource type="Texture2D" uid="uid://duy20bq2yb7p0" path="res://assets/materials/wood4/Wood026_1K-PNG_Roughness.png" id="5_56cnj"]
-[ext_resource type="Texture2D" uid="uid://umfhrfv1com5" path="res://assets/materials/wood4/Wood026_1K-PNG_NormalGL.png" id="6_8c2k7"]
+[ext_resource type="Texture2D" uid="uid://b8bqv5g5be2wl" path="res://assets/materials/wood4/Wood026_1K-PNG_Color.png" id="4_mmgsu"]
+[ext_resource type="Texture2D" uid="uid://d1esp8ld8hubb" path="res://assets/materials/wood4/Wood026_1K-PNG_Roughness.png" id="5_56cnj"]
+[ext_resource type="Texture2D" uid="uid://dksfw3td5hcs5" path="res://assets/materials/wood4/Wood026_1K-PNG_NormalGL.png" id="6_8c2k7"]
 [ext_resource type="PackedScene" uid="uid://cdj7ppj8k5e4f" path="res://scenes/wood_particle_emitter.tscn" id="7_ugshk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0y64q"]

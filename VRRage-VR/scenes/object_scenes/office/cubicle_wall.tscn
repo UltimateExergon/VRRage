@@ -70,8 +70,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_eqnkd")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n3lht"]
-points = PackedVector3Array(1.07643, 1, 0.0897024, 1.07643, 0.897024, 0.1, 1.2, 0.897024, 0.0897024, 1.07643, 1, -0.089722, -1.07666, 1, 0.0897024, 1.07643, -1, 0.1, -1.07666, 0.897024, 0.1, 1.2, 0.897024, -0.089722, 1.2, -0.89722, 0.0897024, 1.07643, 0.897024, -0.1, -1.07666, 1, -0.089722, -1.2, 0.897024, 0.0897024, 1.07643, -1, -0.1, -1.07666, -1, 0.1, 1.2, -0.89722, -0.089722, -1.07666, 0.897024, -0.1, -1.2, 0.897024, -0.089722, -1.2, -0.89722, 0.0897024, -1.07666, -1, -0.1, -1.2, -0.89722, -0.089722)
+[sub_resource type="BoxShape3D" id="BoxShape3D_pfyps"]
+size = Vector3(2.39813, 2.01843, 0.174561)
 
 [node name="CubicleWall" type="Node3D"]
 script = ExtResource("1_y8mnt")
@@ -97,5 +97,5 @@ mesh = SubResource("ArrayMesh_7n72c")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="cubicle_wall-rigid"]
-transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_n3lht")
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -0.000704962, -0.00785521, -0.0194702)
+shape = SubResource("BoxShape3D_pfyps")

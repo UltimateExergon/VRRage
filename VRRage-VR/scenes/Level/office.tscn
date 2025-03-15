@@ -36,7 +36,7 @@ background_color = Color(0.212305, 0.212305, 0.212305, 1)
 background_energy_multiplier = 0.0
 
 [node name="office" type="Node3D" groups=["Level"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162022, -0.747242, -1.0625)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.456305, -0.747242, -2.63129)
 script = ExtResource("1_5hv1r")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -50,7 +50,7 @@ light_energy = 0.5
 [node name="Teleporter" parent="." instance=ExtResource("3_bde34")]
 transform = Transform3D(1, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 3.30432, 0.704257, -5.63295)
 teleport_level = "level_select"
-label_text = "Level Auswahl"
+label_text = "Levelauswahl"
 
 [node name="room" parent="." instance=ExtResource("3_ebb6v")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 5.14507, 2.73635, -0.354326)

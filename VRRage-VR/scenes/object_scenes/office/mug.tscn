@@ -70,6 +70,5 @@ script = ExtResource("4_vofdp")
 
 [node name="right" type="Marker3D" parent="mug-rigid"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.142784, -0.025907, -0.0833241)
-visible = false
 script = ExtResource("4_vofdp")
 hand = 1

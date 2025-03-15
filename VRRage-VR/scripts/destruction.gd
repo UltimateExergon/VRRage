@@ -119,6 +119,11 @@ func destroy() -> void:
 
 		can_destroy = false
 		main_node.add_active_shard(shard_container)
+		
+		var right_hand = get_node("/root/Main/Player/RightHand")
+		var left_hand = get_node("/root/Main/Player/LeftHand")
+		right_hand.trigger_haptic_pulse("haptic", 0.0, 1.0, 0.5, 0.0)
+		left_hand.trigger_haptic_pulse("haptic", 0.0, 1.0, 0.5, 0.0)
 
 		var saved_velocity = get_child(0).linear_velocity
 		start_shards(saved_velocity)
@@ -311,6 +316,12 @@ func check_hits_left():
 		self.destroy()
 	else:
 		emit_Particles()
+		
+		var right_hand = get_node("/root/Main/Player/RightHand")
+		var left_hand = get_node("/root/Main/Player/LeftHand")
+		right_hand.trigger_haptic_pulse("haptic", 0.0, 0.75, 0.3, 0.0)
+		left_hand.trigger_haptic_pulse("haptic", 0.0, 0.75, 0.3, 0.0)
+		
 		hits_left -= 1
 			
 func _on_invincible_timer_timeout():
