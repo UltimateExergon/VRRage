@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://yg8clck6x474"]
+[gd_scene load_steps=29 format=3 uid="uid://yg8clck6x474"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_bomn3"]
 [ext_resource type="PackedScene" uid="uid://vwoo3053ab2v" path="res://assets/models/pub/Bar.blend" id="2_pgkxv"]
@@ -13,9 +13,12 @@
 [ext_resource type="PackedScene" uid="uid://cdjuf7rc3abp0" path="res://assets/models/pub/Toilette.blend" id="8_t6qce"]
 [ext_resource type="Script" path="res://scripts/destruction.gd" id="14_iobre"]
 [ext_resource type="PackedScene" uid="uid://c1cwoss7c7hd1" path="res://assets/models/pub/Tür1_kaputt.blend" id="15_l4k7k"]
+[ext_resource type="PackedScene" uid="uid://1j6i6br3ffgq" path="res://scenes/object_scenes/pub/BierglasUnkaputtbar.tscn" id="19_ih352"]
 [ext_resource type="PackedScene" uid="uid://0kp8ph3yegdp" path="res://scenes/object_scenes/pub/pflanze.tscn" id="19_oi3g0"]
 [ext_resource type="PackedScene" uid="uid://vmlurgbjfpgt" path="res://assets/models/pub/Tür2_kaputt.blend" id="22_4eakp"]
 [ext_resource type="PackedScene" uid="uid://bufj6mms2xlq3" path="res://scenes/object_scenes/pub/vorschlaghammer.tscn" id="24_ef8ap"]
+[ext_resource type="PackedScene" uid="uid://cvyioe8kfyqu" path="res://scenes/object_scenes/pub/zimmerpflanze.tscn" id="25_5q7t8"]
+[ext_resource type="PackedScene" uid="uid://8vjj605rmyxk" path="res://scenes/object_scenes/pub/monstera.tscn" id="27_1bxq6"]
 [ext_resource type="PackedScene" uid="uid://cqakpsaru5eju" path="res://assets/models/pub/Toilette_kaputt.blend" id="27_6ia8q"]
 [ext_resource type="PackedScene" uid="uid://cjdtefbe0dgsf" path="res://scenes/object_scenes/pub/bierglas.tscn" id="32_rp4j8"]
 [ext_resource type="PackedScene" uid="uid://doai8qx72mnql" path="res://scenes/object_scenes/pub/bottle_normal.tscn" id="33_aweba"]
@@ -202,22 +205,27 @@ transform = Transform3D(0.38028, 0, 0.924872, 0, 1, 0, -0.924872, 0, 0.38028, -6
 
 [node name="Pflanze" parent="PflanzeCollection" instance=ExtResource("19_oi3g0")]
 
-[node name="Pflanze2" parent="PflanzeCollection" instance=ExtResource("19_oi3g0")]
-transform = Transform3D(0.276325, 0, 0.961063, 0, 1, 0, -0.961063, 0, 0.276325, 4.74994, 1.09418, 0.69076)
-
-[node name="Pflanze3" parent="PflanzeCollection" instance=ExtResource("19_oi3g0")]
-transform = Transform3D(0.358058, 0, 0.933699, 0, 1, 0, -0.933699, 0, 0.358058, 12.1074, 0.0800422, 7.58483)
-
 [node name="Pflanze4" parent="PflanzeCollection" instance=ExtResource("19_oi3g0")]
 transform = Transform3D(0.955798, 0, 0.294024, 0, 1, 0, -0.294024, 0, 0.955798, 6.00183, 0.0800422, 9.70888)
+
+[node name="Pflanze3" parent="PflanzeCollection" instance=ExtResource("25_5q7t8")]
+transform = Transform3D(0.38028, 0, -0.924871, 0, 1, 0, 0.924871, 0, 0.38028, 12.2677, 0.0800416, 7.61737)
+
+[node name="Monstera" parent="PflanzeCollection" instance=ExtResource("27_1bxq6")]
+transform = Transform3D(0.38028, 0, -0.924871, 0, 1, 0, 0.924871, 0, 0.38028, 4.72429, 1.08448, 0.914613)
 
 [node name="BierglasCollection" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.653851, 1.00444, 2.16409)
 
 [node name="bierglas" parent="BierglasCollection" instance=ExtResource("32_rp4j8")]
+script = null
 
 [node name="bierglas2" parent="BierglasCollection" instance=ExtResource("32_rp4j8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.88533, 0.00816011, -2.42183)
+script = null
+
+[node name="Node3D" parent="BierglasCollection" instance=ExtResource("19_ih352")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1103, -0.483421, 1.03253)
 
 [node name="BottleNormalCollection" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.476391, 1.00444, 2.27853)
