@@ -163,9 +163,11 @@ shape = SubResource("ConvexPolygonShape3D_4x5k0")
 
 [node name="left" type="Marker3D" parent="RAMmer-rigid"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02359, -0.215088, -0.0570423)
+visible = false
 script = ExtResource("4_v0bqp")
 
 [node name="right" type="Marker3D" parent="RAMmer-rigid"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00876955, -0.215088, -0.0511584)
+visible = false
 script = ExtResource("4_v0bqp")
 hand = 1

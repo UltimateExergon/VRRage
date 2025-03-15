@@ -134,9 +134,11 @@ shape = SubResource("ConvexPolygonShape3D_f0mv5")
 
 [node name="left" type="Marker3D" parent="toilet_hammer-rigid"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0157945, -1.04282, -0.0657261)
+visible = false
 script = ExtResource("4_7bx3s")
 
 [node name="right" type="Marker3D" parent="toilet_hammer-rigid"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00987111, -1.0351, -0.0721662)
+visible = false
 script = ExtResource("4_7bx3s")
 hand = 1
