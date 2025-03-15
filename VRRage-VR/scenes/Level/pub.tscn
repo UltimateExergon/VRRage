@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cdjuf7rc3abp0" path="res://assets/models/pub/Toilette.blend" id="8_t6qce"]
 [ext_resource type="Script" path="res://scripts/destruction.gd" id="14_iobre"]
 [ext_resource type="PackedScene" uid="uid://c1cwoss7c7hd1" path="res://assets/models/pub/Tür1_kaputt.blend" id="15_l4k7k"]
-[ext_resource type="PackedScene" uid="uid://1j6i6br3ffgq" path="res://scenes/object_scenes/pub/BierglasUnkaputtbar.tscn" id="19_ih352"]
+[ext_resource type="PackedScene" uid="uid://1j6i6br3ffgq" path="res://scenes/object_scenes/pub/bierglas_unkaputtbar.tscn" id="19_ih352"]
 [ext_resource type="PackedScene" uid="uid://0kp8ph3yegdp" path="res://scenes/object_scenes/pub/pflanze.tscn" id="19_oi3g0"]
 [ext_resource type="PackedScene" uid="uid://vmlurgbjfpgt" path="res://assets/models/pub/Tür2_kaputt.blend" id="22_4eakp"]
 [ext_resource type="PackedScene" uid="uid://bufj6mms2xlq3" path="res://scenes/object_scenes/pub/vorschlaghammer.tscn" id="24_ef8ap"]
@@ -224,7 +224,7 @@ script = null
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.88533, 0.00816011, -2.42183)
 script = null
 
-[node name="Node3D" parent="BierglasCollection" instance=ExtResource("19_ih352")]
+[node name="Unkaputtbar" parent="BierglasCollection" instance=ExtResource("19_ih352")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1103, -0.483421, 1.03253)
 
 [node name="BottleNormalCollection" type="Node3D" parent="."]
